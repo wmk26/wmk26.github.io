@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="用linux命令的时候很容易忘，以至于每次用的时候都得重新搜索，此处记录自己经常使用的一些命令，方便自己查找。 1. sort命令 -u：unique，去除重复行 -t：指定字段分隔符 -k：指定按第几列来排序 -r：反向排序  使用示例：sort -t “:” -k 3 /etc/passwd（如果以tab键为分割，使用-t$’\t’） 在使用的使用遇到如下问题： $ sort -n -t $’">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux常用命令">
+<meta property="og:url" content="http://yoursite.com/2015/07/21/linux-e5-b8-b8-e7-94-a8-e5-91-bd-e4-bb-a4/index.html">
+<meta property="og:site_name" content="恰同学少年">
+<meta property="og:description" content="用linux命令的时候很容易忘，以至于每次用的时候都得重新搜索，此处记录自己经常使用的一些命令，方便自己查找。 1. sort命令 -u：unique，去除重复行 -t：指定字段分隔符 -k：指定按第几列来排序 -r：反向排序  使用示例：sort -t “:” -k 3 /etc/passwd（如果以tab键为分割，使用-t$’\t’） 在使用的使用遇到如下问题： $ sort -n -t $’">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-12-12T12:25:35.379Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux常用命令">
+<meta name="twitter:description" content="用linux命令的时候很容易忘，以至于每次用的时候都得重新搜索，此处记录自己经常使用的一些命令，方便自己查找。 1. sort命令 -u：unique，去除重复行 -t：指定字段分隔符 -k：指定按第几列来排序 -r：反向排序  使用示例：sort -t “:” -k 3 /etc/passwd（如果以tab键为分割，使用-t$’\t’） 在使用的使用遇到如下问题： $ sort -n -t $’">
+  <link rel="canonical" href="http://yoursite.com/2015/07/21/linux-e5-b8-b8-e7-94-a8-e5-91-bd-e4-bb-a4/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>linux常用命令 | 恰同学少年</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">恰同学少年</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/07/21/linux-e5-b8-b8-e7-94-a8-e5-91-bd-e4-bb-a4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="恰同学少年">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">linux常用命令
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2015-07-21 10:58:23" itemprop="dateCreated datePublished" datetime="2015-07-21T10:58:23+08:00">2015-07-21</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>用linux命令的时候很容易忘，以至于每次用的时候都得重新搜索，此处记录自己经常使用的一些命令，方便自己查找。</p>
+<h3 id="1-sort命令"><a href="#1-sort命令" class="headerlink" title="1. sort命令"></a><strong>1. sort命令</strong></h3><ul>
+<li>-u：unique，去除重复行</li>
+<li>-t：指定字段分隔符</li>
+<li>-k：指定按第几列来排序</li>
+<li>-r：反向排序</li>
+</ul>
+<p>使用示例：sort -t “:” -k 3 /etc/passwd（如果以tab键为分割，使用-t$’\t’） 在使用的使用遇到如下问题：</p>
+<p>$ sort -n -t $’\t’ output.txt &gt;output_sort.txt<br>sort: 字符串比较出现错误: Invalid or incomplete multibyte or wide character<br>sort: 请设置LC_ALL=’C’ 以避免出现问题。<br>sort: 要比较的字符串为”0\t-1\t鎺ㄨ繘澶х┖娓湴鍖鸿鍒掑缓璁\276 鍔犲揩鎵撻€犲煄甯傛柊鐨勫闀挎瀬\t[鎺ㄨ繘/v, 澶\247/a, 绌烘腐/n, 鍦板尯/n, 瑙勫垝/n, 寤鸿/vn,  /nr, 鍔犲揩/v, 鎵撻€\240/v, 鍩庡競/n, 鏂\260/a, 鐨\204/uj, 澧為暱鏋\201/n]“ 和”0\t1\t鍘熸爣棰橈細绀句細鏁戝姪浣撳埗鏈哄埗鏈夊緟瀹屽杽\t[鍘\237/b, 鏍囬/n, 锛\232/w, 绀句細/n, 鏁戝姪/v, 浣撳埗/n, 鏈哄埗/n, 鏈夊緟/v, 瀹屽杽/v]“。</p>
+<p>解决方案：在终端输入命令：export LC_ALL=C，然后再排序即可； 多列排序，命令如下： sort -t ‘ ‘ -k1,1 -k2n,2 data 说明：</p>
+<ul>
+<li>其中 -t ‘ ‘ 指定使用空格分列</li>
+<li>-k1,1 指定以第一列为关键字排序</li>
+<li>-k2n,2 指定以第二列为关键字做数据排序</li>
+</ul>
+<h3 id="2-make-2-gt-amp-1-tee-build-log"><a href="#2-make-2-gt-amp-1-tee-build-log" class="headerlink" title="2. make 2&gt;&amp;1 | tee build.log"></a><strong>2. make 2&gt;&amp;1 | tee build.log</strong></h3><ul>
+<li>1,2表示的是文件描述符。（0 stdin，1 stdout，2 stderr）</li>
+<li>2&gt;&amp;1，表示标准错误重定向到标准输出；</li>
+<li>tee的作用同时输出到控制台和文件；</li>
+</ul>
+<h3 id="3-find"><a href="#3-find" class="headerlink" title="3. find"></a><strong>3. find</strong></h3><p>find命令的常用形式可以简化为：</p>
+<p>find [path…] [expression]</p>
+<ul>
+<li>path：find命令所查找的目录路径。例如用.来表示当前目录，用/来表示系统根目录</li>
+<li>expression：expression可以分为——“-options [-print -exec -ok …]”</li>
+<li>-options，指定find命令的常用选项</li>
+<li>-print，find命令将匹配的文件输出到标准输出</li>
+<li>-exec，find命令对匹配的文件执行该参数所给出的shell命令。相应命令的形式为’command’ { } \;，注意{ }和\；之间的空格</li>
+</ul>
+<p>find命令常用选项：</p>
+<ul>
+<li>-name，按照文件名查找文件。如：find . -name “*.c” 在当前目录及其子目录（用“.”表示）中查找任何扩展名为“c”的文件；</li>
+<li>-perm，按照文件权限来查找文件，如：find . -perm 755 –print 在当前目录下查找文件权限位为755的文件；</li>
+<li>-prune，使find命令不在当前指定的目录中查找；</li>
+<li>-user：按照文件属主来查找文件。</li>
+</ul>
+<p>详细参考<a href="http://www.cnblogs.com/skynet/archive/2010/12/25/1916873.html" target="_blank" rel="noopener">这篇文章</a>；</p>
+<h3 id="4-cd"><a href="#4-cd" class="headerlink" title="4. cd"></a><strong>4. cd</strong></h3><ul>
+<li>最近才发现cd还有一个比较实用的命令，cd - ：表示回到上次所在目录；</li>
+</ul>
+<h3 id="5-scp"><a href="#5-scp" class="headerlink" title="5. scp"></a><strong>5. scp</strong></h3><p>scp命令用于两台机器之间复制文件；</p>
+<p>#复制文件，指定用户名，需要输入密码<br>scp local_file remote_username@remote_ip:remote_file</p>
+<p>#复制文件夹<br>scp -r local_folder remote_username@remote_ip:remote_folder</p>
+<p>#实现无密码传输</p>
+<p>#本地机器运行如下命令，一路回车即可<br>ssh-keygen -t rsa</p>
+<p>#在~目录下生成.ssh目录，该目录下有三个文件；<br>id_rsa         #私钥<br>id_rsa.pub     #公钥<br>known_hosts    #已知主机</p>
+<p>#用scp将公钥复制到另一台机器上面，同时修改文件名为authorized_keys<br>scp <del>/.ssh/id_rsa.pub remote_username@remote_ip:</del>/.ssh/authorized_keys</p>
+<h3 id="6-进程后台运行"><a href="#6-进程后台运行" class="headerlink" title="6. 进程后台运行"></a><strong>6. 进程后台运行</strong></h3><p># 总共有三种方法，举例说明<br># 1. nohup<br>nohup ping <a href="http://www.ibm.com" target="_blank" rel="noopener">www.ibm.com</a> </p>
+<p># 2. setsid<br>setsid ping <a href="http://www.ibm.com" target="_blank" rel="noopener">www.ibm.com</a></p>
+<p># 3. &amp;<br>ping <a href="http://www.ibm.com" target="_blank" rel="noopener">www.ibm.com</a> &amp;</p>
+<p># 前台运行程序改成后台运行<br># 先暂停任务<br>ctrl + z<br># 查看任务详情<br>jobs<br># 任务后台运行<br>bg %jobnumber 将任务放到后台中去处理</p>
+<p>具体参考：<a href="https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/#ibm-pcon" target="_blank" rel="noopener">Linux 技巧：让进程在后台可靠运行的几种方法</a>，介绍的非常详细； 另，还可以参考，<a href="http://www.cnblogs.com/lwm-1988/archive/2011/08/20/2147299.html" target="_blank" rel="noopener">linux命令后台运行</a></p>
+<h3 id="7-删除已输入的命令"><a href="#7-删除已输入的命令" class="headerlink" title="7. 删除已输入的命令"></a><strong>7. 删除已输入的命令</strong></h3><p>经常会有输入错了一个命令，然后狂按backspace的经历。后来才发现又快捷键来做</p>
+<p>ctl + u 删除光标以前的字符<br>ctl + k 删除光标以后的字符<br>ctl + a 移动光标至的字符头<br>ctl + e 移动光标至的字符尾<br>ctl + l 清屏</p>
+<p>具体参考：<a href="http://www.xiaojian.org/article/305.html" target="_blank" rel="noopener">linux 删除已输入的命令</a> 参考文章：</p>
+<ol>
+<li><a href="http://book.51cto.com/art/200808/85110.htm" target="_blank" rel="noopener">7.2.2 排序命令：sort</a></li>
+<li><a href="http://stackoverflow.com/questions/1037365/unix-sort-with-tab-delimiter" target="_blank" rel="noopener">Unix Sort with Tab Delimiter</a></li>
+<li><a href="http://blog.chinaunix.net/uid-25504049-id-3075909.html" target="_blank" rel="noopener">linux sort 多字段排序</a></li>
+<li><a href="http://static-sort.symanteccloud.com/public/documents/sfha/6.0.1/linux/productguides/zh/cn/pdf/dmp_notes_601_lin.pdf" target="_blank" rel="noopener">Veritas™ Dynamic Multi-Pathing 版本说明</a></li>
+<li><a href="http://bbs.chinaunix.net/thread-2331765-1-1.html" target="_blank" rel="noopener">make 2&gt;&amp;1 | tee build.log 求解释</a></li>
+<li><a href="http://www.cnblogs.com/skynet/archive/2010/12/25/1916873.html" target="_blank" rel="noopener">【日常小记】linux中强大且常用命令：find、grep</a></li>
+<li><a href="http://os.51cto.com/art/200907/140868.htm" target="_blank" rel="noopener">linux cd命令详解及cd命令的几个小技巧</a></li>
+<li><a href="http://linuxtools-rst.readthedocs.org/zh_CN/latest/tool/scp.html" target="_blank" rel="noopener">18. scp 跨机远程拷贝</a></li>
+<li><a href="http://david-je.iteye.com/blog/1960302" target="_blank" rel="noopener">SCP命令设置无密码</a></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2015/07/20/e6-af-8f-e6-97-a5java20150716-0720/" rel="next" title="每日Java(20150716-0720)">
+                  <i class="fa fa-chevron-left"></i> 每日Java(20150716-0720)
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2015/07/21/e6-af-8f-e6-97-a5java20150721/" rel="prev" title="每日Java(20150721)">
+                  每日Java(20150721) <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-sort命令"><span class="nav-number">1.</span> <span class="nav-text">1. sort命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-make-2-gt-amp-1-tee-build-log"><span class="nav-number">2.</span> <span class="nav-text">2. make 2&gt;&amp;1 | tee build.log</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-find"><span class="nav-number">3.</span> <span class="nav-text">3. find</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-cd"><span class="nav-number">4.</span> <span class="nav-text">4. cd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-scp"><span class="nav-number">5.</span> <span class="nav-text">5. scp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-进程后台运行"><span class="nav-number">6.</span> <span class="nav-text">6. 进程后台运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-删除已输入的命令"><span class="nav-number">7.</span> <span class="nav-text">7. 删除已输入的命令</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">178</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span>
+        
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        
+        
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span>
+        
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/muse.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="本来不想写这种豆腐块的小文章的，但是秉承着看书偶有所得即记之的观点，还是稍稍记录一下吧。 整体来说，书并不好，说是随笔，还真是随意。基本上是各种流水账吧，书中三分之一的篇幅在谈mac，剩余是一些编程的碎碎念，包括各种编程工具的使用，一些人物的品评等等，不一而足。很多文章都是在网上一搜一大批，自然，作者的文章只能算中下吧。 不过一本书再一无是处，也总有一些可取的地方吧。下面就说一下，自己的一点收获吧">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MacTalk 人生元编程">
+<meta property="og:url" content="http://yoursite.com/2015/12/12/mactalk-e4-ba-ba-e7-94-9f-e5-85-83-e7-bc-96-e7-a8-8b/index.html">
+<meta property="og:site_name" content="恰同学少年">
+<meta property="og:description" content="本来不想写这种豆腐块的小文章的，但是秉承着看书偶有所得即记之的观点，还是稍稍记录一下吧。 整体来说，书并不好，说是随笔，还真是随意。基本上是各种流水账吧，书中三分之一的篇幅在谈mac，剩余是一些编程的碎碎念，包括各种编程工具的使用，一些人物的品评等等，不一而足。很多文章都是在网上一搜一大批，自然，作者的文章只能算中下吧。 不过一本书再一无是处，也总有一些可取的地方吧。下面就说一下，自己的一点收获吧">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-12-12T12:25:35.381Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MacTalk 人生元编程">
+<meta name="twitter:description" content="本来不想写这种豆腐块的小文章的，但是秉承着看书偶有所得即记之的观点，还是稍稍记录一下吧。 整体来说，书并不好，说是随笔，还真是随意。基本上是各种流水账吧，书中三分之一的篇幅在谈mac，剩余是一些编程的碎碎念，包括各种编程工具的使用，一些人物的品评等等，不一而足。很多文章都是在网上一搜一大批，自然，作者的文章只能算中下吧。 不过一本书再一无是处，也总有一些可取的地方吧。下面就说一下，自己的一点收获吧">
+  <link rel="canonical" href="http://yoursite.com/2015/12/12/mactalk-e4-ba-ba-e7-94-9f-e5-85-83-e7-bc-96-e7-a8-8b/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>MacTalk 人生元编程 | 恰同学少年</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">恰同学少年</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/12/12/mactalk-e4-ba-ba-e7-94-9f-e5-85-83-e7-bc-96-e7-a8-8b/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="恰同学少年">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">MacTalk 人生元编程
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2015-12-12 16:59:43" itemprop="dateCreated datePublished" datetime="2015-12-12T16:59:43+08:00">2015-12-12</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/读书/" itemprop="url" rel="index"><span itemprop="name">读书</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本来不想写这种豆腐块的小文章的，但是秉承着看书偶有所得即记之的观点，还是稍稍记录一下吧。 整体来说，书并不好，说是随笔，还真是随意。基本上是各种流水账吧，书中三分之一的篇幅在谈mac，剩余是一些编程的碎碎念，包括各种编程工具的使用，一些人物的品评等等，不一而足。很多文章都是在网上一搜一大批，自然，作者的文章只能算中下吧。 不过一本书再一无是处，也总有一些可取的地方吧。下面就说一下，自己的一点收获吧。文中说“<strong>在MacTalk之前，我写博客，也为一些媒体写文章，最好的时候一个月会写2-3篇，每次约稿都要拖到最后才能完成，但是开始写MacTalk之后，到今天为止，近8个月的时间我写了180多篇有效文章，平均每周5篇左右，文字总量在15万到20万，这个惊人的数量是我从来没想到的，而且花费的时间是我剪切了刷微博、浏览网页、扯淡、看电视的时间，粘贴到MacTalk上的，每个人时间就那么多，我觉得我并没有损失什么。 所以，不要为自己设限！</strong>”，合抱之木，生于毫末；九层之台，起于累土；千里之行，始于足下。由斯可见；自己开始写博客也差不多有一年的时间了吧，平时在上网的时候，看见别人的博客总喜欢看一下作者最近是否还在坚持写博客，2/8定律还是挺能说明问题的，80%以上的博客早已经田园将芜胡不归，不可不叹；自己做事还算有恒，不知能坚持多长时间； 书的副标题是人生元编程，但是里面有就只有一篇文章在谈人生元编程的问题。里面的观点还是可以借鉴和思考的。书中说“<strong>具备元编程的语言就具备更强大的操控自己的能力，可以自省，可以反射，可以动态改变和控制自己；具备人生元编程能力的人，同样有自省能力，随时检查和控制自身的情绪和行为，思考自己的想法，改变大脑的动机。</strong>”，不知怎么就想起了之前在知乎上看到的一个<a href="http://www.zhihu.com/question/32422838/answer/55775344" target="_blank" rel="noopener">问题的答案</a>，用程序员的视角去写一本修真小说，解码自己，重构世界，和这里提到的“人生元编程”还真有异曲同工之妙。 还有一些和作者相同的观点，比如说“内事不决问百度，外事不决问Google”，附录一个知乎上的问答<a href="http://www.zhihu.com/question/20161362" target="_blank" rel="noopener">如何用好Google搜索引擎</a>。比如说软件付费的观点，目前虽然赞同，但不能力行之，以后等财务自由了一定支持正版，去尊重开发人员，也让自己体验更优质的服务。作者是一个Mac控，为Mac打了不少广告，自己也有点动心，以后有机会或可一试；书中还提到一些不错的资源，比如，高晓松的晓说，还有冯唐的《不二》，找时间会去了解一下。 自己也有以后写书的想法，成与否就让时间去见证吧，是以为记； 附录：</p>
+<ul>
+<li><a href="http://www.zhihu.com/question/20161362" target="_blank" rel="noopener">如何用好Google搜索引擎</a></li>
+<li><a href="http://www.zhihu.com/question/32422838" target="_blank" rel="noopener">怎么写出一本程序员风格的修真小说？</a></li>
+<li>晓说优酷链接，<a href="http://www.youku.com/show_page/id_zc3c10ca46d8d11e1b52a.html" target="_blank" rel="noopener">第一季</a>，<a href="http://www.youku.com/show_page/id_z64feb2249b8211e296da.html" target="_blank" rel="noopener">第二季</a>，<a href="http://xhtyh.blog.163.com/blog/static/21219421420139231162329/" target="_blank" rel="noopener">Mp3下载</a></li>
+<li>冯唐的<a href="http://book.douban.com/subject/6732178/" target="_blank" rel="noopener">不二</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2015/12/11/write-clean-code/" rel="next" title="Write Clean Code">
+                  <i class="fa fa-chevron-left"></i> Write Clean Code
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2015/12/12/e6-b1-aa-e8-a8-80-e5-a6-84-e8-af-ad-e8-af-b4-e8-af-b4-e5-b9-b3-e5-87-a1-e7-94-9f-e6-b4-bb-e9-87-8c-e7-9a-84-e4-b8-8d-e5-b9-b3-e5-87-a1/" rel="prev" title="汪言妄语——说说平凡生活里的不平凡">
+                  汪言妄语——说说平凡生活里的不平凡 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">178</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span>
+        
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        
+        
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span>
+        
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/muse.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

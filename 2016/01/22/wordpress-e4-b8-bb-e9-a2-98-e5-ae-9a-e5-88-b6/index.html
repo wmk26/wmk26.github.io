@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="1. 行高、字符间距设置参考雅黑字体下WordPress 行高与字符间距最佳实践：1.8em与0.06em，修改style.css如下 #main { clear: both; overflow: hidden; padding: 20px 0 0 0; &amp;lt;!--段间距，分别是上、右、下、左间距--&amp;gt; } #content { margin-bottom: 36px; } #conte">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wordpress主题定制">
+<meta property="og:url" content="http://yoursite.com/2016/01/22/wordpress-e4-b8-bb-e9-a2-98-e5-ae-9a-e5-88-b6/index.html">
+<meta property="og:site_name" content="恰同学少年">
+<meta property="og:description" content="1. 行高、字符间距设置参考雅黑字体下WordPress 行高与字符间距最佳实践：1.8em与0.06em，修改style.css如下 #main { clear: both; overflow: hidden; padding: 20px 0 0 0; &amp;lt;!--段间距，分别是上、右、下、左间距--&amp;gt; } #content { margin-bottom: 36px; } #conte">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-12-12T12:25:35.382Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="wordpress主题定制">
+<meta name="twitter:description" content="1. 行高、字符间距设置参考雅黑字体下WordPress 行高与字符间距最佳实践：1.8em与0.06em，修改style.css如下 #main { clear: both; overflow: hidden; padding: 20px 0 0 0; &amp;lt;!--段间距，分别是上、右、下、左间距--&amp;gt; } #content { margin-bottom: 36px; } #conte">
+  <link rel="canonical" href="http://yoursite.com/2016/01/22/wordpress-e4-b8-bb-e9-a2-98-e5-ae-9a-e5-88-b6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>wordpress主题定制 | 恰同学少年</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">恰同学少年</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/01/22/wordpress-e4-b8-bb-e9-a2-98-e5-ae-9a-e5-88-b6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="恰同学少年">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">wordpress主题定制
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2016-01-22 22:16:17" itemprop="dateCreated datePublished" datetime="2016-01-22T22:16:17+08:00">2016-01-22</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/WordPress/" itemprop="url" rel="index"><span itemprop="name">WordPress</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="1-行高、字符间距设置"><a href="#1-行高、字符间距设置" class="headerlink" title="1. 行高、字符间距设置"></a>1. 行高、字符间距设置</h2><p>参考<a href="http://zhangzhao.me/wordpress-height-under-ya-black-font-and-character-spacing-best-practice-1-8em-and-0-06em.zz" target="_blank" rel="noopener">雅黑字体下WordPress 行高与字符间距最佳实践：1.8em与0.06em</a>，修改style.css如下</p>
+<pre><code>#main {
+clear: both;
+overflow: hidden;
+padding: 20px 0 0 0; &lt;!--段间距，分别是上、右、下、左间距--&gt;
+}
+#content {
+margin-bottom: 36px;
+}
+#content,
+#content input,
+#content textarea {
+color: #333;
+font-size: 16px;
+line-height: 1.8em; &lt;!--行间距，设置为字体的1.8倍--&gt;
+letter-spacing: 0.06em; &lt;!--字符间距，设置为字体的0.06倍--&gt;
+}
+#content p,
+#content ul,
+#content ol,
+#content dd,
+#content pre,
+#content hr {
+margin-bottom: 20px;
+}
+}</code></pre><h2 id="2-引用块格式设置"><a href="#2-引用块格式设置" class="headerlink" title="2. 引用块格式设置"></a>2. 引用块格式设置</h2><p>参考：<a href="http://kangjian.net/blog/892/" target="_blank" rel="noopener">WordPress默认主题Twenty Ten的blockquote引用样式修改</a>，修改引用的样式如下：</p>
+<pre><code>blockquote {
+background:#f9f9f9;
+border-left:10px solid #ccc;
+margin:1.5em 10px;
+padding:.5em 10px;
+width: 90%;
+font: 微软雅黑, Georgia;
+color: #888;
+}</code></pre><h2 id="3-设置选中文字后的背景色"><a href="#3-设置选中文字后的背景色" class="headerlink" title="3. 设置选中文字后的背景色"></a>3. 设置选中文字后的背景色</h2><p>参考：<a href="https://www.logcg.com/archives/343.html" target="_blank" rel="noopener">WordPress中设置被选中文字颜色及背景色</a>，修改引用样式如下：</p>
+<pre><code>::-moz-selection {
+background-color: #822e30; &lt;!--使用酒红色--&gt;
+color: #fff;
+}
+
+::selection {
+background-color: #822e30;
+color: #fff;
+}</code></pre><p>附：</p>
+<ul>
+<li><a href="http://www.w3schools.com/tags/ref_colorpicker.asp" target="_blank" rel="noopener">html颜色选择器</a></li>
+<li><a href="http://xiaohudie.net/RGB.html" target="_blank" rel="noopener">RGB取色器</a></li>
+</ul>
+<h2 id="4-修改文章页面的背景颜色"><a href="#4-修改文章页面的背景颜色" class="headerlink" title="4. 修改文章页面的背景颜色"></a>4. 修改文章页面的背景颜色</h2><p>修改文章页面的背景颜色，代码如下：</p>
+<pre><code>#wrapper {
+background: #f9f9f5; &lt;!--作业部落编辑器的颜色，RGB的值分别是249,249,245--&gt;
+margin-top: 20px;
+padding: 0 20px;
+}</code></pre><p>注：使用作业部落编辑器的背景颜色，调出qq截图之后，可以看出背景颜色的RGB值，然后生成颜色代码即可；</p>
+<h2 id="5-修改侧边栏以及副标题文字颜色"><a href="#5-修改侧边栏以及副标题文字颜色" class="headerlink" title="5. 修改侧边栏以及副标题文字颜色"></a>5. 修改侧边栏以及副标题文字颜色</h2><p>修改侧边栏以及副标题的颜色以及字体</p>
+<pre><code>body,
+input,
+textarea {
+color: #000000; &lt;!--使用黑色字体--&gt;
+font-size: 14px;
+line-height: 180%;
+}</code></pre><h2 id="6-参考文献"><a href="#6-参考文献" class="headerlink" title="6. 参考文献"></a>6. 参考文献</h2><ul>
+<li><a href="http://zhangzhao.me/wordpress-height-under-ya-black-font-and-character-spacing-best-practice-1-8em-and-0-06em.zz" target="_blank" rel="noopener">雅黑字体下WordPress 行高与字符间距最佳实践：1.8em与0.06em</a></li>
+<li><a href="http://kangjian.net/blog/892/" target="_blank" rel="noopener">WordPress默认主题Twenty Ten的blockquote引用样式修改</a></li>
+<li><a href="https://www.logcg.com/archives/343.html" target="_blank" rel="noopener">WordPress中设置被选中文字颜色及背景色</a></li>
+<li><a href="http://www.w3schools.com/tags/ref_colorpicker.asp" target="_blank" rel="noopener">html颜色选择器</a></li>
+<li><a href="http://xiaohudie.net/RGB.html" target="_blank" rel="noopener">RGB取色器</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2016/01/22/e6-88-91-e7-9a-84-e8-87-aa-e5-ad-a6-e5-b0-8f-e5-8f-b2/" rel="next" title="我的自学小史">
+                  <i class="fa fa-chevron-left"></i> 我的自学小史
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2016/01/27/e6-88-91-e4-bb-ac-e6-80-8e-e6-a0-b7-e8-af-bb-e4-b9-a6/" rel="prev" title="我们怎样读书">
+                  我们怎样读书 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-行高、字符间距设置"><span class="nav-number">1.</span> <span class="nav-text">1. 行高、字符间距设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-引用块格式设置"><span class="nav-number">2.</span> <span class="nav-text">2. 引用块格式设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-设置选中文字后的背景色"><span class="nav-number">3.</span> <span class="nav-text">3. 设置选中文字后的背景色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-修改文章页面的背景颜色"><span class="nav-number">4.</span> <span class="nav-text">4. 修改文章页面的背景颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-修改侧边栏以及副标题文字颜色"><span class="nav-number">5.</span> <span class="nav-text">5. 修改侧边栏以及副标题文字颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-参考文献"><span class="nav-number">6.</span> <span class="nav-text">6. 参考文献</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">178</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span>
+        
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        
+        
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span>
+        
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/muse.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

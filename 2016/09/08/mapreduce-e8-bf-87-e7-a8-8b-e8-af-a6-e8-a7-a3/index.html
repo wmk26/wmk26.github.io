@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="关于MapReduce的详细过程一直不是很懂，看了很多资料也是云里雾里的，不过还是找到两篇不错的文章：  MapReduce 过程详解(原理解释的很清晰，强烈建议阅读，本篇文章也是主要参考这篇文章来的) Hadoop排序工具用法小结(主要是说如何排序，里面的例子也是很清晰的)  自己尝试将上面两篇文章结合起来，并依据自己的实践来进行一些注解；  MapReduce总体流程 0. 综述整个MapRe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MapReduce过程详解">
+<meta property="og:url" content="http://yoursite.com/2016/09/08/mapreduce-e8-bf-87-e7-a8-8b-e8-af-a6-e8-a7-a3/index.html">
+<meta property="og:site_name" content="恰同学少年">
+<meta property="og:description" content="关于MapReduce的详细过程一直不是很懂，看了很多资料也是云里雾里的，不过还是找到两篇不错的文章：  MapReduce 过程详解(原理解释的很清晰，强烈建议阅读，本篇文章也是主要参考这篇文章来的) Hadoop排序工具用法小结(主要是说如何排序，里面的例子也是很清晰的)  自己尝试将上面两篇文章结合起来，并依据自己的实践来进行一些注解；  MapReduce总体流程 0. 综述整个MapRe">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://images.cnitblog.com/i/361346/201404/041657025158483.png">
+<meta property="og:updated_time" content="2019-12-12T12:25:35.383Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MapReduce过程详解">
+<meta name="twitter:description" content="关于MapReduce的详细过程一直不是很懂，看了很多资料也是云里雾里的，不过还是找到两篇不错的文章：  MapReduce 过程详解(原理解释的很清晰，强烈建议阅读，本篇文章也是主要参考这篇文章来的) Hadoop排序工具用法小结(主要是说如何排序，里面的例子也是很清晰的)  自己尝试将上面两篇文章结合起来，并依据自己的实践来进行一些注解；  MapReduce总体流程 0. 综述整个MapRe">
+<meta name="twitter:image" content="http://images.cnitblog.com/i/361346/201404/041657025158483.png">
+  <link rel="canonical" href="http://yoursite.com/2016/09/08/mapreduce-e8-bf-87-e7-a8-8b-e8-af-a6-e8-a7-a3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>MapReduce过程详解 | 恰同学少年</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">恰同学少年</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/08/mapreduce-e8-bf-87-e7-a8-8b-e8-af-a6-e8-a7-a3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="恰同学少年">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">MapReduce过程详解
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2016-09-08 18:54:18" itemprop="dateCreated datePublished" datetime="2016-09-08T18:54:18+08:00">2016-09-08</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>关于MapReduce的详细过程一直不是很懂，看了很多资料也是云里雾里的，不过还是找到两篇不错的文章：</p>
+<ul>
+<li><a href="http://www.cnblogs.com/npumenglei/p/3631244.html" target="_blank" rel="noopener">MapReduce 过程详解</a>(原理解释的很清晰，强烈建议阅读，本篇文章也是主要参考这篇文章来的)</li>
+<li><a href="http://www.dreamingfish123.info/?p=1102" target="_blank" rel="noopener">Hadoop排序工具用法小结</a>(主要是说如何排序，里面的例子也是很清晰的)</li>
+</ul>
+<p>自己尝试将上面两篇文章结合起来，并依据自己的实践来进行一些注解； <img src="http://images.cnitblog.com/i/361346/201404/041657025158483.png" alt="mapreduce workflow"> MapReduce总体流程</p>
+<h2 id="0-综述"><a href="#0-综述" class="headerlink" title="0. 综述"></a>0. 综述</h2><p>整个MapReduce过程总共分为七个步骤，分别是Map/Partition/Sort/Combine/Copy/Merge/Reduce。简单来说，Map对文件进行切分，Partition将文件根据一定条件放到不同的桶中，Sort对桶中的数据进行排序，Combine对桶中的数据进行一次合并，以减少数据的传输消耗，Copy是将桶中的数据分发到各个不同的Reduce节点上，Merge是在Reduce节点上对来自不同桶中的数据进行一次合并，Reduce对合并之后的文件进行处理；</p>
+<h2 id="1-Map"><a href="#1-Map" class="headerlink" title="1. Map"></a>1. Map</h2><p>拆解，在此阶段可以定义mapper脚本程序，处理文件，得到mapper的输出；</p>
+<h2 id="2-Partition"><a href="#2-Partition" class="headerlink" title="2. Partition"></a>2. Partition</h2><p>分区，分区的原因在于，有时候会有多个Reducer, Partition就是提前对输入进行处理，将同类数据放到一个区中，可以在hadoop脚本中自定义如何做Partition，比如按照输入数据的第1列做partition，那么第一列相同的数据会被分到同一个Partition中去，同一个Partition中第一列的值可能有多个，但是第一列值相同的数据不会出现在多个Partition中。</p>
+<h2 id="3-Sort"><a href="#3-Sort" class="headerlink" title="3. Sort"></a>3. Sort</h2><p>排序，对每一个分区的数据进行排序，可以在hadoop脚本中自定义如何做Sort，即指定字段分隔符以及以哪几个字段作为排序的key。如果不指定，则默认以整行为key，value默认为空；</p>
+<h2 id="4-Combine"><a href="#4-Combine" class="headerlink" title="4. Combine"></a>4. Combine</h2><p>Combine可以理解为一个mini Reduce过程，它发生在前面Map的输出结果之后， 目的就是在结果送到Reducer之前先对其进行一次计算，以减少文件的大小，方便后面的传输。但这步也不是必须的。</p>
+<h2 id="5-Copy"><a href="#5-Copy" class="headerlink" title="5. Copy"></a>5. Copy</h2><p>Copy阶段，把输出结果传送给Reducer，通过http的方式， 由Reducer节点向各个mapper节点下载属于自己分区（Partition）的数据。</p>
+<h2 id="6-Merge"><a href="#6-Merge" class="headerlink" title="6. Merge"></a>6. Merge</h2><p>此时Reducer得到的文件是从不同Mapper那里下载到的，需要对他们进行合并为一个文件（猜想可能是一个Merge Sort的过程，因为最后输出到Reducer的也都是排好序的）；</p>
+<h2 id="7-Reduce"><a href="#7-Reduce" class="headerlink" title="7. Reduce"></a>7. Reduce</h2><p>运行Reducer程序对数据进行处理，然后输出，有多少个Reducer就会输出多少个结果文件，一般的命名方式是part-000xx；</p>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>Partition, Sort, Combine, Copy, Merge等. 而这些过程往往被统称为”Shuffle” 也就是 “混洗”. 而Shuffle的目的就是对数据进行梳理，排序，以更科学的方式分发给每个Reducer,以便能够更高效地进行计算和处理。 整个MapReduce过程中其实包含两次Sort，一次在Partition之后进行Sort，一次是在Merge的时候进行Sort，将不同的Partition混合到一个Reducer中进行一次Merge Sort；</p>
+<h2 id="hadoop中的参数详解"><a href="#hadoop中的参数详解" class="headerlink" title="hadoop中的参数详解"></a>hadoop中的参数详解</h2><pre><code># 典型的参数配置：
+bin/hadoop streaming -input /tmp/comp-test.txt -output /tmp/xx -mapper &quot;python mapper.py&quot; -reducer &quot;python reducer.py&quot; \
+-partitioner org.apache.hadoop.mapred.lib.KeyFieldBasedPartitioner \
+-jobconf mapred.output.key.comparator.class=org.apache.hadoop.mapred.lib.KeyFieldBasedComparator \
+-jobconf stream.num.map.output.key.fields=3 \
+-jobconf stream.map.output.field.separator=. \
+-jobconf map.output.key.field.separator=. \
+-jobconf mapred.text.key.partitioner.options=-k2,3 \
+-jobconf mapred.text.key.comparator.options=&quot;-k3,3 -k4nr&quot; \
+-jobconf mapred.reduce.tasks=5 \
+-file ./mapper.py \
+-file ./reducer.py \
+-jobconf mapred.map.tasks=100 \
+-jobconf mapred.reduce.tasks=100
+
+# 参数详解
+stream.num.map.output.key.fields        # 设置map输出的前几个字段作为key，
+stream.map.output.field.separator       # 设置map输出的字段分隔符，默认是&quot;\t&quot;
+map.output.key.field.separator          # 设置key内的字段分隔符
+num.key.fields.for.partition            # 设置key内前几个字段用来做partition
+mapred.text.key.partitioner.options     # 设置key内某个字段或者某个字段范围用做partition，如上面的例子就是指定key内的第二列和第三列做partition，还可以只设置一列，如设置第二列，则为-k2,2;
+mapred.text.key.comparator.options      # 设置key中需要比较的字段或字节范围，上面的例子解释为：把前四列都作为key，前两列做partition，排序依据优先依据第三列正序(文本序)，第四列逆序(数字序)的组合排序。
+jobconf mapred.map.tasks                # 设置map任务数
+jobconf mapred.reduce.tasks=100         # 设置reduce任务数
+
+
+注0:
+
+KeyFieldBasePartitioner只影响分桶并不影响排序。
+
+注1:
+
+mapred.text.key.partitioner.options和num.key.fields.for.partition不需要一起使用，一起使用则以num.key.fields.for.partition为准。
+
+注2:
+
+此处有一个需要注意的地方，如果这个数字设置的比key中的字段数目多，则只会有一份partition；比如stream.num.map.output.key.fields为1，jobconf mapred.text.key.partitioner.options=-k2,3，则只会产生一份partition；需要特别注意；
+
+注3:
+
+如果不指定Partition字段，则使用整个key作为Partition</code></pre>
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2016/09/05/e6-9d-a5-e8-87-aa-e5-85-ac-e5-8f-b8cto-e7-9a-84-e8-81-8c-e5-9c-ba-e5-bb-ba-e8-ae-ae/" rel="next" title="来自公司CTO的职场建议">
+                  <i class="fa fa-chevron-left"></i> 来自公司CTO的职场建议
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2016/09/11/e8-8d-a4-e4-b8-8e-e8-85-a5/" rel="prev" title="荤与腥">
+                  荤与腥 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-综述"><span class="nav-number">1.</span> <span class="nav-text">0. 综述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Map"><span class="nav-number">2.</span> <span class="nav-text">1. Map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Partition"><span class="nav-number">3.</span> <span class="nav-text">2. Partition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Sort"><span class="nav-number">4.</span> <span class="nav-text">3. Sort</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Combine"><span class="nav-number">5.</span> <span class="nav-text">4. Combine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Copy"><span class="nav-number">6.</span> <span class="nav-text">5. Copy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Merge"><span class="nav-number">7.</span> <span class="nav-text">6. Merge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Reduce"><span class="nav-number">8.</span> <span class="nav-text">7. Reduce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结："><span class="nav-number">9.</span> <span class="nav-text">总结：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hadoop中的参数详解"><span class="nav-number">10.</span> <span class="nav-text">hadoop中的参数详解</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">178</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span>
+        
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        
+        
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span>
+        
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/muse.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

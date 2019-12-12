@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="2018 已经快过去一个月了，但是始终没有想好这一年究竟想要达到一个什么样的目标，如此拖延下去也不是个办法，还是先写一个初始版本，后续持续优化吧。 1. 回顾 2017 的计划关于技术：2017 计划 2017 完成情况 至少看完一遍《机器学习——周志华》和《Deep Learning》，学习自己实践基本的算法； 看了一小部分《机器学习》和《Deep Learning》，难以坚持下去； 坚持每周阅">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2018 计划">
+<meta property="og:url" content="http://yoursite.com/2018/01/28/2018-e8-ae-a1-e5-88-92/index.html">
+<meta property="og:site_name" content="恰同学少年">
+<meta property="og:description" content="2018 已经快过去一个月了，但是始终没有想好这一年究竟想要达到一个什么样的目标，如此拖延下去也不是个办法，还是先写一个初始版本，后续持续优化吧。 1. 回顾 2017 的计划关于技术：2017 计划 2017 完成情况 至少看完一遍《机器学习——周志华》和《Deep Learning》，学习自己实践基本的算法； 看了一小部分《机器学习》和《Deep Learning》，难以坚持下去； 坚持每周阅">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-12-12T12:25:35.385Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2018 计划">
+<meta name="twitter:description" content="2018 已经快过去一个月了，但是始终没有想好这一年究竟想要达到一个什么样的目标，如此拖延下去也不是个办法，还是先写一个初始版本，后续持续优化吧。 1. 回顾 2017 的计划关于技术：2017 计划 2017 完成情况 至少看完一遍《机器学习——周志华》和《Deep Learning》，学习自己实践基本的算法； 看了一小部分《机器学习》和《Deep Learning》，难以坚持下去； 坚持每周阅">
+  <link rel="canonical" href="http://yoursite.com/2018/01/28/2018-e8-ae-a1-e5-88-92/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>2018 计划 | 恰同学少年</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">恰同学少年</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/28/2018-e8-ae-a1-e5-88-92/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="恰同学少年">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">2018 计划
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2018-01-28 15:17:47" itemprop="dateCreated datePublished" datetime="2018-01-28T15:17:47+08:00">2018-01-28</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/生活/" itemprop="url" rel="index"><span itemprop="name">生活</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>2018 已经快过去一个月了，但是始终没有想好这一年究竟想要达到一个什么样的目标，如此拖延下去也不是个办法，还是先写一个初始版本，后续持续优化吧。</p>
+<h2 id="1-回顾-2017-的计划"><a href="#1-回顾-2017-的计划" class="headerlink" title="1. 回顾 2017 的计划"></a>1. 回顾 2017 的计划</h2><h3 id="关于技术："><a href="#关于技术：" class="headerlink" title="关于技术："></a>关于技术：</h3><p>2017 计划</p>
+<p>2017 完成情况</p>
+<p>至少看完一遍《机器学习——周志华》和《Deep Learning》，学习自己实践基本的算法；</p>
+<p>看了一小部分《机器学习》和《Deep Learning》，难以坚持下去；</p>
+<p>坚持每周阅读两篇论文并写笔记；</p>
+<p>除了论文分享之外，几乎没有自己主动看论文；</p>
+<p>每周坚持锻炼算法编程，目标是在今年得编程比赛上拿到名次；</p>
+<p>没有锻炼，也没有比赛；</p>
+<p>深入学习 C++，希望能独立完成一个具体的项目；</p>
+<p>没有学习</p>
+<h3 id="关于读书："><a href="#关于读书：" class="headerlink" title="关于读书："></a>关于读书：</h3><p>2017 计划</p>
+<p>2017 完成情况</p>
+<p>50 本人文社科，10 本英文书籍，10 本技术书籍，尝试用简短的语句概况全书的内容，并向人推荐；</p>
+<p>人文社科看了有二三十本吧，英文书籍只有两本，技术书籍几乎为零；</p>
+<p>专注于历史，中国史、罗马史，主要是几套丛书吧，《大秦帝国》、《世界文明史》、《罗马人的故事》；</p>
+<p>看完了《大秦帝国》，《罗马人的故事》开了个头；</p>
+<p>专注于诗词，诵读完《唐诗三百首》、开始诵读《宋词三百首》；</p>
+<p>《唐诗三百首》基本完成，《宋词三百首》看了二十多篇；</p>
+<h3 id="关于锻炼："><a href="#关于锻炼：" class="headerlink" title="关于锻炼："></a>关于锻炼：</h3><p>2017 计划</p>
+<p>2017 完成情况</p>
+<p>跑步目标：总计 1000 公里，完成 1-2 次半程马拉松，1 次全程马拉松；</p>
+<p>大概 750 公里，完成一次半程马拉松；</p>
+<p>坚持使用 keep，锻炼胸肌和腹肌，同时学习《城市就是健身房》，学习一些跑酷的基本动作；</p>
+<p>执行的算是比较好的，keep 腹肌和胸肌进阶两者皆有 50 次；</p>
+<p>骑行：目标是有 5 次左右的长距离骑行，距离每次在 25 公里以上吧；总里程约 10000 公里；</p>
+<p>6 次长距离骑行，里程大概 1300；</p>
+<p>爬山：目标是五岳；</p>
+<p>春天去泰山，夏天去衡山；</p>
+<h3 id="其他："><a href="#其他：" class="headerlink" title="其他："></a>其他：</h3><p>2017 计划</p>
+<p>2017 完成情况</p>
+<p>准备年底去日本旅游一次。去之前要学习日语，了解日本的相关文化；</p>
+<p>日语学习浅尝辄止；</p>
+<p>锻炼自己的演讲能力，这个非常重要，不可忽视，每月至少安排一次演讲的机会；</p>
+<p>除了例行的论文分享外，没有其余的锻炼；</p>
+<h2 id="2-计划反思"><a href="#2-计划反思" class="headerlink" title="2. 计划反思"></a>2. 计划反思</h2><p>回顾 17 年制定的计划，发现有以下问题，在 18 年一点点进行改进</p>
+<ol>
+<li>目标模糊，不可量化，比如日语学习，比如算法学习，并没有翔实的可度量的计划；</li>
+<li>执行力太差，上述目标一年时间足够了，但是再回首，发现自己做的远远不够。一年一次的反思回顾时间太长，以后改为一月回顾一次，坚持走在正确的道路上；</li>
+</ol>
+<h2 id="3-2018-计划"><a href="#3-2018-计划" class="headerlink" title="3. 2018 计划"></a>3. 2018 计划</h2><h3 id="关于技术"><a href="#关于技术" class="headerlink" title="关于技术"></a>关于技术</h3><ol>
+<li>学习《机器学习》、《PRML》、《Deep Learning》三本书，至少全部看一遍，部分能用代码实现，每本书总结 10 篇文章，大约一个月一篇；</li>
+<li>学习《计算广告学》、《推荐系统实践》等业务书籍，在计算广告学和推荐系统相关领域有一个较为深入的理解，总结或写 10 篇相关技术博客；</li>
+<li>每周阅读一篇最新的论文，推荐系统、计算广告、点击率预估、相关性等，每两周写一篇总结；</li>
+<li>参加 kaggle 比赛，深入参与 3 次，名次达到 top 10%；</li>
+<li>学习两门 MOOC，自然语言处理和深度学习相关，写总结；</li>
+<li>深入学习区块链技术，知其然知其所以然，阅读两本以上相关书籍，最好能有编程实现；</li>
+</ol>
+<h3 id="关于读书"><a href="#关于读书" class="headerlink" title="关于读书"></a>关于读书</h3><ol>
+<li>50 份读书笔记；</li>
+<li>阅读完成《罗马人的故事》，对罗马有一个直观的印象，后续看情况阅读《罗马帝国衰亡史》以及希腊神话和文明相关书籍；</li>
+<li>阅读完成《世界文明史》，皇皇巨著，不期待能有多少收获，至少阅读一遍，有一个直观的印象；</li>
+<li>继续专注于诗词和元典，诗词相关的书籍阅读 10 本以上，对格律有一个全面的认识和了解，知其然；诵读《宋词三百首》，重新诵读《诗经》和《唐诗三百首》；重读《论语》、《老子》、《庄子》、《楚辞》；</li>
+<li>50 本人文社科相关书籍，侧重历史、哲学、心理学等；10 本外文书籍；</li>
+</ol>
+<h3 id="关于锻炼"><a href="#关于锻炼" class="headerlink" title="关于锻炼"></a>关于锻炼</h3><ol>
+<li>跑步 1000 公里，2 次全马，1 次半马，尝试 2 次越野跑；</li>
+<li>骑行 2000 公里，周游北京周边各处景点；</li>
+<li>爬 1000 米以上高山 3 次以上；</li>
+<li>keep 每周 4 次，全年 200 次以上，不在多，在坚持；</li>
+<li>徒步 10 次左右；</li>
+</ol>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ol>
+<li>学习日语，目标是年底考 N2，看学习情况，如果好，奖励一次日本自由行；</li>
+<li>旅行 3 次以上，</li>
+<li>听 TED 演讲，平均一周一次，一月四次，一年 40 次，做总结；</li>
+<li>每月看一次演出，一年 10 次以上，戏曲、话剧等；</li>
+<li>练字，毛笔字练习不了就先练钢笔字，一年坚持 150 天以上，每次 20 分钟以上；</li>
+<li>重构一次个人网站，完整掌握建设网站相关知识；</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2017/12/31/e6-88-91-e7-9a-84-2017/" rel="next" title="我的 2017">
+                  <i class="fa fa-chevron-left"></i> 我的 2017
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2018/03/27/e9-aa-91-e8-a1-8c-e7-ac-94-e8-ae-b0007-20180324-e4-b9-8b-e5-8c-97-e4-ba-ac-e5-85-ad-e7-8e-af/" rel="prev" title="骑行笔记007——20180324之北京六环">
+                  骑行笔记007——20180324之北京六环 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-回顾-2017-的计划"><span class="nav-number">1.</span> <span class="nav-text">1. 回顾 2017 的计划</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于技术："><span class="nav-number">1.1.</span> <span class="nav-text">关于技术：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于读书："><span class="nav-number">1.2.</span> <span class="nav-text">关于读书：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于锻炼："><span class="nav-number">1.3.</span> <span class="nav-text">关于锻炼：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他："><span class="nav-number">1.4.</span> <span class="nav-text">其他：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-计划反思"><span class="nav-number">2.</span> <span class="nav-text">2. 计划反思</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2018-计划"><span class="nav-number">3.</span> <span class="nav-text">3. 2018 计划</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于技术"><span class="nav-number">3.1.</span> <span class="nav-text">关于技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于读书"><span class="nav-number">3.2.</span> <span class="nav-text">关于读书</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于锻炼"><span class="nav-number">3.3.</span> <span class="nav-text">关于锻炼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">3.4.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">178</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span>
+        
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        
+        
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span>
+        
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/muse.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

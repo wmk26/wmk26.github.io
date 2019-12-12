@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="记录下在Ubuntu下使用git与github的经历。 github基本功能： Repository：放项目的仓库； Fork：授权拷贝；（Fork 别人的项目） Branch：Fork之后，在个人的github上出现同名Repository，是源Repository的分支（Branch）； Pull Request：推送请求，将修改后的代码推送给原作者；  git初始设置  $ git conf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu下git&amp;github使用">
+<meta property="og:url" content="http://yoursite.com/2015/04/11/ubuntu-e4-b8-8bgitgithub-e4-bd-bf-e7-94-a8/index.html">
+<meta property="og:site_name" content="恰同学少年">
+<meta property="og:description" content="记录下在Ubuntu下使用git与github的经历。 github基本功能： Repository：放项目的仓库； Fork：授权拷贝；（Fork 别人的项目） Branch：Fork之后，在个人的github上出现同名Repository，是源Repository的分支（Branch）； Pull Request：推送请求，将修改后的代码推送给原作者；  git初始设置  $ git conf">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-12-12T12:25:35.379Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ubuntu下git&amp;github使用">
+<meta name="twitter:description" content="记录下在Ubuntu下使用git与github的经历。 github基本功能： Repository：放项目的仓库； Fork：授权拷贝；（Fork 别人的项目） Branch：Fork之后，在个人的github上出现同名Repository，是源Repository的分支（Branch）； Pull Request：推送请求，将修改后的代码推送给原作者；  git初始设置  $ git conf">
+  <link rel="canonical" href="http://yoursite.com/2015/04/11/ubuntu-e4-b8-8bgitgithub-e4-bd-bf-e7-94-a8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>ubuntu下git&github使用 | 恰同学少年</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">恰同学少年</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/04/11/ubuntu-e4-b8-8bgitgithub-e4-bd-bf-e7-94-a8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="恰同学少年">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">ubuntu下git&github使用
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2015-04-11 16:49:35" itemprop="dateCreated datePublished" datetime="2015-04-11T16:49:35+08:00">2015-04-11</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>记录下在Ubuntu下使用git与github的经历。 github基本功能： Repository：放项目的仓库； Fork：授权拷贝；（Fork 别人的项目） Branch：Fork之后，在个人的github上出现同名Repository，是源Repository的分支（Branch）； Pull Request：推送请求，将修改后的代码推送给原作者；</p>
+<ol>
+<li>git初始设置</li>
+</ol>
+<p>$ git config –global user.name “Your Real Name”<br>$ git config –global user.email <a href="mailto:you@email.address" target="_blank" rel="noopener">you@email.address</a></p>
+<p>如，我的设置如下：</p>
+<p>git config –global user.name “wmk26”<br>git config –global user.email “<a href="mailto:1549359482@qq.com" target="_blank" rel="noopener">1549359482@qq.com</a>“</p>
+<ol start="2">
+<li>初始化Git仓库（init）</li>
+</ol>
+<p>//Mytest目录是工作目录，仅作示意<br>$ cd ~/Mytest<br>$ git init  </p>
+<p># 然后会显示：<br>Initialized empty Git repository in $PROJECT/ .git/</p>
+<p>上述结果表示在当前目录下创建了一个.git的隐藏目录，这个就是所谓的Git仓库了。此时的～/Mytest文件夹，我们也改名称之为工作树。 3. 提交(commit) 接下来在本地仓库里添加一些文件，比如README。进行如下操作</p>
+<p>//将README添加到待提交的列表。<br>$ git add README<br>//提交到本地仓库，并没有提交到GitHub上。<br>$ git commit -m “first commit”</p>
+<ol>
+<li>连接github并上传repository</li>
+</ol>
+<p>首先在本地创建ssh key；</p>
+<p>$ ssh-keygen -t rsa -C “<a href="mailto:your_email@youremail.com" target="_blank" rel="noopener">your_email@youremail.com</a>“</p>
+<p>后面的your_<a href="mailto:email@youremail.com" target="_blank" rel="noopener">email@youremail.com</a>改为你的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在~/下生成.ssh文件夹，进去，打开id_rsa.pub，复制里面的key。 回到github，进入Account Settings，左边选择SSH Keys，Add SSH Key,title随便填，粘贴key。为了验证是否成功，在git bash下输入：</p>
+<p>$ ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a></p>
+<p>如果是第一次的会提示是否continue，输入yes就会看到：You’ve successfully authenticated, but GitHub does not provide shell access 。这就表示已成功连上github。 设置远程连接github：</p>
+<p>git remote add origin <a href="https://github.com/user_name/Mytest.git" target="_blank" rel="noopener">https://github.com/user_name/Mytest.git</a></p>
+<p>#注：使用https连接之后每次都需要输入用户名和密码。可以改用如下方式<br>git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:user_name/Mytest.git</p>
+<p>将本地仓库的文件上传到github上：</p>
+<p>$ git push origin master</p>
+<p>git push命令会将本地仓库推送到远程服务器。 git pull命令则相反。 修改完代码后，使用git status可以查看文件的差别，使用git add 添加要commit的文件，也可以用git add -i来智能添加文件。之后git commit提交本次修改，git push上传到github。</p>
+<ol>
+<li>其他</li>
+</ol>
+<p>将github上的repository下载到本地，可以这样做：</p>
+<p>$ git pull origin master</p>
+<p>如果github上已经有同名的repository，再把本地的repository上传会发生如下错误：</p>
+<p>! [rejected] master -&gt; master (non-fast-forward)<br>error: 无法推送一些引用到 ‘<a href="https://github.com/lmdyyh/BitMap.git&#39;" target="_blank" rel="noopener">https://github.com/lmdyyh/BitMap.git&#39;</a><br>提示：更新被拒绝，因为您当前分支的最新提交落后于其对应的远程分支。<br>提示：再次推送前，先与远程变更合并（如 ‘git pull’）。详见<br>提示：’git push –help’ 中的 ‘Note about fast-forwards’ 小节。</p>
+<p>因为GitHub上有个README文件，就好比多人协同工作时其他人上传了一个新版本，此时需要执行 git pull <a href="https://github.com/username/Project.git" target="_blank" rel="noopener">https://github.com/username/Project.git</a> 或git pull origin master 我们运行 git pull,目的就是要从原始克隆的远端仓库中抓取数据后,合并到工作目录中当前分支。 然后merge后执行git push即可。fast forward能够保证不会强制覆盖别人的代码，确保了多人协同开发。尽量不要使用non fast forward方法提交代码。</p>
+<ol>
+<li>可能遇到的一些问题</li>
+</ol>
+<p>6.1. 在linux上使用SSH连接github时可能会遇到如下错误：</p>
+<p>Agent admitted failure to sign using the key</p>
+<p>解决：运行如下两个命令即可：</p>
+<p># start the ssh-agent in the background<br>eval “$(ssh-agent -s)”<br># Agent pid 59566<br>ssh-add<br># Enter passphrase for /home/you/.ssh/id_rsa: [tippy tap]<br># Identity added: /home/you/.ssh/id_rsa (/home/you/.ssh/id_rsa)</p>
+<p>6.2. 设置了SSH连接，可是每次push的时候都需要输入用户名和密码 原因：使用了https方式push</p>
+<p>#输入<br>git remote -v </p>
+<p>#返回<br>origin  <a href="https://github.com/:wmk26/leetcode.git" target="_blank" rel="noopener">https://github.com/:wmk26/leetcode.git</a> (fetch)<br>origin  <a href="https://github.com/:wmk26/leetcode.git" target="_blank" rel="noopener">https://github.com/:wmk26/leetcode.git</a> (push)</p>
+<p>解决：输入如下三行命令</p>
+<p>git remote rm origin<br>git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:wmk26/leetcode.git<br>git push origin</p>
+<p>  参考文献：</p>
+<ol>
+<li><a href="http://wuyuans.com/2012/05/github-simple-tutorial/" target="_blank" rel="noopener">github简单使用教程</a></li>
+<li><a href="http://blog.csdn.net/lmdyyh/article/details/19683721" target="_blank" rel="noopener">git命令的基本使用方法</a></li>
+<li><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu-14.04/" target="_blank" rel="noopener">Installing and using Git and GitHub on Ubuntu: A beginner’s guide</a></li>
+<li><a href="http://www.pureweber.com/article/git-and-github/" target="_blank" rel="noopener">Git与Github的使用(ubuntu)</a></li>
+<li><a href="http://jinchen.blog.51cto.com/6745578/1639230" target="_blank" rel="noopener">linux git ssh 无密码登陆 免密码登陆</a></li>
+<li><a href="https://help.github.com/articles/error-agent-admitted-failure-to-sign/" target="_blank" rel="noopener">Error: Agent admitted failure to sign</a></li>
+</ol>
+<p>注：个人认为第三篇参考文章比较简洁，很具有参考价值。其次是第一篇文章，很详细。</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2015/04/07/e3-80-8a-e4-b8-8d-e6-ad-bb-e8-8d-af-e3-80-8b-e8-af-bb-e4-b9-a6-e7-ac-94-e8-ae-b0/" rel="next" title="《不死药》读书笔记">
+                  <i class="fa fa-chevron-left"></i> 《不死药》读书笔记
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2015/04/29/e3-80-8a-e5-be-ae-e8-bd-af-e7-9a-84-e6-a2-a6-e5-b7-a5-e5-8e-82-e3-80-8b-e8-af-bb-e4-b9-a6-e7-ac-94-e8-ae-b0/" rel="prev" title="《微软的“梦工厂”》读书笔记">
+                  《微软的“梦工厂”》读书笔记 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">178</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span>
+        
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        
+        
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span>
+        
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/muse.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

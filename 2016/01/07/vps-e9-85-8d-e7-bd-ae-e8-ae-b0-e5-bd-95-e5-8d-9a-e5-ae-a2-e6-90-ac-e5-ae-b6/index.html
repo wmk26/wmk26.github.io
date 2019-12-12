@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="之前一直使用高大上的linode，但是经常会无法访问，一直让自己很不爽。听说linode的日本机房挺快的，不过目前好像没有资源了。前几天，看见知乎上一个问答：有哪些便宜稳定，速度也不错的Linux VPS 推荐？，里面有人推荐vultr，见猎心喜，于是准备尝试一下；现在vultr做活动，新用户注册，送50$，让你免费体验2个月（需要双币信用卡），简直爽歪歪。于是去薅“万恶的”资本主义的羊毛。之后花">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vps配置记录&amp;&amp;博客搬家">
+<meta property="og:url" content="http://yoursite.com/2016/01/07/vps-e9-85-8d-e7-bd-ae-e8-ae-b0-e5-bd-95-e5-8d-9a-e5-ae-a2-e6-90-ac-e5-ae-b6/index.html">
+<meta property="og:site_name" content="恰同学少年">
+<meta property="og:description" content="之前一直使用高大上的linode，但是经常会无法访问，一直让自己很不爽。听说linode的日本机房挺快的，不过目前好像没有资源了。前几天，看见知乎上一个问答：有哪些便宜稳定，速度也不错的Linux VPS 推荐？，里面有人推荐vultr，见猎心喜，于是准备尝试一下；现在vultr做活动，新用户注册，送50$，让你免费体验2个月（需要双币信用卡），简直爽歪歪。于是去薅“万恶的”资本主义的羊毛。之后花">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-12-12T12:25:35.382Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vps配置记录&amp;&amp;博客搬家">
+<meta name="twitter:description" content="之前一直使用高大上的linode，但是经常会无法访问，一直让自己很不爽。听说linode的日本机房挺快的，不过目前好像没有资源了。前几天，看见知乎上一个问答：有哪些便宜稳定，速度也不错的Linux VPS 推荐？，里面有人推荐vultr，见猎心喜，于是准备尝试一下；现在vultr做活动，新用户注册，送50$，让你免费体验2个月（需要双币信用卡），简直爽歪歪。于是去薅“万恶的”资本主义的羊毛。之后花">
+  <link rel="canonical" href="http://yoursite.com/2016/01/07/vps-e9-85-8d-e7-bd-ae-e8-ae-b0-e5-bd-95-e5-8d-9a-e5-ae-a2-e6-90-ac-e5-ae-b6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>vps配置记录&&博客搬家 | 恰同学少年</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">恰同学少年</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/01/07/vps-e9-85-8d-e7-bd-ae-e8-ae-b0-e5-bd-95-e5-8d-9a-e5-ae-a2-e6-90-ac-e5-ae-b6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="恰同学少年">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">vps配置记录&&博客搬家
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2016-01-07 13:48:12" itemprop="dateCreated datePublished" datetime="2016-01-07T13:48:12+08:00">2016-01-07</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>之前一直使用高大上的linode，但是经常会无法访问，一直让自己很不爽。听说linode的日本机房挺快的，不过目前好像没有资源了。前几天，看见知乎上一个问答：<a href="https://www.zhihu.com/question/20800554/answer/71397836" target="_blank" rel="noopener">有哪些便宜稳定，速度也不错的Linux VPS 推荐？</a>，里面有人推荐vultr，见猎心喜，于是准备尝试一下；现在vultr做活动，新用户注册，送50$，让你免费体验2个月（需要双币信用卡），简直爽歪歪。于是去薅“万恶的”资本主义的羊毛。之后花了大概一天的时间，搭建了梯子，做了相关优化，同时把linode上面的个人网站转移过来。期间遇到不少问题，记录之；</p>
+<h2 id="1-vultr基本设置："><a href="#1-vultr基本设置：" class="headerlink" title="1. vultr基本设置："></a>1. vultr基本设置：</h2><ul>
+<li>vultr部署之后会默认初始化一个root密码，使用不方便，修改之：</li>
+</ul>
+<p>sudo passwd root # 修改root密码</p>
+<ul>
+<li>.bashrc .vimrc（vim需要自己安装）配置： 直接scp命令从自己的ubuntu上复制过去（找时间上传到github上再贴地址）；</li>
+</ul>
+<h2 id="2-shadowsocks配置："><a href="#2-shadowsocks配置：" class="headerlink" title="2. shadowsocks配置："></a>2. shadowsocks配置：</h2><p>参考以下两篇文章：</p>
+<ul>
+<li><a href="http://www.auooo.com/2015/06/26/shadowsocks%EF%BC%88%E5%BD%B1%E6%A2%AD%EF%BC%89%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/" target="_blank" rel="noopener">shadowsocks（影梭）不完全指南</a></li>
+<li><a href="http://felixqu.com/2014/06/23/setup-shadowsocks-on-ubuntu/" target="_blank" rel="noopener">在 Ubuntu 服务器上部署 shadowsocks</a></li>
+</ul>
+<p>如果不想看上面的文章，直接安装下面的步骤来也可以：</p>
+<p>1）基本工具安装：sudo apt-get install python-gevent python-pip<br>2）shadowsocks安装：sudo pip install shadowsocks<br>3）配置：新建一个配置文件，比如在/etc下新建一个shadowsocks.json文件，文件内容如下：<br>{<br>“server”:”你的服务器地址”,<br>“port_passwd”:{<br>“服务器端口号”:”密码”,<br>…（可以添加多个）<br>}<br>“local_address”: “127.0.0.1”,<br>“local_port”:1080,<br>“timeout”:300,<br>“method”:”aes-256-cfb”,<br>“fast_open”: true<br>}<br>备注：这篇文章（<a href="http://wuchong.me/blog/2015/02/02/shadowsocks-install-and-optimize/）推荐使用rc4-md5加密的方式，尝试了一下，不行。google了一下，说这种加速在路由器上会很明显，一般的速度还是靠网速。。。" target="_blank" rel="noopener">http://wuchong.me/blog/2015/02/02/shadowsocks-install-and-optimize/）推荐使用rc4-md5加密的方式，尝试了一下，不行。google了一下，说这种加速在路由器上会很明显，一般的速度还是靠网速。。。</a><br>4）启动（后台启动）：nohup ssserver –c /etc/shadowsocks.json &gt; log &amp;<br>5）配置开机自动启动：打开/etc/rc.local，添加一行：/usr/local/bin/ssserver –c /etc/shadowsocks.json<br>6）升级shadowsock命令：sudo pip install –upgrade shadowsocks</p>
+<h2 id="3-shadowsocks加速："><a href="#3-shadowsocks加速：" class="headerlink" title="3. shadowsocks加速："></a>3. shadowsocks加速：</h2><p>主要参考这篇文章：<a href="http://wuchong.me/blog/2015/02/02/shadowsocks-install-and-optimize/" target="_blank" rel="noopener">科学上网之 Shadowsocks 安装及优化加速</a> 备注：其中涉及到使用锐速加速，需要更改内核，参考这篇文章：<a href="https://prinzeugen.net/ubuntu-14-04-change-kernel-to-install-serverspeeder/" target="_blank" rel="noopener">Ubuntu 14.04 更换内核以安装锐速</a></p>
+<h2 id="4-个人博客相关设置"><a href="#4-个人博客相关设置" class="headerlink" title="4. 个人博客相关设置"></a>4. 个人博客相关设置</h2><ul>
+<li>更改dns服务商，改狗爹的nameserver为国内的dnspod，主要参考如下文章： <a href="http://bigc.at/godaddy-domain-dnspod-dns.orz" target="_blank" rel="noopener">如何让Godaddy域名使用DNSPod做DNS解析</a></li>
+</ul>
+<p>备注：需要有如下需要注意的地方：</p>
+<ul>
+<li>记录类型A表示ipv4的类型；</li>
+<li>主机记录@表示主域名，也就是不带www的域名，对应本网站就是wangmingkuo.com，也就是添加了这一条记录，访问wangmingkuo.com会解析到对应的记录值；</li>
+<li>如果设置二级域名，则主机记录填写二级域名如blog，记录类型为CNAME，记录值就填要解析的ip地址或者其他网站地址；</li>
+<li>为了让<a href="http://www.wangmingkuo.com也解析到wangmingkuo.com，可以设置二级域名为www，记录类型为CNAME，记录值为wangmingkuo.com即可；" target="_blank" rel="noopener">www.wangmingkuo.com也解析到wangmingkuo.com，可以设置二级域名为www，记录类型为CNAME，记录值为wangmingkuo.com即可；</a></li>
+</ul>
+<h2 id="5-wordpress搬家（linode-gt-vultr）"><a href="#5-wordpress搬家（linode-gt-vultr）" class="headerlink" title="5. wordpress搬家（linode-&gt;vultr）"></a>5. wordpress搬家（linode-&gt;vultr）</h2><ul>
+<li>在vultr上搭建LNMP环境：<a href="http://lnmp.org/install.html" target="_blank" rel="noopener">使用一键安装LNMP</a>（注：建议记录一下个人配置，如mysql账户密码等）</li>
+<li>一般来说，一个虚拟主机就是一个网站，因此需要开启虚拟主机，参考：<a href="http://lnmp.org/faq/lnmp-vhost-add-howto.html" target="_blank" rel="noopener">LNMP添加、删除虚拟主机及伪静态使用教程就可以了</a>，下面是自己的一些配置，仅供参考：</li>
+</ul>
+<p>添加了两个域名，<a href="http://www.wangmingkuo.com" target="_blank" rel="noopener">www.wangmingkuo.com</a> wangmingkuo.com<br>使用默认的网站目录<br>Allow Rewrite rule? y<br>rewrite: wordpress<br>Allow access_log? y<br>access log name: default<br>create database and MySQL user with same name: y<br>mysql root password: 你的mysql密码<br>Enter database name: 如果是vps之间搬家，最好保持数据库名称一致，如果第一次安装，就不必在意了（wmk_blog）<br>Please enter password for mysql user wmk_blog: wmk_blog</p>
+<ul>
+<li>以下说明如何从linode搬家到vultr；如果第一次在vps安装，则可以跳过；主要参考：<a href="http://now4live.com/wordpress%E6%90%AC%E5%AE%B6%E5%85%A8%E6%94%BB%E7%95%A5/" target="_blank" rel="noopener">WordPress搬家全攻略</a></li>
+</ul>
+<p>a. 导出wordpress数据库（注意-u和-p后面不要有空格，下同）：<br>mysqldump -u数据库用户名 -p数据库密码 要导出的Wordpress数据库名称&gt;backup.sql</p>
+<p>b. 打包wordpress文件<br>tar -czf wmk.tar.gz /home/wwwroot/<a href="http://www.wangmingkuo/" target="_blank" rel="noopener">www.wangmingkuo/</a></p>
+<p>c. 文件数据拷贝到新的vps上，直接用scp命令，参考如下：<br>scp backup.sql wmk.tar.gz root@新vps的ip地址:新vps上的地址<br>示例：<br>scp backup.sql wmk.tar.gz <a href="mailto:root@1.1.1.1" target="_blank" rel="noopener">root@1.1.1.1</a>:/home/wwwroot/</p>
+<p>d. 把wmk.tar.gz加压缩到<a href="http://www.wangmingkuo.com文件夹下：" target="_blank" rel="noopener">www.wangmingkuo.com文件夹下：</a><br>tar -xzvf wmk.tar.gz</p>
+<p>备注可能会遇到的问题：<br>问题：以上操作之后，如果要改变/home/wwwroot/<a href="http://www.wangmingkuo.com文件夹的内容，会提示&quot;Operation" target="_blank" rel="noopener">www.wangmingkuo.com文件夹的内容，会提示&quot;Operation</a> not permitted”，解决：chattr -i <a href="http://www.wangmingkuo.com，" target="_blank" rel="noopener">www.wangmingkuo.com，</a><br>原因：<a href="http://www.wangmingkuo.com这个文件夹被锁定了，参数i的意思是设定文件不能被删除/改名/设定链接关系，同时不能写入或新增内容，-号的意思是去除这个限制；" target="_blank" rel="noopener">www.wangmingkuo.com这个文件夹被锁定了，参数i的意思是设定文件不能被删除/改名/设定链接关系，同时不能写入或新增内容，-号的意思是去除这个限制；</a></p>
+<p>e. 导入数据库<br>mysql -u数据库用户名 -p数据库密码 数据库名称&lt;backup.sql<br>备注：注意，需要保证搬家前和搬家后的数据库名称相同；另如果导入之后有问题，那么可能是数据库的格式不太对，可以尝试进入LNMP安装的myPHPadmin种手动导入。</p>
+<p>f. 设置域名转向新的vps</p>
+<p>g. 内存优化，暂时还没有尝试，参考下面这篇文章：<br>小内存VPS优化 – 如何搭建个人网站（<a href="http://keenwon.com/436.html）" target="_blank" rel="noopener">http://keenwon.com/436.html）</a></p>
+<p>备注：可能会遇到的问题</p>
+<p>问题1 ：Wordpress的插件，主题无法更新<br>原因：LNMP一键包环境中对于PHP权限的设置限制<br>解决：<br>1. 编辑/usr/local/php/etc/php.ini文件<br>2. 找到disable_functions这一行中，删除”scandir,”这一段脚本，然后保存这个文件退出<br>3. 运行 /etc/init.d/php-fpm restart 命令，重启PHP-FPM</p>
+<h2 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h2><ul>
+<li><a href="https://www.zhihu.com/question/20800554/answer/71397836" target="_blank" rel="noopener">有哪些便宜稳定，速度也不错的Linux VPS 推荐？</a></li>
+<li><a href="http://www.auooo.com/2015/06/26/shadowsocks%EF%BC%88%E5%BD%B1%E6%A2%AD%EF%BC%89%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/" target="_blank" rel="noopener">shadowsocks（影梭）不完全指南</a></li>
+<li><a href="http://felixqu.com/2014/06/23/setup-shadowsocks-on-ubuntu/" target="_blank" rel="noopener">在 Ubuntu 服务器上部署 shadowsocks</a></li>
+<li><a href="http://wuchong.me/blog/2015/02/02/shadowsocks-install-and-optimize/" target="_blank" rel="noopener">科学上网之 Shadowsocks 安装及优化加速</a></li>
+<li><a href="https://prinzeugen.net/ubuntu-14-04-change-kernel-to-install-serverspeeder/" target="_blank" rel="noopener">Ubuntu 14.04 更换内核以安装锐速</a></li>
+<li><a href="http://bigc.at/godaddy-domain-dnspod-dns.orz" target="_blank" rel="noopener">如何让Godaddy域名使用DNSPod做DNS解析</a></li>
+<li><a href="http://lnmp.org/install.html" target="_blank" rel="noopener">使用一键安装LNMP</a></li>
+<li><a href="http://lnmp.org/faq/lnmp-vhost-add-howto.html" target="_blank" rel="noopener">LNMP添加、删除虚拟主机及伪静态使用教程就可以了</a></li>
+<li><a href="http://now4live.com/wordpress%E6%90%AC%E5%AE%B6%E5%85%A8%E6%94%BB%E7%95%A5/" target="_blank" rel="noopener">WordPress搬家全攻略</a></li>
+<li><a href="http://www.ha97.com/5172.html" target="_blank" rel="noopener">（总结）Linux的chattr与lsattr命令详解</a></li>
+<li><a href="http://www.itbulu.com/lnmp-scandir.html" target="_blank" rel="noopener">解决LNMP环境无法显示所有WordPress主题及无法编辑主题页面</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2016/01/03/2016-e8-a7-82-e5-bd-b1-e8-ae-b0-e5-bd-95/" rel="next" title="2016观影记录">
+                  <i class="fa fa-chevron-left"></i> 2016观影记录
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2016/01/10/e4-bc-97-e7-97-85-e4-b9-8b-e7-8e-8b-ef-bc-9a-e7-99-8c-e7-97-87-e8-bd-ac/" rel="prev" title="众病之王：癌症转">
+                  众病之王：癌症转 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-vultr基本设置："><span class="nav-number">1.</span> <span class="nav-text">1. vultr基本设置：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-shadowsocks配置："><span class="nav-number">2.</span> <span class="nav-text">2. shadowsocks配置：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-shadowsocks加速："><span class="nav-number">3.</span> <span class="nav-text">3. shadowsocks加速：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-个人博客相关设置"><span class="nav-number">4.</span> <span class="nav-text">4. 个人博客相关设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-wordpress搬家（linode-gt-vultr）"><span class="nav-number">5.</span> <span class="nav-text">5. wordpress搬家（linode-&gt;vultr）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献："><span class="nav-number">6.</span> <span class="nav-text">参考文献：</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">178</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span>
+        
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        
+        
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span>
+        
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/muse.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
