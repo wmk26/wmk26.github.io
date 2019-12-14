@@ -224,533 +224,6 @@
   
   
   <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/22/linux-e5-b8-b8-e7-94-a8-e7-bc-a9-e5-86-99/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mingkuo Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="恰同学少年">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2016/08/22/linux-e5-b8-b8-e7-94-a8-e7-bc-a9-e5-86-99/" class="post-title-link" itemprop="url">Linux常用缩写</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2016-08-22 10:00:39" itemprop="dateCreated datePublished" datetime="2016-08-22T10:00:39+08:00">2016-08-22</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>经常被各种缩写弄的云里雾里的，今天无意间中知乎上看到一个问答：<a href="https://www.zhihu.com/question/49073893" target="_blank" rel="noopener">Linux中常用的命令都是哪些单词的缩写？</a>，本来想着以后再看的，拖延症又犯了，后来想着也没有什么别的事情，还是立刻去做了的好。于是将整理了一下其中的答案，以备后用；建议查找的时候直接Ctrl+F； update: 20160920</p>
-<h2 id="1-目录缩写"><a href="#1-目录缩写" class="headerlink" title="1. 目录缩写"></a>1. 目录缩写</h2><p>缩写</p>
-<p>全称</p>
-<p>说明</p>
-<p>/bin</p>
-<p>BINaries</p>
-<p>二进制可执行命令</p>
-<p>/dev</p>
-<p>DEVices</p>
-<p>特殊设备文件</p>
-<p>/etc</p>
-<p>ETCetera</p>
-<p>系统管理和配置文件</p>
-<p>/etc/fstab</p>
-<p>FileSystem TABle</p>
-<p>文件/etc/fstab包含了静态文件系统信息，定义了存储设备和分区整合到整个系统的方式。mount 命令会读取这个文件，确定设备和分区的挂载选项。</p>
-<p>/lib</p>
-<p>LIBraries</p>
-<p>库文件</p>
-<p>/mnt</p>
-<p>MouNT</p>
-<p>系统提供这个目录是让用户临时挂载其他的文件系统。</p>
-<p>/opt</p>
-<p>OPTion</p>
-<p>第三方软件放置的目录。如果你想自行安装额外的软件(非原本的 distribution 提供的)，那么也能够将你的软件安装到这里来。</p>
-<p>/proc</p>
-<p>PROCesses</p>
-<p>虚拟的目录，是系统内存的映射。可直接访问这个目录来获取系统信息。</p>
-<p>/sbin</p>
-<p>Super BINaries, Superuser BINaries</p>
-<p>系统管理命令，这里存放的是系统管理员使用的管理程序</p>
-<p>/srv</p>
-<p>SeRVices</p>
-<p>是一些网络服务启动后，这些服务所需要取用的数据目录。常见的服务例如 WWW，FTP 等。</p>
-<p>/sys</p>
-<p>SYStem</p>
-<p>虚拟文件系统，主要记录与内核相关的信息，包括目前已加载的内核模块与内核检测到的硬件设备信息，同样不占硬盘容量。</p>
-<p>/tmp</p>
-<p>TeMPorary</p>
-<p>公用的临时文件存储点</p>
-<p>tty</p>
-<p>teletypewriter</p>
-<p>“电传打字机”，在类Unix里，键盘显示器，都是虚拟的teletypewriter</p>
-<p>/usr</p>
-<p>Unix System/Software/Shared Resources</p>
-<p>“Unix 操作系统软件资源” 所放置的目录，不是用户数据。 FHS 建议所有的软件开发者应该将他们的数据合理的放置到这个目录下的子目录，而不是自行新建该软件自己独立的目录。</p>
-<p>/var</p>
-<p>VARiable</p>
-<p>某些大文件的溢出区，比方说各种服务的日志文件</p>
-<p>注：具体到各个目录的功能以及作用，可以参考下面两篇文章：</p>
-<ul>
-<li><a href="https://www.zhihu.com/question/49073893" target="_blank" rel="noopener">Linux中常用的命令都是哪些单词的缩写？</a></li>
-<li><a href="http://www.cnblogs.com/zhyryxz/archive/2012/05/03/2480242.html" target="_blank" rel="noopener">(转)linux 目录结构及其含义</a>(这篇比较详细)</li>
-</ul>
-<h2 id="2-命令缩写"><a href="#2-命令缩写" class="headerlink" title="2. 命令缩写"></a>2. 命令缩写</h2><p>缩写</p>
-<p>全称</p>
-<p>说明</p>
-<p>apt</p>
-<p>Advanced Packaging Tool</p>
-<p>是Debian Linux发行版中的APT软件包管理工具。一般配合apt-get或者apt-update</p>
-<p>awk</p>
-<p>Aho Weiberger and Kernighan</p>
-<p>Alfred Aho，Peter Weinberger, 和 Brian Kernighan 的Family Name的首字符。一种编程语言，用于在linux/unix下对文本和数据进行处理。</p>
-<p>bash</p>
-<p>Bourne Again SHell</p>
-<p>一种shell</p>
-<p>bg</p>
-<p>BackGround</p>
-<p>用于将作业放到后台运行，使前台可以执行其他任务。该命令的运行效果与在指令后面添加符号&amp;的效果是相同的，都是将其放到系统后台执行。</p>
-<p>cal</p>
-<p>CALendar</p>
-<p>用于显示当前日历，或者指定日期的日历。</p>
-<p>cat</p>
-<p>CATenate</p>
-<p>“连接”，连接文件并打印到标准输出设备上，cat经常用来显示文件的内容，类似于下的type命令。</p>
-<p>chgrp</p>
-<p>CHange GRouP</p>
-<p>用来改变文件或目录所属的用户组。</p>
-<p>chmod</p>
-<p>CHange MODe</p>
-<p>用来变更文件或目录的权限。</p>
-<p>chown</p>
-<p>CHange OWNer</p>
-<p>改变某个文件或目录的所有者和所属的组，该命令可以向某个用户授权，使该用户变成指定文件的所有者或者改变文件所属的组。</p>
-<p>cd</p>
-<p>Change Directory</p>
-<p>切换工作目录</p>
-<p>cp</p>
-<p>CoPy</p>
-<p>将一个或多个源文件或者目录复制到指定的目的文件或目录</p>
-<p>dd</p>
-<p>Data Description</p>
-<p>用于复制文件并对原文件的内容进行转换和格式化处理。</p>
-<p>df</p>
-<p>Disk Free</p>
-<p>用于显示磁盘分区上的可使用的磁盘空间。默认显示单位为KB。</p>
-<p>du</p>
-<p>Disk Usage</p>
-<p>查看使用空间的，但是与df命令不同的是Linux du命令是对文件和目录磁盘使用的空间的查看，还是和df命令有一些区别的。</p>
-<p>diff</p>
-<p>DIFFerence</p>
-<p>在最简单的情况下，比较给定的两个文件的不同。</p>
-<p>dpkg</p>
-<p>Debian PacKaGe</p>
-<p>Debian Linux系统用来安装、创建和管理软件包的实用工具。</p>
-<p>ed</p>
-<p>EDitor</p>
-<p>单行纯文本编辑器，它有命令模式（command mode）和输入模式（input mode）两种工作模式。</p>
-<p>emacs</p>
-<p>Editor MACroS</p>
-<p>是由GNU组织的创始人Richard Stallman开发的一个功能强大的全屏文本编辑器，它支持多种编程语言，具有很多优良的特性。(备注：vim大法好！！！)</p>
-<p>env</p>
-<p>ENVironment</p>
-<p>用于显示系统中已存在的环境变量，以及在定义的环境中执行指令。</p>
-<p>exec</p>
-<p>EXECute</p>
-<p>用于调用并执行指令的命令。</p>
-<p>fsck</p>
-<p>File System Consistency checK, or fuck</p>
-<p>用于检查并且试图修复文件系统中的错误。</p>
-<p>gawk</p>
-<p>Gnu Aho Weiberger and Kernighan</p>
-<p>grep</p>
-<p>Gnu Regular Expression Print</p>
-<p>（global search regular expression(RE) and print out the line，全面搜索正则表达式并把行打印出来）是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。</p>
-<p>grub</p>
-<p>GRand Unified Bootloader</p>
-<p>多重引导程序grub的命令行shell工具。</p>
-<p>ifconfig</p>
-<p>InterFace CONFIGuration</p>
-<p>被用于配置和显示Linux内核中网络接口的网络参数。</p>
-<p>init</p>
-<p>INITialization</p>
-<p>Linux下的进程初始化工具</p>
-<p>insmod</p>
-<p>INStall Module</p>
-<p>用于将给定的模块加载到内核中。</p>
-<p>ln</p>
-<p>LiNk</p>
-<p>用来为文件创件连接，连接类型分为硬连接和符号连接两种，默认的连接类型是硬连接。如果要创建符号连接必须使用”-s”选项。</p>
-<p>ls</p>
-<p>LiSt</p>
-<p>显示目标列表</p>
-<p>lsmod</p>
-<p>LiSt Module</p>
-<p>用于显示已经加载到内核中的模块的状态信息。</p>
-<p>man</p>
-<p>MANual</p>
-<p>Linux下的帮助指令，通过man指令可以查看Linux中的指令帮助、配置文件帮助和编程帮助等信息。一般戏称有问题找男人。。。</p>
-<p>mkdir</p>
-<p>MaKe DIRectory</p>
-<p>创建目录</p>
-<p>mkfs</p>
-<p>MaKe FileSystem</p>
-<p>用于在设备上（通常为硬盘）创建Linux文件系统。</p>
-<p>mv</p>
-<p>MoVe</p>
-<p>对文件或目录重新命名，或者将文件从一个目录移到另一个目录中。</p>
-<p>nano</p>
-<p>Nano’s ANOther editor</p>
-<p>是一个字符终端的文本编辑器，有点像DOS下的editor程序。</p>
-<p>parted</p>
-<p>PARTition EDitor</p>
-<p>是由GNU组织开发的一款功能强大的磁盘分区和分区大小调整工具，与fdisk不同，它支持调整分区的大小。</p>
-<p>passwd</p>
-<p>PASSWorD</p>
-<p>用于设置用户的认证信息，包括用户密码、密码过期时间等。</p>
-<p>ping</p>
-<p>Packet InterNet Grouper</p>
-<p>用来测试主机之间网络的连通性。执行ping指令会使用ICMP传输协议，发出要求回应的信息，若远端主机的网络功能没有问题，就会回应该信息，因而得知该主机运作正常。</p>
-<p>popd</p>
-<p>POP from Directory</p>
-<p>删除目录栈中的记录；</p>
-<p>pushd</p>
-<p>PUSH to Directory</p>
-<p>是将目录加入命令堆叠中。</p>
-<p>ps</p>
-<p>Processes Status</p>
-<p>报告当前系统的进程状态。可以搭配kill指令随时中断、删除不必要的程序。</p>
-<p>pwd</p>
-<p>Print Working Directory</p>
-<p>以绝对路径的方式显示用户当前工作目录</p>
-<p>rcconf</p>
-<p>Run Command CONFiguration</p>
-<p>Debian Linux下的运行等级服务配置工具，用以设置在特定的运行等级下系统服务的启动配置。</p>
-<p>rm</p>
-<p>ReMove</p>
-<p>可以删除一个目录中的一个或多个文件或目录，也可以将某个目录及其下属的所有文件及其子目录均删除掉。对于链接文件，只是删除整个链接文件，而原有文件保持不变。</p>
-<p>rmdir</p>
-<p>ReMove DIRectory</p>
-<p>用来删除空目录。</p>
-<p>rmmod</p>
-<p>ReMove MODule</p>
-<p>用于从当前运行的内核中移除指定的内核模块。</p>
-<p>rpm</p>
-<p>RPM/Redhat Package Manager</p>
-<p>RPM软件包的管理工具。</p>
-<p>sed</p>
-<p>Stream EDitor</p>
-<p>一种流编辑器，它是文本处理中非常中的工具，能够完美的配合正则表达式使用，功能不同凡响。</p>
-<p>ssh</p>
-<p>Secure SHell</p>
-<p>openssh套件中的客户端连接工具，可以给予ssh加密协议实现安全的远程登录服务器。</p>
-<p>su</p>
-<p>Substitute User</p>
-<p>“替代用户”，切换当前用户身份到其他用户身份，变更时须输入所要变更的用户帐号与密码。</p>
-<p>sudo</p>
-<p>SuperUser DO</p>
-<p>用来以其他身份来执行命令，预设的身份为root。</p>
-<p>sync</p>
-<p>SYNChronize</p>
-<p>用于强制被改变的内容立刻写入磁盘，更新超块信息。</p>
-<p>vim</p>
-<p>vi Improved</p>
-<p>是UNIX操作系统和类UNIX操作系统中最通用的全屏幕纯文本编辑器。Linux中的vi编辑器叫vim，它是vi的增强版（vi Improved），与vi编辑器完全兼容，而且实现了很多增强功能。(备注：神一样的编辑器！！！)</p>
-<p>yum</p>
-<p>Yellow dog Updater, Modified</p>
-<p>在Fedora和RedHat以及SUSE中基于rpm的软件包管理器</p>
-<p>注：命令的具体解释可以参考这个网站：<a href="http://man.linuxde.net/" target="_blank" rel="noopener">Linux命令大全</a></p>
-<h2 id="3-编程相关缩写"><a href="#3-编程相关缩写" class="headerlink" title="3. 编程相关缩写"></a>3. 编程相关缩写</h2><p>缩写</p>
-<p>全称</p>
-<p>说明</p>
-<p>cc</p>
-<p>C Compiler</p>
-<p>gcc</p>
-<p>Gnu Compiler Collection</p>
-<p>作为一个软件集被你下载下来编译安装的时候</p>
-<p>gcc</p>
-<p>Gnu C Compiler</p>
-<p>作为一个软件被你调用来编译C程序的时候</p>
-<p>g++</p>
-<p>Gnu c++ compiler</p>
-<p>其实g++只是调用gcc，然后连接c++的库，并且作相应的一些编译设置而已</p>
-<p>gcj</p>
-<p>Gnu Compiler for Java</p>
-<p>gdb</p>
-<p>Gnu DeBug</p>
-<h2 id="4-递归缩写"><a href="#4-递归缩写" class="headerlink" title="4. 递归缩写"></a>4. 递归缩写</h2><p>缩写</p>
-<p>全称</p>
-<p>说明</p>
-<p>GNU</p>
-<p>Gnu is Not Unix</p>
-<p>PHP</p>
-<p>PHP: Hypertext Preprocessor</p>
-<p>RPM</p>
-<p>RPM Package Manager</p>
-<p>WINE</p>
-<p>WINE Is Not an Emulator</p>
-<p>Wine 是类UNIX系统下运行微软Windows程序的”兼容层”。在Wine中运行的Windows程序，就如同运行原生Linux程序一样，不会有模拟器那样的性能问题。</p>
-<p>PNG</p>
-<p>PNG’s Not GIF</p>
-<p>nano</p>
-<p>Nano’s ANOther editor</p>
-<h2 id="5-其他缩写"><a href="#5-其他缩写" class="headerlink" title="5. 其他缩写"></a>5. 其他缩写</h2><p>缩写</p>
-<p>全称</p>
-<p>说明</p>
-<p>tar</p>
-<p>Tape Archive</p>
-<p>“磁带档案卷”</p>
-<p>tcl</p>
-<p>Tool Command Language</p>
-<p>Tcl（发音 tickle）是一种脚本语言。</p>
-<p>tty</p>
-<p>teletypewriter</p>
-<p>“电传打字机”，在类Unix里，键盘显示器，都是虚拟的teletypewriter</p>
-<p>tzselect</p>
-<p>Time Zone SELECT</p>
-<p>rc</p>
-<p>Runtime Configuration</p>
-<p>比如.vimrc, .bashrc等</p>
-<h2 id="6-参考资料"><a href="#6-参考资料" class="headerlink" title="6. 参考资料"></a>6. 参考资料</h2><ul>
-<li><a href="https://www.zhihu.com/question/49073893" target="_blank" rel="noopener">Linux中常用的命令都是哪些单词的缩写？</a></li>
-<li><a href="http://www.cnblogs.com/zhyryxz/archive/2012/05/03/2480242.html" target="_blank" rel="noopener">(转)linux 目录结构及其含义</a></li>
-<li><a href="http://man.linuxde.net/" target="_blank" rel="noopener">Linux命令大全</a></li>
-<li><a href="https://wiki.archlinux.org/index.php/Wine_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)" target="_blank" rel="noopener">Wine (简体中文)</a></li>
-<li><a href="https://wiki.archlinux.org/index.php/Fstab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)" target="_blank" rel="noopener">fstab (简体中文)</a></li>
-<li><a href="http://coolshell.cn/articles/9070.html" target="_blank" rel="noopener">AWK 简明教程</a></li>
-<li><a href="http://i.linuxtoy.org/docs/guide/ch02s02.html" target="_blank" rel="noopener">缩写习惯</a></li>
-<li><a href="https://zh.wikipedia.org/wiki/Tcl?oldformat=true" target="_blank" rel="noopener">Tcl</a></li>
-<li><a href="http://www.abbreviations.com/acronyms/UNIX" target="_blank" rel="noopener">Unix Command Acronyms</a></li>
-<li><a href="http://www.acronym24.com/vimrc-vim-runtime-configuration-file/" target="_blank" rel="noopener">What is the meaning of .VIMRC Acronym in Computing?</a></li>
-</ul>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/17/e3-80-8a-e6-8f-90-e9-97-ae-e7-9a-84-e8-89-ba-e6-9c-af-e3-80-8b/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mingkuo Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="恰同学少年">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2016/08/17/e3-80-8a-e6-8f-90-e9-97-ae-e7-9a-84-e8-89-ba-e6-9c-af-e3-80-8b/" class="post-title-link" itemprop="url">《提问的艺术》</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2016-08-17 10:01:12" itemprop="dateCreated datePublished" datetime="2016-08-17T10:01:12+08:00">2016-08-17</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/读书/" itemprop="url" rel="index"><span itemprop="name">读书</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>很一般的一本书，泛泛而览，并没有多大用处，给我的一个思考就是，学会提问真的很重要，以后要在生活中多多留意一些好的提问。不过其中有些提问确实给自己带来了一些思考。简单记录一下吧。 学会提出问题确实非常重要，通常我们并不知道自己真正想要的是什么，通过向自己提问可以明白自己最需要的是什么，能够更好的认识自己。书中分三个层面：商业、人际交往以及人生，提出了三百多个问题，并根据自己的切身体会给出了一些关键问题的示例，而且一再强调是这些关键问题让对话顺利进行、让事情顺利完成，并不否认这些关键问题的作用，但是作者为了抢到提问题的好处，过分强调了问题的重要性，不可避免地犯了“过度简化因果关系谬误”。而且其中有些内容也有强加因果的嫌疑，明明是次要的因素，却偏偏当做主要因素来强调。是以，在阅读的过程中一直觉得有点前言不搭后语，也因此对这本书的评价不是很好。 阅读完之后，我也在学习着向自己提问：</p>
-<ul>
-<li>什么是自己的核心竞争力？<ul>
-<li>什么是核心竞争力？</li>
-<li>有哪些具体的核心竞争力？</li>
-<li>如何去培养自己的核心竞争力？</li>
-</ul>
-</li>
-<li>如果自己没有了工作，自己可以拿什么养活自己？<ul>
-<li>如果换一个全新的领域，自己能够多块适应？</li>
-<li>去除学历、工作职位等一切外在的东西，自己还剩下些什么？</li>
-<li>工作之外自己还有什么？</li>
-</ul>
-</li>
-<li>如果要完成自己的梦想，自己现在应该做哪些准备？<ul>
-<li>自己的梦想是什么？</li>
-<li>梦想与妄想的区别是什么？</li>
-</ul>
-</li>
-<li>我最想做的事情是什么？如果不考虑外部的因素。<ul>
-<li>如果有最想做的事情，为什么没有去做？</li>
-</ul>
-</li>
-<li>三年之后自己想要成为什么样的人？<ul>
-<li>一年之后自己想要成为什么样的人？</li>
-</ul>
-</li>
-</ul>
-<p>看到豆瓣上一些人说，这本书很鸡汤，确实如此，因为很多时候，我们绝大多说人都只会想一想，却从来没有亲身去实践，又或者是浅尝辄止，没有坚持，也没有深思，估计自己也会如此，看了这本书之后，感觉自己有很多事情想去做，或许也会去做几天，当时时间一久，估计很快就会遗忘。毕竟，遗忘是最轻松的事情，记着确是十分痛苦的事情。唠唠叨叨这么多，也只是希望自己去躬身实践，去坚持吧。 一些不错的书摘：</p>
-<h3 id="01-不要滔滔不绝，却忘了客户的感受"><a href="#01-不要滔滔不绝，却忘了客户的感受" class="headerlink" title="01. 不要滔滔不绝，却忘了客户的感受"></a>01. 不要滔滔不绝，却忘了客户的感受</h3><ul>
-<li>但有人问你：“你能介绍一下自己吗？”你可以问他：“你想具体了解我哪方面的情况呢？”</li>
-</ul>
-<h3 id="05-用封闭式问题摆脱圈子的烦恼"><a href="#05-用封闭式问题摆脱圈子的烦恼" class="headerlink" title="05. 用封闭式问题摆脱圈子的烦恼"></a>05. 用封闭式问题摆脱圈子的烦恼</h3><ul>
-<li>当你想得到一个清晰而明确的答案时，请一定要问一个明确的封闭式问题，“是或者不是？”（因为当问及一个直截了当的问题时，人们往往喜欢在那里兜圈子，而不是正面回答别人的问题。）</li>
-</ul>
-<h3 id="09-五个“为什么”探寻对方真实需求"><a href="#09-五个“为什么”探寻对方真实需求" class="headerlink" title="09. 五个“为什么”探寻对方真实需求"></a>09. 五个“为什么”探寻对方真实需求</h3><ul>
-<li>当有人说“我想要这样”的时候，你需要取发现他们真正需要的是什么。（通常我们并不知道我们想要什么。。。）</li>
-</ul>
-<h3 id="13-每个人都渴望被聆听"><a href="#13-每个人都渴望被聆听" class="headerlink" title="13. 每个人都渴望被聆听"></a>13. 每个人都渴望被聆听</h3><ul>
-<li>有一天晚上，梭罗在他的日志中写道：“今天我得到的最大恭维就是有人问我，我怎么想的，并真诚地聆听了我的答案。”</li>
-</ul>
-<h3 id="17-用满足感开启更多的秘密"><a href="#17-用满足感开启更多的秘密" class="headerlink" title="17. 用满足感开启更多的秘密"></a>17. 用满足感开启更多的秘密</h3><ul>
-<li>请试着问你的朋友、同事以及家人这个问题：“人生当中是什么给予了你最大的满足？”然后坐下来静静地倾听他们的回答，你会发现你们之间交谈的闪光点和蕴藏其中的一些弥足珍贵的东西。</li>
-</ul>
-<h3 id="23-找到打开心灵的密钥"><a href="#23-找到打开心灵的密钥" class="headerlink" title="23. 找到打开心灵的密钥"></a>23. 找到打开心灵的密钥</h3><ul>
-<li>要想了解一个人的内在，要想知道对他们而言最重要的事是什么，你可以这样问对方：“你一生中最大的成就是什么？”</li>
-</ul>
-<h3 id="25-坚持站在问题的核心"><a href="#25-坚持站在问题的核心" class="headerlink" title="25. 坚持站在问题的核心"></a>25. 坚持站在问题的核心</h3><ul>
-<li>当有人想要征求你的建议却又含糊其辞的时候，或开始向你详细说明关于这件事情的背景情况时，你可以这样问：“你的问题是什么？”</li>
-</ul>
-<h3 id="28-用加减法，帮助对方做出选择"><a href="#28-用加减法，帮助对方做出选择" class="headerlink" title="28. 用加减法，帮助对方做出选择"></a>28. 用加减法，帮助对方做出选择</h3><ul>
-<li>当选择取决于个人时，你应该问：“你觉得什么样的决定是最正确的？”让对方自己找出正确的解决方法；</li>
-</ul>
-<h3 id="31-给自己写一个讣告，你才知道想过怎样的人生"><a href="#31-给自己写一个讣告，你才知道想过怎样的人生" class="headerlink" title="31. 给自己写一个讣告，你才知道想过怎样的人生"></a>31. 给自己写一个讣告，你才知道想过怎样的人生</h3><ul>
-<li>为了帮助别人弄清楚在人生中究竟什么才是他们真正想做的事情，他们想如何被别人记住时，你可以这样问：“如果今天让你来写自己的讣告，你最想怎样来总结你的一生。”</li>
-</ul>
-<h3 id="33-把每一天都当做余生来度过"><a href="#33-把每一天都当做余生来度过" class="headerlink" title="33. 把每一天都当做余生来度过"></a>33. 把每一天都当做余生来度过</h3><ul>
-<li>如果想邀请别人对他们生命中最重要的事以及想如何度过余生进行深思的话，不妨问一下：“如果你知道你的生命只剩下三年的时间，你会做些什么去改变自己的生活或职业生涯呢？”</li>
-</ul>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/15/e5-b7-a5-e4-bd-9c-e4-b8-80-e6-9c-88-e6-9c-89-e6-84-9f/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1789,6 +1262,199 @@
   </article>
 
     
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/14/e6-af-95-e4-b8-9a-e6-97-85-e8-a1-8c-e4-b9-8b-e9-bb-84-e5-b1-b1-e6-b8-b8-e8-ae-b0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mingkuo Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="恰同学少年">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2016/06/14/e6-af-95-e4-b8-9a-e6-97-85-e8-a1-8c-e4-b9-8b-e9-bb-84-e5-b1-b1-e6-b8-b8-e8-ae-b0/" class="post-title-link" itemprop="url">毕业旅行之黄山游记</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2016-06-14 23:37:10" itemprop="dateCreated datePublished" datetime="2016-06-14T23:37:10+08:00">2016-06-14</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/生活/" itemprop="url" rel="index"><span itemprop="name">生活</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><p>临近毕业，宿舍决定一起出去毕业旅行，地点到没有什么异议，提出去黄山之后都颇为赞同。在出游时间上则是颇费周折，几经协商最后达成了一致，于6.4-6.6日去黄山旅游。此篇文章姑且称之为游记吧。之前在旅游途中将已经在日记本上将草稿写好，将纸质版的整理成电子版的却一直到6月13日才开始，6月14日差不多完成初稿。</p>
+<h2 id="第一天：“借问路旁名利客，何如此地学长生”"><a href="#第一天：“借问路旁名利客，何如此地学长生”" class="headerlink" title="第一天：“借问路旁名利客，何如此地学长生”"></a>第一天：“借问路旁名利客，何如此地学长生”</h2><p>4号一早出发，从汉口经合肥南中转到黄山北高铁站，1小时左右的公交车到达市区，入住在黄山老街附件的7天酒店，傍晚的时候漫步于新安江畔，留恋于老街夜景； 上午10点左右做火车到合肥南，大概12点到合肥南，在上卫生间的时候意外遇到实验室一个师兄，一问之下原来也是去黄山旅游的。他们计划晚上直接去宏村，第二天去爬山，与自己的行程有点冲突，本来也想和他们一起先去宏村体验一下的，但想着到黄山已经下午两三点了，如果计划第二天爬山，时间上有点来不及了；作为一个安徽人对于皖南的古村落总是有一种向往，可惜一直缘悭一面，只能留待以后了。 在合肥南乘车到黄山北，座位边上是一个中年人，听口音像是合肥本地人，自己刚一落座，就开始巴拉巴拉开始说个不停，一会儿谈国家大事，一会儿谈高等教育，一会儿又谈到房地产，可惜对这些东西都大不感兴趣，而且对于他的方言自己也只能听懂80%左右，所以大多数时候自己都是嗯嗯啊啊心不在焉地附和着。好在坐车到一半他就下车了，不然真的不知道该如何应付了。到达黄山北已经是下午两点多了，车站的人并不多，简单的修整之后乘坐公交车去市区，公交车上遇到一位老人，得知我们来黄山旅游的，热情地提供了一些有用的信息，但大多数的时候都是在说自己的亲戚朋友有多么多么的厉害，又是公安局长又是公司总裁的，去黄山旅游还一切费用全免，住市里大酒店也有人买单。谈了那么多别人的东西，却始终没有言及自身，不知道他是否也像他口中的亲戚朋友一样厉害，亦或是借别人来抬高自己，出于礼貌，自己也只有简单应和之。在老街附近下车，团购了7天酒店，放下包之后出去觅食了。徽菜属于八大菜系之一，自己家乡的菜并没有什么特色，不知道在黄山是否能吃到正宗的徽菜。 在酒店附近找了一家小餐馆，点了5个菜，还算有点特色吧，黄山臭鳜鱼、干笋烧肉、毛豆腐、烧田螺、干锅花菜。臭鳜鱼和干笋烧肉还不错，其余也是一般。简单吃完晚饭后来到了新安江畔，江中有一小洲，面积不大，但上面的景色却着实不错，虽然是周六，上面的人依然不是很多，草翠树青，天蓝水碧，漫步于柏油小路上，心情无比的安详与宁静，有种忽然进入世外桃源的感觉，隔离了城市的喧嚣，回归了生活的本源，当此之时，才会觉得身心是真正放松下来了。时见路旁有慢跑的人，心中起念也想效仿之，但如此美景还是慢慢享受为宜，念起念灭，也不以为意。漫步的时候，室友开玩笑，“安徽的姑娘都很不错，就是男生不咋地”（一脸懵逼.jpg），自己打趣说要不入赘黄山吧。 谈笑间离开了江心洲，又沿着新安江畔继续行走，一边是高高的堤岸，一边是缓缓东流的江水，走在江边的平台上，看着岸边垂钓的“闲人”，心情也如这江水一般，和缓宁静。适逢夕阳西下，意外发现有一处七彩祥云，与夕阳交相辉映，煞是好看，倒映在缓缓东流的江水之中，不禁为之沉醉。（推其原理，应该是太阳光经过类似三棱镜的云块折射之后形成的）。和室友开玩笑说，若是能够牵手心爱的姑娘一起漫步徜徉其中，真是完美无缺了。始于美景，止于现实。逛完江畔，天已经黑了，舟车劳顿了一天也有一点累，简单逛了一下老街，拍了几张照片，匆匆而过，不及细看，但给自己的感觉还是不错的，虽然也有很浓的商业气息，但由于之前新安江给自己的印象实在是很好，于是乎也觉得老街也充满了江水的灵气。 在附近的超市购买了一些食品，准备第二天登山时食用，回到酒店已经是10点多了，却也没有多少睡意。于是提议斗地主，买了两大瓶2.5L的可乐，正好可以作为惩罚，心不在焉，手气不佳，最终一个人喝了一大瓶可乐，再看肚子，已然两月有余。当晚数次上厕所，所以也并没有怎么休息好。简单记了点东西，就休息了。 <img src="http://7xkqon.com1.z0.glb.clouddn.com/huangshan%E4%B8%83%E5%BD%A9%E4%BA%91.jpg" alt="七彩云"> 七彩云 <img src="http://7xkqon.com1.z0.glb.clouddn.com/huangshan%E6%96%B0%E5%AE%89%E6%B1%9F%E7%95%94%E7%9A%84%E5%A4%95%E9%98%B3.jpg" alt="新安江畔的夕阳"> 新安江畔的夕阳 逛了有大半天的时间，和室友们一致认为黄山是一个相当不错的地方，环境好，人文好，当然这里的人也好。于我来说，给我感觉最好的地方还是江心洲和新安江畔，没有山峰，但是有水，有水则有灵气，借用崔颢的一句诗来作为今天的总结吧，“借问路旁名利客，何如此地学长生”。</p>
+<h2 id="第二天：“江山留胜迹，我辈复登临”"><a href="#第二天：“江山留胜迹，我辈复登临”" class="headerlink" title="第二天：“江山留胜迹，我辈复登临”"></a>第二天：“江山留胜迹，我辈复登临”</h2><p>今日登山，先乘车到前山入口处，开始爬山，从慈光阁，经立马桥、半山寺，爬天都峰，观迎客松，过莲花峰，爬百步云梯、一线天，看日落。走鳌鱼峰、海心亭到白云宾馆，夜宿白云宾馆地下洗脚按摩的沙发。 4号晚上斗完地主已经12点多了，匆匆写了点日记，乱翻了一会儿书就睡觉了。第二天一觉睡到八点多，在附近小餐馆吃了点饭，早饭中饭就一起解决了。本想打车去汽车站坐巴士去黄山景区的，上了出租车之后，和师傅说了一下情况，师傅直接将我们送到了黄山脚下（回来的时候发现，有一班班车可以走高速到黄山景区的，时间在50分钟左右）。出租车1小时左右到达小镇，由于不能继续往上走，只能下车。刚下车又换乘了一辆私家车，说是可以送我们去山脚下买票的地方。途中得知，这种私家车是去后山的，而我们的计划则是从前山爬后山下，司机人挺好的，将我们送到前山景区大巴处，也没有收我们的钱，按照他的说法是没有送到地方就不能收钱，于是对这里的印象又好了很多。到达前山景区入口处，又购票坐景区大巴车进山。可以在途中下车乘坐玉屏索道上山或者是一直坐车到终点站从慈光阁登山。我们选择了从慈光阁开始爬山。 刚开始爬山的时候，还是精神抖擞，斗志昂扬，遇到下山的人，还问他们要了三根登山的拐杖。然而，爬了大概30分钟左右，从慈光阁经从容亭到立马桥，就已经开始感觉有点累了。再打开地图一看，才走了十分之一都不到的路程，不禁有点面面相觑。开玩笑说，这虽然是地图上的一小步，却是登山的一大大大大步。“休息两小时，爬山五分钟”，走走停停又来到了半山寺，此时可以绕过天都峰从小心坡到玉屏楼，或是爬被誉为黄山第一险峰的“天都峰”。几经商讨和忽悠，开始一起爬天都峰，在半山寺休息的时候，遇到几个女生也准备爬天都峰，不过看到她们走了几步，和刚下天都峰的人交流了一下竟然改道了。。。 闻名不如见面，天都峰不愧为黄山第一险峰，从半山寺，到金鸡叫天门走天都南路还是相当险峻的。好几处都几乎是垂直的山路，或是仅容一人通过的狭窄山道、或将路开在峭壁边上，一边是大岩石，一般则是毫无防护的悬崖，一望惊心，只得低头爬山。几经周折，最终还是爬上了天都峰峰顶，“世之奇伟、瑰怪、非常之观，常在于险远”，险峻的回报则是大好的风景。远山连绵，近峰壁立，时有浮云从山顶飘过，仿佛伸手可触，偶见山间飞鸟在脚底下飞过，望上是蓝天白云，望下是漫山的绿植和裸露的巨石，令人心旷神怡，不觉大吼了几声，可能是由于所处位置太高，并没有听到回声。原本以为自己也是有恐高症的，不过看到如此美景亦将一切置之度外，偶尔到无人攀爬之处，向下眺望，群山万壑尽收眼底，“山登绝顶我为峰”的感觉无外如是。 观赏完风景之后开始下山，路过鲫鱼背，从天都北路下山，也许是下山的缘故，并没有觉得有多少险峻之处。下天都峰之后，经小心坡、玉屏站到达闻名天下的迎客松前。由于时间已经相当晚了，大部分的游客都已经下山了，于是一行人在迎客松前尽情地拍了好一会儿照片。之后从玉屏楼，过莲花峰，爬百步云梯、一线天，最终夜宿白云宾馆，问了一下租帐篷需要300一顶，最后还是决定在下面的按摩洗脚的地方租了一个沙发，人均也是150，不过只能将就着睡了。由于黄山第一高峰莲花峰已经封闭，不能爬了，心中不免有一些遗憾。在去百步云梯途中，恰逢夕阳西下，得以一览黄山的落日，刚开始看的时候，很像一个金色的蛋黄，金灿灿、红通通，上下还有两条彩带，相衬之下更显瑰丽壮观。夕阳之下则是昂首矗立在天地间的山峰，雄伟对辉煌，相得益彰。 <img src="http://7xkqon.com1.z0.glb.clouddn.com/huangshan%E9%BB%84%E5%B1%B1%E8%90%BD%E6%97%A5.jpg" alt="黄山落日1"> 黄山落日1 <img src="http://7xkqon.com1.z0.glb.clouddn.com/huangshan%E9%BB%84%E5%B1%B1%E8%90%BD%E6%97%A52.jpg" alt="黄山落日2"> 黄山落日2 爬山的时候，经常会遇到游客，一般三两句间就能聊开来，问问上山或是下山还有多远，然后在一阵感叹与感谢中嘻哈一笑，擦肩而过。在这种情形下，人人都表现出一种很友善的态度，在山的影响下，人与人之间的距离在拉近，更显一种真诚。子曰，“仁者乐山”，想来或许也含有一种类似的意思在其中吧。很是喜欢这种感觉，后来想到，可能是由于我们都处于同一种境地，人与人之间能够更好地相互理解，所以也就能表现出更多的友善与真诚，不管如何，还是很喜欢这种感觉。化用王维的一句诗，“相逢意气解君惑，嘻哈谈笑山路边”。 途中遇到过形形色色的人，有八九岁的小孩子，有一同出来旅游的学生（爬天都峰的时候就遇到两个华科的女生，一同爬了很长一段距离，后来在玉屏站处分手），有金发碧眼的外国友人（室友说，听到一个老外说了一句“This is so fucking high.”，想着翻译成中文“真他妈高”，也能很好地表达我们的想法，不觉大笑，人同此心心同此理，23333。），更有甚者，在天都峰峰顶遇到一个年近古稀之年的老奶奶，身体矍铄，实在厉害。自己也不禁畅想，不知道自己以后如此年龄还有没有能力去爬山。</p>
+<h2 id="第三天：“朝阳出天山，苍茫云海间”"><a href="#第三天：“朝阳出天山，苍茫云海间”" class="headerlink" title="第三天：“朝阳出天山，苍茫云海间”"></a>第三天：“朝阳出天山，苍茫云海间”</h2><p>凌晨4点多起床去光明顶上看日出，看完日出后，室友选择了下山，自己意犹未尽，独自一人去西海大峡谷。先去观飞来石，然后下探西海大峡谷，到谷底之后再继续向上爬山，中午12点多到达白云宾馆。再经光明顶，去北海景区，经北海宾馆、妙笔生花、黑虎松、始信峰、竖琴松，到蘑菇亭，乘坐新索道下山到达云谷寺，乘坐景区大巴到终点站，在外边做私人客车，走高速，大概40分钟到达市区。买了点纪念品，和室友汇合，开启返程之路； 昨晚偷了个闲在宾馆大厅草草写了点游记，回住的地方已经12点多了。同住的一位仁兄呼噜声相当之大，鼾声如雷，声振寰宇。。。直接的后果是躺在沙发上一直到1点多才在迷迷糊糊中睡去。凌晨四点多的时候，仿佛听见外边有滴滴答答的雨滴声，心中不免生出一丝失望之情。同屋一人出去看了之后，回来说，外边还可以看到星星。于是赶紧爬了起来。后来才知道滴答声原来是手表发出来的。匆忙中在白云宾馆附近买了一份明信片，寄出之后开始去光明顶。爬了大概10分钟上了光明顶，山顶上早已经人群涌动，挤在栏杆前，手举“长枪大炮”对准日出的地方。刚上去的时候，4:55分，而日出则是5:05分，四处找了一个位置没有发现更好的视角，干脆坐在了后面的栏杆上面。 抬头向远处望去，远方还是暗红的一小片，渐渐的，暗红色的云层中间有一小片开始越来越红，就如同烧红的焦炭一般，外围是一种开始冷却的暗红色，内里则是炽热旺盛的大红色。里面的大红色开始躁动、开始蔓延、开始扩张、开始喷薄而出，将大片的云彩照映的火红火红的，灿若云锦想来描述的就是这种情形吧。此时，整个景观又仿佛变成了大火烧山一般，恍惚间还能看见其中有着了火的重檐高阁，以及往来奔走救火的人。大火从核心区域开始向四周燃烧过去，中心处更显炽热，仿佛有一个神兽被困在其中将要浴火重生一般。慢慢地、渐渐地，朝阳终于挣脱了束缚，探出了头。“朝阳出天山，苍茫云海间”，新生的朝阳就这样一点一点从云海中不缓不急却势不可挡地升了起来。看到周围欢呼的人群以及“新生”的朝阳，不觉想起了《春江花月夜》，套用其中的两句话，“黄山何时初见日，朝阳何日初照人；人生代代无穷已，朝阳年年只相似”。回来时查了一下资料，早在三皇五帝时期，黄山就已经见于史料，再往前推溯，几万年，甚至是几十万年，黄山有了第一个看日出的人，此后斗转星移、朝代更迭，无数的人在黄山上见证了日出。万年的时光，山依旧是山，朝阳依旧是朝阳，念及此处不觉怅然，不过念起念灭，更多的还是一种看到新生后的欢愉之情。 <img src="http://7xkqon.com1.z0.glb.clouddn.com/huangshan%E9%BB%84%E5%B1%B1%E6%97%A5%E5%87%BA1.jpg" alt="黄山日出1"> 黄山日出1 <img src="http://7xkqon.com1.z0.glb.clouddn.com/huangshan%E9%BB%84%E5%B1%B1%E6%97%A5%E5%87%BA2.jpg" alt="黄山日出2"> 黄山日出2 <img src="http://7xkqon.com1.z0.glb.clouddn.com/huangshan%E9%BB%84%E5%B1%B1%E6%97%A5%E5%87%BA3.jpg" alt="黄山日出3"> 黄山日出3 观看完日出后，在光明顶上和食物“大战”了几个回合，匆匆解决了早餐的问题。不经意间抬头看天，顿时被惊到了，头上不远处即是片片浮云，在晨风的吹拂下，大片大片的浮云快速飞过，平时晚上锻炼完之后在操场上也经常看见有浮云飘过，彼时也觉得飘的很快，但对比这里，远不及此时来的震撼，“天上浮云似白衣，斯须改变如苍狗”。躺在石凳上，望着浮云，顿觉心境空灵，晨起的一丝困倦也消失的无影无踪了。之后和室友分手，他们选择直接从后山做索道下山，自己则意犹未尽，于是开始了独自一人的爬山之旅。 从光明顶西北方向前进，准备去飞来石和西海大峡谷。从光明顶到飞来石的路上大部分是下坡，走得颇为轻松。走了大概20分钟，已然可以望见飞来石，87版《红楼梦》中的那块石头即取景于此。此时恰好晨雾初起，石头被层层雾气所笼罩，雾气渐浓，飞来石凭空而立在云海之中，凌虚御空、昂首傲立，仿佛真的是仙境中的一大块灵石，从天外飞来。慢慢走近，向下眺望西海大峡谷，一片茫然，山峰若隐若现在晨雾之中，此时所能想到的也只有白居易《长恨歌》中的那句“忽闻海上有仙山，山在虚无缥缈间”。忽而不知从哪里吹来一阵风，云雾顿时飘散开来，飞来石开始露出真容，迎风屹立在悬崖之上，站在石头边上，向远处望去，不觉暗暗喝了一声彩，整个西海大峡谷的景色迎面扑来、尽收眼底。“枯松倒挂倚绝壁，千山矗立与天齐”，心情为之一畅。大峡谷中，绿植如被，未散尽的云雾充斥其间，此时朝阳亦不吝啬自己的光辉，将金色的光芒尽洒其上，更显一种瑰丽与壮阔。由于自己是一个人，只好麻烦旁边的一个女生帮忙留了一张影。之后恋恋不舍地离开了飞来石，继续独自一人前行。经过回音壁来到排云亭。在路边的一个景点处，竟然意外遇见了昨天晚上一起租房住的两个男生，三言两语间达成一致，一起结伴游览西海大峡谷。于是三人一起出发，虽然是初见却也其乐融融，并不显生分。 <img src="http://7xkqon.com1.z0.glb.clouddn.com/huangshan%E5%B1%B1%E5%9C%A8%E8%99%9A%E6%97%A0%E7%BC%A5%E7%BC%88%E9%97%B4.jpg" alt="山在虚无缥缈间"> 山在虚无缥缈间 <img src="http://7xkqon.com1.z0.glb.clouddn.com/huangshan%E9%A3%9E%E6%9D%A5%E7%9F%B3.jpg" alt="飞来石"> 飞来石 经过丹霞站，先绕了一环，再绕了二环，开始沿着栈道向谷底进发。全程并没有多少惊险之处，只有一处，是那种真正的栈道形式，远远望去还是有点惊险的，栈道开在垂直的岩壁之上，底下即是悬崖。但真正走上去之后，才发现并没有那么惊险。也就是看着有点可怕而已，纸老虎一张。同游的两个男生却是“胆战心惊”，几乎是坐着一个台阶一个台阶下去的。 自己也并非不恐高，但这种程度却远远不到让自己恐高的地步，而且心中也有自己的思量，其一是想景区是要钱的并非要命，那自然是安全为第一要务了，即如是，那这个栈道就可以相信是非常安全的；其二是想到这种栈道一般都是以钢筋混凝土浇筑而成，走在上面并不觉得有丝毫晃动，于是就更没有担心的必要了。人之恐惧大多数时候是因为未知，而不在于未知之事有多可怕。就像《新白娘子传奇》里面，许仙在不知道白娘子是蛇妖的时候，忧思惕惧，莫可断绝，数次被外人鼓动去试探白娘子。等到白娘子把真相告知许仙之后，许仙反而就不害怕了，转过来处处维护白娘子。再拿栈道来说事，如果了解栈道的修建过程，了解栈道发生故障的几率，了解刘邦曾经在栈道上行军退守汉中等等知识，那么是否我们就不会那么恐惧走栈道了。军队尚可过，何况你我。 下山的过程中，边走边玩边拍照，大约花费了2个小时左右的时间。期间还发生了一件趣事，在途中看见一个觅食的小松鼠，同伴取出沙琪玛引诱之，小松鼠竟然也不怕生，犹犹豫豫地蹭过来之后，叼起食物就跑开去了。玩心大起，亦效仿之，小松鼠依前番一样逡巡而来，叼起食物后快速离去，指尖还感受到了松鼠坚硬的牙齿，大为有趣。 <img src="http://7xkqon.com1.z0.glb.clouddn.com/huangshan%E5%96%82%E9%A3%9F%E6%9D%BE%E9%BC%A0.jpg" alt="喂食松鼠"> 喂食松鼠 下到谷底之后，抬头向上仰望，山峰笔直，直插天际。谷底的景色并没有多少特色，反而不及从上往下俯视看到的那般壮观。在谷底遇到三个俄罗斯的美女，几经逡巡犹豫之下，用自己蹩脚的英语上前搭讪，提出合影的要求，好不容易摆好姿势，却不曾想同伴的自拍杆在关键时刻掉链子，而她们则急于赶路，只好作罢，只在仓促中拍下其中一个美女的合影。搭讪的起因只是觉得好玩，同时也想试一试自己是否能够开口说英语，事实证明，自己的英语口语真够蹩脚的，得找机会锻炼锻炼了，以后有机会会去欧美旅游也说不定。 到了谷底之后又有两个选择，一是坐峡谷观光车直接到山上的白云宾馆，二是从谷底爬山，经三溪桥、步仙桥、卧石披云、西海瑶台到白云宾馆，高度大概在1500米以上，爬山所需时间在3个小时左右。自己感觉精力充沛，越爬越high，于是鼓动同伴一起爬山。什么“来黄山玩就是为了爬山，坐车那还叫爬山吗？”、“无限风光在险峰”、“你看前面的妹子都去爬山了，我们男生还好意思坐车上去吗？”，反正是各种乌七八糟的理由，终于在自己的游说和忽悠之下，决定开始一起爬山了（偷笑。。。）。刚开始的一段他们还是有点犹豫的，自己则继续加紧忽悠，连口号都用上了，比如说“不怕累，不怕苦，想想长征两万五”。。。等到他们爬到一小半的路程之后，就已经由不得他们了，23333。途中还真遇到两个爬山的女生，此段山路有点高也有点险，人多不至，因此遇到两个女生在爬山还是有点惊讶的，也是有点佩服的，于是和她们相互打气爬了一段路程。一般来说，人所罕至之处必有佳景，果不其然，在半山腰处有一小桥，站在桥上，遥望对面刚刚下来的山峰，发现风景相当秀丽，笔直的山峰表面盘旋而下一个栈道，如一条腰带缠绕在山峰上，仔细一看，还能发现对面正在战战兢兢下山的人们，不觉对着山峰大吼了几声，这次倒是听到了一些回声。 上到一大半的时候，因为要急着赶路，回市区和室友汇合。在快到山顶的一个小亭子里面和同伴分手。独自一人开始爬山，在12点左右的时候到达白云宾馆，爬山全程大约花费两个半小时。在白云宾馆处把早上没来得及盖上邮戳的明信片通通盖上邮戳。 “无限风光在险峰”，或“世之奇伟、瑰怪，非常之观，常在于险远，而人之所罕至”，爬过山之后，对于这些论断，自己只能部分认同，诚然，有不少美景都在人所罕至之处，但人所共至的地方也多美景，一点也不比人所罕至之处少或者不好看。自己在两个多小时的爬山过程中，虽然也看到过不少好看的景色，但是也不乏平凡的景色，即使是美景，出色之处也和之前在天都峰和光明顶、飞来石附近看的差不多。于我来说，去人所罕至之处，更多的在于一种体验、一种征服感、一种经过自己努力方才看到美景的满足感，这才是到人所罕至之处之于我的意义所在。 从白云宾馆再登光明顶，在宾馆广场处，看到有人打架，一个男子打两个中年妇女，原因不明。上山用的拐杖都打断了，很多游人都上前阻止劝和。自己对此类事情没有兴趣，见有人拉架于是便离开了。这也是整个旅游过程中看到的唯一不和谐之处。想来想去，还是忠实地记录之。 再登光明顶，临近下午，山顶上游人如织。再也没有了早上闲适的感觉了。匆匆下山而去，经气象台，在北海宾馆处看到一套很好看的明信片，于是买了下来。再然后，经妙笔生花、黑虎松、始信峰、竖琴松，到蘑菇亭，乘坐新索道下山到达云谷寺。因为赶时间，并没有过多留意周围的景色。其中始信峰处风景甚佳，路上还看到好几株连理松，两树同根，齐人高处分叉，两边皆枝繁叶茂，不分轩轾，看起来挺有感觉，树下则是锁满了各种同心锁。心想同心不同心在于人，不在于树也不在于锁，同心锁只不过是一个美好的祝愿罢了。 下山的途中，偶然间听一导游说，游黄山有两种旅游方法，其一是普通旅游方法，比如自己选择的从前山上，后山下，其二是圣人、大人物的旅游方法，第一天从前山上、前山下，第二天从后山上、从后山下，代表人物有徐霞客和太上皇。想来也不过是后人的附会之说，难道遵循大人物的旅游路线就是大人物了？还是遵从自己的内心最好。下山的时候如果不赶时间，自己还真的想走下山去，爬了大半天的山，虽然有点累，精神却尚好，无奈准备晚上回武汉，只好从权————做索道下山。 下山后，乘坐景区大巴到终点站，大约20分钟，在附件找了一个私人的客车，大概50分钟左右到达黄山老街。买了点纪念品，和室友汇合，从商贸城做高铁专线巴士，大约半小时左右到高铁站，开启返程之路。12点多回到学校，三天的黄山之旅到此结束。 <img src="http://7xkqon.com1.z0.glb.clouddn.com/huangshan%E8%BF%9E%E7%90%86%E6%9D%BE.jpg" alt="连理松"> 连理松</p>
+<h2 id="尾声：“他日还相访，乘桥蹑彩虹。”"><a href="#尾声：“他日还相访，乘桥蹑彩虹。”" class="headerlink" title="尾声：“他日还相访，乘桥蹑彩虹。”"></a>尾声：“他日还相访，乘桥蹑彩虹。”</h2><p>爬了两天的黄山，发现自己是真的爱上爬山了。人在大山面前才会发现自己有多么渺小，才会发现什么是不动如山，岁月更迭不改山之本色，沧海桑田更增山之魅力，就是那样简简单单矗立在天地之间，昂首向天，不向任何事物屈服、也不必谄媚于任何事物。不因时移，不以事易，如此就足以让人慑服，凛然不可侵。“仁者乐山，智者乐水”，自己虽然是一个庸人，但也愿意学习之、仿效之；回程途中，给自己定下了一个目标，在有生之年爬100座千米以上的高山，去切身体会山的魅力，让其浸润我的灵魂，完善我的人格。 两天的时间依然有点意犹未尽，有很多景区没有亲自涉足，留下了不少遗憾。只有留待下次了，回来的时候百度了一下描写黄山的诗句，其中有一句挺好的，就作为本篇的结束语吧。“他日还相访，乘桥蹑彩虹。”</p>
+<h2 id="余思"><a href="#余思" class="headerlink" title="余思"></a>余思</h2><p>此处记录一些琐碎的思考。 记得之前在知乎上看到一句话说，“若不读书，行万里路也不过是个邮差！”，颇为赞同，在去黄山之前也有想过看看书籍之类的，蚂蜂窝上提供的黄山旅游攻略也提及一本书叫《千年徽州梦》，但总感觉临时抱佛脚不会好到哪里去。索性就什么也不读，什么也不做，只是去感受，然后去记录心中最原始的想法，至于是否是邮差也顾不得了。后来想一想，其实这一部分工作应该很早之前就应该做的，有两种方法，一种是定点突破，对景区感兴趣，然后集中时间和精力去了解景区的方方面面，在做好充分的准备之后才开始去旅游；另一种则是广撒网了，平时大量的阅读积累，去旅游的时候能否用上则很大部分要看缘分了。比较起来，自己还是喜欢后一种方法，无心偶遇总比有意为之让人更加印象深刻。所以，之后还是应该大量阅读才好。 爬山是一个体力活，这次感受尤其之深，幸好自己之前一直不曾中断锻炼，身体还算过得去。不过相对于自己的目标来说，自己的身体还是有点孱弱，今后还是好好努力锻炼，与之前不同的是，之前锻炼仅仅是锻炼，并没有太多的目标性，之后则开始有点针对性了，行万里路，爬百座山。 整篇游记写下来，还是觉得有点像流水账一样。这是自己的第一篇游记，瑕疵也在所难免。自己在写作的时候，尝试了两种方法，第一种是将爬山的过程和其中的感受分开来写，比如“第二天”的写法，另一种则直接将个人想法夹杂在行程之中了，比如“第三天”的写法。也不知道哪一种更好一点。游记该如何写？自己目前还不知道方法，不过却知道接下来如果有时间当好好阅读一下优秀的游记，比如说《徐霞客游记》等； 为了便于阅读，文中添加了少量小尺寸的图片，拍照是一个技术活，之前一直没有注意，以后应该学习一下，听说《美国纽约摄影学院摄影教材》不错，找时间会系统学习一下。 最后的最后，写的不好，敬请有缘阅读的人谅解吧。</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/03/e6-b1-9f-e5-9f-8e-e5-be-ae-e9-9b-a8-e9-87-8c-ef-bc-8c-e4-bf-a1-e6-93-8d-e7-8b-ac-e6-ad-a5-e6-97-b6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mingkuo Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="恰同学少年">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2016/06/03/e6-b1-9f-e5-9f-8e-e5-be-ae-e9-9b-a8-e9-87-8c-ef-bc-8c-e4-bf-a1-e6-93-8d-e7-8b-ac-e6-ad-a5-e6-97-b6/" class="post-title-link" itemprop="url">江城微雨里，信操独步时</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2016-06-03 13:33:45" itemprop="dateCreated datePublished" datetime="2016-06-03T13:33:45+08:00">2016-06-03</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/生活/" itemprop="url" rel="index"><span itemprop="name">生活</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>昨晚本来打算去跑步的，到操场时，天微雨，少行人，如此良宵美景实在不忍辜负，索性就不去跑步了。 自己一直很喜欢深夜的校园，灯光不明不暗，四周不静不吵，行人不多不少，总之一切都是一种恰到好处。如果晚上的时候天上飘下一点小雨，那就更加美好了。全身上下没有贵重的或者易受潮的东西，所以即不用撑着雨伞，也不用担心会弄湿衣裳，就那样随性地去走，微微细雨打在身上有种说不出的舒服。此时最适合一个人或两个人在细雨微风中散步了。或想想过去，或创想未来，或反躬自省，或者干脆什么也不去想，只是享受这种感觉。“莫听穿林打叶声，何妨吟啸且徐行。竹杖芒鞋轻胜马，谁怕？ 一蓑烟雨任平生”，此时或许是最能领悟这首词的意境的时候了。每次晚上跑完步的时候，总是喜欢在操场上走几圈，因为担心寝室会关门，所以每次总也难以尽兴，不过即使只是走一两圈，都已经让自己心满意足了。那个时候是整个晚上最享受的时间，只觉“万籁此俱寂，天地独留我”。大量的运动之后越发感觉宁静的美好，此时不必那么急于速度和时间，只是简简单单去享受晦明的静谧。一天的忙碌奔波之后终于可以觅得一丝休闲的时光，不去想白天那些烦心的事情，快速运转的世界和形色匆匆的人们此时都已经安静下来了，没有了外在的干扰，心仿佛才能真正宁静下来，去仔细想一想自己做过那些事情，没做过那些事情以及想做和该做什么事情。 如此晦明的夜晚，一个人独自散步也挺好，不过最后的依然是两个人一起散步了。或者不用说话，两心相知，言语反而多余，或者随意闲聊，鸡毛蒜皮，学长室短，或者谈谈未来，说说理想。最美的时刻也不过如是。生活中相识之人甚多，相知之人又有几何。之前看过刘震云的《一句顶一万句》，里面有一句话说“世上的人遍地都是，说得着的人千里难寻。”，小说中，形形色色的人一生都在寻找一个能够说得上话的人，最后能够得偿所愿的人几乎没有几个。何谓能够说得上话的人？自认为是那种能够最大程度真诚相对的人（当然，人与人之间还是应该保持一定距离的，太近容易受伤，太远容易疏离），一个人说话不必有那么多的顾虑、遮掩或者迁就，想到什么就说什么，因为知道对方是可以信任的，是会认真倾听的，是会替自己着想的。如此亦是世间难寻。除此之外，还有另一种“无声胜有声”的状态，两心相知，不想说话的时候就不去说话，各做各的事情，坦然行走却不会觉得尴尬。如此更是奢求了。 最近生活有点混乱，自己也变得有点急躁了，急于去做一些事情，急于去做成一些事情，最后都有点不遂人愿；“另有些事做了，没有做好。明天不散步了。”</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
   </div>
 
   
@@ -1838,7 +1504,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">178</span>
+          <span class="site-state-item-count">176</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1871,9 +1537,7 @@
         
           
         
-          
-        
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">categories</span>
         
       </div>
@@ -1886,7 +1550,9 @@
         
           
         
-        <span class="site-state-item-count">1</span>
+          
+        
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">tags</span>
         
       </div>
