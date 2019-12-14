@@ -55,17 +55,17 @@
   };
 </script>
 
-  <meta name="description" content="String  &amp;amp;&amp;amp;  StringBuilder  &amp;amp;&amp;amp;  StringBufferString  String是一个不可变的对象，即一旦被创建就不能改变；  String创建的对象存储在常量池中（Constant String Pool）;  String是线程安全的（任何不可变的对象都是线程安全的），因此不能被多个线程同时使用； example：  Strin">
+  <meta name="description" content="String  &amp;amp;&amp;amp;  StringBuilder  &amp;amp;&amp;amp;  StringBufferString String是一个不可变的对象，即一旦被创建就不能改变；  String创建的对象存储在常量池中（Constant String Pool）;  String是线程安全的（任何不可变的对象都是线程安全的），因此不能被多个线程同时使用； example：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="每日Java(0715)">
 <meta property="og:url" content="http://yoursite.com/2015/07/15/e6-af-8f-e6-97-a5java0715/index.html">
 <meta property="og:site_name" content="恰同学少年">
-<meta property="og:description" content="String  &amp;amp;&amp;amp;  StringBuilder  &amp;amp;&amp;amp;  StringBufferString  String是一个不可变的对象，即一旦被创建就不能改变；  String创建的对象存储在常量池中（Constant String Pool）;  String是线程安全的（任何不可变的对象都是线程安全的），因此不能被多个线程同时使用； example：  Strin">
+<meta property="og:description" content="String  &amp;amp;&amp;amp;  StringBuilder  &amp;amp;&amp;amp;  StringBufferString String是一个不可变的对象，即一旦被创建就不能改变；  String创建的对象存储在常量池中（Constant String Pool）;  String是线程安全的（任何不可变的对象都是线程安全的），因此不能被多个线程同时使用； example：">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-12-12T12:25:35.380Z">
+<meta property="og:updated_time" content="2019-12-14T09:41:59.317Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="每日Java(0715)">
-<meta name="twitter:description" content="String  &amp;amp;&amp;amp;  StringBuilder  &amp;amp;&amp;amp;  StringBufferString  String是一个不可变的对象，即一旦被创建就不能改变；  String创建的对象存储在常量池中（Constant String Pool）;  String是线程安全的（任何不可变的对象都是线程安全的），因此不能被多个线程同时使用； example：  Strin">
+<meta name="twitter:description" content="String  &amp;amp;&amp;amp;  StringBuilder  &amp;amp;&amp;amp;  StringBufferString String是一个不可变的对象，即一旦被创建就不能改变；  String创建的对象存储在常量池中（Constant String Pool）;  String是线程安全的（任何不可变的对象都是线程安全的），因此不能被多个线程同时使用； example：">
   <link rel="canonical" href="http://yoursite.com/2015/07/15/e6-af-8f-e6-97-a5java0715/">
 
 
@@ -268,7 +268,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+                <time title="Modified: 2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
             
           
@@ -305,15 +305,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="String-amp-amp-StringBuilder-amp-amp-StringBuffer"><a href="#String-amp-amp-StringBuilder-amp-amp-StringBuffer" class="headerlink" title="String  &amp;&amp;  StringBuilder  &amp;&amp;  StringBuffer"></a>String  &amp;&amp;  StringBuilder  &amp;&amp;  StringBuffer</h2><p><strong>String</strong></p>
-<ul>
+        <h2 id="String-amp-amp-StringBuilder-amp-amp-StringBuffer"><a href="#String-amp-amp-StringBuilder-amp-amp-StringBuffer" class="headerlink" title="String  &amp;&amp;  StringBuilder  &amp;&amp;  StringBuffer"></a>String  &amp;&amp;  StringBuilder  &amp;&amp;  StringBuffer</h2><p><strong>String</strong></p><ul>
 <li><p>String是一个不可变的对象，即一旦被创建就不能改变；</p>
 </li>
 <li><p>String创建的对象存储在常量池中（Constant String Pool）;</p>
 </li>
 <li><p>String是线程安全的（任何不可变的对象都是线程安全的），因此不能被多个线程同时使用；</p>
 <pre><code>example：</code></pre></li>
-</ul>
+</ul><a id="more"></a>
+
 <p>String s = “Let’s test”;<br>s.concat(“ if the String object is IMMUTABLE”);<br>System.out.println(s);<br>s = s.concat(“ if the String object is IMMUTABLE”);<br>System.out.println(s);</p>
 <p>输出为：</p>
 <p>Let’s test<br>Let’s test if the String object is IMMUTABLE</p>

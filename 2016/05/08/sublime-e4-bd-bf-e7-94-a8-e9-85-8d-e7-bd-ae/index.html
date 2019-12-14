@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="最近在写前端，经推荐尝试使用sublime 3，记录一下自己的配置。 1. 简介Sublime Text 是一套跨平台的文本编辑器，支持基于Python的插件。说是需要购买注册码，但是不买也是可以使用的。。。推荐使用sublime text3，因为比2要快。 2. 配置安装就不赘述了。下面记录一下自己的配置： 2.1 安装package controlpackage control类似于debia">
+  <meta name="description" content="最近在写前端，经推荐尝试使用sublime 3，记录一下自己的配置。1. 简介Sublime Text 是一套跨平台的文本编辑器，支持基于Python的插件。说是需要购买注册码，但是不买也是可以使用的。。。推荐使用sublime text3，因为比2要快。">
 <meta name="keywords" content="sublime">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sublime使用配置">
 <meta property="og:url" content="http://yoursite.com/2016/05/08/sublime-e4-bd-bf-e7-94-a8-e9-85-8d-e7-bd-ae/index.html">
 <meta property="og:site_name" content="恰同学少年">
-<meta property="og:description" content="最近在写前端，经推荐尝试使用sublime 3，记录一下自己的配置。 1. 简介Sublime Text 是一套跨平台的文本编辑器，支持基于Python的插件。说是需要购买注册码，但是不买也是可以使用的。。。推荐使用sublime text3，因为比2要快。 2. 配置安装就不赘述了。下面记录一下自己的配置： 2.1 安装package controlpackage control类似于debia">
+<meta property="og:description" content="最近在写前端，经推荐尝试使用sublime 3，记录一下自己的配置。1. 简介Sublime Text 是一套跨平台的文本编辑器，支持基于Python的插件。说是需要购买注册码，但是不买也是可以使用的。。。推荐使用sublime text3，因为比2要快。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-12-12T12:25:35.383Z">
+<meta property="og:updated_time" content="2019-12-14T09:41:59.312Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sublime使用配置">
-<meta name="twitter:description" content="最近在写前端，经推荐尝试使用sublime 3，记录一下自己的配置。 1. 简介Sublime Text 是一套跨平台的文本编辑器，支持基于Python的插件。说是需要购买注册码，但是不买也是可以使用的。。。推荐使用sublime text3，因为比2要快。 2. 配置安装就不赘述了。下面记录一下自己的配置： 2.1 安装package controlpackage control类似于debia">
+<meta name="twitter:description" content="最近在写前端，经推荐尝试使用sublime 3，记录一下自己的配置。1. 简介Sublime Text 是一套跨平台的文本编辑器，支持基于Python的插件。说是需要购买注册码，但是不买也是可以使用的。。。推荐使用sublime text3，因为比2要快。">
   <link rel="canonical" href="http://yoursite.com/2016/05/08/sublime-e4-bd-bf-e7-94-a8-e9-85-8d-e7-bd-ae/">
 
 
@@ -269,7 +269,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+                <time title="Modified: 2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
             
           
@@ -306,8 +306,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>最近在写前端，经推荐尝试使用sublime 3，记录一下自己的配置。</p>
-<h1 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h1><p>Sublime Text 是一套跨平台的文本编辑器，支持基于Python的插件。说是需要购买注册码，但是不买也是可以使用的。。。推荐使用sublime text3，因为比2要快。</p>
+        <p>最近在写前端，经推荐尝试使用sublime 3，记录一下自己的配置。</p><h1 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h1><p>Sublime Text 是一套跨平台的文本编辑器，支持基于Python的插件。说是需要购买注册码，但是不买也是可以使用的。。。推荐使用sublime text3，因为比2要快。</p><a id="more"></a>
+
 <h1 id="2-配置"><a href="#2-配置" class="headerlink" title="2. 配置"></a>2. 配置</h1><p>安装就不赘述了。下面记录一下自己的配置：</p>
 <h2 id="2-1-安装package-control"><a href="#2-1-安装package-control" class="headerlink" title="2.1 安装package control"></a>2.1 安装package control</h2><p>package control类似于debian的apt-get，redhat的yum，有了它能极大得简化插件的安装。ctrl+~（Esc下面那个键）同时按住，弹出一个输入框，粘贴下面代码，回车。 sublime text3</p>
 <pre><code>import urllib.request,os; pf = &apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), &apos;wb&apos;).write(urllib.request.urlopen( &apos;http://sublime.wbond.net/&apos; + pf.replace(&apos; &apos;,&apos;%20&apos;)).read())</code></pre><p>sublime text2</p>

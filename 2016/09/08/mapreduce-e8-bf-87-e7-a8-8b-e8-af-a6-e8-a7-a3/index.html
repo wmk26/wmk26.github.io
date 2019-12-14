@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="关于MapReduce的详细过程一直不是很懂，看了很多资料也是云里雾里的，不过还是找到两篇不错的文章：  MapReduce 过程详解(原理解释的很清晰，强烈建议阅读，本篇文章也是主要参考这篇文章来的) Hadoop排序工具用法小结(主要是说如何排序，里面的例子也是很清晰的)  自己尝试将上面两篇文章结合起来，并依据自己的实践来进行一些注解；  MapReduce总体流程 0. 综述整个MapRe">
+  <meta name="description" content="关于MapReduce的详细过程一直不是很懂，看了很多资料也是云里雾里的，不过还是找到两篇不错的文章： MapReduce 过程详解(原理解释的很清晰，强烈建议阅读，本篇文章也是主要参考这篇文章来的) Hadoop排序工具用法小结(主要是说如何排序，里面的例子也是很清晰的)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MapReduce过程详解">
 <meta property="og:url" content="http://yoursite.com/2016/09/08/mapreduce-e8-bf-87-e7-a8-8b-e8-af-a6-e8-a7-a3/index.html">
 <meta property="og:site_name" content="恰同学少年">
-<meta property="og:description" content="关于MapReduce的详细过程一直不是很懂，看了很多资料也是云里雾里的，不过还是找到两篇不错的文章：  MapReduce 过程详解(原理解释的很清晰，强烈建议阅读，本篇文章也是主要参考这篇文章来的) Hadoop排序工具用法小结(主要是说如何排序，里面的例子也是很清晰的)  自己尝试将上面两篇文章结合起来，并依据自己的实践来进行一些注解；  MapReduce总体流程 0. 综述整个MapRe">
+<meta property="og:description" content="关于MapReduce的详细过程一直不是很懂，看了很多资料也是云里雾里的，不过还是找到两篇不错的文章： MapReduce 过程详解(原理解释的很清晰，强烈建议阅读，本篇文章也是主要参考这篇文章来的) Hadoop排序工具用法小结(主要是说如何排序，里面的例子也是很清晰的)">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://images.cnitblog.com/i/361346/201404/041657025158483.png">
-<meta property="og:updated_time" content="2019-12-12T12:25:35.383Z">
+<meta property="og:updated_time" content="2019-12-14T09:41:59.291Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MapReduce过程详解">
-<meta name="twitter:description" content="关于MapReduce的详细过程一直不是很懂，看了很多资料也是云里雾里的，不过还是找到两篇不错的文章：  MapReduce 过程详解(原理解释的很清晰，强烈建议阅读，本篇文章也是主要参考这篇文章来的) Hadoop排序工具用法小结(主要是说如何排序，里面的例子也是很清晰的)  自己尝试将上面两篇文章结合起来，并依据自己的实践来进行一些注解；  MapReduce总体流程 0. 综述整个MapRe">
+<meta name="twitter:description" content="关于MapReduce的详细过程一直不是很懂，看了很多资料也是云里雾里的，不过还是找到两篇不错的文章： MapReduce 过程详解(原理解释的很清晰，强烈建议阅读，本篇文章也是主要参考这篇文章来的) Hadoop排序工具用法小结(主要是说如何排序，里面的例子也是很清晰的)">
 <meta name="twitter:image" content="http://images.cnitblog.com/i/361346/201404/041657025158483.png">
   <link rel="canonical" href="http://yoursite.com/2016/09/08/mapreduce-e8-bf-87-e7-a8-8b-e8-af-a6-e8-a7-a3/">
 
@@ -270,7 +270,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+                <time title="Modified: 2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
             
           
@@ -307,11 +307,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>关于MapReduce的详细过程一直不是很懂，看了很多资料也是云里雾里的，不过还是找到两篇不错的文章：</p>
-<ul>
+        <p>关于MapReduce的详细过程一直不是很懂，看了很多资料也是云里雾里的，不过还是找到两篇不错的文章：</p><ul>
 <li><a href="http://www.cnblogs.com/npumenglei/p/3631244.html" target="_blank" rel="noopener">MapReduce 过程详解</a>(原理解释的很清晰，强烈建议阅读，本篇文章也是主要参考这篇文章来的)</li>
 <li><a href="http://www.dreamingfish123.info/?p=1102" target="_blank" rel="noopener">Hadoop排序工具用法小结</a>(主要是说如何排序，里面的例子也是很清晰的)</li>
-</ul>
+</ul><a id="more"></a>
+
 <p>自己尝试将上面两篇文章结合起来，并依据自己的实践来进行一些注解； <img src="http://images.cnitblog.com/i/361346/201404/041657025158483.png" alt="mapreduce workflow"> MapReduce总体流程</p>
 <h2 id="0-综述"><a href="#0-综述" class="headerlink" title="0. 综述"></a>0. 综述</h2><p>整个MapReduce过程总共分为七个步骤，分别是Map/Partition/Sort/Combine/Copy/Merge/Reduce。简单来说，Map对文件进行切分，Partition将文件根据一定条件放到不同的桶中，Sort对桶中的数据进行排序，Combine对桶中的数据进行一次合并，以减少数据的传输消耗，Copy是将桶中的数据分发到各个不同的Reduce节点上，Merge是在Reduce节点上对来自不同桶中的数据进行一次合并，Reduce对合并之后的文件进行处理；</p>
 <h2 id="1-Map"><a href="#1-Map" class="headerlink" title="1. Map"></a>1. Map</h2><p>拆解，在此阶段可以定义mapper脚本程序，处理文件，得到mapper的输出；</p>

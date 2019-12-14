@@ -55,17 +55,17 @@
   };
 </script>
 
-  <meta name="description" content="基本认识：  gcc最初是一个c语言编译器，现在则是一个包含众多语言的编译器，包括C++、Fortran、Pascal、Objective-C、Java、Ada，以及Go等；（GNU C Compiler -&amp;gt; GNU Compiler Collection） windows下比较流行的gcc移植版本主要有三个，MinGW，Cygwin和Djgpp； MinGW：让GCC的Windows移植">
+  <meta name="description" content="基本认识： gcc最初是一个c语言编译器，现在则是一个包含众多语言的编译器，包括C++、Fortran、Pascal、Objective-C、Java、Ada，以及Go等；（GNU C Compiler -&amp;gt; GNU Compiler Collection） windows下比较流行的gcc移植版本主要有三个，MinGW，Cygwin和Djgpp； MinGW：让GCC的Windows移植版">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows下GCC配置">
 <meta property="og:url" content="http://yoursite.com/2015/04/02/windows-e4-b8-8bgcc-e9-85-8d-e7-bd-ae/index.html">
 <meta property="og:site_name" content="恰同学少年">
-<meta property="og:description" content="基本认识：  gcc最初是一个c语言编译器，现在则是一个包含众多语言的编译器，包括C++、Fortran、Pascal、Objective-C、Java、Ada，以及Go等；（GNU C Compiler -&amp;gt; GNU Compiler Collection） windows下比较流行的gcc移植版本主要有三个，MinGW，Cygwin和Djgpp； MinGW：让GCC的Windows移植">
+<meta property="og:description" content="基本认识： gcc最初是一个c语言编译器，现在则是一个包含众多语言的编译器，包括C++、Fortran、Pascal、Objective-C、Java、Ada，以及Go等；（GNU C Compiler -&amp;gt; GNU Compiler Collection） windows下比较流行的gcc移植版本主要有三个，MinGW，Cygwin和Djgpp； MinGW：让GCC的Windows移植版">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-12-12T12:25:35.379Z">
+<meta property="og:updated_time" content="2019-12-14T09:41:59.345Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows下GCC配置">
-<meta name="twitter:description" content="基本认识：  gcc最初是一个c语言编译器，现在则是一个包含众多语言的编译器，包括C++、Fortran、Pascal、Objective-C、Java、Ada，以及Go等；（GNU C Compiler -&amp;gt; GNU Compiler Collection） windows下比较流行的gcc移植版本主要有三个，MinGW，Cygwin和Djgpp； MinGW：让GCC的Windows移植">
+<meta name="twitter:description" content="基本认识： gcc最初是一个c语言编译器，现在则是一个包含众多语言的编译器，包括C++、Fortran、Pascal、Objective-C、Java、Ada，以及Go等；（GNU C Compiler -&amp;gt; GNU Compiler Collection） windows下比较流行的gcc移植版本主要有三个，MinGW，Cygwin和Djgpp； MinGW：让GCC的Windows移植版">
   <link rel="canonical" href="http://yoursite.com/2015/04/02/windows-e4-b8-8bgcc-e9-85-8d-e7-bd-ae/">
 
 
@@ -268,7 +268,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+                <time title="Modified: 2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
             
           
@@ -305,8 +305,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>基本认识：</p>
-<ul>
+        <p>基本认识：</p><ul>
 <li>gcc最初是一个c语言编译器，现在则是一个包含众多语言的编译器，包括C++、Fortran、Pascal、Objective-C、Java、Ada，以及Go等；（GNU C Compiler -&gt; GNU Compiler Collection）</li>
 <li>windows下比较流行的gcc移植版本主要有三个，MinGW，Cygwin和Djgpp；<ul>
 <li>MinGW：让GCC的Windows移植版能使用Win32API来编程；</li>
@@ -314,7 +313,8 @@
 <li>Djgpp：则是想让DOS下也能用上GCC；</li>
 </ul>
 </li>
-</ul>
+</ul><a id="more"></a>
+
 <p>因为<a href="http://www.mingw.org/" target="_blank" rel="noopener">MinGW</a>被墙，所以选择了<a href="https://sourceware.org/cygwin/" target="_blank" rel="noopener">Cygwin</a>。。。</p>
 <p>安装步骤：参考<a href="http://www.33lc.com/article/7276.html" target="_blank" rel="noopener">http://www.33lc.com/article/7276.html</a></p>
 <p>Cygwin配置：参考<a href="http://oldratlee.com/post/2012-12-22/stunning-cygwin" target="_blank" rel="noopener">http://oldratlee.com/post/2012-12-22/stunning-cygwin</a></p>

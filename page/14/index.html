@@ -264,7 +264,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+                <time title="Modified: 2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
             
           
@@ -293,36 +293,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>之前面试Java的时候被问到cookie和session的区别，索性今日上网找点资料记录一下；</p>
-<h2 id="1-定义"><a href="#1-定义" class="headerlink" title="1. 定义"></a>1. 定义</h2><p>注：翻译自英文wikipedia</p>
-<p><strong>cookie：</strong>cookie是发送自用户所浏览的网站并存储在用户浏览器中的一小段数据。用户每一次浏览该网站的时候，浏览器都会把cookie发送给服务器，以通知网站该用户的之前活动。cookies被设计成一个可靠的机制，以让网站记住一些状态信息（比如购物车中的数据）或记录用户的浏览活动（包括点击特定的buttons，登陆，或者记录用户数月前或者uunmq访问过哪些网页等）</p>
-<p><strong>session：</strong>在计算机科学，特别是网络中，一个session是一个半永久性的交互式信息交换，也被称作多个通信设备或者计算机和用户之间的对话、会话或会议（a dialogue, a converstaion or a meeting）。一个session在特定时间建立，然后在之后的某个时间被拆除。session一般（并不总是）有状态的（stateful），也就是说至少需要有一个通信块（communicating parts）来存储session历史信息。这点与无状态的通信不同，无状态的通信由独立的requests和response组成；</p>
-<h2 id="2-cookie"><a href="#2-cookie" class="headerlink" title="2. cookie"></a>2. cookie</h2><p>cookie分为两种：</p>
-<ul>
-<li>以文件方式存在硬盘空间上的长期性的cookie；</li>
-<li>停留在浏览器所占内存中的临时性的cookie；</li>
-</ul>
-<p>浏览网站时，在网站登陆的地方，会有提示，询问是否记住自己的登陆状态，此时，登录时填写的一些信息会被以文件的方式存储在客户端的硬盘上；</p>
-<p>当用户登陆后，session会在cookie端产生一个session_id，这个session_id是存于浏览器所占用的内存当中，因此，当关闭浏览器后，session_id就消失了。</p>
-<p>cookie采用的是在客户端保持状态的方案，它是客户端的会话状态的一种存储机制。它是服务器在本地机器上存储的小段文本或者内存中的一段数据，并随每一个请求发送至同一个服务器。服务器用HTTP头信息向客户端发送cookie，在客户端，浏览器解析这些cookies并将他们保存为一个本地文件，或者本地内存在数据，他们会自动将同一服务器的任何请求附上这些cookies，由于采用服务器端保持状态的方案在客户端也需要保存一个标识，所以session机制借助于cookie机制来达到保存标识的目的，这样就解决了http协议无状态的缺陷。</p>
-<h2 id="3-session"><a href="#3-session" class="headerlink" title="3. session"></a>3. session</h2><p>session是一种服务器端的信息管理机制，它把这些文件信息以文件的形式存放在服务器的硬盘空间上，这种情况是默认的，也可以用memcache把这种数据放到内存里面。</p>
-<p>当客户端向服务器发送请求时，要求服务器端产生一个session时，服务器端会先检查一下，客户端的cookie里面有没</p>
-<p>有session_id，是否已经过期。如果有这样的session_id的话，服务器端会根据cookie里面的session_id把服务器的session检索出来。如果没有这样的session_id的话，服务器端会重新建立一个。</p>
-<p>session产生的session_id放在cookie里面，如果用户把cookie禁止掉，session仍然可以用，不过通过其他的方式来获得这个session_id，比如可以在url后面或者以表单的形式提交到服务器端。</p>
-<h2 id="4-cookie和session的安全性"><a href="#4-cookie和session的安全性" class="headerlink" title="4. cookie和session的安全性"></a>4. cookie和session的安全性</h2><p>一般来说，cookie不是很安全，别人可以分析存放在本地的cookie并进行cookie欺骗，而session是存放在服务器端的，要想攻破session的话，首先要攻破cookie取得其中的session_id；而session_id是要有人登陆，或者启动session_start才会有，你不知道什么时候会有人登陆。其次，session_id是加密的，第二次session_start的时候，前一次的session_id就没有了，sessioin过期时session_id也会失效，想在短时间内攻破加密的session_id比较困难。</p>
-<h2 id="5-其他区别"><a href="#5-其他区别" class="headerlink" title="5. 其他区别"></a>5. 其他区别</h2><ul>
-<li>如果考虑安全性，应当使用session；</li>
-<li>session会在一段时间内保存在服务器上。当访问增多，会比较占用服务器的性能，因此如果考虑到减轻服务器性能，应该使用cookie；</li>
-<li>单个cookie保存的数据不能超过4K；</li>
-</ul>
-<h2 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h2><ol>
-<li><a href="https://en.wikipedia.org/wiki/HTTP_cookie" target="_blank" rel="noopener">HTTP cookie</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Session_(computer_science)" target="_blank" rel="noopener">Session (computer science)</a></li>
-<li><a href="http://blog.51yip.com/php/938.html" target="_blank" rel="noopener">老生常谈session,cookie的区别，安全性</a>（主要参考文献）</li>
-<li><a href="http://www.cnblogs.com/shiyangxt/articles/1305506.html" target="_blank" rel="noopener">cookie 和session 的区别详解</a></li>
-<li><a href="http://www.360doc.com/content/11/0706/15/3639038_131844581.shtml" target="_blank" rel="noopener">描述Cookie和Session的作用，区别和各自的应用范围，cookie、session工作原理</a></li>
-</ol>
-
+          <p>之前面试Java的时候被问到cookie和session的区别，索性今日上网找点资料记录一下；</p><h2 id="1-定义"><a href="#1-定义" class="headerlink" title="1. 定义"></a>1. 定义</h2><p>注：翻译自英文wikipedia</p><p><strong>cookie：</strong>cookie是发送自用户所浏览的网站并存储在用户浏览器中的一小段数据。用户每一次浏览该网站的时候，浏览器都会把cookie发送给服务器，以通知网站该用户的之前活动。cookies被设计成一个可靠的机制，以让网站记住一些状态信息（比如购物车中的数据）或记录用户的浏览活动（包括点击特定的buttons，登陆，或者记录用户数月前或者uunmq访问过哪些网页等）</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2015/07/21/e6-af-8f-e6-97-a5java20150721/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -386,7 +366,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+                <time title="Modified: 2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
             
           
@@ -415,73 +395,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>用linux命令的时候很容易忘，以至于每次用的时候都得重新搜索，此处记录自己经常使用的一些命令，方便自己查找。</p>
-<h3 id="1-sort命令"><a href="#1-sort命令" class="headerlink" title="1. sort命令"></a><strong>1. sort命令</strong></h3><ul>
+          <p>用linux命令的时候很容易忘，以至于每次用的时候都得重新搜索，此处记录自己经常使用的一些命令，方便自己查找。</p><h3 id="1-sort命令"><a href="#1-sort命令" class="headerlink" title="1. sort命令"></a><strong>1. sort命令</strong></h3><ul>
 <li>-u：unique，去除重复行</li>
 <li>-t：指定字段分隔符</li>
 <li>-k：指定按第几列来排序</li>
 <li>-r：反向排序</li>
 </ul>
-<p>使用示例：sort -t “:” -k 3 /etc/passwd（如果以tab键为分割，使用-t$’\t’） 在使用的使用遇到如下问题：</p>
-<p>$ sort -n -t $’\t’ output.txt &gt;output_sort.txt<br>sort: 字符串比较出现错误: Invalid or incomplete multibyte or wide character<br>sort: 请设置LC_ALL=’C’ 以避免出现问题。<br>sort: 要比较的字符串为”0\t-1\t鎺ㄨ繘澶х┖娓湴鍖鸿鍒掑缓璁\276 鍔犲揩鎵撻€犲煄甯傛柊鐨勫闀挎瀬\t[鎺ㄨ繘/v, 澶\247/a, 绌烘腐/n, 鍦板尯/n, 瑙勫垝/n, 寤鸿/vn,  /nr, 鍔犲揩/v, 鎵撻€\240/v, 鍩庡競/n, 鏂\260/a, 鐨\204/uj, 澧為暱鏋\201/n]“ 和”0\t1\t鍘熸爣棰橈細绀句細鏁戝姪浣撳埗鏈哄埗鏈夊緟瀹屽杽\t[鍘\237/b, 鏍囬/n, 锛\232/w, 绀句細/n, 鏁戝姪/v, 浣撳埗/n, 鏈哄埗/n, 鏈夊緟/v, 瀹屽杽/v]“。</p>
-<p>解决方案：在终端输入命令：export LC_ALL=C，然后再排序即可； 多列排序，命令如下： sort -t ‘ ‘ -k1,1 -k2n,2 data 说明：</p>
-<ul>
-<li>其中 -t ‘ ‘ 指定使用空格分列</li>
-<li>-k1,1 指定以第一列为关键字排序</li>
-<li>-k2n,2 指定以第二列为关键字做数据排序</li>
-</ul>
-<h3 id="2-make-2-gt-amp-1-tee-build-log"><a href="#2-make-2-gt-amp-1-tee-build-log" class="headerlink" title="2. make 2&gt;&amp;1 | tee build.log"></a><strong>2. make 2&gt;&amp;1 | tee build.log</strong></h3><ul>
-<li>1,2表示的是文件描述符。（0 stdin，1 stdout，2 stderr）</li>
-<li>2&gt;&amp;1，表示标准错误重定向到标准输出；</li>
-<li>tee的作用同时输出到控制台和文件；</li>
-</ul>
-<h3 id="3-find"><a href="#3-find" class="headerlink" title="3. find"></a><strong>3. find</strong></h3><p>find命令的常用形式可以简化为：</p>
-<p>find [path…] [expression]</p>
-<ul>
-<li>path：find命令所查找的目录路径。例如用.来表示当前目录，用/来表示系统根目录</li>
-<li>expression：expression可以分为——“-options [-print -exec -ok …]”</li>
-<li>-options，指定find命令的常用选项</li>
-<li>-print，find命令将匹配的文件输出到标准输出</li>
-<li>-exec，find命令对匹配的文件执行该参数所给出的shell命令。相应命令的形式为’command’ { } \;，注意{ }和\；之间的空格</li>
-</ul>
-<p>find命令常用选项：</p>
-<ul>
-<li>-name，按照文件名查找文件。如：find . -name “*.c” 在当前目录及其子目录（用“.”表示）中查找任何扩展名为“c”的文件；</li>
-<li>-perm，按照文件权限来查找文件，如：find . -perm 755 –print 在当前目录下查找文件权限位为755的文件；</li>
-<li>-prune，使find命令不在当前指定的目录中查找；</li>
-<li>-user：按照文件属主来查找文件。</li>
-</ul>
-<p>详细参考<a href="http://www.cnblogs.com/skynet/archive/2010/12/25/1916873.html" target="_blank" rel="noopener">这篇文章</a>；</p>
-<h3 id="4-cd"><a href="#4-cd" class="headerlink" title="4. cd"></a><strong>4. cd</strong></h3><ul>
-<li>最近才发现cd还有一个比较实用的命令，cd - ：表示回到上次所在目录；</li>
-</ul>
-<h3 id="5-scp"><a href="#5-scp" class="headerlink" title="5. scp"></a><strong>5. scp</strong></h3><p>scp命令用于两台机器之间复制文件；</p>
-<p>#复制文件，指定用户名，需要输入密码<br>scp local_file remote_username@remote_ip:remote_file</p>
-<p>#复制文件夹<br>scp -r local_folder remote_username@remote_ip:remote_folder</p>
-<p>#实现无密码传输</p>
-<p>#本地机器运行如下命令，一路回车即可<br>ssh-keygen -t rsa</p>
-<p>#在~目录下生成.ssh目录，该目录下有三个文件；<br>id_rsa         #私钥<br>id_rsa.pub     #公钥<br>known_hosts    #已知主机</p>
-<p>#用scp将公钥复制到另一台机器上面，同时修改文件名为authorized_keys<br>scp <del>/.ssh/id_rsa.pub remote_username@remote_ip:</del>/.ssh/authorized_keys</p>
-<h3 id="6-进程后台运行"><a href="#6-进程后台运行" class="headerlink" title="6. 进程后台运行"></a><strong>6. 进程后台运行</strong></h3><p># 总共有三种方法，举例说明<br># 1. nohup<br>nohup ping <a href="http://www.ibm.com" target="_blank" rel="noopener">www.ibm.com</a> </p>
-<p># 2. setsid<br>setsid ping <a href="http://www.ibm.com" target="_blank" rel="noopener">www.ibm.com</a></p>
-<p># 3. &amp;<br>ping <a href="http://www.ibm.com" target="_blank" rel="noopener">www.ibm.com</a> &amp;</p>
-<p># 前台运行程序改成后台运行<br># 先暂停任务<br>ctrl + z<br># 查看任务详情<br>jobs<br># 任务后台运行<br>bg %jobnumber 将任务放到后台中去处理</p>
-<p>具体参考：<a href="https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/#ibm-pcon" target="_blank" rel="noopener">Linux 技巧：让进程在后台可靠运行的几种方法</a>，介绍的非常详细； 另，还可以参考，<a href="http://www.cnblogs.com/lwm-1988/archive/2011/08/20/2147299.html" target="_blank" rel="noopener">linux命令后台运行</a></p>
-<h3 id="7-删除已输入的命令"><a href="#7-删除已输入的命令" class="headerlink" title="7. 删除已输入的命令"></a><strong>7. 删除已输入的命令</strong></h3><p>经常会有输入错了一个命令，然后狂按backspace的经历。后来才发现又快捷键来做</p>
-<p>ctl + u 删除光标以前的字符<br>ctl + k 删除光标以后的字符<br>ctl + a 移动光标至的字符头<br>ctl + e 移动光标至的字符尾<br>ctl + l 清屏</p>
-<p>具体参考：<a href="http://www.xiaojian.org/article/305.html" target="_blank" rel="noopener">linux 删除已输入的命令</a> 参考文章：</p>
-<ol>
-<li><a href="http://book.51cto.com/art/200808/85110.htm" target="_blank" rel="noopener">7.2.2 排序命令：sort</a></li>
-<li><a href="http://stackoverflow.com/questions/1037365/unix-sort-with-tab-delimiter" target="_blank" rel="noopener">Unix Sort with Tab Delimiter</a></li>
-<li><a href="http://blog.chinaunix.net/uid-25504049-id-3075909.html" target="_blank" rel="noopener">linux sort 多字段排序</a></li>
-<li><a href="http://static-sort.symanteccloud.com/public/documents/sfha/6.0.1/linux/productguides/zh/cn/pdf/dmp_notes_601_lin.pdf" target="_blank" rel="noopener">Veritas™ Dynamic Multi-Pathing 版本说明</a></li>
-<li><a href="http://bbs.chinaunix.net/thread-2331765-1-1.html" target="_blank" rel="noopener">make 2&gt;&amp;1 | tee build.log 求解释</a></li>
-<li><a href="http://www.cnblogs.com/skynet/archive/2010/12/25/1916873.html" target="_blank" rel="noopener">【日常小记】linux中强大且常用命令：find、grep</a></li>
-<li><a href="http://os.51cto.com/art/200907/140868.htm" target="_blank" rel="noopener">linux cd命令详解及cd命令的几个小技巧</a></li>
-<li><a href="http://linuxtools-rst.readthedocs.org/zh_CN/latest/tool/scp.html" target="_blank" rel="noopener">18. scp 跨机远程拷贝</a></li>
-<li><a href="http://david-je.iteye.com/blog/1960302" target="_blank" rel="noopener">SCP命令设置无密码</a></li>
-</ol>
-
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2015/07/21/linux-e5-b8-b8-e7-94-a8-e5-91-bd-e4-bb-a4/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -545,7 +473,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+                <time title="Modified: 2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
             
           
@@ -574,97 +502,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Java中的hash存储机制（以HashMap为主）</p>
-<h1 id="1-HashMap实现原理分析"><a href="#1-HashMap实现原理分析" class="headerlink" title="1. HashMap实现原理分析"></a>1. HashMap实现原理分析</h1><h2 id="1-1-概述："><a href="#1-1-概述：" class="headerlink" title="1.1 概述："></a>1.1 概述：</h2><p>看了HashMap源码的说明(HashMap.java)，说明的非常好，尝试先翻译一下：</p>
-<p>Hash table是基于Map接口的实现，这个实现提供了map的所有操作，同时允许null values和null key。（HashMap类和Hashtable基本可以等同，除了HashMap是非同步的（unsynchronized）且允许null键值）。HashMap不保证map中的顺序一直不变；</p>
-<p>如果假设hash函数可以均匀地把元素分配在桶中，那么这个实现可以提供常量时间的基本操作（get方法和put方法）；在集合层面上的迭代要求时间和HashMap实例的容量（capacity）以及大小（key-value映射对的数目）成比例；因此，如果要求高的迭代性能，最好不要把初始容量设置过高（或者把load factor设置的过低）；</p>
-<p>影响HashMap实例性能的有两个参数：初始容量和负载因子（load factor）；初始容量是指创建hash表时分配的容量，load factor是一个衡量指标，当hash表的使用率大于这个指标时，hash表将会自动扩容（rehashed，容量将会翻倍）；load factor默认为0.75，在时间和空间使用率上取得了一个很好的平衡；</p>
-<p>注意这个实现是非同步的（not synchronized），如果多个线程同时访问一个hash map， 同时至少一个线程修改了map的结构（添加或删除一个mapping，仅仅改变一个已经存在的key的value，这不算结构修改），必须外在地执行同步化操作。如果没有这种对象存在，map需要被装箱（wrapped）,如：</p>
-<p>Map m = Collections.synchronizedMap(new HashMap(…));</p>
-<h2 id="1-2-HashMap的数据结构"><a href="#1-2-HashMap的数据结构" class="headerlink" title="1.2 HashMap的数据结构"></a>1.2 HashMap的数据结构</h2><p>在Java中，基本的存储数据的结构有两种，一个是数组，一个事模拟指针（引用）。所有的数据结构都可以用这两个基本结构来构造的，HashMap就是一个“链表的数组”的数据结构。如下图所示：</p>
-<p><img src="file:///C:/Users/Administrator/AppData/Local/YNote/data/qq1C04AC66BBFA7A186F0EBDB3B35D84F2/c74ac270b618462d9e2fa980e534d573/hashmap.jpg" alt><a href="http://www.wangmingkuo.com/wp-content/uploads/2015/07/hashmap.jpg" target="_blank" rel="noopener"><img src="http://www.wangmingkuo.com/wp-content/uploads/2015/07/hashmap-300x238.jpg" alt="hashmap"></a></p>
-<p>由上图可以看出，HashMap底层就是一个数组结构，数组的每一项又是一个链表。当新建一个HashMap的时候，就会初始化一个数组，源码如下：</p>
-<p>/**<br> * The table, resized as necessary. Length MUST Always be a power of two.<br> */<br>transient Entry&lt;K,V&gt;[] table = (Entry&lt;K,V&gt;[]) EMPTY_TABLE;</p>
-<p> static class Entry&lt;K,V&gt; implements Map.Entry&lt;K,V&gt; {<br>     final K key;<br>     V value;<br>     Entry&lt;K,V&gt; next;<br>     int hash;<br>     ……</p>
-<p>从源码中可以看出，Entry就是数组中的元素，每个Map.Entry就是一个key-value对，Entry持有一个指向下一个元素的引用，这就构成了链表。</p>
-<h2 id="1-3-HashMap的存储实现"><a href="#1-3-HashMap的存储实现" class="headerlink" title="1.3 HashMap的存储实现"></a>1.3 HashMap的存储实现</h2><h3 id="1-3-1-存储"><a href="#1-3-1-存储" class="headerlink" title="1.3.1 存储"></a>1.3.1 存储</h3><p>public V put(K key, V value) {<br>    //如果table为空，初始化；<br>    if (table == EMPTY_TABLE) {<br>        inflateTable(threshold);<br>    }<br>    //如果key为null，调用putForNullKey方法进行处理，将value放置在数组的第一个位置；<br>    if (key == null)<br>        return putForNullKey(value);<br>    //根据key计算hash值<br>    int hash = hash(key);<br>    //搜索指定hash值在对应table中的索引；<br>    int i = indexFor(hash, table.length);<br>    //如果i索引的Entry不为null，通过循环不断遍历e元素的下一个元素；<br>    for (Entry&lt;K,V&gt; e = table[i]; e != null; e = e.next) {<br>        Object k;<br>        //找到指定key与需要放入的key是否相同（hash值相同且通过equals比较返回true）；<br>        //旧值将会被新值替换；<br>        if (e.hash == hash &amp;&amp; ((k = e.key) == key || key.equals(k))) {<br>            V oldValue = e.value;<br>            e.value = value;<br>            e.recordAccess(this);<br>            return oldValue;<br>        }<br>    }<br>    //如果i索引处的Entry为null，表明此处还没有Entry；<br>    //modCount记录HashMap中修改结构的次数；<br>    modCount++;<br>    //将key value添加到i索引处；<br>    addEntry(hash, key, value, i);<br>    return null;<br>}</p>
-<p>上面方法提供了一个根据 hashCode() 返回值来计算 Hash 码的方法：hash()，这个方法是一个纯粹的数学计算，其方法如下：</p>
-<p>final int hash(Object k) {<br>    int h = hashSeed;<br>    if (0 != h &amp;&amp; k instanceof String) {<br>        return sun.misc.Hashing.stringHash32((String) k);<br>    }</p>
-<pre><code>h ^= k.hashCode();
-
-// This function ensures that hashCodes that differ only by
-// constant multiples at each bit position have a bounded
-// number of collisions (approximately 8 at default load factor).
-h ^= (h &gt;&gt;&gt; 20) ^ (h &gt;&gt;&gt; 12);
-return h ^ (h &gt;&gt;&gt; 7) ^ (h &gt;&gt;&gt; 4);</code></pre><p>}</p>
-<p>对于任意给定的对象，只要它的 hashCode() 返回值相同，那么程序调用 hash 方法所计算得到的 Hash 码值总是相同的。接下来程序会调用 indexFor(int h, int length) 方法来计算该对象应该保存在 table 数组的哪个索引处。indexFor(int h, int length) 方法的代码如下：</p>
-<p>static int indexFor(int h, int length)<br>{<br>    return h &amp; (length-1);<br>}</p>
-<p>h&amp;(length-1)运算等价于对length取模，即h % length，举例如下所示：</p>
-<p>h&amp;(length-1)                h                  length-1</p>
-<pre><code> 4 &amp; (16-1)         00100      &amp;     01111      =      00100 (4)
-
- 5 &amp; (16-1)         00101       &amp;     01111      =      00101 (5)
-
-18 &amp; (16-1)        10010       &amp;     01111      =      00010(2)
-
-23 &amp; (16-1)       10111         &amp;     01111      =      00111(7)
-
------------------------------------------------------------------------------------------------------------------------</code></pre><p>根据上面 put 方法的源代码可以看出，当程序试图将一个 key-value 对放入 HashMap 中时，程序首先根据该 key 的 hashCode() 返回值决定该 Entry 的存储位置：如果两个 Entry 的 key 的 hashCode() 返回值相同，那它们的存储位置相同。如果这两个 Entry 的 key 通过 equals 比较返回 true，新添加 Entry 的 value 将覆盖集合中原有 Entry 的 value，但 key 不会覆盖。如果这两个 Entry 的 key 通过 equals 比较返回 false，新添加的 Entry 将与集合中原有 Entry 形成 Entry 链，而且新添加的 Entry 位于 Entry 链的头部。</p>
-<p>当向 HashMap 中添加 key-value 对，由其 key 的 hashCode() 返回值决定该 key-value 对（就是 Entry 对象）的存储位置。当两个 Entry 对象的 key 的 hashCode() 返回值相同时，将由 key 通过 eqauls() 比较值决定是采用覆盖行为（返回 true），还是产生 Entry 链（返回 false）。</p>
-<p>上面程序中还调用了 addEntry(hash, key, value, i); 代码，其中 addEntry 是 HashMap 提供的一个包访问权限的方法，该方法仅用于添加一个 key-value 对。下面是该方法的代码：</p>
-<p>void addEntry(int hash, K key, V value, int bucketIndex)<br>{<br>    // 获取指定 bucketIndex 索引处的 Entry<br>    Entry&lt;K,V&gt; e = table[bucketIndex];       //1<br>    // 将新创建的 Entry 放入 bucketIndex 索引处，并让新的 Entry 指向原来的 Entry<br>    table[bucketIndex] = new Entry&lt;K,V&gt;(hash, key, value, e);<br>    // 如果 Map 中的 key-value 对的数量超过了极限<br>    if (size++ &gt;= threshold)<br>        // 把 table 对象的长度扩充到 2 倍。<br>        resize(2 * table.length);<br>}</p>
-<p>上面方法的代码很简单，但其中包含了一个非常优雅的设计：系统总是将新添加的 Entry 对象放入 table 数组的 bucketIndex 索引处——如果 bucketIndex 索引处已经有了一个 Entry 对象，那新添加的 Entry 对象指向原有的 Entry 对象（产生一个 Entry 链），如果 bucketIndex 索引处没有 Entry 对象，也就是上面程序1处代码的 e 变量是 null，也就是新放入的 Entry 对象指向 null，也就是没有产生 Entry 链。</p>
-<h3 id="1-3-2-读取"><a href="#1-3-2-读取" class="headerlink" title="1.3.2 读取"></a>1.3.2 读取</h3><p>当 HashMap 的每个 bucket 里存储的 Entry 只是单个 Entry ——也就是没有通过指针产生 Entry 链时，此时的 HashMap 具有最好的性能：当程序通过 key 取出对应 value 时，系统只要先计算出该 key 的 hashCode() 返回值，在根据该 hashCode 返回值找出该 key 在 table 数组中的索引，然后取出该索引处的 Entry，最后返回该 key 对应的 value 即可。看 HashMap 类的 get(K key) 方法代码：</p>
-<p>public V get(Object key)<br> {<br>    // 如果 key 是 null，调用 getForNullKey 取出对应的 value<br>    if (key == null)<br>        return getForNullKey();<br>    // 根据该 key 的 hashCode 值计算它的 hash 码<br>    int hash = hash(key.hashCode());<br>    // 直接取出 table 数组中指定索引处的值，<br>    for (Entry&lt;K,V&gt; e = table[indexFor(hash, table.length)];<br>        e != null;<br>        // 搜索该 Entry 链的下一个 Entr<br>        e = e.next)          // ①<br>    {<br>        Object k;<br>        // 如果该 Entry 的 key 与被搜索 key 相同<br>        if (e.hash == hash &amp;&amp; ((k = e.key) == key<br>        || key.equals(k)))<br>        return e.value;<br>    }<br>    return null;<br> }</p>
-<p>从上面代码中可以看出，如果 HashMap 的每个 bucket 里只有一个 Entry 时，HashMap 可以根据索引、快速地取出该 bucket 里的 Entry；在发生“Hash 冲突”的情况下，单个 bucket 里存储的不是一个 Entry，而是一个 Entry 链，系统只能必须按顺序遍历每个 Entry，直到找到想搜索的 Entry 为止——如果恰好要搜索的 Entry 位于该 Entry 链的最末端（该 Entry 是最早放入该 bucket 中），那系统必须循环到最后才能找到该元素。</p>
-<p>归纳起来简单地说，HashMap 在底层将 key-value 当成一个整体进行处理，这个整体就是一个 Entry 对象。HashMap 底层采用一个 Entry[] 数组来保存所有的 key-value 对，当需要存储一个 Entry 对象时，会根据 Hash 算法来决定其存储位置；当需要取出一个 Entry 时，也会根据 Hash 算法找到其存储位置，直接取出该 Entry。由此可见：HashMap 之所以能快速存、取它所包含的 Entry，完全类似于现实生活中母亲从小教我们的：不同的东西要放在不同的位置，需要时才能快速找到它。</p>
-<p>当创建 HashMap 时，有一个默认的负载因子（load factor），其默认值为 0.75，这是时间和空间成本上一种折衷：增大负载因子可以减少 Hash 表（就是那个 Entry 数组）所占用的内存空间，但会增加查询数据的时间开销，而查询是最频繁的的操作（HashMap 的 get() 与 put() 方法都要用到查询）；减小负载因子会提高数据查询的性能，但会增加 Hash 表所占用的内存空间。</p>
-<p>掌握了上面知识之后，我们可以在创建 HashMap 时根据实际需要适当地调整 load factor 的值；如果程序比较关心空间开销、内存比较紧张，可以适当地增加负载因子；如果程序比较关心时间开销，内存比较宽裕则可以适当的减少负载因子。通常情况下，程序员无需改变负载因子的值。</p>
-<h2 id="1-4-HashSet的实现"><a href="#1-4-HashSet的实现" class="headerlink" title="1.4 HashSet的实现"></a>1.4 HashSet的实现</h2><p>对于 HashSet 而言，它是基于 HashMap 实现的，HashSet 底层采用 HashMap 来保存所有元素，因此 HashSet 的实现比较简单，查看 HashSet 的源代码，可以看到如下代码：</p>
-<p>public class HashSet<e><br>     extends AbstractSet<e><br>     implements Set<e>, Cloneable, java.io.Serializable<br> {<br>     // 使用 HashMap 的 key 保存 HashSet 中所有元素<br>     private transient HashMap&lt;E,Object&gt; map;<br>     // 定义一个虚拟的 Object 对象作为 HashMap 的 value<br>     private static final Object PRESENT = new Object();<br>     …<br>     // 初始化 HashSet，底层会初始化一个 HashMap<br>     public HashSet()<br>     {<br>         map = new HashMap&lt;E,Object&gt;();<br>     }<br>     // 以指定的 initialCapacity、loadFactor 创建 HashSet<br>     // 其实就是以相应的参数创建 HashMap<br>     public HashSet(int initialCapacity, float loadFactor)<br>     {<br>         map = new HashMap&lt;E,Object&gt;(initialCapacity, loadFactor);<br>     }<br>     public HashSet(int initialCapacity)<br>     {<br>         map = new HashMap&lt;E,Object&gt;(initialCapacity);<br>     }<br>     HashSet(int initialCapacity, float loadFactor, boolean dummy)<br>     {<br>         map = new LinkedHashMap&lt;E,Object&gt;(initialCapacity<br>             , loadFactor);<br>     }<br>     // 调用 map 的 keySet 来返回所有的 key<br>     public Iterator<e> iterator()<br>     {<br>         return map.keySet().iterator();<br>     }<br>     // 调用 HashMap 的 size() 方法返回 Entry 的数量，就得到该 Set 里元素的个数<br>     public int size()<br>     {<br>         return map.size();<br>     }<br>     // 调用 HashMap 的 isEmpty() 判断该 HashSet 是否为空，<br>     // 当 HashMap 为空时，对应的 HashSet 也为空<br>     public boolean isEmpty()<br>     {<br>         return map.isEmpty();<br>     }<br>     // 调用 HashMap 的 containsKey 判断是否包含指定 key<br>     //HashSet 的所有元素就是通过 HashMap 的 key 来保存的<br>     public boolean contains(Object o)<br>     {<br>         return map.containsKey(o);<br>     }<br>     // 将指定元素放入 HashSet 中，也就是将该元素作为 key 放入 HashMap<br>     public boolean add(E e)<br>     {<br>         return map.put(e, PRESENT) == null;<br>     }<br>     // 调用 HashMap 的 remove 方法删除指定 Entry，也就删除了 HashSet 中对应的元素<br>     public boolean remove(Object o)<br>     {<br>         return map.remove(o)==PRESENT;<br>     }<br>     // 调用 Map 的 clear 方法清空所有 Entry，也就清空了 HashSet 中所有元素<br>     public void clear()<br>     {<br>         map.clear();<br>     }<br>     …<br> }</e></e></e></e></p>
-<p>由上面源程序可以看出，HashSet 的实现其实非常简单，它只是封装了一个 HashMap 对象来存储所有的集合元素，所有放入 HashSet 中的集合元素实际上由 HashMap 的 key 来保存，而 HashMap 的 value 则存储了一个 PRESENT，它是一个静态的 Object 对象。HashSet 的绝大部分方法都是通过调用 HashMap 的方法来实现的，因此 HashSet 和 HashMap 两个集合在实现本质上是相同的。</p>
-<ol start="2">
-<li><h1 id="HashSet和HashMap的区别"><a href="#HashSet和HashMap的区别" class="headerlink" title="HashSet和HashMap的区别"></a>HashSet和HashMap的区别</h1></li>
-</ol>
-<p>*HashMap*</p>
-<p>*HashSet*</p>
-<p>HashMap实现了Map接口</p>
-<p>HashSet实现了Set接口</p>
-<p>HashMap储存键值对</p>
-<p>HashSet仅仅存储对象</p>
-<p>使用put()方法将元素放入map中</p>
-<p>使用add()方法将元素放入set中</p>
-<p>HashMap中使用键对象来计算hashcode值</p>
-<p>HashSet使用成员对象来计算hashcode值，对于两个对象来说hashcode可能相同，所以equals()方法用来判断对象的相等性，如果两个对象不同的话，那么返回false</p>
-<p>HashMap比较快，因为是使用唯一的键来获取对象</p>
-<p>HashSet较HashMap来说比较慢</p>
-<h1 id="3-HashMap和HashTable的区别"><a href="#3-HashMap和HashTable的区别" class="headerlink" title="3. HashMap和HashTable的区别"></a>3. HashMap和HashTable的区别</h1><p>HashMap和Hashtable都实现了Map接口，但决定用哪一个之前先要弄清楚它们之间的分别。主要的区别有：线程安全性，同步(synchronization)，以及速度。</p>
-<ul>
-<li>HashMap几乎可以等价于Hashtable，除了HashMap是非synchronized的，并可以接受null(HashMap可以接受为null的键值(key)和值(value)，而Hashtable则不行)。</li>
-<li>HashMap是非synchronized，而Hashtable是synchronized，这意味着Hashtable是线程安全的，多个线程可以共享一个Hashtable；而如果没有正确的同步的话，多个线程是不能共享HashMap的。Java 5提供了ConcurrentHashMap，它是HashTable的替代，比HashTable的扩展性更好。</li>
-<li>另一个区别是HashMap的迭代器(Iterator)是fail-fast迭代器，而Hashtable的enumerator迭代器不是fail-fast的。所以当有其它线程改变了HashMap的结构（增加或者移除元素），将会抛出ConcurrentModificationException，但迭代器本身的remove()方法移除元素则不会抛出ConcurrentModificationException异常。但这并不是一个一定发生的行为，要看JVM。这条同样也是Enumeration和Iterator的区别。</li>
-<li>由于Hashtable是线程安全的也是synchronized，所以在单线程环境下它比HashMap要慢。如果你不需要同步，只需要单一线程，那么使用HashMap性能要好过Hashtable。</li>
-<li>HashMap不能保证随着时间的推移Map中的元素次序是不变的。</li>
-</ul>
-<p>注：</p>
-<ul>
-<li>sychronized意味着在一次仅有一个线程能够更改Hashtable。就是说任何线程要更新Hashtable时要首先获得同步锁，其它线程要等到同步锁被释放之后才能再次获得同步锁更新Hashtable。</li>
-<li>Fail-safe和iterator迭代器相关。如果某个集合对象创建了Iterator或者ListIterator，然后其它的线程试图“结构上”更改集合对象，将会抛出ConcurrentModificationException异常。但其它线程可以通过set()方法更改集合对象是允许的，因为这并没有从“结构上”更改集合。但是假如已经从结构上进行了更改，再调用set()方法，将会抛出IllegalArgumentException异常。</li>
-<li>结构上的更改指的是删除或者插入一个元素，这样会影响到map的结构。</li>
-</ul>
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><ol>
-<li><a href="http://www.ibm.com/developerworks/cn/java/j-lo-hash/?ca=drs-tp4608" target="_blank" rel="noopener">通过分析 JDK 源代码研究 Hash 存储机制</a></li>
-<li><a href="http://www.cnblogs.com/xwdreamer/archive/2012/06/03/2532832.html" target="_blank" rel="noopener">深入Java集合学习系列：HashMap的实现原理</a></li>
-<li><a href="http://zhangshixi.iteye.com/blog/672697" target="_blank" rel="noopener">深入Java集合学习系列：HashMap的实现原理</a></li>
-<li><a href="http://blog.csdn.net/mazhimazh/article/details/17876641" target="_blank" rel="noopener">Java 7之集合类型第4篇 - HashMap</a></li>
-<li><a href="http://www.cnblogs.com/hzmark/archive/2012/12/24/hashmap.html" target="_blank" rel="noopener">HashMap源码分析（基于JDK1.6）</a></li>
-<li><a href="http://www.cnblogs.com/skywang12345/p/3310835.html" target="_blank" rel="noopener">Java 集合系列10之 HashMap详细介绍(源码解析)和使用示例</a></li>
-<li><a href="http://www.importnew.com/10620.html" target="_blank" rel="noopener">Java HashMap的工作原理</a></li>
-<li><a href="http://www.importnew.com/7099.html" target="_blank" rel="noopener">HashMap的工作原理</a>（针对面试的一些问题给出解答）</li>
-<li><a href="http://www.importnew.com/6931.html" target="_blank" rel="noopener">HashMap和HashSet的区别</a></li>
-<li><a href="http://www.importnew.com/7010.html" target="_blank" rel="noopener">HashMap和Hashtable的区别</a></li>
-</ol>
-
+          <p>Java中的hash存储机制（以HashMap为主）</p><h1 id="1-HashMap实现原理分析"><a href="#1-HashMap实现原理分析" class="headerlink" title="1. HashMap实现原理分析"></a>1. HashMap实现原理分析</h1><h2 id="1-1-概述："><a href="#1-1-概述：" class="headerlink" title="1.1 概述："></a>1.1 概述：</h2><p>看了HashMap源码的说明(HashMap.java)，说明的非常好，尝试先翻译一下：</p><p>Hash table是基于Map接口的实现，这个实现提供了map的所有操作，同时允许null values和null key。（HashMap类和Hashtable基本可以等同，除了HashMap是非同步的（unsynchronized）且允许null键值）。HashMap不保证map中的顺序一直不变；</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2015/07/20/e6-af-8f-e6-97-a5java20150716-0720/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -728,7 +575,7 @@ return h ^ (h &gt;&gt;&gt; 7) ^ (h &gt;&gt;&gt; 4);</code></pre><p>}</p>
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+                <time title="Modified: 2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
             
           
@@ -757,47 +604,16 @@ return h ^ (h &gt;&gt;&gt; 7) ^ (h &gt;&gt;&gt; 4);</code></pre><p>}</p>
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>“闲翻书，偶拾句”。记录书中感觉说的不错的句子，加上自己的想法。最后做总结；</p>
-<p>不管哪种人，“永远不会太迟”的说法永远不过时。神级科学家说，通过学习，人几乎可以在任何年龄生成新的脑细胞。（p2，看到这句话，第一反应是不屑，觉得这种说法相当不靠谱；因为之前听说过一个说法，说人的学习能力是随着年龄的增长是递减的；但仔细一想，这种说法也是没有坚实的理论依据的，自己相信这一种说法估计还是受一般认知的影响，可是一般认知很有可能不那么正确；以后遇到类似的论断的时候，还需三思；再一想，虽然人的学习能力是随着年龄的增长是递减的，但这并不意味这，一个人从很大年纪开始学习就取得不了什么成就，因为这里面还需要考虑这种能力的利用率的问题；）</p>
-<p>科学完全不能定位才能的基因，它也无法解密一些更引人入胜和实用的东西：10000小时法则。这一法则是由20世纪70年代的心理学家们提出的，他们认为所有的世界级专家（从作曲家、外科医生到足球运动员）都需要经历10000小时（一般超过10年）的刻苦练习；（p8，平均一天3小时，从个人经历来看，时间从来不是最重要的，因为我们总是拥有大把的时间，坚持才是，如果还有其他因素，学会思考总结也是其中之一）</p>
-<p>如果我们想最大化自身的潜能，所有人都需要精深的练习。（p9，何谓精深？？？）</p>
-<p>美国的儿童知道“如果不成功，那就再试一试”；德国的孩子受到这样的教育：“如果想变聪明，请犯错”。……。那些不敢冒险的人就无法发展他们的才能。（p9，虽然还不想承认，但是自己确实很害怕犯错，害怕因为自己的错误让别人失望，估计这种思维很小就形成了，因为小时候最怕让父母失望。。。）</p>
-<p>真理之行源于疑问。（p11，喜欢这句话）</p>
-<p>谁也不能随随便便成功，它来自彻底的自我管理和毅力——哈佛图书馆训言。（p2虽然这句话被证伪，详情参考：（假哈佛图书馆自习室墙上训言以讹传讹的典故），<a href="http://blog.sina.com.cn/s/blog_62bf266901010tmv.html，但是所谓话伪理不伪，自律确实非常重要。从另一方面看，生活中充满了类似的谣言，想要辨识出谣言还真是不容易，所以有一个偷懒的做法，对于个人，只要认为是正确的，就去实践，不是有句话说“真理和谬误只在一线之间”吗？）" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_62bf266901010tmv.html，但是所谓话伪理不伪，自律确实非常重要。从另一方面看，生活中充满了类似的谣言，想要辨识出谣言还真是不容易，所以有一个偷懒的做法，对于个人，只要认为是正确的，就去实践，不是有句话说“真理和谬误只在一线之间”吗？）</a></p>
-<p>犯错让你更聪明。——德国寓言。（p3）</p>
-<p>精深练习是建立在一个悖论之上的“朝着既定的目标挣扎前进，挑战自己的能力极限，不断犯错，这让你更聪明。类似的说法是，做哪些不得不放慢节奏的事情，犯错并加以改正——就像爬冰山，刚开始的时候会滑倒，会跌跌撞撞，最后不知不觉中就变的敏捷自如。（p8，犯错只是其中的一个方面而已，另一个方面应该在于思考；否则只能愚公移山，依靠子子孙孙无穷尽了。）</p>
-<p>“我们一直在寻找可以不劳而获的捷径，这绝对是一种糟糕透顶的学习方式。”罗伯特·比约克是加州大学洛杉矶分校的心理系主任，毕生致力于记忆和学习问题的研究。（p9）</p>
-<p>罗伯特解释道，其中的原因与我们的大脑构造有关。“我们总认为记忆系统就像一台录音机，但这种理解是错误的。我们的大脑是一个活体结构，一个几乎永远装不满的箱子。我们面对困难且克服困难的机会越多，脚手架就会变得更多。脚手架越多，我们学习新东西的速度就越快。”（p9）</p>
-<p>窍门是设定一个稍稍超越自己现有能力的目标：设定努力的目标靶。盲目受挫毫无帮助，实现目标才能突破原有水平。（p10，听过很多次类似的表述，很奇怪，记忆最深一次是却是思修老师上课时说的，说设定的目标需要“跳一跳，够得着”。而且根据自己的锻炼经验来看，确实如此，过高的目标只会让人很快退却，慢慢的增长王道。但好像自己也只有在锻炼中运用了，学习生活中自己总是很盲目）</p>
-<p>人们常会认为，练习与人才的关系就如磨刀石和刀具：前者固然重要，但是没有瓷实的刀片——即与生俱来的才能，也是巧妇难为无米之炊。精深练习提出了一种诱人的可能兴奋：它可能是一个锤炼刀片的过程。（p10）</p>
-<p>我一直认为，除了傻子，人在智力上差别不大，不同的只是热情和努力。——查尔斯·达尔文（p24，其实我是质疑这句话的，在google上随便搜了一下，都是来源于这部书；具体是不是达尔文说的，不清楚。有可能是“如是我闻”）</p>
-<p>卡内基大厅是美国古典音乐和流行音乐界的标志性建筑。民间流传着一个关于该大厅的笑话：“问：‘我怎么才能去卡内基大厅？’答：‘练习、练习、再练习’”（p28）</p>
-<p>科学洞见第一条：实际上，所有的动作都是神经纤维链之间沟通的结果。（p29）<br>脑科学使用洞见第二条：技能线路锻炼得越多，使用就越自如。（p31）</p>
-<p>髓鞘质的原则（p36）：<br>1. 回放电路至关重要；这种生理机制只钟情行动：真真实实的电流脉冲传过神经纤维；它钟情坚持重复；精深练习得动力来自于原始状态，即时刻警惕、忍饥挨饿、目标明确，甚至绝望挣扎的状态；<br>2. 髓鞘质包罗万象：髓鞘质不在乎你是谁，只在乎你做了什么。<br>3. 髓鞘质无法逆转：这就是习惯很难打破。改变就习惯的唯一办法是重复新动作以养成新习惯；<br>4. 髓鞘质与年龄：30多岁之前，髓鞘质一直生成，直到50岁，损失的速度将快过生长的速度；</p>
-<p>人才温床的成功不是因为那里的人更努力，而是因为他们朝着正确的方向努力——练习得更深入，生成了更多的髓鞘质；（p38，何为正确的方向？？？）</p>
-<p>埃里克森与该领域的同事们一起奠定了杰出的成就鸡翅上理论，其核心原则就是一项统计数据：任何领域的任何专家都要经过10000小时专心致志地练习。（p42）</p>
-<p>研究表明，这种天才的真正特长在于他们能够静下心来进行精深练习，甚至表明上根本看不出来他们在练习。（p44）</p>
-<p>优秀是一种习惯。——亚里士多德（p47）</p>
-<p>独特性依然重要，但是它的意义在于勃朗特姐妹和Z-男孩做了该做的事情，创造出自己非凡的技能：释放正确的信号，搭建自己的贿赂。（p55）</p>
-<p>“如果人们知道我是多么努力地工作换来了我的成就，似乎也就没什么了不起了”米开朗琪罗后来说。（p60）</p>
-<p>“长时间的学习，幼年开始就接触各类材料，模仿并且合作创作，这样的学徒制度不知不觉中使那些可能在各方面都平平无奇的男孩变成了艺术技巧高超的男人。”布鲁斯·科尔在《文艺复兴时期的艺术家之路》一书中写道。“文艺复兴时期的艺术家认为，艺术可以通过一系列渐进的步骤教导，从磨色开始，临摹，配合师傅的设计，直到自己开始绘画或雕塑。”（p60）</p>
-<p>这不是说地球上每个人都可能成为爱因斯坦。重点是，虽然人才看上去是命中注定的，但实际上你完全可以自己决定学习什么技能，每个人都拥有比自己想象中还要大的潜能。正如髓鞘质先生常说的那样，我们出生时都有机会成为自己的互联网之王。诀窍在于找到正确的方法。（p68）</p>
-<p>屡败屡战，屡战屡败。败了更好。——塞缪尔·贝克特（p70，其实把前两个词调换一个位置刚好。）</p>
-<p>在我访问的人才温床里，这个策略（组块化）被分成三步。第一步，技能学习者整体了解一项任务——一个大组块，巨大的回路。第二步，尽可能把它分解成最基础的组块。第三步，花时间用慢动作练习，再加速，以了解其内在结构。（p75）</p>
-<p>“练习并不能使之完美；完美的练习才能使之完美。”（p82）</p>
-<p>重复练习是无可替代且千金难求的，然而，要补充解释几点。常规练习是练得越多越好，但是，精深练习并不适用这道等式。投入更多的时间练习是有用的，但前提是你必须处于最佳位置。（p82）</p>
-<p>精深练习往往使人精疲力竭：他们不能一次坚持一个多小时或者两个小时（埃里克森观察了众多训练之后的发现，p82）</p>
-<p>在访问每个人才温床时，我都会让人们用一些词语来描述他们对最有成效的练习的感觉。这些是他们告诉我的词语：注意力、连接、建立、完整的、警觉、关注、错误、重复、疲劳、边缘、唤醒。我没听到的词语有这些：自然、轻松、日常、自动。还有一个词语， 从没在我访问过的人才温床中出现过：天才；（p86，如此，还认为学习是快乐的吗？快乐应该来源于学习后，而不是学习中）</p>
-<p>这份激情并不总是炫眼耀目的，也不总是幸福洋溢的——有时候，甚至是黑暗沉迷的。有时候，她又像是结婚多年的老两口拥有的那种平淡不惊的安全。（p92，坦白的说，自己并不喜欢激情这个词，因为激情太容易消失了，但有时感觉自己或许理解错了激情的含义。）</p>
-<p>这就是激情的工作原理，是那些让我们意识到“我就想成为那样的人”的时刻。人们通常认为激情是一种内心品质。但是我探访的人才温床越多，就越坚信激情首先来自外部世界。在人才温床，正确的蝴蝶拍打翅膀卷起了人才飓风。（p95，或者也可以叫“斗志”）</p>
-<p>同其他人才温床的时机情况一样，库拉索岛的成功不但是因为原始信号启动了激情。还包括成功规律中所有的其他原因：严明的纪律，一流的教练，家长的支持，民族自豪感，对这项运动的热情，当然还有充分的精深练习（就我所知，琼斯式训练时铁打的规矩，而不是个例）（p120，由此可以看出，本书说讲的也只是众多成功规律的一些常见的规律而已。）</p>
-<p>我拜访的每一处人才温床，他们使用的语言都与德维克的研究发现相符，都是在肯定努力的价值，以及缓慢的进步，而不是天生的才华和智慧。（p135）</p>
-<p>激励性的语言通常是指这类鼓舞人们争取不断进步的语言：希望、梦想、以及泛泛的肯定（“你是最棒的！”）。这这语言——我们称之为高动机语言——有其作用。但是从德维克和人才温床那里得到的信息很明显：高动机语言并不能激励人。它的作用正好相反：不是去争取进步，而是倒退，提醒人们无需努力，逃避痛苦挣扎。德维克的研究表明，想“哇，你真用功”或“干得不错，兄弟”这类话产生的激励要有效的多，而另一类这被她称为“无效的表扬”。（p136，这个论断与自己一般所听到的有点出入，mark）</p>
-<p>诸如踢足球、写作、喜剧表演这样的技能，需要建立灵活性神经回路，即需要学习者在脑中形成数千条回路，这样就可以轻松地找到一条回路，可以让他绕过变化无常的障碍物；拉小提琴、打高尔夫、体操、花样滑冰这些技能，需要建立一致性神经回路，全靠扎实的技术基础，重现一场完美表演说遵循的基本法则；这就是为什么自学的高尔夫球员、滑冰运动员，还有体操运动员鲜有案例达到世界级水平，而自学成长的小说家、喜剧演员、还有足球运动员却层出不穷的原因。（p189）</p>
-<p><img src="http://www.wangmingkuo.com/wp-content/uploads/2015/07/%E4%B8%80%E4%B8%87%E5%B0%8F%E6%97%B6%E5%A4%A9%E6%89%8D%E7%90%86%E8%AE%BA.png" alt="一万小时天才理论"></p>
-<p>花了大概两个半天的时间翻完了这本书，最大的感触应该还是在于作者提出的，“精深练习1万小时，就能成为专家”，书中举了很多例子来对此进行说明，但是给我的感觉却是，作者也只是讨论了成为专家的某一些要素而已，而且举得例子也是支持他论据的一些例子，这让我想到了之前看到的一篇反鸡汤文中所说的，这些文章永远只会告诉你事情的一个方面，而有意无意地忽略了其他的因素。事实上，我认为没有人能真正弄明白究竟是什么因素让成功（或成为专家）的人成功，或许就连成功的人自己都无法弄明白；但是其中还是有一些共性的，套用一句话，就是“优秀的人都是相似的，而差劲的人却各有各而差劲”。虽然如此，书籍还是有些参考价值的，里面提到的一些方法，比如组块化、重复练习、激励性的语言等等还是可以借鉴的。</p>
-<p>总的来说，这部书应该算作一本励志书，其实书中提出的理论并没有什么新颖之处，也并不具备很强的操作性。“一万小时的精深练习”确实需要，但并不就能保证这样就一定能够成为专家之类的。这其中还有很多其他的因素，比如学习环境、比如自律、比如机遇等等。这本书另一个有价值的地方在于，他给出了很多“天才”的例子，然后挖掘了一些细节证明即使是“天才”也需要大量的精深练习，比如米开朗琪罗、勃朗特三姐妹等等；读完全书还有一个体会，人们说一些人是天才，往往是想掩盖自己的懒惰而已；因为天份是天赋的，而勤奋和懒惰是后天可以改变的；人们宁愿自欺欺人地说别人有天份，而大多数时候都不愿承认是自己的懒惰。:)</p>
-
+          <p>“闲翻书，偶拾句”。记录书中感觉说的不错的句子，加上自己的想法。最后做总结；</p><p>不管哪种人，“永远不会太迟”的说法永远不过时。神级科学家说，通过学习，人几乎可以在任何年龄生成新的脑细胞。（p2，看到这句话，第一反应是不屑，觉得这种说法相当不靠谱；因为之前听说过一个说法，说人的学习能力是随着年龄的增长是递减的；但仔细一想，这种说法也是没有坚实的理论依据的，自己相信这一种说法估计还是受一般认知的影响，可是一般认知很有可能不那么正确；以后遇到类似的论断的时候，还需三思；再一想，虽然人的学习能力是随着年龄的增长是递减的，但这并不意味这，一个人从很大年纪开始学习就取得不了什么成就，因为这里面还需要考虑这种能力的利用率的问题；）</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2015/07/16/e4-b8-80-e4-b8-87-e5-b0-8f-e6-97-b6-e5-a4-a9-e6-89-8d-e7-90-86-e8-ae-ba/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -861,7 +677,7 @@ return h ^ (h &gt;&gt;&gt; 7) ^ (h &gt;&gt;&gt; 4);</code></pre><p>}</p>
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+                <time title="Modified: 2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
             
           
@@ -890,8 +706,7 @@ return h ^ (h &gt;&gt;&gt; 7) ^ (h &gt;&gt;&gt; 4);</code></pre><p>}</p>
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="String-amp-amp-StringBuilder-amp-amp-StringBuffer"><a href="#String-amp-amp-StringBuilder-amp-amp-StringBuffer" class="headerlink" title="String  &amp;&amp;  StringBuilder  &amp;&amp;  StringBuffer"></a>String  &amp;&amp;  StringBuilder  &amp;&amp;  StringBuffer</h2><p><strong>String</strong></p>
-<ul>
+          <h2 id="String-amp-amp-StringBuilder-amp-amp-StringBuffer"><a href="#String-amp-amp-StringBuilder-amp-amp-StringBuffer" class="headerlink" title="String  &amp;&amp;  StringBuilder  &amp;&amp;  StringBuffer"></a>String  &amp;&amp;  StringBuilder  &amp;&amp;  StringBuffer</h2><p><strong>String</strong></p><ul>
 <li><p>String是一个不可变的对象，即一旦被创建就不能改变；</p>
 </li>
 <li><p>String创建的对象存储在常量池中（Constant String Pool）;</p>
@@ -899,64 +714,15 @@ return h ^ (h &gt;&gt;&gt; 7) ^ (h &gt;&gt;&gt; 4);</code></pre><p>}</p>
 <li><p>String是线程安全的（任何不可变的对象都是线程安全的），因此不能被多个线程同时使用；</p>
 <pre><code>example：</code></pre></li>
 </ul>
-<p>String s = “Let’s test”;<br>s.concat(“ if the String object is IMMUTABLE”);<br>System.out.println(s);<br>s = s.concat(“ if the String object is IMMUTABLE”);<br>System.out.println(s);</p>
-<p>输出为：</p>
-<p>Let’s test<br>Let’s test if the String object is IMMUTABLE</p>
-<p><strong>StringBuffer</strong></p>
-<ul>
-<li><p>StringBuffer是可变的对象，即可以修改对象的值；</p>
-</li>
-<li><p>对象存储在堆中（heap）;</p>
-</li>
-<li><p>StringBuffer中的方法是需要同步的（synchronized），即是线程安全的，每一个方法在同一时间只能被一个线程访问；但是同步操作意味着要耗费一些额外的开销，甚至可能会造成死锁；因此StringBuffer的性能比StringBuilder要差一些；</p>
-</li>
-<li><p>StringBuffer可以通过使用toString()方法转换成string;</p>
-<p>example:</p>
-</li>
-</ul>
-<p>StringBuffer demo1 = new StringBuffer(“Hello”);<br>//在堆上创建一个对象”Hello”；<br>demo1 = new StringBuffer(“Bye”);<br>//修改上述对象为”Bye”；</p>
-<p><strong>StringBuilder</strong></p>
-<ul>
-<li>StringBuilder与StringBuffer基本相同。不同之处在于StringBuilder不是线程安全的，因此StringBuilder比StringBuffer快；</li>
-</ul>
-<p><strong>对比：</strong></p>
-<p>String</p>
-<p>StringBuffer</p>
-<p>StringBuilder</p>
-<p>存储区域</p>
-<p>常量池</p>
-<p>堆</p>
-<p>堆</p>
-<p>是否可修改</p>
-<p>否（不可变）</p>
-<p>是（可变）</p>
-<p>是（可变）</p>
-<p>是否线程安全</p>
-<p>是</p>
-<p>是</p>
-<p>否</p>
-<p>性能（创建？？）</p>
-<p>快</p>
-<p>非常慢</p>
-<p>快</p>
-<p>相同之处</p>
-<p>final类，不允许被继承</p>
-<p>final类，不允许被继承</p>
-<p>final类，不允许被继承</p>
-<p><strong>其他：</strong></p>
-<ul>
-<li>在某些特别的情况下，String对象的字符串拼接会被JVM解释成StringBuffer对象的拼接；（参考资料2）</li>
-<li>使用StringBuffer、StringBuilder的无参构造器产生的对象默认拥有16个字符串长度大小的字符串缓冲区；</li>
-</ul>
-<p><strong>参考资料：</strong></p>
-<ol>
-<li><a href="http://javahungry.blogspot.com/2013/06/difference-between-string-stringbuilder.html" target="_blank" rel="noopener">Difference Between String , StringBuilder And StringBuffer Classes With Example : Java</a>（需翻墙）</li>
-<li><a href="http://blog.csdn.net/rmn190/article/details/1492013" target="_blank" rel="noopener">String,StringBuffer与StringBuilder的区别??</a></li>
-<li><a href="http://www.cnblogs.com/fancydeepin/archive/2013/04/23/min-snail-speak_String-StringBuffer-StringBuilder.html" target="_blank" rel="noopener">小瓜牛漫谈 — String、StringBuffer、StringBuilder</a></li>
-<li><a href="http://www.techtamasha.com/simple-example-to-demonstrate-that-string-object-is-immutable/31" target="_blank" rel="noopener">Simple example to demonstrate that String object is immutable</a></li>
-</ol>
-<p><strong>备注：</strong>主要翻译了第一篇文章；第三篇文章也具有很高的参考价值，做了很多实验测试字符串拼接的性能；</p>
-
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2015/07/15/e6-af-8f-e6-97-a5java0715/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1020,7 +786,7 @@ return h ^ (h &gt;&gt;&gt; 7) ^ (h &gt;&gt;&gt; 4);</code></pre><p>}</p>
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+                <time title="Modified: 2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
             
           
@@ -1049,49 +815,21 @@ return h ^ (h &gt;&gt;&gt; 7) ^ (h &gt;&gt;&gt; 4);</code></pre><p>}</p>
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Java的基本程序设计结构</p>
-<p>Java基础知识：</p>
-<ol>
+          <p>Java的基本程序设计结构</p><p>Java基础知识：</p><ol>
 <li>Java对大小写敏感；</li>
 <li>文件名必须与公共类（public）的名字相同；</li>
 <li>标准的命名规范为：驼峰命名法，类名以大写字母开头，其余单词首字母大写，如CamelCase；</li>
 <li>根据Java语言规范，main方法必须申明为public；</li>
 </ol>
-<p>Java数据类型</p>
-<p>类型</p>
-<p>存储（bytes）</p>
-<p>说明</p>
-<p>int</p>
-<p>4</p>
-<p>short</p>
-<p>2</p>
-<p>long</p>
-<p>8</p>
-<p>后缀L</p>
-<p>byte</p>
-<p>1</p>
-<p>float</p>
-<p>4</p>
-<p>有效位数6-7位，后缀F</p>
-<p>double</p>
-<p>8</p>
-<p>有效位数15位</p>
-<p>char</p>
-<p>强烈建议不要在程序中使用char类型</p>
-<p>bool</p>
-<p>整型和布尔值直接不能转换</p>
-<p>注：</p>
-<ol>
-<li>byte和short类型主要用于特定的场合，如，底层的文件处理或者需要控制占用存储空间量的大数组；</li>
-<li>整型的范围与运行Java代码的机器无关，使得Java程序具有很好的可移植性；</li>
-<li>长整型数字后面有一个后缀L，十六进制有一个前缀0x，八进制的前缀是0；从Java7开始，加上前缀0b就可以写二进制了，且可以为数字下面加下划线，增强易读性，如0b1111_0100_0010；</li>
-<li>Java没有任何无符号类型（unsigned）；</li>
-<li>三个特殊的浮点数值，正无穷大（Double.POSITIVE_INFINITY）、负无穷大（Double.NEGATIVE_INFINITY）和NaN（DoubleNaN）;</li>
-<li>浮点数值不适用与禁止出现舍入误差的金融计算中；这种情况下一般使用BigDecimal类；</li>
-<li>强烈建议不要在程序中使用char类型；</li>
-</ol>
-<p>常量：使用final修饰常量，关键词表示这个变量只能被赋值一次。一旦被赋值之后，就不能再更改；习惯上，常量名使用全大写；</p>
-
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2015/07/15/e6-af-8f-e6-97-a5java20150714/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1155,7 +893,7 @@ return h ^ (h &gt;&gt;&gt; 7) ^ (h &gt;&gt;&gt; 4);</code></pre><p>}</p>
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+                <time title="Modified: 2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
             
           
@@ -1265,7 +1003,7 @@ return h ^ (h &gt;&gt;&gt; 7) ^ (h &gt;&gt;&gt; 4);</code></pre><p>}</p>
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+                <time title="Modified: 2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
             
           
@@ -1295,13 +1033,15 @@ return h ^ (h &gt;&gt;&gt; 7) ^ (h &gt;&gt;&gt; 4);</code></pre><p>}</p>
 
       
           <p>之前写博客一直想着要写点精而有价值的东西，后来发现好像做不到，自己不仅没有这个实力，而且文笔相当烂。我想其中一个原因可能在于自己缺乏大量的练习，一开始就定位一个自己无法企及的目标有点不现实。如今正在慢慢改变这种想法；今后希望能够多写、多读、多反思。当然精而有价值将一直是我的目标，但我必须从头开始做起。暂时有两个想法：</p>
-<ol>
-<li>每日系列博客：暂定每天学点Java；</li>
-<li>每周系列博客：学习机器学习算法，一周弄懂一个算法吧；</li>
-</ol>
-<p>以上都需要写成博客，以供日后参考。一直相信日积月累的效应，而且自己在某些方面已经可以看到这种坚持的效果了，所有，最大的困难还在于自己的坚持，且看自己能坚持多长时间吧。</p>
-<p>2015.07.13</p>
-
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2015/07/13/e4-b8-80-e4-ba-9b-e6-83-b3-e6-b3-95-20150713/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1365,7 +1105,7 @@ return h ^ (h &gt;&gt;&gt; 7) ^ (h &gt;&gt;&gt; 4);</code></pre><p>}</p>
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+                <time title="Modified: 2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
             
           
@@ -1395,30 +1135,15 @@ return h ^ (h &gt;&gt;&gt; 7) ^ (h &gt;&gt;&gt; 4);</code></pre><p>}</p>
 
       
           <p>记得很早之前就听说过这个视频，网上对其赞誉颇高（<a href="http://movie.douban.com/subject/4603382/" target="_blank" rel="noopener">豆瓣电影</a>评分9.5）。很自然的从网上下载了一个版本的视频，但是没有字幕，打开过几次，总是很快就放弃了。昨天（7月7日）在Ubuntu下折腾了半天的翻墙东西，弄完之后，就翻墙去YouTube上浏览随意浏览了一下，偶然间想起了这个视频，因为YouTube上可以显示英文字幕，所以也就完整的看了下来，英文能听懂大部分，意思也大概都理解，看完之后，感觉并没有带来那么大的震撼，当然也有可能是自己日渐麻木了，对外界的事物很难提起兴趣了。感觉看完之后，还是有些感想的，今天又抽时间看了他的<a href="http://www.cs.cmu.edu/~pausch/Randy/pauschLastLectureChineseTranslation_10_25_07.pdf" target="_blank" rel="noopener">讲稿</a>，想着还是有些东西可以写的。遂记之。</p>
-<p>之前室友推荐看过一部电影<a href="http://movie.douban.com/subject/1867345/" target="_blank" rel="noopener">《遗愿清单》</a>，其主题和这个最后一课有点类似。遗愿清单上说的是两个将死之人结伴去实现年轻时的梦想。兰迪·波许教授的最后一课基本上也是再说他是如何实现自己童年的梦想的。所不同的是，遗愿清单中的两人是在将死之前去实现年轻是的梦想，而兰迪·波许的童年梦想很多都已经实现。我也曾经有过很多梦想，可是如今，自身的惰性和单调的生活已经磨去了身上大部分的锐气与激情，很多时候，梦想变成了一个很奢侈的东西，变成了只敢在梦中想的东西，变成了“不敢高声语”只能独自回忆的东西；“<strong>如今我们深夜饮酒，杯子碰到一起，都是梦破碎的声音。</strong>”，无数次在跑步的时候问自己，是否就要这样一直平凡甚至平庸下去，从自身的角度来说，自己从来都不想像现在这样浑浑噩噩下去。现实的阻力是那么大，以致于一次次挺起胸膛对抗这个世界的时候，却又一次次跌倒。如今自己仿佛麻木了，越来越害怕跌倒，也就越来越无法站起，越来越对外界的变化变得主动麻木起来。但我内心深处却深知，这不是我想要的状态，这也绝不是我想要的生活。有时想着，如果自己将要离开这个世界的时候，是否会有什么很后悔的事情，我想最大的后悔之一可能是：在最该努力的时间里选择了安逸与懒惰。我知道，其实目前自身的绝大多数问题的核心其实还是在于自己，我也深知，救赎之道也从来都在自己的掌握之中。我希望有一天，再重新看这篇文章的时候，我会说，我已经找到救赎之道并力行之。</p>
-<p>演讲里面还是有一些有意思的话的，摘抄如下：</p>
-<p>1. We can’t change it, and we just have to decide how we’re going to respond to that. We cannot change the cards we are dealt, just how we play the hand.（中文意思大概就是，人生就是一副扑克牌，你无法改变你手中的牌，你能做的就是打好你的牌）</p>
-<p>2. And that’s one of the themes that you’ll hear later on in the talk, is have something to bring to the table, right, because that will make you more welcome.（成为一个有价值的人，俗一点的说法就是，你要有被利用的价值。）</p>
-<p>3. I did not make it to the National Football League, but I probably got more from that dream and not accomplishing it that I got from any of the ones that I did accomplish.（“功唐不捐”）</p>
-<p>4. Fundamentals, fundamentals, fundamentals. You’ve got to get the fundamentals down because otherwise the fancy stuff isn’t going to work.（强调了三遍的事情一定是重要的事情，2333，基础确实非常重要，万变不离其宗。在武学中，力量和速度就是基础，记得独孤九剑的精髓就在于一个快字。扯远了，基础重要，却也是最容易被忽视的。）</p>
-<p>5. He said, that’s a good thing. He said, when you’re screwing up and nobody’s saying anything to you anymore, that means they gave up. And that’s a lesson that stuck with me my whole life. Is that when you see yourself doing something badly and nobody’s bothering to tell you anymore, that’s a very bad place to be. Your critics are your ones telling you they still love you and care.（此言不虚）</p>
-<p>6. Experience is what you get when you didn’t get what you wanted.（意思同上3类似，天道酬勤，但可能酬的不是你以为的勤。）</p>
-<p>7. And so I bided time and then I graduated with my Ph.D. from Carnegie Mellon, thinking that meant me infinitely qualified to do anything.</p>
-<p>8. But remember, the brick walls are there for a reason. The brick walls are not there to keep us out. The brick walls are there to give us a chance to show how badly we want something. Because the brick walls are there to stop the people who don’t want it badly enough. They’re there to stop the other people.（这是一个对困难比较有意思的解释，也是很符合现实的一种解释，自己目前遇到的很多brick，估计也是在试探自己究竟有多渴望得到吧。但并不是所有的墙都是这样，有些墙不管你是多么渴望翻过去，却始终无法完成。）</p>
-<p>9. And I said, I can do that, but it’s kind of like a fish talking about the importance of water. I mean I don’t konw how to not have fun. I’m dying and I’m having fun. And I’m going to keep having fun every day I have left. Because there’s no other way to play it.（快乐很重要，但也不能把一起都快乐化，有些时候还是需要冷静沉默去思考一些问题的（仿佛悲剧总比喜剧深刻，但喜闻乐见的还是喜剧。。。）。但不可否认，做人最重要的还是开心啊。。。）</p>
-<p>10. Never lose the childlike wonder. It’s just too important. It’s what drives us.、</p>
-<p>11. People have to help you and I do believe in karma. I believe in paybacks. You get people to help you by telling the truth. Being earnest. I’ll take an earnest person over a hip person every day, because hip is a short term. Earnest is long term.</p>
-<p>12. Remember brick walls let us show our dedication. They are there to separate us from the people who don’t really want to achieve their childhood dreams. Don’t bail. The best of the gold’s at the bottom of barrels of crap.</p>
-<p>13. Get a feedback loop and listen to it.（这方面尤其欠缺，别人给自己意见的时候，自己第一反应竟是不假思索的反驳。。。以后得改）</p>
-<p>14. Show gratitude.</p>
-<p>15. Don’t complain. Just work harder.（自己如今越来越走向反面，工作不认真，却越来越喜欢抱怨。）</p>
-<p>16. Be good at something, it makes you valuable.</p>
-<p>17. Work hard. I got tenure a year early as Steve mentioned. Junior faculty members used to say to me, wow, you get tenure early. What’s your secret? I said, it’s pretty simple. Call my any Friday night in my office at ten o’clock and I’ll tell you.（勤奋，万事无他,唯手熟尔。）</p>
-<p>18. Find the best in everybody……., No one is all evil. Everybody has a good side, just keep waiting, it will come out.</p>
-<p>19. And be prepared. Luck is truly where preparation meets opportunity.</p>
-<p>ps：其实自己还是非常认同夫子所说的“先行其言而后从之”之语的。因为如果没有实现这些东西，写这些东西没有任何意义。但自己还是在没有完成之前把这些东西写出来了，权当练练写作技巧吧。</p>
-<p>补：看到一篇类似的博客<a href="http://www.ruanyifeng.com/blog/2008/08/randy_pausch_the_last_lecture.html" target="_blank" rel="noopener">Randy Pausch教授的《最后一课》</a>，下面有个评论比较有意思，“人之将死 其言亦善<br>善而无用”，自己还是很认同的，如果不去实践的话，再多的善都是无用的。</p>
-
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2015/07/08/e5-85-b0-e8-bf-aa-c2-b7-e6-b3-a2-e8-ae-b8-e6-95-99-e6-8e-88-e7-9a-84-e6-9c-80-e5-90-8e-e4-b8-80-e8-af-be/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1482,7 +1207,7 @@ return h ^ (h &gt;&gt;&gt; 7) ^ (h &gt;&gt;&gt; 4);</code></pre><p>}</p>
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+                <time title="Modified: 2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
             
           
@@ -1512,45 +1237,15 @@ return h ^ (h &gt;&gt;&gt; 7) ^ (h &gt;&gt;&gt; 4);</code></pre><p>}</p>
 
       
           <p>前言：博客已经有一个多月未曾更新了，其一在于这段时间确实也没有什么可以写的，其二是这段时间在断断续续的读《金瓶梅词话》，几十万字的古文读起来确实费劲，至今也才看到一半。前几日非常想读大刘的这本《球状闪电》，于是索性就把买了一套三体全集，附带的有这本《球状闪电》。这应该是自己第三次看这部小说了，在大刘的科幻小说中，对《球状闪电》的喜欢仅次于《三体》。这是一本故事性很强，结构非常完整的一部小说，之前大刘接受采访是也曾所过，《球状闪电》最适合拍成电影。确实如此，期待有朝一日能够搬上银屏。下面还是做一个很粗浅的总结吧，以备后用。</p>
-<p><strong>简单的故事情节：</strong></p>
-<p>在一次生日之夜，陈博士的父母都被球状闪电杀死。陈博士从此之后迷上了球状闪电，在上大学的过程中，分别遇到了两位导师，其一是张彬，其二是高波；前者极力反对其研究球状闪电（后来陈博士得知他也是研究了半辈子的球状闪电，他的妻子也为此而死），后者却大力支持。陈博士博士毕业之后，继续跟随高波。因为之前与身为军队少校的林云有一面之缘，陈博士和高波开始和军方合作。在这期间，球状闪电仍然没有多大进展，一次偶然的机会，一位前俄罗斯的科学家格莫夫联系了他们，并带领他们参观了俄罗斯研究球状闪电的基地。这个基地近三十年的研究表明球状闪电的产生是毫无规律。回国之后，陈博士陷入了深深的绝望之中。一次出海，在晚上观看灯塔的时候得到启示“那灯本来就在那里的，但只要亮的时候你才能看到······”，依据这个启示，陈博士最终成功捕获了球状闪电，之后球状闪电的研究也取得了很大进展。球状闪电在一次核电厂的危机中发挥了很大的作用，后来却被搁浅。陈博士本能的对把球状闪电作为武器感到厌烦，所以退出了研究，进而开始研究龙卷风预测系统。之后中美战争爆发了，珠峰号被龙卷风摧毁（与陈博士的龙卷风预测系统有很大的关系）。球状闪电也在一次近海攻击中因敌方提前防御而没有发挥任何效果。这时张彬去世了，依据其身前遗嘱用球状闪电火化了。一次丁仪和林云去祭奠张彬的时候，意外在墓碑上发现了球状闪电模型（量子态的张彬的妻子所刻）。进而发现并捕获了弦（宏原子核）。上级因为对弦实验的不确定性决定取消弦实验，林云却强制启动了实验。实验摧毁了大约三分之一国土上的电子芯片，使这些地区瞬间从信息时代回归到农业时代，实验中林云被量子态了。由于对未知力量的畏惧，中美双发停战了，后来丁仪和陈博士都开始了新的生活，量子态的林云偶尔还会出现在他们的生活中。</p>
-<p><strong>详细的故事情节</strong></p>
-<p><strong>序曲：</strong></p>
-<pre><code>一个雷雨之夜，主角（一直没有提他的名字，目前只能知道叫陈博士）和父母一起过他十四岁的生日。球状闪电穿墙而来，将他的父母烧成灰烬。主角却从此迷上了球状闪电，“要去经历他（主角父亲）所说的美妙人生了”。</code></pre><p><strong>上篇：</strong></p>
-<pre><code>主角在上了大学之后选择了大气科学专业，成为了“单纯追寻一个目标的机器。”，疯狂的学习与研究球状闪电相关的一切知识。大二的暑假，主角回家准备把房子租出去，但却发现了一些不寻常的事情。离开了两年的屋子却给了他一种“仿佛昨天才离开”的感觉。并发现了一幅画（画中有一个在其父亲离世之后才建成的水塔）和一根半黑半白的头发（其生日那天，帮他的母亲拔了一根半黑半白的头发）。主角再次木然地离开了家。
-
-在大二下学期，主角上了一门叫“大气电学”的课，老师是一个叫张彬的很普通的一个人。主角向他请教关于球状闪电的问题，张彬很是敷衍，并说“在这东西上花太多的精力，意义不大”。主角对张彬那种“对大自然那最深邃神秘的麻木”无比失望。后来张彬找到他，让他参加一个项目，因为这个项目可以实际接触到雷电研究，所以主角就答应了。主角和张彬的一个研究生赵雨吐槽张彬说“他这种人只会干那些将来注定有全让机器干的活，创新和想象力对他们来说没有意义，在学术上他们用所谓的严谨和严肃来掩盖自己的贫乏和平庸。”期间提及张彬研究的一个防雷涂料（因为无实用价值而束之高阁，最后在寻找球状闪电的过程中却发挥了重要作用。）。主角因为张彬所从事的专业和他的追求最近，所以读了张彬的研究生。张彬坚决制止了主角想把球状闪电作为硕士论文的课题。主角读完研究生之后又读了博士（今后终于可以称呼他陈博士了。。。），博士生导师叫高波，MIT读的PHD，和张彬正处于两个极端，素有“火球”的称号，拥有“活跃的思维和有活力的性格。”陈博士在高波的指导下开始为球状闪电建立数学模型。
-
-一次回家的路上，经过泰安站的时候，陈博士想起了之前张彬提到过的有大气物理学者在玉皇顶上目击球状闪电的事情，于是决定去一探究竟。在登山的过程中，陈博士第一次碰到了与众不同的林云，白衬衣和白色牛仔裤，轻盈的身影和宁静的表情，让人一见忘俗。可惜擦身而过。陈博士在山上意外碰到了当了玉皇顶气象站副站长的赵雨，吃饭的时候遇到了一位在这里工作了近四五十年的一个炊事员老王（又是老王。。。），谈及之前球状闪电的事情，陈博士意外发现，当年的亲历者中就有张彬，老王说，那个后生（张彬）说“要用一辈子的时间去研究那东西”。老王之后也意外地迷上了根雕艺术。之后在山上，陈博士第一次和林云有了正式的接触，得知她是一名军人，正在研究如何生成雷电作为武器使用。陈博士第一次将自己噩梦般的生日经历告诉了林云。与之取得了一些共鸣。
-
-陈博士的博士论文答辩通过了，但是由于缺乏实验证明，引起了不少的争议，比如这个问题，“最后一个问题：一个针尖上能站几个天使。”。张彬也是答辩委员会之一，只是提了一些无关紧要的问题。事后，陈博士找到了张彬，问了当年玉皇顶上的事情，张彬将其带入一个堆满了大量箱子的屋子里面，并了解了张彬这些年做的事情，原来，张彬因为球状闪电结缘他的妻子郑敏，一起寻找球状闪电。在一次野外寻雷的过程中，郑敏被球状闪电击中身亡。之后三十年中张彬继续对球状闪电的理论研究，提出了很多比陈博士提出的数学模型更好的数学模型，但是却无法完全模拟球状闪电的所有特性，最终在一次失败之后绝望了。陈博士最后跟高波去了大气科学研究院的雷电研究所。陈博士在研究张彬的手稿中发现了异象，张彬的演算手稿上出现了郑敏的笔迹，而这些手稿远在郑敏去世之后才写的。同时发现照片中的郑敏比实际的年龄苍老很多，且照片中出现了一个不该有的东西：三英寸电脑软盘。
-
-到达北京后，陈博士在高波的授意下联系林云讨论和军方合作的事情。林云带领陈博士参观了新概念武器开发中心，在参观的过程中，陈博士感受到了林云对于武器的那种痴迷与狂热，比如车里的竹子地雷。在试验基地里面，林云演示了人工产生闪电以及在大气层中制造雷电的技术。在得知其中一名飞行员在测试中牺牲了之后，陈博士本能地对把闪电作为武器的研究感到反感，这让他想起了那个生日之夜。林云之后又和陈博士谈了一下，帮助陈博士减少了一些对雷电武器的厌恶感。陈博士被说服了，“我又开始数针尖上的天使了，但这次林云同我一起数”。陈博士负者研究数学模型，林云负者在计算机上进行编程实现。期间陈博士见到了林云的男朋友江星辰，“看到江星辰的第一眼，就让我发现同他竞争是毫无意义的。”，他是一个“每时每刻都努力将自己的力量隐藏起来，这是一种善意，怕这种力量伤害了像我这样的人。”。当陈博士完成了一个“能够表现球状闪电所有已知特性的数学模型”后，才发现这个模型的计算量太大，单机模拟一次需要五十万小时。受SETI@home的影响，林云和陈博士决定做一个类似的网站，但是效果并不理想，最后，林云决定直接攻破SETI@home的服务器，使用其中的资源计算这个模型。后来被人发现，被迫停止。但是却无意间在原先的网站上发现了一条俄罗斯人的留言，“我知道你们在计算什么，BL，别浪费生命了，来找我。”。林云和陈博士到达俄罗斯并找到了亚历山大·格莫夫。格莫夫带领他们参观了苏联科学院西伯利亚分院的遗址。在那里向他们介绍了他们寻找球状闪电的艰辛历程，虽然“三十年间成功地产生了二十七个球状闪电”，但是这些结果却毫无规律，无法复现。格莫夫好曾经因为父亲叛逃而被怀疑修改了其中的参数，并因此而被人陷害，在这之后，他的妻子因为长期接触放电辐射，而痛苦死去，他的儿子被球状闪电烧焦。格莫夫的述说让陈博士几近绝望。“我感觉到自己心中那已经熄灭的希望之火又被泼上了冷水，现在哪里只剩下浸在冰水中的灰了。”。</code></pre><p><strong>中篇：</strong></p>
-<pre><code>陈博士回国之火开始了放纵的生活，并且准备开始谈恋爱，但是之后却接到了江星辰的电话，邀请陈博士出海游玩并准备说服他继续球状闪电的研究。在游玩的时候谈到“龙卷风和地震时最难预警的两种自然灾害”，并说航母顶多只能抵抗F2级的龙卷风。之后又谈及林云思想性格中的危险倾向，比如曾经将发明的液体地雷同时出售给对阵双方。晚上在荒岛宿营的时候，陈博士无意中从灯塔的闪灭中得到关于球状闪电的启示，“那灯本来就在那里的，但只要亮的时候你才能看到······”。
-
-游玩回来之后，陈博士又联系了林云并到她家做客，见到了林云的父亲上将林峰。陈博士说出了自己的想法“球状闪电并不是由闪电产生，而是自然界早就存在的一种结构......，闪电只是点燃或激发了它......，就像电流点亮了电灯，但电灯本身早已存在。”。接下来确定了使用“天网”来寻找球状闪电。饭后，林峰找陈博士单独谈了一段时间，了解到林云母亲在越战中被攻击蜂蛰死的事情，并让陈博士留意林云的危险倾向。天网计划最终借助于张彬之前研究的防雷涂料得以实施。张彬虽然身患绝症但坚持要求参与其中，并在一次飞行中目睹了第一颗主动激发的球状闪电。虽然可以激发球状闪电，却无法对其进行研究。于是求助牛人丁仪（三体中也出现了，天才一样的人物，哲学和量子物理学博士学位以及一个硕士学位）。丁仪思考之后认为未激发的球状闪电是肉眼可见的，并提出了一种捕获球状闪电的方法。最终在球状闪电熄灭瞬间使用探杆系统成功捕获一个球状闪电。丁仪进一步说明，“宇宙是几何的而不是物理的，......，宇宙中除了空间之外什么都没有”，丁仪认为球状闪电是宏观意义上的电子，并且相信存在宏原子、宏物质、宏世界、宏宇宙。丁仪又借助高速摄像机说明了球状闪电对目标的高度选择性（物质的波粒二象性）。接下来对球状闪电的研究顺风顺水，并成立了球状闪电武器部队。进一步的实验证明，球状闪电不仅是一个电子，还呈现出量子效应，有观察者时，坍缩成确定值，无观察者时呈现量子态，一切都是不确定的。接下来又找到了专门烧毁芯片的球状闪电，陈博士的电脑芯片也躺枪了。之后发生了一件事情，球状闪电第一次展现了它的威力，一群反技术的恐怖份子劫持了一群小学生并占领了核电厂，球状闪电将里面所有的人全部杀死。陈博士因为小时候父母的阴影无法接受把球状闪电用来杀人，所以退出了球状闪电的研究。一天在宿舍中突然发现之前芯片被烧毁的计算机又重新启动了，万分惊骇之下向丁仪求助，丁仪解释说，“所有死于球状闪电的人，都处于量子态，严格的说，他们并没有真正死去，他们都是薛定谔的猫，在不确定中同时处于生和死两种状态。”</code></pre><p><strong>下篇：</strong></p>
-<pre><code>陈博士退出了球状闪电的武器化研究之后，进而从事“绝不能用作军事用途的研究：预报龙卷风”。研究进展的很快，陈博士开发了一个系统可以识别出有可能生成龙卷风的扰动（专业名词叫“卵”），并成功预报了几次龙卷风。在一次去美国参加世界气象大会时，东道主向其展示了一个称为“龙卷风猎杀者”的系统，这个系统可以定位“卵”，并在其未形成龙卷风之前就将其消灭。陈博士单纯的以为这个系统只会造福人类，而不会被当做武器，事后证明，陈博士太naive了。之后，中美之间爆发了一场战争。一天，陈博士接到军方电话去参加一个会议，在会议上得知珠峰号被一个超级龙卷风消灭。而攻击珠峰号的是一个代号“埃洛斯”的气象武器系统，这个系统的核心是陈博士之前研究的龙卷风预测系统。军方邀请陈博士协助研究防御系统。有一天，发生了一件奇异的事情，周围所有的芯片都被烧毁了，后来得知，此次芯片破坏区波及三分之一的国土，生活瞬间从信息社会倒退到农业社会，敌人也迷惑不解并停止了进攻。又有一天，丁仪过来找陈博士，告诉了他离开之后发生的一些事情。核电厂行动之后，球状闪电研究得到重视，但在战争爆发之后，这一武器却被意外搁置。珠峰号被摧毁之后，球状闪电部队才被分配了一个任务：对近海领域的敌航母战舰进行试探性攻击，失望与期望一样大，攻击最终失败，因为敌方舰队安装了屏蔽磁场，球状闪电攻击没有任何效果。巨大的失败打击，甚至让林云产生了变成量子战士攻击航母的想法。
-
-张彬去世了，按照他的遗愿，用球状闪电为他举行了葬礼。有一次，林云和丁仪一起去祭奠张彬，在他的墓碑上却发现了一些方程和计算公式，这是张彬妻子的字体，全面描述了宏原子的数学模型。借助这个数学模型，基地开始定位并捕获宏原子核（外形像弦）。丁仪告诉林云，两条弦（宏原子核）以一个相对的速度缠绕在一起会引发宏聚变，释放巨大的能量。基地本打算对以电子芯片为释放目标的弦做实验，在一起准备就绪的情况下却被叫停。林云不甘心，劫持了实验基地，强行进行宏聚变实验，林云也在宏聚变中被量子化了。
-
-宏聚变之后的第三天，量子态的林云现身了。讲诉了她往昔的一些事情。小时候的林云由于失去了母亲，在一个暑假跟随父亲去军队中，并迷恋上了武器。在林云读硕士的时候，在网上认识了一位俄罗斯女士，后来得知这位俄罗斯女士曾经参与过新概念武器研究，而杀死林云母亲的杀人蜂正是她的研究成果。林云在跟她接触的时候深受其影响，并认可了她关于武器的看法“防止这事发生的最好方法，就是抢在敌人或潜在敌人前面把它造出来。”后来陈博士与他的大学同学戴琳结婚了，量子态的偶尔也会出现在他的生活中。</code></pre><p><strong>摘抄：</strong></p>
-<p>“其实，儿子，过一个美妙的人生并不难，听爸爸教你：你选一个公认的世界难题，最好是只用一张纸和一支铅笔的数学难题，比如哥德巴赫猜想或费马大定理什么的，或连纸笔都不要的纯自然哲学难题，比如宇宙的本源之类的，<strong>投入全部身心钻研，只问耕耘不问收获，不知不觉的专注中，一辈子也就过去了。</strong>人们常说的寄托，也就是这么回事。或是相反，把挣钱作为唯一的目标，所有的时间都想着怎么挣钱，也不用问挣来干什么用，到死得时候像葛朗台一样抱着一堆金币说：啊，真暖和啊……，所以<strong>美妙人生的关键在于你能迷上什么东西。</strong>”（p2，开篇其实就已经定下一个基调了，文中的很多人都是一辈子专注一件事情，比如说陈博士、张彬、郑敏、林云、格莫夫、丁仪等等，哦，对了，还有老王。。。）</p>
-<p>它在飘动时发出一种啸叫，那啸叫低沉中透着尖利，让人想到了太古的荒原上，一个鬼魂在吹着埙。（p3）</p>
-<p>我不知道为什么要去那儿，我只是想去，这就够了，这是人类最本源的冲动。（p7）</p>
-<p>记得有一个印度传说，说一个国王所深爱的王妃死去，国王决定为她建造一座前所未有的豪华陵墓，他为这座陵墓耗尽了大半生的心血，当陵墓完工时，他看到正中放着的王妃的棺木，说：这东西放在这儿多不协调，把它搬走。（p8，感觉这个传说有些意思，但这种细微的东西又难以把握，姑且记之）</p>
-<p>每到这时，我就会想起爱因斯坦晚年的一句话：“窗外的每一片树叶，都使人类的科学显得那么幼稚无力。”（p22）（想起了另外一句话，大意是：人类一思考，上帝就发笑。搜索了一下，发现跟自己之前理解的有些出入，附上一篇文章，或可解疑：人类一思考，上帝就发笑——米兰昆德拉１９８６耶路撒冷，<a href="http://www.360doc.com/content/09/1111/14/453309_8806939.shtml" target="_blank" rel="noopener">http://www.360doc.com/content/09/1111/14/453309_8806939.shtml</a>，<a href="http://zhidao.baidu.com/question/19616819.html" target="_blank" rel="noopener">http://zhidao.baidu.com/question/19616819.html</a>）</p>
-<p>我像一个没有经验的登山者，筋疲力尽地攀上了一个自以为无人到过的高度，但环顾四周时却看到了前人留下来的帐篷和他们继续向上延伸的脚印。（p37）</p>
-<p>有一位天文学家说过一句很有意思的话：恒星这东西，如果不是其确实存在，本来可以很容易证明它不可能存在的。（p65）</p>
-<p>那灯本来就在那里的，但只要亮的时候你才能看到······（p97）</p>
-<p>想想十八世纪或更早一些的时候，那些想发明计算机器的科学家，他们肯定认为，自己之所以失败，是因为想得不够复杂，现在我们知道，是因为他们想的不够简单。（p103）</p>
-<p>丁仪：“从物理学的角度看，生命这种物质运动形式，与其他的物质运动相比并没有更高的含义，从生命中你找不到新的无力规律，所以从我的角度看，一个人的死与一块冰的消融没有本质的区别。”（p160）</p>
-<p>又是秋天了，这是死亡的季节，是离去的季节，也是写诗的季节。（p229）</p>
-<p>“金黄色的树林里分出两条路，可惜我们不能同时涉足，但我们却选择了，人迹罕至的那一条，这从此决定了，我们的一生。”（p230）</p>
-<p>“人类社会也很像是处于不确定的量子态，一个超级观察者能令它坍缩回理智状态。”（p275，记得曾经看过一篇挺有意思的科幻小说，说的是在实验室中一次模拟地球演变的时候，意外的再现了我们当前所在的世界，也就是说我们所有的历史和现在都可以在里面查到，这台机器就很像一个超级观察者。）</p>
-<p>据丁仪说，从量子力学的角度来讲，人的死亡过程就是由一个强观察者变为弱观察者再变为非观察者的过程。（p279）</p>
-<p><strong>后记：</strong></p>
-<p>如果仅就故事性和科幻性而言，球状闪电确实是一流作品，但是大刘的文笔依然是其硬伤。但个人认为瑕不掩瑜，毕竟科幻文学还是科幻为主，文学为辅。</p>
-
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2015/07/07/e7-90-83-e7-8a-b6-e9-97-aa-e7-94-b5/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>

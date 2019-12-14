@@ -55,17 +55,17 @@
   };
 </script>
 
-  <meta name="description" content="在python处理数据的过程中，有时候需要判断给定的字符是否是汉字、字母以及数字；参考网上的程序，给出如下的示例： python2.x#!/usr/bin/env python# -- coding:utf-8-- # 判断一个unicode是否是汉字def is_chinese(uchar):    if u’\u4e00’ &amp;lt;= uchar&amp;lt;=u’\u9fff’:        r">
+  <meta name="description" content="在python处理数据的过程中，有时候需要判断给定的字符是否是汉字、字母以及数字；参考网上的程序，给出如下的示例：python2.x#!/usr/bin/env python# -- coding:utf-8--">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python中判断字符是否是汉字、字母以及数字">
 <meta property="og:url" content="http://yoursite.com/2016/03/05/python-e4-b8-ad-e5-88-a4-e6-96-ad-e5-ad-97-e7-ac-a6-e6-98-af-e5-90-a6-e6-98-af-e6-b1-89-e5-ad-97-e3-80-81-e5-ad-97-e6-af-8d-e4-bb-a5-e5-8f-8a-e6-95-b0-e5-ad-97/index.html">
 <meta property="og:site_name" content="恰同学少年">
-<meta property="og:description" content="在python处理数据的过程中，有时候需要判断给定的字符是否是汉字、字母以及数字；参考网上的程序，给出如下的示例： python2.x#!/usr/bin/env python# -- coding:utf-8-- # 判断一个unicode是否是汉字def is_chinese(uchar):    if u’\u4e00’ &amp;lt;= uchar&amp;lt;=u’\u9fff’:        r">
+<meta property="og:description" content="在python处理数据的过程中，有时候需要判断给定的字符是否是汉字、字母以及数字；参考网上的程序，给出如下的示例：python2.x#!/usr/bin/env python# -- coding:utf-8--">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-12-12T12:25:35.383Z">
+<meta property="og:updated_time" content="2019-12-14T09:41:59.256Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python中判断字符是否是汉字、字母以及数字">
-<meta name="twitter:description" content="在python处理数据的过程中，有时候需要判断给定的字符是否是汉字、字母以及数字；参考网上的程序，给出如下的示例： python2.x#!/usr/bin/env python# -- coding:utf-8-- # 判断一个unicode是否是汉字def is_chinese(uchar):    if u’\u4e00’ &amp;lt;= uchar&amp;lt;=u’\u9fff’:        r">
+<meta name="twitter:description" content="在python处理数据的过程中，有时候需要判断给定的字符是否是汉字、字母以及数字；参考网上的程序，给出如下的示例：python2.x#!/usr/bin/env python# -- coding:utf-8--">
   <link rel="canonical" href="http://yoursite.com/2016/03/05/python-e4-b8-ad-e5-88-a4-e6-96-ad-e5-ad-97-e7-ac-a6-e6-98-af-e5-90-a6-e6-98-af-e6-b1-89-e5-ad-97-e3-80-81-e5-ad-97-e6-af-8d-e4-bb-a5-e5-8f-8a-e6-95-b0-e5-ad-97/">
 
 
@@ -268,7 +268,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+                <time title="Modified: 2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
             
           
@@ -305,8 +305,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>在python处理数据的过程中，有时候需要判断给定的字符是否是汉字、字母以及数字；参考网上的程序，给出如下的示例：</p>
-<h3 id="python2-x"><a href="#python2-x" class="headerlink" title="python2.x"></a>python2.x</h3><p>#!/usr/bin/env python<br># -<em>- coding:utf-8-</em>-</p>
+        <p>在python处理数据的过程中，有时候需要判断给定的字符是否是汉字、字母以及数字；参考网上的程序，给出如下的示例：</p><h3 id="python2-x"><a href="#python2-x" class="headerlink" title="python2.x"></a>python2.x</h3><p>#!/usr/bin/env python<br># -<em>- coding:utf-8-</em>-</p><a id="more"></a>
+
 <p># 判断一个unicode是否是汉字<br>def is_chinese(uchar):<br>    if u’\u4e00’ &lt;= uchar&lt;=u’\u9fff’:<br>        return True<br>    else:<br>        return False</p>
 <p># 判断一个unicode是否是数字<br>def is_number(uchar):<br>    if u’\u0030’ &lt;= and uchar&lt;=u’\u0039’:<br>        return True<br>    else:<br>        return False</p>
 <p># 判断一个unicode是否是英文字母<br>def is_alphabet(uchar):<br>    if (u’\u0041’ &lt;= uchar&lt;=u’\u005a’) or (u’\u0061’ &lt;= uchar&lt;=u’\u007a’):<br>        return True<br>    else:<br>        return False</p>

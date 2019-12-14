@@ -55,17 +55,17 @@
   };
 </script>
 
-  <meta name="description" content="0. 简介：聚类是一种无监督的学习方式，它将相似的对象归到同一个簇中。聚类算法几乎可以应用于所有的对象，簇内的对象越相似，聚类的效果越好；   1. 优缺点 优点：容易实现； 缺点：可能收敛到局部最小值，在大规模数据上面收敛比较慢； 数据：数值型数据；  2. 算法伪代码创建k个点作为起始质心（经常是随机选择）当任意一个点的簇分配结果发生变化时    对数据集中的每个数据点        对每个质">
+  <meta name="description" content="0. 简介：聚类是一种无监督的学习方式，它将相似的对象归到同一个簇中。聚类算法几乎可以应用于所有的对象，簇内的对象越相似，聚类的效果越好；  1. 优缺点 优点：容易实现； 缺点：可能收敛到局部最小值，在大规模数据上面收敛比较慢； 数据：数值型数据；">
 <meta property="og:type" content="article">
 <meta property="og:title" content="K均值聚类算法">
 <meta property="og:url" content="http://yoursite.com/2015/09/20/k-e5-9d-87-e5-80-bc-e8-81-9a-e7-b1-bb-e7-ae-97-e6-b3-95/index.html">
 <meta property="og:site_name" content="恰同学少年">
-<meta property="og:description" content="0. 简介：聚类是一种无监督的学习方式，它将相似的对象归到同一个簇中。聚类算法几乎可以应用于所有的对象，簇内的对象越相似，聚类的效果越好；   1. 优缺点 优点：容易实现； 缺点：可能收敛到局部最小值，在大规模数据上面收敛比较慢； 数据：数值型数据；  2. 算法伪代码创建k个点作为起始质心（经常是随机选择）当任意一个点的簇分配结果发生变化时    对数据集中的每个数据点        对每个质">
+<meta property="og:description" content="0. 简介：聚类是一种无监督的学习方式，它将相似的对象归到同一个簇中。聚类算法几乎可以应用于所有的对象，簇内的对象越相似，聚类的效果越好；  1. 优缺点 优点：容易实现； 缺点：可能收敛到局部最小值，在大规模数据上面收敛比较慢； 数据：数值型数据；">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-12-12T12:25:35.381Z">
+<meta property="og:updated_time" content="2019-12-14T09:41:59.317Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="K均值聚类算法">
-<meta name="twitter:description" content="0. 简介：聚类是一种无监督的学习方式，它将相似的对象归到同一个簇中。聚类算法几乎可以应用于所有的对象，簇内的对象越相似，聚类的效果越好；   1. 优缺点 优点：容易实现； 缺点：可能收敛到局部最小值，在大规模数据上面收敛比较慢； 数据：数值型数据；  2. 算法伪代码创建k个点作为起始质心（经常是随机选择）当任意一个点的簇分配结果发生变化时    对数据集中的每个数据点        对每个质">
+<meta name="twitter:description" content="0. 简介：聚类是一种无监督的学习方式，它将相似的对象归到同一个簇中。聚类算法几乎可以应用于所有的对象，簇内的对象越相似，聚类的效果越好；  1. 优缺点 优点：容易实现； 缺点：可能收敛到局部最小值，在大规模数据上面收敛比较慢； 数据：数值型数据；">
   <link rel="canonical" href="http://yoursite.com/2015/09/20/k-e5-9d-87-e5-80-bc-e8-81-9a-e7-b1-bb-e7-ae-97-e6-b3-95/">
 
 
@@ -268,7 +268,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+                <time title="Modified: 2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
             
           
@@ -305,12 +305,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="0-简介："><a href="#0-简介：" class="headerlink" title="0. 简介："></a>0. 简介：</h3><p>聚类是一种无监督的学习方式，它将相似的对象归到同一个簇中。聚类算法几乎可以应用于所有的对象，簇内的对象越相似，聚类的效果越好；  </p>
-<h3 id="1-优缺点"><a href="#1-优缺点" class="headerlink" title="1. 优缺点"></a>1. 优缺点</h3><ul>
+        <h3 id="0-简介："><a href="#0-简介：" class="headerlink" title="0. 简介："></a>0. 简介：</h3><p>聚类是一种无监督的学习方式，它将相似的对象归到同一个簇中。聚类算法几乎可以应用于所有的对象，簇内的对象越相似，聚类的效果越好；  </p><h3 id="1-优缺点"><a href="#1-优缺点" class="headerlink" title="1. 优缺点"></a>1. 优缺点</h3><ul>
 <li>优点：容易实现；</li>
 <li>缺点：可能收敛到局部最小值，在大规模数据上面收敛比较慢；</li>
 <li>数据：数值型数据；</li>
-</ul>
+</ul><a id="more"></a>
+
 <h3 id="2-算法伪代码"><a href="#2-算法伪代码" class="headerlink" title="2. 算法伪代码"></a>2. 算法伪代码</h3><p>创建k个点作为起始质心（经常是随机选择）<br>当任意一个点的簇分配结果发生变化时<br>    对数据集中的每个数据点<br>        对每个质心<br>            计算质心与数据点之间的距离<br>        将数据点分配到距其最近的簇<br>    对每一个簇，计算簇中所有点的均值并将其均值作为质心</p>
 <h3 id="3-度量聚类效果的方法："><a href="#3-度量聚类效果的方法：" class="headerlink" title="3. 度量聚类效果的方法："></a>3. 度量聚类效果的方法：</h3><ol>
 <li>SSE(Sum of Squared Error，误差平方和)。<ol>

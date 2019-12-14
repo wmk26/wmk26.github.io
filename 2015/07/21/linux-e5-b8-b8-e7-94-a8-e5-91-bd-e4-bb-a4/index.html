@@ -55,17 +55,17 @@
   };
 </script>
 
-  <meta name="description" content="用linux命令的时候很容易忘，以至于每次用的时候都得重新搜索，此处记录自己经常使用的一些命令，方便自己查找。 1. sort命令 -u：unique，去除重复行 -t：指定字段分隔符 -k：指定按第几列来排序 -r：反向排序  使用示例：sort -t “:” -k 3 /etc/passwd（如果以tab键为分割，使用-t$’\t’） 在使用的使用遇到如下问题： $ sort -n -t $’">
+  <meta name="description" content="用linux命令的时候很容易忘，以至于每次用的时候都得重新搜索，此处记录自己经常使用的一些命令，方便自己查找。1. sort命令 -u：unique，去除重复行 -t：指定字段分隔符 -k：指定按第几列来排序 -r：反向排序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux常用命令">
 <meta property="og:url" content="http://yoursite.com/2015/07/21/linux-e5-b8-b8-e7-94-a8-e5-91-bd-e4-bb-a4/index.html">
 <meta property="og:site_name" content="恰同学少年">
-<meta property="og:description" content="用linux命令的时候很容易忘，以至于每次用的时候都得重新搜索，此处记录自己经常使用的一些命令，方便自己查找。 1. sort命令 -u：unique，去除重复行 -t：指定字段分隔符 -k：指定按第几列来排序 -r：反向排序  使用示例：sort -t “:” -k 3 /etc/passwd（如果以tab键为分割，使用-t$’\t’） 在使用的使用遇到如下问题： $ sort -n -t $’">
+<meta property="og:description" content="用linux命令的时候很容易忘，以至于每次用的时候都得重新搜索，此处记录自己经常使用的一些命令，方便自己查找。1. sort命令 -u：unique，去除重复行 -t：指定字段分隔符 -k：指定按第几列来排序 -r：反向排序">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-12-12T12:25:35.379Z">
+<meta property="og:updated_time" content="2019-12-14T09:41:59.322Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux常用命令">
-<meta name="twitter:description" content="用linux命令的时候很容易忘，以至于每次用的时候都得重新搜索，此处记录自己经常使用的一些命令，方便自己查找。 1. sort命令 -u：unique，去除重复行 -t：指定字段分隔符 -k：指定按第几列来排序 -r：反向排序  使用示例：sort -t “:” -k 3 /etc/passwd（如果以tab键为分割，使用-t$’\t’） 在使用的使用遇到如下问题： $ sort -n -t $’">
+<meta name="twitter:description" content="用linux命令的时候很容易忘，以至于每次用的时候都得重新搜索，此处记录自己经常使用的一些命令，方便自己查找。1. sort命令 -u：unique，去除重复行 -t：指定字段分隔符 -k：指定按第几列来排序 -r：反向排序">
   <link rel="canonical" href="http://yoursite.com/2015/07/21/linux-e5-b8-b8-e7-94-a8-e5-91-bd-e4-bb-a4/">
 
 
@@ -268,7 +268,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+                <time title="Modified: 2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
             
           
@@ -305,13 +305,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>用linux命令的时候很容易忘，以至于每次用的时候都得重新搜索，此处记录自己经常使用的一些命令，方便自己查找。</p>
-<h3 id="1-sort命令"><a href="#1-sort命令" class="headerlink" title="1. sort命令"></a><strong>1. sort命令</strong></h3><ul>
+        <p>用linux命令的时候很容易忘，以至于每次用的时候都得重新搜索，此处记录自己经常使用的一些命令，方便自己查找。</p><h3 id="1-sort命令"><a href="#1-sort命令" class="headerlink" title="1. sort命令"></a><strong>1. sort命令</strong></h3><ul>
 <li>-u：unique，去除重复行</li>
 <li>-t：指定字段分隔符</li>
 <li>-k：指定按第几列来排序</li>
 <li>-r：反向排序</li>
-</ul>
+</ul><a id="more"></a>
+
 <p>使用示例：sort -t “:” -k 3 /etc/passwd（如果以tab键为分割，使用-t$’\t’） 在使用的使用遇到如下问题：</p>
 <p>$ sort -n -t $’\t’ output.txt &gt;output_sort.txt<br>sort: 字符串比较出现错误: Invalid or incomplete multibyte or wide character<br>sort: 请设置LC_ALL=’C’ 以避免出现问题。<br>sort: 要比较的字符串为”0\t-1\t鎺ㄨ繘澶х┖娓湴鍖鸿鍒掑缓璁\276 鍔犲揩鎵撻€犲煄甯傛柊鐨勫闀挎瀬\t[鎺ㄨ繘/v, 澶\247/a, 绌烘腐/n, 鍦板尯/n, 瑙勫垝/n, 寤鸿/vn,  /nr, 鍔犲揩/v, 鎵撻€\240/v, 鍩庡競/n, 鏂\260/a, 鐨\204/uj, 澧為暱鏋\201/n]“ 和”0\t1\t鍘熸爣棰橈細绀句細鏁戝姪浣撳埗鏈哄埗鏈夊緟瀹屽杽\t[鍘\237/b, 鏍囬/n, 锛\232/w, 绀句細/n, 鏁戝姪/v, 浣撳埗/n, 鏈哄埗/n, 鏈夊緟/v, 瀹屽杽/v]“。</p>
 <p>解决方案：在终端输入命令：export LC_ALL=C，然后再排序即可； 多列排序，命令如下： sort -t ‘ ‘ -k1,1 -k2n,2 data 说明：</p>

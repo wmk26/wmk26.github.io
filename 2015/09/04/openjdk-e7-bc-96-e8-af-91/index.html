@@ -55,17 +55,17 @@
   };
 </script>
 
-  <meta name="description" content="近日想深入了解一下Java虚拟机，于是阅读《深入理解Java虚拟机》这本书；在编译openjdk的时候遇到一些问题。记录如下，以供参考； 0. 编译环境（Linux底下可以用sudo lshw -short命令查看）： Ubuntu 14.04LTS i386 4GB内存； Intel Core i3 cpu；  1. 获取OpenJDK源码有如下两种方式：  下载源码包 从Source Bund">
+  <meta name="description" content="近日想深入了解一下Java虚拟机，于是阅读《深入理解Java虚拟机》这本书；在编译openjdk的时候遇到一些问题。记录如下，以供参考；0. 编译环境（Linux底下可以用sudo lshw -short命令查看）：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenJDK编译">
 <meta property="og:url" content="http://yoursite.com/2015/09/04/openjdk-e7-bc-96-e8-af-91/index.html">
 <meta property="og:site_name" content="恰同学少年">
-<meta property="og:description" content="近日想深入了解一下Java虚拟机，于是阅读《深入理解Java虚拟机》这本书；在编译openjdk的时候遇到一些问题。记录如下，以供参考； 0. 编译环境（Linux底下可以用sudo lshw -short命令查看）： Ubuntu 14.04LTS i386 4GB内存； Intel Core i3 cpu；  1. 获取OpenJDK源码有如下两种方式：  下载源码包 从Source Bund">
+<meta property="og:description" content="近日想深入了解一下Java虚拟机，于是阅读《深入理解Java虚拟机》这本书；在编译openjdk的时候遇到一些问题。记录如下，以供参考；0. 编译环境（Linux底下可以用sudo lshw -short命令查看）：">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-12-12T12:25:35.380Z">
+<meta property="og:updated_time" content="2019-12-14T09:41:59.311Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenJDK编译">
-<meta name="twitter:description" content="近日想深入了解一下Java虚拟机，于是阅读《深入理解Java虚拟机》这本书；在编译openjdk的时候遇到一些问题。记录如下，以供参考； 0. 编译环境（Linux底下可以用sudo lshw -short命令查看）： Ubuntu 14.04LTS i386 4GB内存； Intel Core i3 cpu；  1. 获取OpenJDK源码有如下两种方式：  下载源码包 从Source Bund">
+<meta name="twitter:description" content="近日想深入了解一下Java虚拟机，于是阅读《深入理解Java虚拟机》这本书；在编译openjdk的时候遇到一些问题。记录如下，以供参考；0. 编译环境（Linux底下可以用sudo lshw -short命令查看）：">
   <link rel="canonical" href="http://yoursite.com/2015/09/04/openjdk-e7-bc-96-e8-af-91/">
 
 
@@ -268,7 +268,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+                <time title="Modified: 2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
             
           
@@ -305,8 +305,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>近日想深入了解一下Java虚拟机，于是阅读<a href="https://book.douban.com/subject/24722612/" target="_blank" rel="noopener">《深入理解Java虚拟机》</a>这本书；在编译openjdk的时候遇到一些问题。记录如下，以供参考；</p>
-<h3 id="0-编译环境（Linux底下可以用sudo-lshw-short命令查看）："><a href="#0-编译环境（Linux底下可以用sudo-lshw-short命令查看）：" class="headerlink" title="0. 编译环境（Linux底下可以用sudo lshw -short命令查看）："></a>0. 编译环境（Linux底下可以用sudo lshw -short命令查看）：</h3><ol>
+        <p>近日想深入了解一下Java虚拟机，于是阅读<a href="https://book.douban.com/subject/24722612/" target="_blank" rel="noopener">《深入理解Java虚拟机》</a>这本书；在编译openjdk的时候遇到一些问题。记录如下，以供参考；</p><h3 id="0-编译环境（Linux底下可以用sudo-lshw-short命令查看）："><a href="#0-编译环境（Linux底下可以用sudo-lshw-short命令查看）：" class="headerlink" title="0. 编译环境（Linux底下可以用sudo lshw -short命令查看）："></a>0. 编译环境（Linux底下可以用sudo lshw -short命令查看）：</h3><a id="more"></a>
+<ol>
 <li>Ubuntu 14.04LTS i386</li>
 <li>4GB内存；</li>
 <li>Intel Core i3 cpu；</li>

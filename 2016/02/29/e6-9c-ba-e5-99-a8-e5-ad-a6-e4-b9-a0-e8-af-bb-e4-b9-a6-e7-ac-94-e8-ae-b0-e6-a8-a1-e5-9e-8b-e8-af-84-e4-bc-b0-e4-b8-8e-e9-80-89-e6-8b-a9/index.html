@@ -55,21 +55,21 @@
   };
 </script>
 
-  <meta name="description" content="以下是在阅读周志华老师的《机器学习》书籍时做的笔记，同时自己也搜索了一些相关的知识，整理如下； 1. 经验误差学习器在训练集上的误差称为“训练误差”或“经验误差”，在新样本上的误差称为“泛化误差”； 我们希望得到泛化误差最小的学习器，然而我们事先并不知道新样本是什么样，实际能做的是努力使经验误差最小化； 2. 过拟合与欠拟合过拟合：当学习器把训练样本学得“太好”了的时候，很可能已经把样本自身的一些">
+  <meta name="description" content="以下是在阅读周志华老师的《机器学习》书籍时做的笔记，同时自己也搜索了一些相关的知识，整理如下；1. 经验误差学习器在训练集上的误差称为“训练误差”或“经验误差”，在新样本上的误差称为“泛化误差”； 我们希望得到泛化误差最小的学习器，然而我们事先并不知道新样本是什么样，实际能做的是努力使经验误差最小化；">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习读书笔记——模型评估与选择">
 <meta property="og:url" content="http://yoursite.com/2016/02/29/e6-9c-ba-e5-99-a8-e5-ad-a6-e4-b9-a0-e8-af-bb-e4-b9-a6-e7-ac-94-e8-ae-b0-e6-a8-a1-e5-9e-8b-e8-af-84-e4-bc-b0-e4-b8-8e-e9-80-89-e6-8b-a9/index.html">
 <meta property="og:site_name" content="恰同学少年">
-<meta property="og:description" content="以下是在阅读周志华老师的《机器学习》书籍时做的笔记，同时自己也搜索了一些相关的知识，整理如下； 1. 经验误差学习器在训练集上的误差称为“训练误差”或“经验误差”，在新样本上的误差称为“泛化误差”； 我们希望得到泛化误差最小的学习器，然而我们事先并不知道新样本是什么样，实际能做的是努力使经验误差最小化； 2. 过拟合与欠拟合过拟合：当学习器把训练样本学得“太好”了的时候，很可能已经把样本自身的一些">
+<meta property="og:description" content="以下是在阅读周志华老师的《机器学习》书籍时做的笔记，同时自己也搜索了一些相关的知识，整理如下；1. 经验误差学习器在训练集上的误差称为“训练误差”或“经验误差”，在新样本上的误差称为“泛化误差”； 我们希望得到泛化误差最小的学习器，然而我们事先并不知道新样本是什么样，实际能做的是努力使经验误差最小化；">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://webdataanalysis.net/wp-content/uploads/2010/02/min-max.png">
 <meta property="og:image" content="http://webdataanalysis.net/wp-content/uploads/2010/02/z-score.png">
 <meta property="og:image" content="http://webdataanalysis.net/wp-content/uploads/2010/02/log-function.png">
 <meta property="og:image" content="http://webdataanalysis.net/wp-content/uploads/2010/02/atan-function.png">
-<meta property="og:updated_time" content="2019-12-12T12:25:35.382Z">
+<meta property="og:updated_time" content="2019-12-14T09:41:59.293Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习读书笔记——模型评估与选择">
-<meta name="twitter:description" content="以下是在阅读周志华老师的《机器学习》书籍时做的笔记，同时自己也搜索了一些相关的知识，整理如下； 1. 经验误差学习器在训练集上的误差称为“训练误差”或“经验误差”，在新样本上的误差称为“泛化误差”； 我们希望得到泛化误差最小的学习器，然而我们事先并不知道新样本是什么样，实际能做的是努力使经验误差最小化； 2. 过拟合与欠拟合过拟合：当学习器把训练样本学得“太好”了的时候，很可能已经把样本自身的一些">
+<meta name="twitter:description" content="以下是在阅读周志华老师的《机器学习》书籍时做的笔记，同时自己也搜索了一些相关的知识，整理如下；1. 经验误差学习器在训练集上的误差称为“训练误差”或“经验误差”，在新样本上的误差称为“泛化误差”； 我们希望得到泛化误差最小的学习器，然而我们事先并不知道新样本是什么样，实际能做的是努力使经验误差最小化；">
 <meta name="twitter:image" content="http://webdataanalysis.net/wp-content/uploads/2010/02/min-max.png">
   <link rel="canonical" href="http://yoursite.com/2016/02/29/e6-9c-ba-e5-99-a8-e5-ad-a6-e4-b9-a0-e8-af-bb-e4-b9-a6-e7-ac-94-e8-ae-b0-e6-a8-a1-e5-9e-8b-e8-af-84-e4-bc-b0-e4-b8-8e-e9-80-89-e6-8b-a9/">
 
@@ -273,7 +273,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+                <time title="Modified: 2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
             
           
@@ -310,8 +310,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>以下是在阅读周志华老师的《机器学习》书籍时做的笔记，同时自己也搜索了一些相关的知识，整理如下；</p>
-<h2 id="1-经验误差"><a href="#1-经验误差" class="headerlink" title="1. 经验误差"></a>1. 经验误差</h2><p>学习器在训练集上的误差称为“训练误差”或“经验误差”，在新样本上的误差称为“泛化误差”； 我们希望得到泛化误差最小的学习器，然而我们事先并不知道新样本是什么样，<strong>实际能做的是努力使经验误差最小化</strong>；</p>
+        <p>以下是在阅读周志华老师的《机器学习》书籍时做的笔记，同时自己也搜索了一些相关的知识，整理如下；</p><h2 id="1-经验误差"><a href="#1-经验误差" class="headerlink" title="1. 经验误差"></a>1. 经验误差</h2><p>学习器在训练集上的误差称为“训练误差”或“经验误差”，在新样本上的误差称为“泛化误差”； 我们希望得到泛化误差最小的学习器，然而我们事先并不知道新样本是什么样，<strong>实际能做的是努力使经验误差最小化</strong>；</p><a id="more"></a>
+
 <h2 id="2-过拟合与欠拟合"><a href="#2-过拟合与欠拟合" class="headerlink" title="2. 过拟合与欠拟合"></a>2. 过拟合与欠拟合</h2><p><strong>过拟合</strong>：当学习器把训练样本学得“太好”了的时候，很可能已经把样本自身的一些特点当作了所有潜在样本都会具有的一般性质，这样就会导致泛化性能下降，这种现象被称为过拟合（over-fitting）；过拟合是机器学习面临的关键障碍，各类学习算法都必然带有一些针对过拟合的措施，然而必须认识到，<strong>过拟合是无法彻底避免的，我们能做到的只是“缓解”，或者说减少其风险</strong>；可以这样理解：机器学习面临的问题通常是NP难甚至更难，而有效的学习算法必然是在多项式时间内运行完成，若可彻底避免过拟合，则通过经验误差最小化就能获得最优解，这就意味着我们构造性地证明了“P=NP”；因此，只要相信“P!=NP”，过拟合就不可避免； <strong>避免过拟合（高方差）</strong></p>
 <ul>
 <li>获取更多的训练样本；</li>
