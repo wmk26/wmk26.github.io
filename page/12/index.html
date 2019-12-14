@@ -224,322 +224,6 @@
   
   
   <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/11/03/ubuntu-e6-a1-8c-e9-9d-a2-e8-bf-9b-e4-b8-8d-e5-8e-bb-e5-be-aa-e7-8e-af-e5-87-ba-e7-8e-b0-e7-99-bb-e9-99-86-e7-95-8c-e9-9d-a2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mingkuo Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="恰同学少年">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2015/11/03/ubuntu-e6-a1-8c-e9-9d-a2-e8-bf-9b-e4-b8-8d-e5-8e-bb-e5-be-aa-e7-8e-af-e5-87-ba-e7-8e-b0-e7-99-bb-e9-99-86-e7-95-8c-e9-9d-a2/" class="post-title-link" itemprop="url">ubuntu 桌面进不去 循环出现登陆界面</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2015-11-03 09:32:32" itemprop="dateCreated datePublished" datetime="2015-11-03T09:32:32+08:00">2015-11-03</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>不知道为何，电脑重启之后就无法进入ubuntu系统了，密码输入正确但是过一会儿就又回到了登陆界面。循环出现。。。在网上找了一些方法全没有用。于是自己摸索，记录一下过程。 根据<a href="http://www.zhihu.com/question/24423384" target="_blank" rel="noopener">知乎上的一篇回答</a>，运行如下命令。</p>
-<p>#进去tty1<br>Ctrl + Alt + F1<br>输入用户名和密码<br>startx</p>
-<p>#一般来说能进入桌面，但是自己的还是不行。于是调出命令行，继续后面的操作</p>
-<p>后来看到<a href="http://bbs.51cto.com/thread-1163092-1.html" target="_blank" rel="noopener">这个帖子</a>里面说的原因：</p>
-<ol>
-<li>空间不足；</li>
-<li>该用户使用的是no-loginbash</li>
-</ol>
-<p>由于之前已经尝试了各种方法都不见效，于是想到可能是由于空间不足的缘故。之前登陆的时候一直提示boot分区空间不足，自己也都没在意。这次死马当作活马医，姑且一试，参考<a href="http://blog.csdn.net/wzy_1988/article/details/8848311" target="_blank" rel="noopener">这篇文章</a>，运行如下命令。</p>
-<p>#查看系统现有内核<br>dpkg –get-selections|grep linux-image  </p>
-<p>#查看现在使用的内核<br>uname -a</p>
-<p>#清理/boot分区<br>sudo apt-get purge  内核名称</p>
-<p>额，由于自己的情况比较特殊。无法清理，提示如下信息：</p>
-<p>子进程 已安装post-removal脚本 返回了错误号1</p>
-<p>参考<a href="http://www.cnblogs.com/dolphi/p/3428442.html" target="_blank" rel="noopener">这篇文章</a>解决，输入如下命令；</p>
-<p>#进入目录<br>/var/lib/dpkg</p>
-<p>#删除一个文件夹，还是备份比较保险<br>sudo mv info info.bak</p>
-<p>#重建文件夹<br>sudo mkdir info</p>
-<p>之后继续清理/boot分区；重启之后不经意间就好了，233333. 其他一些原因也是可以参考一下的，<a href="http://blog.sina.com.cn/s/blog_80393a3801018djz.html" target="_blank" rel="noopener">这篇文章</a>值得参考。   参考文献：</p>
-<ul>
-<li><a href="http://www.zhihu.com/question/24423384" target="_blank" rel="noopener">Ubuntu桌面等不进去？</a></li>
-<li><a href="http://bbs.51cto.com/thread-1163092-1.html" target="_blank" rel="noopener">Ubuntu在命令行输入了一个startx命令，之后一直是登陆</a></li>
-<li><a href="http://blog.csdn.net/wzy_1988/article/details/8848311" target="_blank" rel="noopener">Ubuntu清理boot分区</a></li>
-<li><a href="http://www.cnblogs.com/dolphi/p/3428442.html" target="_blank" rel="noopener">解决 子进程已安装的 post-removal脚本返回了错误号 100 的方法</a></li>
-<li><a href="http://blog.sina.com.cn/s/blog_80393a3801018djz.html" target="_blank" rel="noopener">ubuntu12.04循环登录，无法进桌面的问题。</a></li>
-</ul>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/11/01/e7-83-88-e6-97-a5-e7-81-bc-e5-bf-83-e5-a4-aa-e9-98-b3-e9-bb-91-e5-ad-90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mingkuo Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="恰同学少年">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2015/11/01/e7-83-88-e6-97-a5-e7-81-bc-e5-bf-83-e5-a4-aa-e9-98-b3-e9-bb-91-e5-ad-90/" class="post-title-link" itemprop="url">烈日灼心&&太阳黑子</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2015-11-01 20:25:20" itemprop="dateCreated datePublished" datetime="2015-11-01T20:25:20+08:00">2015-11-01</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/读书/" itemprop="url" rel="index"><span itemprop="name">读书</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>不记得是如何入得这个坑了，看了之后感觉还不错。于是乎想写一点自己的想法；看完电影之后，意犹未尽，看到一篇豆瓣的影评“<a href="http://movie.douban.com/review/7507979/" target="_blank" rel="noopener">电影与小说的改编对比（附主创采访解说）</a>”，对于导演的良苦用心感动的“哭了”（“我是觉得如果要是这个惨案就是他们做的，然后那么惨的一个案子的话，我觉得这个恕罪无论如何观众是接受不了的。他（观众）对人物没有爱的，他不会爱这几个人，我觉得观众会非常讨厌和反感。（所以）我觉得这个作为一个剧情片和类型片，然后又是规模比较大的商业制作，我觉得它会有问题，就是观众很难接受。 ”ps: 另类QJ）。于是毅然决然地去看了原著；原著比电影更精彩而且也更加深刻。当然电影也不能算太差，只能说还勉强； 电影和小说的核心应该是人性的救赎。三个高中生当年一念之差杀死了一家五口，之后逃跑了。十几年后，在另一个地方，的哥杨自道、协警辛小丰以及鱼排工陈比觉共同抚养着一个弃婴尾巴。 他们过着艰苦的生活，拼命地自我赎罪，希望有一天能够被原谅，或者希望有一天结束这一切，不用日夜忍受煎熬。 的哥杨自道做好事从不留名，也从不接受记者的采访。“他们高高兴兴地记录下来，说，杨师傅今年已经有十三个乘客表扬啦。我就是第十三个。我前面是个八十岁的老阿嫲，说你送她去女儿家，没有收车费，还扶她上车下车；还有一个打工夫妇，说他们临盆出血，在路口拦车没有一辆车愿意停下来载他们，怕他们血污脏了汽车，是你停了下来，一路飞奔，后来孩子生在车上，但抢救及时母子平安；还有一次……”书中着重描写了他为了帮助一个大妈追回被抢的一万块钱，被刀砍伤。后来这个也成为了伊谷春明确他们是犯罪嫌疑人的一个突破口，救赎中带着一丝毁灭的意味。书中关于杨自道的另一个重点无疑是他和伊谷夏的爱情。因为在救赎，他只能拼命压抑自己心中真挚的感情，直到最后喷薄而出。可惜可叹； 协警辛小丰，或许他是整个事件的罪魁祸首，始作俑者。无法控制自己身体里最原始的冲到，以至于犯下了用一生去救赎的罪恶。或许是为了更快的救赎，或许是其他什么原因，当初原本有一个还不错的工作的辛小丰，在一次见义勇为之后毅然决然地去当了一个协警（两三百的薄薪）。按照他自己的说法“当时我决定去那里，你们都反对。比觉说，蜡烛底下不一定最黑，因为它身边可能有聪明人。他理解错了，我不是因为黑，才过去的，是我喜欢。有点像是……啄木鸟，不过我是在啄自己身上的虫，我喜欢啄的感觉，越啄我越踏实。也许有一天，我会死在那里，可是，我想，没有比这个结局更好的了。”我想如果没有那次冲动，辛小丰一定能够成为一名优秀的警察（在小说中，应该是成为一个化学博士）。可惜生活没有如果。 鱼排工陈比觉，“干最低等的体力活，却又有不相称的学识”，尽一切可能去照顾尾巴。即使在如此艰苦的环境下，依然没有放弃自己的天文梦想。或许他也在幻想，有一天结束救赎，是不是就可以光明正大的追求自己的梦想了。这注定是一个没有答案的问题； 维系三个人的无疑是尾巴。由于尾巴的生日意外地和他们犯下凶杀案的日期相同，于是他们一厢情愿地认为，这是那个女孩的投胎转世。他们拼命地溺爱尾巴，其中的一个原因或许是寻求另一种救赎的方式吧。尾巴对于他们仿佛真的是一种天谴，比如说“尾巴，正在把不相干的人，引入他们不愿为外人关注的私人生活中。”，再如辛小丰有一个记录自己抓过多少个人得本子，后来被尾巴翻出来无意中把之前的那些页给撕了。“辛小丰打开一看，之前写过的“正”字，全部被撕掉，只剩下现在打头的第一页上剩一个半的“正”字。下面，就是“中班陈杨辛”四个字。再翻过去，就是老陈，爸爸、姐姐、小爸爸、陈杨辛、书书、小狗、大鸡的电话号码。按本子上原有的通讯录的格式填写的。只有小狗和大鸡的后面电话栏是空的，它们没有电话，陈杨辛自己的号码是5555555。 辛小丰说不出的绝望和空虚，好像这十多年来的一切都很虚妄。所有的努力似乎都清零了。这是他自己对自己的隐秘交待，他甚至羞于做这样的记录，正是这样，他特别不愿意任何人看见它，包括阿道。可是，他又知道，这个幼稚可笑的记录，一点一点给他带来了隐秘的慰藉。十几年来，不知哪一天开始，每帮一次人、每抓一个混蛋，他都会记上一划，这记录令他羞愧难堪，可是他还是坚持记下来了。现在，几乎都不存在了。这也许就是一个暗示，暗示他，十多年来，他一笔一划甚至拿生命做代价的积累，实际上依然是轻若鸿毛的东西，转眼就灰飞烟灭了。 ”虽然这样，他们对尾巴的爱依然催人泪下，“他们对尾巴的爱护，看了我都想哭，那是男人内心最美好的真情。你看，走马灯一样，我见了那么多谋婚的对象，还有五湖四海的客户，我还是觉得，他们三个人最特别。你看这大街上，随眼看去，这些都是什么男人啊，自私自利、猥琐、无趣、自以为是、贪婪自大，眼神不是像木头就是像大粪。这些人啊，开着名车，你立刻不想要那名车了；他浑身是钱，你立刻觉得原来钱多也没意思；这些人成了名流贤达，你立刻觉得名望原来都是垃圾箱啊；这些人……”，“尾巴翻了个身，床上传来嘎硌、嘎硌、嘎硌很道劲的声音。两人走过去，袖手站在她床前看。我的天，辛小丰说，小孩磨牙齿这么响啊，简直像嚼干豆子啊！会不会把牙咬坏了？ 两个人都像欣赏什么绝妙音乐，脸上笑眯眯的。杨自道说，小时候，听我母亲说我也老磨牙。看来，她是像我多一点。不会吧，辛小丰说，带出去，人家都说像我。” 最后再说一个人，卓生发。很难说他是一个好人或者一个坏人，或许书中伊谷夏给他的评价是比较中肯的。他是一个阴暗的好人。“记得吧，有一天，我俩在那上面，伊谷夏指着石屋天台，你说，你会得到神的宽宥。那时，我也相信你。我觉得你孤单而善良。但是现在，和他们三个相比，我认为你得不到神的宽恕。你瞧不起山下的人，说那些人从小到老，都没有罪过心、负疚心，从来不知道忏悔。可是，现在，我告诉你，神也未必宽恕你，因为你心里只有恨，你心里装满了恨，你只想证明每一个人都是比你更恶的人！”，“胡须在轻微荡漾。你也是好人，但是，我觉得大树看透了你！伊谷夏站起来说，你从来就没有光明磊落过，你没有责任感、不敢担当，没有牺牲精神、没有勇气也没有人心美好的真情！除了挑剔别人，热衷发现别人的恶，你什么都没有！我就是来告诉你，你是好人，阴暗的好人，到处都有你这样阴暗的好人，而我，——讨厌你！ ”。按照书中的说法，当年，卓生发岳父母和妻子孩子被困火场，本来有足够的时间去救他们，但是他退缩了。之后他虽然也在救赎，比如吃素，对小动物充满爱心等等，但是显然这种救赎相比于其他三人是苍白无力的。他的性格依然是懦弱的，目睹了流浪歌手被碾压的时候，除了心中的恻隐之心，他仍旧选择了逃避。“有一天，天界山的房东，指着山下的烟霭说，他一看那边，心里总是充满了恨。他说，现在的人心太坏了。他们心中没有准绳、没有神明。他们虽然没有杀人放火，没有烧杀抢劫，可是，心里面堆满了蛆虫一样的恶，贪婪、自私……又因为这些恶，为法律不察、而且人人有份，所以，这世上，你几乎找不到一颗敬畏愧疚之心，这种人一生乏善可陈，可是心安理得，他们一起在法律边缘，糟蹋着道德、毒化了空气。这才是真正的罪人。房东说，哪怕失足大错，只要知罪错懂懊悔，用一生来赎罪了，就是神会宽恕的人。 他为什么这么说？ 他说，他就是个罪人。但是，他羞于说原因。他只是告诉我，他会得到神的宽恕。”，我不知道他是否能够得到救赎，但就像伊谷夏说的那样，我讨厌他。 比较赞同小说中伊谷春对于法律的见解，他说“我很喜欢法律。我觉得法律，是人类发明的最好的东西了。没有它，我们都是野生动物。我们天生比所有动物都坏。要制定出好法律不容易，更不容易的是，不折不扣地遵从它、执行它。不论在哪一个环节，我们血管里的野性、兽性、惰性都会伺机钻出来，占法律的便宜。一部好法律，一部人人遵从的好法律，决定了这个社会的进化步伐。 法律有时候不近情理，伊谷春说，但是，从警多年后我想透了这个问题。不近情理是法律折衷的代价，这不能是我们拒绝它的理由。因为如果这样，这个社会就会失去秩序。没有秩序，我们就沦为动物世界。哪个方面失去，哪个方面就沦陷。所以，法律应该成为我们敬畏的神——你为什么不说话？ ”。人人心中都有善有恶，但是有一个内在道德在制约着我们心中的善恶，有一个外在的律法在审判着善恶。看完这部小说，我想在心里我会宽恕他们三个人，但是法律无法宽恕。但是对于卓生发，我很难用宽恕这个词。我想救赎的意义或许就在于此吧。（关于救赎与宽恕，不由地想起了冰与火之歌，在那个世界中，如果一个人犯了罪，不论是多么罪大恶极，只要穿上黑衣，成为守夜人他就能够被宽恕。想象中，他们三人都是穿上黑衣的守夜人。） 最后还是再吐槽一下电影吧。主要是关于结局的反转。此处直接引用<a href="http://movie.douban.com/review/7507979/" target="_blank" rel="noopener">豆瓣上的一段话</a>“其实《太阳黑子》最大的主题是关于人犯罪后的赎罪，三兄弟之所以拼命逼自己赎罪（杨和辛做好事及抓坏人都非常拼命不计后果），是因为之前的罪孽实在深重。如果这个“罪孽”到头来其实没那么重，那赎罪的力度似乎也没那么强了。” 最后的最后，那个叫尾巴的小姑娘真是太可爱了。比如说“尾巴说，你见不到。因为我是水仙花生的。我妈妈说，有一天，他们买了很多水仙花球，有一盆一直不开一直不开，肚子很大很大。比这个苹果还大。有一天半夜，水仙花肚子破开了，他们就听到我在哭，像拇指姑娘那么大。”，脑补了一下场景，简直太可爱了。假如以后有这样一位小姑娘，能不倾尽全力去呵护？（希望前世有一个情人，哈哈）</p>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/10/25/e5-b0-81-e7-a5-9e-e6-bc-94-e4-b9-89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mingkuo Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="恰同学少年">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2015/10/25/e5-b0-81-e7-a5-9e-e6-bc-94-e4-b9-89/" class="post-title-link" itemprop="url">封神演义</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2015-10-25 22:27:16" itemprop="dateCreated datePublished" datetime="2015-10-25T22:27:16+08:00">2015-10-25</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/读书/" itemprop="url" rel="index"><span itemprop="name">读书</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>第一次想看这本小说是因为在微信上面看到一篇文章，<a href="http://mp.weixin.qq.com/s?__biz=MjM5NDAyNjU0MA==&mid=214244562&idx=4&sn=d6b891a77c883d5a532d6e76636672de&scene=0#rd" target="_blank" rel="noopener">用反派Boss的视角看主角是一种怎样的体验</a>。故事写的很有趣，于是萌生了去看原著的想法； 期望越高，失望也越大。勉勉强强看完了全书，估计是自己没有看懂，看完之后实在不敢恭维；与四大名著的有很大的差距。以下都是自己不成熟的看法，姑妄记之。 全书虽然想象奇特，但是言语干瘪，比如人物一出场必定先赋诗一首，说自己有多么多么厉害；雷同情节比比皆是，比如姜子牙在破十绝阵的时候，我都怀疑作者是复制粘贴的，都是先派一个弱者过去送死，然后再派一个厉害的人过去解决，像这样的描写作者竟然不厌其烦地写了10次，也是醉了；而且对于书中的价值观实在不敢苟同，比如说遇到不可解释的事情，一股脑归咎于天命、天意、天定；（和基督教的某一阶段很像，无法解释的都丢给上帝他老人家。。。）；再比如，按照书中的意思，阐教应该是正统，而截教则无疑是一个反派。但是观书中两派人物的行为，实在不敢苟同；截教的人擒获阐教一般都先关押住，然后让阐教的人救走；而阐教的人遇到截教的人则干净杀绝，毫不留情，谓之封神榜上有名的人物，必死。而且很多时候，都是以大欺小，以多欺少；阐教遇到困难大boss直接出手。而截教的教主则是在最后不得已而出手的，被两个师兄联合西方教主打残，如果不是老师出手相助，估计又会是封神榜上有名的人物。。。 以下不分体例，直接吐槽； 先说土行孙和邓婵玉，按照书中的描写，简直就是强暴，还强说两人是前缘既定；且不说邓婵娟这个千金小姐如何美丽；单说这个土行孙就让人十分不忿，不仅身矮貌丑（原文“身不过四尺，面如土色”），而且人品猥琐下流，在一次去周营刺杀姜子牙的时候，看到漂亮的女子就想行不轨之事；后来，邓婵玉被俘，然后姜子牙强行按照天意将她嫁给土行孙，当晚，土行孙也不顾及婵玉的想法，强行行了周公之礼。简直无耻至极；不由的想到了水浒中的另两个人物，扈三娘和王英，扈三娘全家被杀，还被强行嫁给杀父仇人。如此美化，实在让人反感。（之前对于这个情节没有多少想法，直到看了<a href="http://news.ifeng.com/a/20150730/44308982_0.shtml" target="_blank" rel="noopener">这样一篇评论</a>，道德的外衣如何能够掩盖真实的人性？感谢作者。） 接着说说那个狐狸精，当初受命去蛊惑君王。（女娲）娘娘曰：“三妖听吾密旨：成汤望气黯然，当失天下；凤鸣岐山，西周已生圣主。天意已定，气数使然。你三妖可隐其妖形，托身宫院，惑乱君心；俟武王伐纣，以助成功，不可残害众生。事成之后，使你等亦成正果。”。可是后来呢？武王大军已经攻进朝歌了，三妖逃命，被女娲拿住。三妖泣而告曰：“启娘娘得知：昔日是娘娘用招妖幡招小妖去朝歌，潜入宫禁，迷惑纣王，使他不行正道，断送他的天下。小畜奉命，百事逢迎，去其左右，令彼将天下断送。今已垂亡，正欲覆娘娘钧旨，不期被杨戬等追袭，路遇娘娘圣驾，尚望娘娘救护，娘娘反将小畜缚去，见姜子牙发落，不是娘娘‘出乎反乎’了？望娘娘上裁！”女娲娘娘曰：“吾使你断送殷受天下，原是合上天气数；岂意你无端造业，残贼生灵，屠毒忠烈，惨恶异常，大拂上天好生之仁。今日你罪恶贯盈，理宜正法。”三妖俯伏，不敢声言。。。实在不想说太多。 再说说纣王，我感觉纣王还真是有点无辜。从书中可以看出，没去祭祀女娲之前，纣王根本就不是一个坏皇帝。甚至可以说还算贤明。千不该万不该的是在祭祀女娲的时候觊觎女娲的美貌意淫了一下，由此覆灭了整个王朝。话说女娲一个神仙也实在小气。因为这一个小错，就颠覆了真个商朝。果然女生是惹不得的。。。 总体来说，这本小说还算将就吧。在豆瓣上看到一些不错的书评；记录如下：</p>
-<ul>
-<li><a href="http://book.douban.com/review/6538466/" target="_blank" rel="noopener">解密《封神榜》（精简版）</a>（分析的相当有意思，反观自己，真的是有点囫囵吞枣了。鲸吞牛饮似的阅读何时才能改变。）</li>
-<li><a href="http://book.douban.com/review/5431793/" target="_blank" rel="noopener">这就是成长啊</a>（对比小说和电视剧）</li>
-<li><a href="http://book.douban.com/review/5504186/" target="_blank" rel="noopener">流氓会仙术 &lt;封神演义&gt;中的槽点</a>（槽点相当认可）</li>
-<li><a href="http://book.douban.com/review/1284301/" target="_blank" rel="noopener">我所理解的《封神演义》</a>（封神演义影射现实？可供一观。）</li>
-<li><a href="http://book.douban.com/review/7565765/" target="_blank" rel="noopener">（转载）封神演义原来是个大阴谋</a>（阴谋论。。。）</li>
-<li><a href="http://book.douban.com/review/6960510/" target="_blank" rel="noopener">封神演义，诸多不足，但属不可不读之书</a>（简评，相当不错。）</li>
-<li><a href="http://book.douban.com/review/1902187/" target="_blank" rel="noopener">四个男人的故事</a>（分析姜子牙，杨戬、土行孙和洪锦，部分观点不太认同。）</li>
-</ul>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/10/25/e4-b8-80-e4-ba-9b-e4-b8-8d-e9-94-99-e7-9a-84-e5-8f-a5-e5-ad-90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -651,7 +335,7 @@
   
   
   <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/10/25/2015-e8-a7-82-e5-bd-b1-e8-ae-b0-e5-bd-95/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/10/25/2015-movies-records/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mingkuo Wang">
@@ -665,7 +349,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
             
-            <a href="/2015/10/25/2015-e8-a7-82-e5-bd-b1-e8-ae-b0-e5-bd-95/" class="post-title-link" itemprop="url">2015观影记录</a>
+            <a href="/2015/10/25/2015-movies-records/" class="post-title-link" itemprop="url">2015 观影记录</a>
           
         </h1>
 
@@ -691,7 +375,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+                <time title="Modified: 2019-12-14 17:11:40" itemprop="dateModified" datetime="2019-12-14T17:11:40+08:00">2019-12-14</time>
               </span>
             
           
@@ -720,13 +404,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>看过一些电影，不想就这么只是看过。于是想记录其中一些点滴的想法。（翻看2015年日记的时候，补上一些曾经看过的电影） 2015.1月</p>
-<ol>
+          <p>看过一些电影，不想就这么只是看过。于是想记录其中一些点滴的想法。（翻看 2015 年日记的时候，补上一些曾经看过的电影）</p>
+<h2 id="2015-1-月"><a href="#2015-1-月" class="headerlink" title="2015.1 月"></a>2015.1 月</h2><ol>
 <li>智取威虎山（淮南）</li>
 <li>千与千寻</li>
 </ol>
-<p>2015.2月</p>
-<ol>
+<h2 id="2015-2-月"><a href="#2015-2-月" class="headerlink" title="2015.2 月"></a>2015.2 月</h2><ol>
 <li>龙猫</li>
 <li>中国远征军</li>
 <li>角斗士</li>
@@ -735,53 +418,44 @@
 <li>大话西游之月光宝盒</li>
 <li>黄金时代</li>
 </ol>
-<p>2015.3月</p>
-<ol>
+<h2 id="2015-3-月"><a href="#2015-3-月" class="headerlink" title="2015.3 月"></a>2015.3 月</h2><ol>
 <li>苍穹之下</li>
 <li>死亡诗社</li>
 <li>木星上行</li>
 </ol>
-<p>2015.4月</p>
-<ol>
+<h2 id="2015-4-月"><a href="#2015-4-月" class="headerlink" title="2015.4 月"></a>2015.4 月</h2><ol>
 <li>少年王</li>
 <li>柳如是</li>
 <li>星际穿越</li>
-<li>速度与激情7</li>
+<li>速度与激情 7</li>
 </ol>
-<p>2015.5月</p>
-<ol>
+<h2 id="2015-5-月"><a href="#2015-5-月" class="headerlink" title="2015.5 月"></a>2015.5 月</h2><ol>
 <li>神盾局特工（全系列）</li>
 </ol>
-<p>2015.6月</p>
-<ol>
+<h2 id="2015-6-月"><a href="#2015-6-月" class="headerlink" title="2015.6 月"></a>2015.6 月</h2><ol>
 <li>侏罗纪世界</li>
 <li>三傻大闹宝莱坞</li>
 </ol>
-<p>2015.7月</p>
-<ol>
+<h2 id="2015-7-月"><a href="#2015-7-月" class="headerlink" title="2015.7 月"></a>2015.7 月</h2><ol>
 <li>色戒</li>
 <li>神话（电视剧）</li>
 <li>秒速五零米</li>
 </ol>
-<p>2015.8月</p>
-<ol>
+<h2 id="2015-8-月"><a href="#2015-8-月" class="headerlink" title="2015.8 月"></a>2015.8 月</h2><ol>
 <li><a href="http://www.wangmingkuo.com/life/%e7%9b%b2%e5%b1%b1/" target="_blank" rel="noopener">盲山</a></li>
 <li>生化危机系列</li>
 </ol>
-<p>2015.9月</p>
-<ol>
+<h2 id="2015-9-月"><a href="#2015-9-月" class="headerlink" title="2015.9 月"></a>2015.9 月</h2><ol>
 <li>末日崩塌</li>
 </ol>
-<p>2015.10月之前</p>
-<ol>
+<h2 id="2015-10-月之前"><a href="#2015-10-月之前" class="headerlink" title="2015.10 月之前"></a>2015.10 月之前</h2><ol>
 <li><a href="http://www.wangmingkuo.com/reading/%e6%88%91%e7%9a%84%e5%9b%a2%e9%95%bf%e6%88%91%e7%9a%84%e5%9b%a2/" target="_blank" rel="noopener">我的团长我的团</a></li>
 <li><a href="http://www.wangmingkuo.com/reading/%e5%8d%8e%e5%b0%94%e8%a1%97%e4%b9%8b%e7%8b%bc/" target="_blank" rel="noopener">华尔街之狼</a></li>
 </ol>
-<p>2015.10</p>
-<ol>
+<h2 id="2015-10"><a href="#2015-10" class="headerlink" title="2015.10"></a>2015.10</h2><ol>
 <li><a href="http://www.wangmingkuo.com/life/%e6%bb%9a%e8%9b%8b%e5%90%a7%ef%bc%8c%e8%82%bf%e7%98%a4%e5%90%9b%ef%bc%81/" target="_blank" rel="noopener">滚蛋吧，肿瘤君</a></li>
 <li>琅琊榜</li>
-<li><a href="http://www.wangmingkuo.com/life/%e5%a4%8f%e6%b4%9b%e7%89%b9%e7%83%a6%e6%81%bc/" target="_blank" rel="noopener">夏洛特烦恼</a>（10.23于梅操）</li>
+<li><a href="http://www.wangmingkuo.com/life/%e5%a4%8f%e6%b4%9b%e7%89%b9%e7%83%a6%e6%81%bc/" target="_blank" rel="noopener">夏洛特烦恼</a>（10.23 于梅操）</li>
 <li><a href="http://www.wangmingkuo.com/reading/%e7%83%88%e6%97%a5%e7%81%bc%e5%bf%83%e5%a4%aa%e9%98%b3%e9%bb%91%e5%ad%90/" target="_blank" rel="noopener">烈日灼心</a>（10.25）</li>
 <li>白日烈焰（10.26）</li>
 <li>蚁人（10.28，美国大片中常见的英雄模式电影，没什么感觉）</li>
@@ -789,8 +463,7 @@
 <li>十二公民（几乎完全模仿十二怒汉）</li>
 <li>十二怒汉</li>
 </ol>
-<p>2015.11</p>
-<ol>
+<h2 id="2015-11"><a href="#2015-11" class="headerlink" title="2015.11"></a>2015.11</h2><ol>
 <li>港囧（11.1，无力吐槽）</li>
 <li>少年王</li>
 <li>旺角卡门（张学友经典表情的出处。。。）</li>
@@ -798,8 +471,7 @@
 <li><a href="http://www.wangmingkuo.com/reading/%e7%81%ab%e6%98%9f%e6%95%91%e6%8f%b4/" target="_blank" rel="noopener">火星救援</a>（11.27，群光天河）</li>
 <li>西游记之大圣归来（第二遍。。。）</li>
 </ol>
-<p>2015.12</p>
-<ol>
+<h2 id="2015-12"><a href="#2015-12" class="headerlink" title="2015.12"></a>2015.12</h2><ol>
 <li>秦时明月真人版（看了一集之后就没兴趣了。。。）</li>
 <li>芈月传（还不错，找时间补一补春秋战国的历史，好像东周列国志还不错的样子）</li>
 <li>我的少女时代（12.21，讲诉了一个“呆萌”少女拯救堕落男生，然后相爱的故事。。。）</li>
@@ -1321,6 +993,341 @@
   </article>
 
     
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/09/20/k-e5-9d-87-e5-80-bc-e8-81-9a-e7-b1-bb-e7-ae-97-e6-b3-95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mingkuo Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="恰同学少年">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2015/09/20/k-e5-9d-87-e5-80-bc-e8-81-9a-e7-b1-bb-e7-ae-97-e6-b3-95/" class="post-title-link" itemprop="url">K均值聚类算法</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2015-09-20 21:04:35" itemprop="dateCreated datePublished" datetime="2015-09-20T21:04:35+08:00">2015-09-20</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/NLP-amp-ML/" itemprop="url" rel="index"><span itemprop="name">NLP&amp;ML</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="0-简介："><a href="#0-简介：" class="headerlink" title="0. 简介："></a>0. 简介：</h3><p>聚类是一种无监督的学习方式，它将相似的对象归到同一个簇中。聚类算法几乎可以应用于所有的对象，簇内的对象越相似，聚类的效果越好；  </p>
+<h3 id="1-优缺点"><a href="#1-优缺点" class="headerlink" title="1. 优缺点"></a>1. 优缺点</h3><ul>
+<li>优点：容易实现；</li>
+<li>缺点：可能收敛到局部最小值，在大规模数据上面收敛比较慢；</li>
+<li>数据：数值型数据；</li>
+</ul>
+<h3 id="2-算法伪代码"><a href="#2-算法伪代码" class="headerlink" title="2. 算法伪代码"></a>2. 算法伪代码</h3><p>创建k个点作为起始质心（经常是随机选择）<br>当任意一个点的簇分配结果发生变化时<br>    对数据集中的每个数据点<br>        对每个质心<br>            计算质心与数据点之间的距离<br>        将数据点分配到距其最近的簇<br>    对每一个簇，计算簇中所有点的均值并将其均值作为质心</p>
+<h3 id="3-度量聚类效果的方法："><a href="#3-度量聚类效果的方法：" class="headerlink" title="3. 度量聚类效果的方法："></a>3. 度量聚类效果的方法：</h3><ol>
+<li>SSE(Sum of Squared Error，误差平方和)。<ol>
+<li>SSE值越小表示数据点越接近它们的质心；</li>
+<li>增加k值肯定能降低SSE值；</li>
+</ol>
+</li>
+<li>对聚类结果的改进<ol>
+<li>拆分：将具有最大SSE值得簇划分成两个簇。具体实现可以将最大簇包含的点过滤出来并在这些点上运行k-均值算法，其中的k设置为2；</li>
+<li>合并：为了保持簇的总数不变，可以将两个簇进行合并；有两种合并的方法；<ol>
+<li>合并最近的质心：计算所有质心之间的距离，然后合并距离最近的两个点来实现；</li>
+<li>合并两个使得SSE增幅最小的质心：合并两个簇然后计算总的SSE值；</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="4-二分K-均值算法（bisecting-K-means）"><a href="#4-二分K-均值算法（bisecting-K-means）" class="headerlink" title="4. 二分K-均值算法（bisecting K-means）"></a>4. 二分K-均值算法（bisecting K-means）</h3><p>为了克服k均值算法收敛于局部最小值的问题，可以使用二分K-均值算法（bisecting K-means）。该算法首先将所有的点作为一个簇，然后将该簇一分为二，之后选择其中的一个簇进行划分直到得到用户指定的簇数目为止；选择哪一个簇取决于对其划分是否可以最大程度降低SSE的值； 伪代码如下：</p>
+<p>将所有的点看成一个簇<br>当簇数目小于k时<br>    对于每一个簇<br>        计算总误差<br>        在给定的簇上面进行k-均值聚类（k=2）<br>        计算将该簇一分为二之后的总误差<br>    选择使得误差最小的那个簇进行划分操作</p>
+<h3 id="5-参考代码"><a href="#5-参考代码" class="headerlink" title="5. 参考代码"></a>5. 参考代码</h3><p>#coding=utf-8<br>from numpy import *</p>
+<p>def loadDataSet(fileName):<br>    dataMat = []<br>    fr = open(fileName)<br>    for line in fr.readlines():<br>        curLine = line.strip().split(‘\t’)<br>        #map存储的是float类型的值<br>        fltLine = map(float, curLine)<br>        dataMat.append(fltLine)<br><br>    return dataMat</p>
+<p>#计算距离<br>def distEclud(vecA, vecB):<br>    return sqrt(sum(power(vecA - vecB, 2)))</p>
+<p>#为给定数据集构建一个包含k个随机质心的集合<br>def randCent(dataSet, k):<br>    #数据点的个数<br>    n = shape(dataSet)[1]<br>    centroids = mat(zeros((k,n)))<br>    for j in range(n):<br>        #第j列的最小值<br>        minJ = min(dataSet[:,j])<br>        rangeJ = float(max(dataSet[:,j]) - minJ)<br>        centroids[:,j] = minJ + rangeJ * random.rand(k,1)<br><br>    return centroids</p>
+<p>def kMeans(dataSet, k, distMeans=distEclud, createCent=randCent):<br>    #数据点的个数<br>    m = shape(dataSet)[0]<br>    #存储每个点的簇分配结果，m行，2列的矩阵<br>    #第一列为所属的类别，第二列为到所属类别的距离<br>    clusterAssment = mat(zeros((m,2)))<br>    #随机初始化k个质心；<br>    centroids = createCent(dataSet, k)<br><br>    clusterChanged = True<br>    #如果所有数据点的簇分配不再变化则结束<br>    while clusterChanged:<br>        clusterChanged = False;<br>        #对于每个数据点<br>        for i in range(m):<br>            minDist = inf; minIndex = -1<br>            #对于每个数据点，计算数据点和质心之间的距离，找到距离最近的质心<br>            for j in range(k):<br>                distJI = distMeans(centroids[j,:], dataSet[i,:])<br>                if distJI &lt; minDist:<br>                    minDist = distJI; minIndex = j<br>            #clusterAssment[i,0]表示第i行，第0列数据<br>            if clusterAssment[i,0] != minIndex:<br>                clusterChanged = True<br>            #clusterAssment[i,:]表示第i行的数据<br>            clusterAssment[i,:] = minIndex, minDist**2<br><br>        #print clusterAssment<br><br>        #更新质心的位置<br>        for cent in range(1):<br>            #通过数组过滤来获得给定簇的所有点；<br>            #clusterAssment[:,0].A表示获取所有行的第一个数据，然后与cent比较，如果等于cent则对应的结果为1，取nonzero，得到相应的不等于0的列号<br>            ptsInClust = dataSet[nonzero(clusterAssment[:,0].A==cent)[0]]<br>            #计算所有点的均值，axis=0表示沿矩阵的列方向进行均值计算<br>            centroids[cent,:] = mean(ptsInClust, axis=0)<br><br>    return centroids, clusterAssment</p>
+<p>def biKmeans(dataSet, k, distMeans=distEclud):<br>    m = shape(dataSet)[0]<br>    #创建一个矩阵来存储数据集中每个点的簇分配结果以及平方误差<br>    clusterAssment = mat(zeros((m,2)))<br>    centroid0 = mean(dataSet, axis=0).tolist()[0]<br>    #保存所有质心<br>    centList = [centroid0]<br><br>    #遍历数据集中所有点计算每个点到质心的误差值<br>    for j in range(m):<br>        clusterAssment[j, 1] = distMeans(mat(centroid0), dataSet[j,:]) ** 2<br><br><br>    while(len(centList) &lt; k):<br>        lowestSSE = inf<br>        #遍历centList中的每一个簇<br>        for i in range(len(centList)):<br>            #尝试划分每一个簇<br>            ptsInCurrCluster = dataSet[nonzero(clusterAssment[:,0].A == i)[0], :]<br>            centroidMat, splitClustAss = kMeans(ptsInCurrCluster, 2, distMeans)<br>            #划分后的误差计算<br>            sseSplit = sum(splitClustAss[:,1])<br>            #划分前的误差计算<br>            sseNotSplit = sum(clusterAssment[nonzero(clusterAssment[:,0].A != i)[0],1])<br><br>            print “sseSplit, and notSplit: “, sseSplit, sseNotSplit<br><br>            #如果划分前后的误差值之和小于lowestSSE，则本次划分将保存<br>            if(sseSplit + sseNotSplit) &lt; lowestSSE:<br>                bestCentToSplit = i<br>                bestNewCents = centroidMat<br>                bestClustAss = splitClustAss.copy()<br>                lowestSSE = sseSplit + sseNotSplit<br><br>        #使用两个数组过滤器，更新簇的分配结果<br>        bestClustAss[nonzero(bestClustAss[:,0].A == 1)[0],0] = len(centList)<br>        bestClustAss[nonzero(bestClustAss[:,0].A == 0)[0],0] = bestCentToSplit<br><br>        print ‘the bestCentToSplit is: ‘, bestCentToSplit<br>        print ‘the len of bestClustAss is: ‘, len(bestClustAss)<br>        centList[bestCentToSplit] = bestNewCents[0,:]<br>        centList.append(bestNewCents[1,:])<br>        clusterAssment[nonzero(clusterAssment[:,0].A == bestCentToSplit)[0],:] = bestClustAss<br><br>    return centList, clusterAssment</p>
+<p>if __name__ == ‘__main__‘:<br>    dataMat = mat(loadDataSet(‘testSet.txt’))<br>    myCentroids, clustAssing = kMeans(dataMat, 4)<br>    dataMat1 = mat(loadDataSet(‘testSet2.txt’))<br>    centList, myNewAssments = biKmeans(dataMat1,3)<br>    print centList</p>
+<h3 id="6-参考文献"><a href="#6-参考文献" class="headerlink" title="6. 参考文献"></a>6. 参考文献</h3><ul>
+<li>《机器学习实战》中文版</li>
+</ul>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/09/20/e5-8d-8e-e5-b0-94-e8-a1-97-e4-b9-8b-e7-8b-bc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mingkuo Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="恰同学少年">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2015/09/20/e5-8d-8e-e5-b0-94-e8-a1-97-e4-b9-8b-e7-8b-bc/" class="post-title-link" itemprop="url">华尔街之狼</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2015-09-20 19:14:00" itemprop="dateCreated datePublished" datetime="2015-09-20T19:14:00+08:00">2015-09-20</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/读书/" itemprop="url" rel="index"><span itemprop="name">读书</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>今日看到一篇<a href="http://mp.weixin.qq.com/s?__biz=MzAwNTE1NjMxMg==&mid=210571093&idx=1&sn=771d6d32994ec453846e576687b6c1ef&scene=0#rd" target="_blank" rel="noopener">介绍乔丹·贝尔福特的微信文章</a>。之前就看过以乔丹·贝尔福特为原型的电影《华尔街之狼》。看完介绍之后，又忙里偷闲看了一遍； 关于电影的具体信息，可以参考<a href="http://baike.baidu.com/subview/3149639/8775088.htm" target="_blank" rel="noopener">华尔街之狼（百度百科）</a>，以及<a href="http://movie.douban.com/subject/2997076/" target="_blank" rel="noopener">华尔街之狼 The Wolf of Wall Street (2013)（豆瓣电影）</a>。不多介绍，里面充斥着金钱、性、毒品以及人性的疯狂等等。看完之后，直接刷新自己的三观。自己印象中的那些做金融的应该都是西装革履、温文尔雅、聪明睿智的人，几乎很少将他们和这些低俗的东西联系起来，如今看来自己实在是too naive了。社会的复杂与不可捉摸完全是自己一个学生无法体会的。 电影中的一些台词也挺有意思的，See, money doesn’t just buy you a better life,better food, better cars, better pussy.It also makes you a better person.You can give generously to the church，or political party of your choice.You can save the fucking spotted owl with money. 说实话，自己也是一个非常喜欢钱的人（毕竟做不了清高的道学先生）。但是对于金钱我却有我自己的看法。金钱当然需要，没有金钱如何去做很多自己想做的事情，就连孔老夫子也曾说过（唉，又拉出老夫子当挡箭牌）“富而可求也；虽执鞭之士，吾亦为之。如不可求，从吾所好。”，“富与贵，是人之所欲也，不以其道得之，不处也；贫与贱，是人之所恶也，不以其道得之，不去也。君子去仁，恶乎成名？君子无终食之间违仁，造次必于是，颠沛必于是。”以及“不义而富且贵，于我如浮云。”，孔老夫子也爱钱，但是取之有道而已，我想这也是圣贤与普通大众的区别吧。金钱与名利其实都是必需品，不可没有，但是也不可过于贪婪（佛教中的三毒，以贪为首）。保证自己有一个舒适宽裕的生活即可。在这个方面，自己非常喜欢曾经在书上看到的一个人物，现摘抄如下，“漱溟日伴爱妻，再有这一双佳儿佳女，他的利禄之念很轻。早先原为女家不肯华门贵族下嫁白丁，所以才去猎取功名。如今既然样样称心随意，不肯把人家幸福，消磨在名利场中，乐得在家过那甜蜜的岁月。”（蜀山剑侠传），这也是自己对于金钱和富贵的要求吧，能够有个舒适的生活，之后就应该多陪陪家人，没有必要再花大量的时间在名利场中。现在虽然如此想，指不定将来自己是否会被这个纸醉金迷的社会中迷失自己呢。如此只有时刻警戒自己了。其次，自己虽喜金钱与名利，但在我自己看来，亲情、爱情以及友情的价值都远大于这些东西。 后记：写作真是一个神奇的东西，原本想写的东西和实际写出来的东西差异相当之大，要么是思想很难被表达，要么自己的文笔太烂无法表达思想。估计是后面一种情况吧。但是在写作之中又能够触发新的想法，这也是一个比较好玩的事情吧。   <strong>参考：</strong></p>
+<ul>
+<li><a href="http://wyw.5156edu.com/html/z2213m9138j1239.html" target="_blank" rel="noopener">《不义而富且贵，于我如浮云》原文和翻译</a></li>
+<li><a href="http://www.56yk.com/taici_view/3065.htm" target="_blank" rel="noopener">电影《华尔街之狼》经典对白</a></li>
+<li><a href="http://baike.baidu.com/subview/3149639/8775088.htm" target="_blank" rel="noopener">华尔街之狼（百度百科）</a></li>
+<li><a href="http://movie.douban.com/subject/2997076/" target="_blank" rel="noopener">华尔街之狼 The Wolf of Wall Street (2013)（豆瓣电影）</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAwNTE1NjMxMg==&mid=210571093&idx=1&sn=771d6d32994ec453846e576687b6c1ef&scene=0#rd" target="_blank" rel="noopener">百人和谐、大战FBI：这就是华尔街之狼的日常生活</a></li>
+</ul>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/09/20/e5-85-b3-e4-ba-8e-e6-84-9a-e5-85-ac-e7-a7-bb-e5-b1-b1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mingkuo Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="恰同学少年">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2015/09/20/e5-85-b3-e4-ba-8e-e6-84-9a-e5-85-ac-e7-a7-bb-e5-b1-b1/" class="post-title-link" itemprop="url">关于愚公移山</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2015-09-20 16:54:21" itemprop="dateCreated datePublished" datetime="2015-09-20T16:54:21+08:00">2015-09-20</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-12-12 20:25:35" itemprop="dateModified" datetime="2019-12-12T20:25:35+08:00">2019-12-12</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/读书/" itemprop="url" rel="index"><span itemprop="name">读书</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>早上起床之前刷知乎，看到一个比较有意思的问题以及一个有意思的回答，<a href="http://www.zhihu.com/question/24954053/answer/29598806" target="_blank" rel="noopener">《愚公移山》是一篇讽刺故事吗？</a>。自己之前也思考过相关的问题，这个答案给自己提供了另一种看问题的方式。于是记录一下； 对于愚公移山这个问题，一般的看法或者我们所被教育的看法是“做事有毅力，有恒心，坚持不懈，不怕困难”以及“人定胜天”等等。所以认为愚公并不愚。自己之前接受的也是这种看法，后来仔细一思考，对这种看法就有点动摇了。个人不成熟的看法认为，愚公大可不必如此去做，虽然“子子孙孙无穷匮也”，但愚公作为一家之长难道就让自己的子子孙孙把一生的时间都用在搬山上面吗？在我看来，或许有如下几种方法：</p>
+<ol>
+<li>搬离此山，另择地而居。人又何必和大自然较劲呢？（况且山长在这里，惹到谁了。。。）</li>
+<li>如果真要移山，倒是可以考虑考虑如何改善工具，提高效率，而不是一味的“荷担者三夫，叩石垦壤，箕畚运于渤海之尾。”,“欲善其事，必利其器”，利用智力来提高效率，或许可以事半功倍，即使最后无法完成移山的任务，改善的工具也可以用在其他的地方。</li>
+<li>还有一种方法，教育。要么教育子孙经商致富，之后用钱来雇人帮忙搬山。要么教育子孙读书做官，以后有钱有权了自然搬山就有望了。</li>
+</ol>
+<p>其实后两种方法，都是善用智力的结果，而不是一味的使用蛮力，虽然“功不唐捐”，虽然“天道酬勤”，但是也不是这样用蛮力的啊。这种做法不是愚而是蠢，其实故事中的愚公也不是蠢，在寓言故事中，毕竟还有天神，这种感动天神的做法未尝不是一种捷径。然而在现实生活中，没有了这种“天神”，再采用愚公的这种做法那就是蠢了。话虽如此说，但是愚公的这种精神还是可取的，在现实生活中，有时还是需要这种脚踏实地，不投机取巧的做法的。一味的想着寻找捷径还不如静下心来一步一个脚印。 以上都是自己之前的看法，不过早上看到的答案却让我有了另一种思考。这个回答里面说，“愚公移山并不是单独的一篇文，而是道家经典《列子》（《冲虚至德真经》）第五卷《汤问》这篇文里的一段话”，很显然，如果单独拿出来说，就很容易断章取义，以为可以一叶知秋，或者窥一斑而见全豹。回答中说，“愚公移山这一段，是关于“以天地为一朝，亿代为瞬息。”的时间观之辩，压根和“坚持不懈”没有一丁点关系。”。自己还是颇为赞同的。由此来看，愚公并不愚，而是和一般人不是在一个思想层次上面。由是可知，对于同一个问题，从不同的角度看待，完全可以到处截然不同的结论的。 最后的最后，从愚公移山这个寓言故事中可以得到两点启发；其一，“横看成岭侧成峰”，杨桃也不仅仅是一个模样的。其二，多读原典，避免断章取义。   <strong>参考文献：</strong></p>
+<ul>
+<li><a href="http://www.zhihu.com/question/24954053/answer/29598806" target="_blank" rel="noopener">《愚公移山》是一篇讽刺故事吗？</a></li>
+<li><a href="http://baike.baidu.com/link?url=9GuCcnAzZGAza_cU-Oq2ihNrJDKjACGZTO492_HC6ZDmI_qbDK3yW-lXkZ5YLzvzBqfiyxkcV-3YJwv6gNczModK61evLlq5oQyPb3YSuDS" target="_blank" rel="noopener">愚公移山</a></li>
+<li><a href="http://blog.sina.com.cn/s/blog_531a703a0102van0.html" target="_blank" rel="noopener">愚公不能移山(转载）</a></li>
+<li><a href="http://baike.baidu.com/view/2371969.htm" target="_blank" rel="noopener">画杨桃</a></li>
+</ul>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
   </div>
 
   
@@ -1370,7 +1377,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">176</span>
+          <span class="site-state-item-count">173</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1405,9 +1412,7 @@
         
           
         
-          
-        
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">categories</span>
         </a>
       </div>
@@ -1426,7 +1431,11 @@
         
           
         
-        <span class="site-state-item-count">2</span>
+          
+        
+          
+        
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span>
         </a>
       </div>
