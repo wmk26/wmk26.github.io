@@ -5401,6 +5401,37 @@ return h ^ (h &gt;&gt;&gt; 7) ^ (h &gt;&gt;&gt; 4);</code></pre><p>}</p>
       </tags>
   </entry>
   <entry>
+    <title>wordpress修改记录</title>
+    <url>/2015/01/02/2015-01-02-wordpress-revised-records/</url>
+    <content><![CDATA[<ol>
+<li>文章编辑器：一开始使用的是wordpress默认的编辑器，功能太少，换用kindeditor-for-wordpress，试用了一段时间，功能虽多，体验太差。现在使用的是TinyMCE Advanced，目前感觉还不错。</li>
+<li>添加qq表情：使用kindeditor-for-wordpress 的一个好处是，里面内嵌了qq的默认表情，换用TinyMCE Advanced后，根据<a href="http://www.annhe.net/article-1478.html" target="_blank" rel="noopener">这篇文章</a>添加了qq表情。（备注：kindeditor-for-wordpress中的表情更多，下载该插件到本地，表情文件位于/kindeditor-for-wordpress/plugins/emoticons/images，以后有时间尝试把qq表情嵌入到TinyMCE Advanced编辑器中）</li>
+<li>首页显示文章摘要：参考的是<a href="http://www.zrblog.net/13.html" target="_blank" rel="noopener">这篇博文</a>，使用的插件是wp-utf8-excerpt，主要特点：1. 支持多字节语言（如中文），不会产生乱码；2.摘要可保留文章中的格式标签，如字体、颜色、链接、图片等（需保留的标签可在后台设置）；3. 首页每篇文章显示300字，存档页面每篇文章显示150字（字数可设置）</li>
+<li>实现按照修改日期对文章进行排序：参考文章：<a href="http://i7298.com/archives/55" target="_blank" rel="noopener">实现WordPress文章按修改时间排序</a>遇到了一些问题，待解决;</li>
+<li>无意间搜到另一个代码高亮工具，大赞！！！Crayon Syntax Highlighter，强烈推荐！！！下载量与SyntaxHighlighter Evolved相差无几，但是评论量接近SyntaxHighlighter Evolved的三倍，且是全五星（SyntaxHighlighter Evolved四星半）。代码编辑远胜于SyntaxHighlighter Evolved。之前一直看别人的推荐使用SyntaxHighlighter Evolved，而且用搜索引擎搜索也都是这货，于是被坑的遍体鳞伤，身心俱疲。看来，别人的推荐还真不一定靠谱，以后得自己尝试了之后才能做评价，且要货比三家，不能只关注大众的观点！！！亦不能迷信权威和大多数，血与泪的教训！希望自己谨记。其中的配置可以参考<a href="http://www.ipeld.net/archives/3765.html" target="_blank" rel="noopener">这篇文章</a>；设置成SyntaxHighlighter Evolved的形式。</li>
+<li>在底部添加pv和uv，参考<a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="noopener">这篇文章</a>；</li>
+<li>使用WordPress返回顶部插件wp auto top，参考<a href="http://jingyan.baidu.com/article/5d6edee228118899eadeec00.html" target="_blank" rel="noopener">这篇文章</a>；</li>
+<li><a href="http://codefine.co/%E6%80%BB%E7%BB%93%E4%B8%80%E4%B8%8B%E6%9C%AC%E7%AB%99%EF%BC%88wordpress%EF%BC%89%E7%94%A8%E5%88%B0%E7%9A%84%E6%8F%92%E4%BB%B6%E3%80%81%E4%B8%BB%E9%A2%98%E4%BB%A5%E5%8F%8A%E8%87%AA%E5%B7%B1%E5%81%9A/" target="_blank" rel="noopener">本站建站技术合集</a>，不错的合集，可供业余时间折腾；</li>
+<li>参考这篇文章：<a href="https://www.anotherhome.net/1010" target="_blank" rel="noopener">wordpress主题字体更换</a>，更换字体；</li>
+<li>添加Jetpack，使用其中的Markdown支持，参考文章：<a href="http://www.itoldme.net/archives/427" target="_blank" rel="noopener">使用Markdown写作WordPress</a>；</li>
+<li>使用多说评论，直接搜索安装名为的duoshuo插件；</li>
+<li>使用文章目录插件，Table of Contents Plus，参考这篇文章配置：<a href="http://www.52souji.net/free-plugin-about-insert-table-of-contents-in-post-for-wordpress/" target="_blank" rel="noopener">免费好用的文章内容目录wordpress插件</a></li>
+<li>使用插件external link，设置全站外部链接在新窗口打开，参考这篇文章：<a href="http://www.yzznl.cn/archives/230.html" target="_blank" rel="noopener">使用 external links 插件控制wordpress外部链接属性</a></li>
+<li>添加社交化分享工具<a href="http://www.jiathis.com/" target="_blank" rel="noopener">JiaThis</a>，可以自定义；</li>
+<li>使用插件<strong>谷歌字体与Gravatar头像加速</strong>优化网站加载速度；参考这篇文章：<a href="http://www.haoqimao.net/?/question/30" target="_blank" rel="noopener">新手如何系统地优化WordPress博客？</a>，里面提到可以在网站备案之后启用国内的CDN加速，自己暂时没有备份的打算，以后再考虑；</li>
+<li>使用插件<strong>WP Fastest Cache</strong>优化网站加载速度；</li>
+<li>使用插件<strong>a3 Lazy Load</strong>后发现图片无法加载，暂时停用；</li>
+<li>20160911,添加文档归档页面，参考：<a href="http://zww.me/wordpress-archive-page-template-wp-primary-function-2014-edition.z-turn" target="_blank" rel="noopener">WordPress 归档页面模板[WP原生函数实现2014版]</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>WordPress</category>
+      </categories>
+      <tags>
+        <tag>wordpress</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2014 年终总结</title>
     <url>/2015/01/02/2014-annually-summary/</url>
     <content><![CDATA[<p>本想洋洋洒洒写一大篇的，拖了几天之后也就意兴阑珊了，不过既然题没有已经拟定了，还是略微总结一下吧，算是给2014年的一个交代。很多事情如果不去翻之前的日记都已经很难记起，现在的自己还没有那么大的勇气去翻阅过去的日记，所以姑且记一记那些还记得的事情吧。</p><a id="more"></a>
