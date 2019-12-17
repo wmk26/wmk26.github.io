@@ -43,7 +43,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":false,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -56,17 +56,18 @@
 </script>
 
   <meta name="description" content="最近用pycharm写python，代码下面出现各种下划线，虽然无关宏旨，但是会严重影响阅读体验；按照提示，google之，原来是自己的编码方式的问题，参考python的编码规范，修改之后果然美观多了。自己之前一直没有注意类似的问题，编的程序仅仅只能完成基本的功能，看起来实在丑陋不堪。与自己心中对于工程的严谨性和美观性的认知大相径庭。好的代码应该是高效（Efficient）、美观（Elegent）">
+<meta name="keywords" content="编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Write Clean Code">
-<meta property="og:url" content="http://yoursite.com/2015/12/11/write-clean-code/index.html">
+<meta property="og:url" content="http://yoursite.com/2015/12/11/2015-12-11-write-clean-code/index.html">
 <meta property="og:site_name" content="恰同学少年">
 <meta property="og:description" content="最近用pycharm写python，代码下面出现各种下划线，虽然无关宏旨，但是会严重影响阅读体验；按照提示，google之，原来是自己的编码方式的问题，参考python的编码规范，修改之后果然美观多了。自己之前一直没有注意类似的问题，编的程序仅仅只能完成基本的功能，看起来实在丑陋不堪。与自己心中对于工程的严谨性和美观性的认知大相径庭。好的代码应该是高效（Efficient）、美观（Elegent）">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-12-14T09:41:59.354Z">
+<meta property="og:updated_time" content="2019-12-16T15:02:45.196Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Write Clean Code">
 <meta name="twitter:description" content="最近用pycharm写python，代码下面出现各种下划线，虽然无关宏旨，但是会严重影响阅读体验；按照提示，google之，原来是自己的编码方式的问题，参考python的编码规范，修改之后果然美观多了。自己之前一直没有注意类似的问题，编的程序仅仅只能完成基本的功能，看起来实在丑陋不堪。与自己心中对于工程的严谨性和美观性的认知大相径庭。好的代码应该是高效（Efficient）、美观（Elegent）">
-  <link rel="canonical" href="http://yoursite.com/2015/12/11/write-clean-code/">
+  <link rel="canonical" href="http://yoursite.com/2015/12/11/2015-12-11-write-clean-code/">
 
 
 <script id="page-configurations">
@@ -202,38 +203,11 @@
     <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
 
   </li>
-      <li class="menu-item menu-item-search">
-        <a href="javascript:;" class="popup-trigger">
-        
-          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
-      </li>
-    
   </ul>
 
     
 
 </nav>
-  <div class="site-search">
-    <div class="popup search-popup">
-    <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="none"
-           placeholder="Searching..." spellcheck="false"
-           type="text" id="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result"></div>
-
-</div>
-<div class="search-pop-overlay"></div>
-
-  </div>
 </div>
     </header>
 
@@ -256,7 +230,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/12/11/write-clean-code/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/12/11/2015-12-11-write-clean-code/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mingkuo Wang">
@@ -295,7 +269,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
+                <time title="Modified: 2019-12-16 23:02:45" itemprop="dateModified" datetime="2019-12-16T23:02:45+08:00">2019-12-16</time>
               </span>
             
           
@@ -305,7 +279,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Others/" itemprop="url" rel="index"><span itemprop="name">Others</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/编程/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
 
                 
                 
@@ -353,6 +327,15 @@
       
 
       <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/编程/" rel="tag"># 编程</a>
+            
+          </div>
+        
 
         
 
@@ -470,6 +453,8 @@
         
           
         
+          
+        
         <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">categories</span>
         </a>
@@ -499,7 +484,9 @@
         
           
         
-        <span class="site-state-item-count">7</span>
+          
+        
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">tags</span>
         </a>
       </div>
@@ -588,8 +575,6 @@
 
 
 
-
-  <script src="/js/local-search.js?v=7.3.0"></script>
 
 
 
