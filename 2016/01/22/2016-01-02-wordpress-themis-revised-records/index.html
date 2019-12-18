@@ -55,18 +55,19 @@
   };
 </script>
 
-  <meta name="description" content="1. 行高、字符间距设置参考雅黑字体下WordPress 行高与字符间距最佳实践：1.8em与0.06em，修改style.css如下#main { clear: both; overflow: hidden; padding: 20px 0 0 0; &amp;lt;!--段间距，分别是上、右、下、左间距--&amp;gt; } #content { margin-bottom: 36px; } #conten">
+  <meta name="description" content="行高、字符间距设置 参考雅黑字体下WordPress 行高与字符间距最佳实践：1.8em与0.06em，修改style.css如下12345678910111213141516171819202122232425#main &amp;#123;clear: both;overflow: hidden;padding: 20px 0 0 0; &amp;lt;!--段间距，分别是上、右、下、左间距--&amp;gt;&amp;#">
+<meta name="keywords" content="wordpress">
 <meta property="og:type" content="article">
 <meta property="og:title" content="wordpress主题定制">
-<meta property="og:url" content="http://yoursite.com/2016/01/22/wordpress-e4-b8-bb-e9-a2-98-e5-ae-9a-e5-88-b6/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/01/22/2016-01-02-wordpress-themis-revised-records/index.html">
 <meta property="og:site_name" content="恰同学少年">
-<meta property="og:description" content="1. 行高、字符间距设置参考雅黑字体下WordPress 行高与字符间距最佳实践：1.8em与0.06em，修改style.css如下#main { clear: both; overflow: hidden; padding: 20px 0 0 0; &amp;lt;!--段间距，分别是上、右、下、左间距--&amp;gt; } #content { margin-bottom: 36px; } #conten">
+<meta property="og:description" content="行高、字符间距设置 参考雅黑字体下WordPress 行高与字符间距最佳实践：1.8em与0.06em，修改style.css如下12345678910111213141516171819202122232425#main &amp;#123;clear: both;overflow: hidden;padding: 20px 0 0 0; &amp;lt;!--段间距，分别是上、右、下、左间距--&amp;gt;&amp;#">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-12-14T09:41:59.287Z">
+<meta property="og:updated_time" content="2019-12-18T10:51:10.163Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wordpress主题定制">
-<meta name="twitter:description" content="1. 行高、字符间距设置参考雅黑字体下WordPress 行高与字符间距最佳实践：1.8em与0.06em，修改style.css如下#main { clear: both; overflow: hidden; padding: 20px 0 0 0; &amp;lt;!--段间距，分别是上、右、下、左间距--&amp;gt; } #content { margin-bottom: 36px; } #conten">
-  <link rel="canonical" href="http://yoursite.com/2016/01/22/wordpress-e4-b8-bb-e9-a2-98-e5-ae-9a-e5-88-b6/">
+<meta name="twitter:description" content="行高、字符间距设置 参考雅黑字体下WordPress 行高与字符间距最佳实践：1.8em与0.06em，修改style.css如下12345678910111213141516171819202122232425#main &amp;#123;clear: both;overflow: hidden;padding: 20px 0 0 0; &amp;lt;!--段间距，分别是上、右、下、左间距--&amp;gt;&amp;#">
+  <link rel="canonical" href="http://yoursite.com/2016/01/22/2016-01-02-wordpress-themis-revised-records/">
 
 
 <script id="page-configurations">
@@ -229,7 +230,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/01/22/wordpress-e4-b8-bb-e9-a2-98-e5-ae-9a-e5-88-b6/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/01/22/2016-01-02-wordpress-themis-revised-records/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mingkuo Wang">
@@ -268,7 +269,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
+                <time title="Modified: 2019-12-18 18:51:10" itemprop="dateModified" datetime="2019-12-18T18:51:10+08:00">2019-12-18</time>
               </span>
             
           
@@ -305,55 +306,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="1-行高、字符间距设置"><a href="#1-行高、字符间距设置" class="headerlink" title="1. 行高、字符间距设置"></a>1. 行高、字符间距设置</h2><p>参考<a href="http://zhangzhao.me/wordpress-height-under-ya-black-font-and-character-spacing-best-practice-1-8em-and-0-06em.zz" target="_blank" rel="noopener">雅黑字体下WordPress 行高与字符间距最佳实践：1.8em与0.06em</a>，修改style.css如下</p><pre><code>#main {
-clear: both;
-overflow: hidden;
-padding: 20px 0 0 0; &lt;!--段间距，分别是上、右、下、左间距--&gt;
-}
-#content {
-margin-bottom: 36px;
-}
-#content,
-#content input,
-#content textarea {
-color: #333;
-font-size: 16px;
-line-height: 1.8em; &lt;!--行间距，设置为字体的1.8倍--&gt;
-letter-spacing: 0.06em; &lt;!--字符间距，设置为字体的0.06倍--&gt;
-}
-#content p,
-#content ul,
-#content ol,
-#content dd,
-#content pre,
-#content hr {
-margin-bottom: 20px;
-}
-}</code></pre><a id="more"></a>
-<h2 id="2-引用块格式设置"><a href="#2-引用块格式设置" class="headerlink" title="2. 引用块格式设置"></a>2. 引用块格式设置</h2><p>参考：<a href="http://kangjian.net/blog/892/" target="_blank" rel="noopener">WordPress默认主题Twenty Ten的blockquote引用样式修改</a>，修改引用的样式如下：</p>
-<pre><code>blockquote {
-background:#f9f9f9;
-border-left:10px solid #ccc;
-margin:1.5em 10px;
-padding:.5em 10px;
-width: 90%;
-font: 微软雅黑, Georgia;
-color: #888;
-}</code></pre><h2 id="3-设置选中文字后的背景色"><a href="#3-设置选中文字后的背景色" class="headerlink" title="3. 设置选中文字后的背景色"></a>3. 设置选中文字后的背景色</h2><p>参考：<a href="https://www.logcg.com/archives/343.html" target="_blank" rel="noopener">WordPress中设置被选中文字颜色及背景色</a>，修改引用样式如下：</p>
-<pre><code>::-moz-selection {
-background-color: #822e30; &lt;!--使用酒红色--&gt;
-color: #fff;
-}
+        <ol>
+<li>行高、字符间距设置</li>
+</ol><p>参考<a href="http://zhangzhao.me/wordpress-height-under-ya-black-font-and-character-spacing-best-practice-1-8em-and-0-06em.zz" target="_blank" rel="noopener">雅黑字体下WordPress 行高与字符间距最佳实践：1.8em与0.06em</a>，修改style.css如下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#main &#123;</span><br><span class="line">clear: both;</span><br><span class="line">overflow: hidden;</span><br><span class="line">padding: 20px 0 0 0; &lt;!--段间距，分别是上、右、下、左间距--&gt;</span><br><span class="line">&#125;</span><br><span class="line">#content &#123;</span><br><span class="line">margin-bottom: 36px;</span><br><span class="line">&#125;</span><br><span class="line">#content,</span><br><span class="line">#content input,</span><br><span class="line">#content textarea &#123;</span><br><span class="line">color: #333;</span><br><span class="line">font-size: 16px;</span><br><span class="line">line-height: 1.8em; &lt;!--行间距，设置为字体的1.8倍--&gt;</span><br><span class="line">letter-spacing: 0.06em; &lt;!--字符间距，设置为字体的0.06倍--&gt;</span><br><span class="line">&#125;</span><br><span class="line">#content p,</span><br><span class="line">#content ul,</span><br><span class="line">#content ol,</span><br><span class="line">#content dd,</span><br><span class="line">#content pre,</span><br><span class="line">#content hr &#123;</span><br><span class="line">margin-bottom: 20px;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><a id="more"></a>
 
-::selection {
-background-color: #822e30;
-color: #fff;
-}</code></pre><p>附：</p>
+
+
+<ol start="2">
+<li>引用块格式设置</li>
+</ol>
+<hr>
+<p>参考：<a href="http://kangjian.net/blog/892/" target="_blank" rel="noopener">WordPress默认主题Twenty Ten的blockquote引用样式修改</a>，修改引用的样式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">blockquote &#123;</span><br><span class="line">background:#f9f9f9;</span><br><span class="line">border-left:10px solid #ccc;</span><br><span class="line">margin:1.5em 10px;</span><br><span class="line">padding:.5em 10px;</span><br><span class="line">width: 90%;</span><br><span class="line">font: 微软雅黑, Georgia;</span><br><span class="line">color: #888;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>设置选中文字后的背景色</li>
+</ol>
+<hr>
+<p>参考：<a href="https://www.logcg.com/archives/343.html" target="_blank" rel="noopener">WordPress中设置被选中文字颜色及背景色</a>，修改引用样式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">::-moz-selection &#123;</span><br><span class="line">background-color: #822e30; &lt;!--使用酒红色--&gt;</span><br><span class="line">color: #fff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">::selection &#123;</span><br><span class="line">background-color: #822e30;</span><br><span class="line">color: #fff;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>附：</p>
 <ul>
 <li><a href="http://www.w3schools.com/tags/ref_colorpicker.asp" target="_blank" rel="noopener">html颜色选择器</a></li>
 <li><a href="http://xiaohudie.net/RGB.html" target="_blank" rel="noopener">RGB取色器</a></li>
 </ul>
-<h2 id="4-修改文章页面的背景颜色"><a href="#4-修改文章页面的背景颜色" class="headerlink" title="4. 修改文章页面的背景颜色"></a>4. 修改文章页面的背景颜色</h2><p>修改文章页面的背景颜色，代码如下：</p>
+<ol start="4">
+<li>修改文章页面的背景颜色</li>
+</ol>
+<hr>
+<p>修改文章页面的背景颜色，代码如下：</p>
 <pre><code>#wrapper {
 background: #f9f9f5; &lt;!--作业部落编辑器的颜色，RGB的值分别是249,249,245--&gt;
 margin-top: 20px;
@@ -383,6 +365,15 @@ line-height: 180%;
       
 
       <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/wordpress/" rel="tag"># wordpress</a>
+            
+          </div>
+        
 
         
 
@@ -450,7 +441,7 @@ line-height: 180%;
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-行高、字符间距设置"><span class="nav-number">1.</span> <span class="nav-text">1. 行高、字符间距设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-引用块格式设置"><span class="nav-number">2.</span> <span class="nav-text">2. 引用块格式设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-设置选中文字后的背景色"><span class="nav-number">3.</span> <span class="nav-text">3. 设置选中文字后的背景色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-修改文章页面的背景颜色"><span class="nav-number">4.</span> <span class="nav-text">4. 修改文章页面的背景颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-修改侧边栏以及副标题文字颜色"><span class="nav-number">5.</span> <span class="nav-text">5. 修改侧边栏以及副标题文字颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-参考文献"><span class="nav-number">6.</span> <span class="nav-text">6. 参考文献</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-修改侧边栏以及副标题文字颜色"><span class="nav-number">1.</span> <span class="nav-text">5. 修改侧边栏以及副标题文字颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-参考文献"><span class="nav-number">2.</span> <span class="nav-text">6. 参考文献</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
