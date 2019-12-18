@@ -45,7 +45,7 @@
     },
     localsearch: {"enable":false,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
       copy_button: 'Copy',
       copy_success: 'Copied',
@@ -114,7 +114,7 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
-  <div class="container use-motion">
+  <div class="container">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -262,20 +262,20 @@
   
     
     <div class="collection-year">
-      <h1 class="collection-header">2017</h1>
+      <h2 class="collection-header">2017</h2>
     </div>
   
 
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2017/05/16/e7-ac-ac-e5-9b-9b-e6-ac-a1-e5-be-92-e6-ad-a5-e8-a5-bf-e5-b1-b1-e6-a3-ae-e6-9e-97-e5-85-ac-e5-9b-ad-e9-a6-99-e5-b1-b1/" itemprop="url">
             <span itemprop="name">第四次徒步——西山森林公园-香山</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -298,13 +298,13 @@
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2017/05/12/e9-aa-91-e8-a1-8c-e7-ac-94-e8-ae-b0002-20170429-e4-b9-8b-e5-ba-86-e4-ba-94-e4-b8-80/" itemprop="url">
             <span itemprop="name">骑行笔记002——20170429之庆五一</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -515,9 +515,7 @@
 
 
   <script src="/lib/anime.min.js?v=3.1.0"></script>
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/utils.js?v=7.3.0"></script>
 <script src="/js/schemes/muse.js?v=7.3.0"></script>
 
 <script src="/js/next-boot.js?v=7.3.0"></script>

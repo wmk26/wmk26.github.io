@@ -45,7 +45,7 @@
     },
     localsearch: {"enable":false,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
       copy_button: 'Copy',
       copy_success: 'Copied',
@@ -114,7 +114,7 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
-  <div class="container use-motion">
+  <div class="container">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -262,20 +262,20 @@
   
     
     <div class="collection-year">
-      <h1 class="collection-header">2014</h1>
+      <h2 class="collection-header">2014</h2>
     </div>
   
 
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2014/12/31/e4-bd-bf-e7-94-a8crf-e5-ae-9e-e7-8e-b0-e5-ad-97-e6-a0-87-e6-b3-a8-e4-b8-ad-e6-96-87-e5-88-86-e8-af-8d/" itemprop="url">
             <span itemprop="name">使用CRF++实现字标注中文分词</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -298,13 +298,13 @@
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2014/12/29/e5-85-83-e6-97-a6-e6-99-9a-e4-bc-9a-e9-9a-8f-e7-ac-94/" itemprop="url">
             <span itemprop="name">元旦晚会随笔</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -327,13 +327,13 @@
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2014/12/29/python-decode-encode/" itemprop="url">
             <span itemprop="name">Python中的编码问题</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -356,13 +356,13 @@
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2014/12/28/professional-terms-in-nlp/" itemprop="url">
             <span itemprop="name">自然语言处理中的专业名词</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -385,13 +385,13 @@
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2014/12/27/animals-in-book-of-songs/" itemprop="url">
             <span itemprop="name">诗经中的那些禽兽们</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -414,13 +414,13 @@
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2014/12/27/flowers-in-book-of-songs/" itemprop="url">
             <span itemprop="name">诗经中的那些花花草草</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -443,13 +443,13 @@
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2014/12/26/about/" itemprop="url">
             <span itemprop="name">关于</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -472,13 +472,13 @@
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2014/12/22/hello-world-2/" itemprop="url">
             <span itemprop="name">世界，你好！</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -689,9 +689,7 @@
 
 
   <script src="/lib/anime.min.js?v=3.1.0"></script>
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/utils.js?v=7.3.0"></script>
 <script src="/js/schemes/muse.js?v=7.3.0"></script>
 
 <script src="/js/next-boot.js?v=7.3.0"></script>

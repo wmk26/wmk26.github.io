@@ -45,7 +45,7 @@
     },
     localsearch: {"enable":false,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
       copy_button: 'Copy',
       copy_success: 'Copied',
@@ -114,7 +114,7 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
-  <div class="container use-motion">
+  <div class="container">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -246,8 +246,8 @@
   <div class="post-block category">
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1 class="collection-header">Linux<small>Category</small>
-        </h1>
+        <h2 class="collection-header">Linux<small>Category</small>
+        </h2>
       </div>
 
       
@@ -258,20 +258,20 @@
   
     
     <div class="collection-year">
-      <h1 class="collection-header">2015</h1>
+      <h2 class="collection-header">2015</h2>
     </div>
   
 
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2015/05/06/e8-ae-b0-e4-b8-80-e4-b8-aamysql-e5-b0-8f-e9-94-99-e8-af-af/" itemprop="url">
             <span itemprop="name">记一个Mysql小错误</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -294,13 +294,13 @@
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2015/04/11/ubuntu-e4-b8-8bgitgithub-e4-bd-bf-e7-94-a8/" itemprop="url">
             <span itemprop="name">ubuntu下git&github使用</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -323,13 +323,13 @@
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2015/04/02/windows-e4-b8-8bgcc-e9-85-8d-e7-bd-ae/" itemprop="url">
             <span itemprop="name">Windows下GCC配置</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -352,13 +352,13 @@
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2015/03/25/vim-e5-bf-ab-e6-8d-b7-e9-94-ae/" itemprop="url">
             <span itemprop="name">vim快捷键</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -571,9 +571,7 @@
 
 
   <script src="/lib/anime.min.js?v=3.1.0"></script>
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/utils.js?v=7.3.0"></script>
 <script src="/js/schemes/muse.js?v=7.3.0"></script>
 
 <script src="/js/next-boot.js?v=7.3.0"></script>

@@ -45,7 +45,7 @@
     },
     localsearch: {"enable":false,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
       copy_button: 'Copy',
       copy_success: 'Copied',
@@ -114,7 +114,7 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
-  <div class="container use-motion">
+  <div class="container">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -262,20 +262,20 @@
   
     
     <div class="collection-year">
-      <h1 class="collection-header">2015</h1>
+      <h2 class="collection-header">2015</h2>
     </div>
   
 
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2015/03/29/e9-82-a3-e4-ba-9b-e4-b8-8d-e5-90-8c-e7-9a-84-e8-a7-82-e7-82-b9/" itemprop="url">
             <span itemprop="name">那些不同的观点</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -298,13 +298,13 @@
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2015/03/28/e6-98-86-e6-9b-b2-e8-af-be-e5-b0-8f-e8-ae-b0/" itemprop="url">
             <span itemprop="name">昆曲课小记</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -327,13 +327,13 @@
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2015/03/25/vim-e5-bf-ab-e6-8d-b7-e9-94-ae/" itemprop="url">
             <span itemprop="name">vim快捷键</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -356,13 +356,13 @@
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2015/03/22/e6-a8-b1-e8-8a-b1-e6-9c-aa-e5-bc-80-e6-97-b6/" itemprop="url">
             <span itemprop="name">樱花未开时</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -385,13 +385,13 @@
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2015/03/18/e3-80-8a-e6-98-86-e6-9b-b2-e5-85-ad-e7-99-be-e5-b9-b4-e3-80-8b-e9-87-87-e6-92-b7/" itemprop="url">
             <span itemprop="name">《昆曲六百年》采撷</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -414,13 +414,13 @@
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2015/03/11/e3-80-8a-e5-9b-b4-e5-9f-8e-e3-80-8b-e8-af-bb-e5-90-8e-e6-84-9f/" itemprop="url">
             <span itemprop="name">《围城》读后感</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -443,13 +443,13 @@
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2015/03/03/e5-85-b3-e4-ba-8e-e6-a2-a6-e6-83-b3/" itemprop="url">
             <span itemprop="name">关于梦想</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -660,9 +660,7 @@
 
 
   <script src="/lib/anime.min.js?v=3.1.0"></script>
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/utils.js?v=7.3.0"></script>
 <script src="/js/schemes/muse.js?v=7.3.0"></script>
 
 <script src="/js/next-boot.js?v=7.3.0"></script>

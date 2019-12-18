@@ -45,7 +45,7 @@
     },
     localsearch: {"enable":false,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
       copy_button: 'Copy',
       copy_success: 'Copied',
@@ -114,7 +114,7 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
-  <div class="container use-motion">
+  <div class="container">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -262,20 +262,20 @@
   
     
     <div class="collection-year">
-      <h1 class="collection-header">2016</h1>
+      <h2 class="collection-header">2016</h2>
     </div>
   
 
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2016/09/30/e6-9d-82-e6-80-9d-e5-bf-83-e4-b8-ad-e7-9a-84-e9-81-93-e5-be-b7-e5-be-8b/" itemprop="url">
             <span itemprop="name">杂思——心中的道德律</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -298,13 +298,13 @@
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2016/09/26/e3-80-8a-e9-87-9c-e5-b1-b1-e8-a1-8c-e3-80-8b-e7-9f-ad-e8-af-84/" itemprop="url">
             <span itemprop="name">《釜山行》短评</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -327,13 +327,13 @@
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2016/09/22/the-hunger-games/" itemprop="url">
             <span itemprop="name">The Hunger Games</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -356,13 +356,13 @@
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2016/09/15/e4-b8-ad-e7-a7-8b-e4-ba-8e-e8-8d-b7-e5-a1-98-e6-9c-88-e8-89-b2/" itemprop="url">
             <span itemprop="name">中秋于荷塘月色</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -385,13 +385,13 @@
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2016/09/11/e8-8d-a4-e4-b8-8e-e8-85-a5/" itemprop="url">
             <span itemprop="name">荤与腥</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -414,13 +414,13 @@
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2016/09/08/mapreduce-e8-bf-87-e7-a8-8b-e8-af-a6-e8-a7-a3/" itemprop="url">
             <span itemprop="name">MapReduce过程详解</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -443,13 +443,13 @@
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
           <a class="post-title-link" href="/2016/09/05/e6-9d-a5-e8-87-aa-e5-85-ac-e5-8f-b8cto-e7-9a-84-e8-81-8c-e5-9c-ba-e5-bb-ba-e8-ae-ae/" itemprop="url">
             <span itemprop="name">来自公司CTO的职场建议</span>
           </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -660,9 +660,7 @@
 
 
   <script src="/lib/anime.min.js?v=3.1.0"></script>
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/utils.js?v=7.3.0"></script>
 <script src="/js/schemes/muse.js?v=7.3.0"></script>
 
 <script src="/js/next-boot.js?v=7.3.0"></script>
