@@ -2,8 +2,6 @@
 title: sublime使用配置
 tags:
   - sublime
-url: 977.html
-id: 977
 categories:
   - Linux
 date: 2016-05-08 18:11:05

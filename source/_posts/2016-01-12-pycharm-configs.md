@@ -1,11 +1,10 @@
 ---
 title: pycharm 常用配置
-url: 812.html
-id: 812
 categories:
   - Python
 date: 2016-01-12 15:25:32
 tags:
+  - python
 ---
 
 pycharm是自己目前用到的最好的python IDE（好像自己也没有用过多少python IDE。。。）。此文意在记录一下相关的配置以及遇到的一些问题；

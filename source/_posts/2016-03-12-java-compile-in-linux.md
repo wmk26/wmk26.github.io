@@ -1,11 +1,11 @@
 ---
 title: linux下编译使用命令行编译运行java程序（多个文件或者整个工程）
-url: 922.html
-id: 922
 categories:
   - Java
 date: 2016-03-12 17:18:32
 tags:
+  - java
+  - linux
 ---
 
 近期做毕业设计，在台式机上使用Intellij IDEA跑Java程序，总是卡的不行不行的。所以就想着放到学院的高性能集群上去跑一下，那么问题来了，长期依赖于IDE的调试，差不多忘记如何再命令行上编译程序了。无赖之下，只好重新学习如何再命令行下编译Java程序；经过摸索，终于弄明白一些基本的东西了，记录如下： 注：以下文章大部分来自于这篇英文文章，[How to Compile and Run Java Code from a Command Line](http://www.sergiy.ca/how-to-compile-and-launch-java-code-from-command-line/)，如果能读懂英文，还是建议阅读原文。本文会大部分翻译，然后加上自己的理解以及收集到的相关知识；

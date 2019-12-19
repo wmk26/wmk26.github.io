@@ -1,11 +1,10 @@
 ---
 title: OpenJDK编译
-url: 560.html
-id: 560
 categories:
   - Java
 date: 2015-09-04 11:06:12
 tags:
+  - java
 ---
 
 近日想深入了解一下Java虚拟机，于是阅读[《深入理解Java虚拟机》](https://book.douban.com/subject/24722612/)这本书；在编译openjdk的时候遇到一些问题。记录如下，以供参考；

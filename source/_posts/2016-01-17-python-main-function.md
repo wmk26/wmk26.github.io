@@ -1,11 +1,10 @@
 ---
 title: python中if __name__ == "__main__"的理解
-url: 821.html
-id: 821
 categories:
   - Python
 date: 2016-01-17 18:06:24
 tags:
+  - python
 ---
 
 在看很多python代码的时候，都会有这么一句python代码：if **name** == "**main**"，一直不解其意，今日看了一些文章，有点明白了，故记录之；

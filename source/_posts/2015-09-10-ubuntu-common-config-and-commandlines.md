@@ -1,11 +1,10 @@
 ---
 title: ubuntu常用配置&&常用命令
-url: 572.html
-id: 572
 categories:
   - Linux
 date: 2015-09-10 17:20:53
 tags:
+  - linux
 ---
 
 遇到就记下；

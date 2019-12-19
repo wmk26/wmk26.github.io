@@ -1,11 +1,11 @@
 ---
 title: MapReduce过程详解
-url: 1069.html
-id: 1069
 categories:
   - Linux
 date: 2016-09-08 18:54:18
 tags:
+  - hadoop
+  - linux
 ---
 
 关于MapReduce的详细过程一直不是很懂，看了很多资料也是云里雾里的，不过还是找到两篇不错的文章：
@@ -63,6 +63,7 @@ Partition, Sort, Combine, Copy, Merge等. 而这些过程往往被统称为"Shuf
 hadoop中的参数详解
 ------------
 
+```
     # 典型的参数配置：
     bin/hadoop streaming -input /tmp/comp-test.txt -output /tmp/xx -mapper "python mapper.py" -reducer "python reducer.py" \
     -partitioner org.apache.hadoop.mapred.lib.KeyFieldBasedPartitioner \
@@ -87,7 +88,7 @@ hadoop中的参数详解
     mapred.text.key.comparator.options      # 设置key中需要比较的字段或字节范围，上面的例子解释为：把前四列都作为key，前两列做partition，排序依据优先依据第三列正序(文本序)，第四列逆序(数字序)的组合排序。
     jobconf mapred.map.tasks                # 设置map任务数
     jobconf mapred.reduce.tasks=100         # 设置reduce任务数
-    
+```
     
     注0:
     

@@ -1,11 +1,10 @@
 ---
 title: vim快捷键
-url: 261.html
-id: 261
 categories:
   - Linux
 date: 2015-03-25 10:30:35
 tags:
+  - linux,vim
 ---
 
 最近更新（2015.12.23） 代码排版：
