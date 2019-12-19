@@ -1,11 +1,10 @@
 ---
 title: wordpress修改记录
-url: 120.html
-id: 120
 categories:
   - WordPress
-date: 2015-01-02 20:00:48
 tags:
+  - wordpress
+date: 2015-01-02 20:00:48
 ---
 
 1.  文章编辑器：一开始使用的是wordpress默认的编辑器，功能太少，换用kindeditor-for-wordpress，试用了一段时间，功能虽多，体验太差。现在使用的是TinyMCE Advanced，目前感觉还不错。

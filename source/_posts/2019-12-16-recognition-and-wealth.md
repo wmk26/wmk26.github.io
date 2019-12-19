@@ -1,5 +1,5 @@
 ---
-title: 2019-12-16-recognition-and-wealth
+title: 认知与财富
 date: 2019-12-16 22:43:42
 category:
   - 理财

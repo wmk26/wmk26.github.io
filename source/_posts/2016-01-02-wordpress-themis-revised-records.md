@@ -1,18 +1,17 @@
 ---
 title: wordpress主题定制
-url: 852.html
-id: 852
 categories:
   - WordPress
 date: 2016-01-22 22:16:17
 tags:
+  - wordpress
 ---
 
-1\. 行高、字符间距设置
--------------
+1. 行高、字符间距设置
 
 参考[雅黑字体下WordPress 行高与字符间距最佳实践：1.8em与0.06em](http://zhangzhao.me/wordpress-height-under-ya-black-font-and-character-spacing-best-practice-1-8em-and-0-06em.zz)，修改style.css如下
 
+```
     #main {
     clear: both;
     overflow: hidden;
@@ -38,13 +37,14 @@ tags:
     margin-bottom: 20px;
     }
     }
-    
+```
 
-2\. 引用块格式设置
+2. 引用块格式设置
 -----------
 
 参考：[WordPress默认主题Twenty Ten的blockquote引用样式修改](http://kangjian.net/blog/892/)，修改引用的样式如下：
 
+```
     blockquote {
     background:#f9f9f9;
     border-left:10px solid #ccc;
@@ -54,30 +54,31 @@ tags:
     font: 微软雅黑, Georgia;
     color: #888;
     }
-    
+```
 
-3\. 设置选中文字后的背景色
+3. 设置选中文字后的背景色
 ---------------
 
 参考：[WordPress中设置被选中文字颜色及背景色](https://www.logcg.com/archives/343.html)，修改引用样式如下：
 
+```
     ::-moz-selection {
     background-color: #822e30; <!--使用酒红色-->
     color: #fff;
     }
-    
+
     ::selection {
     background-color: #822e30;
     color: #fff;
     }
-    
+```
 
 附：
 
 *   [html颜色选择器](http://www.w3schools.com/tags/ref_colorpicker.asp)
 *   [RGB取色器](http://xiaohudie.net/RGB.html)
 
-4\. 修改文章页面的背景颜色
+4. 修改文章页面的背景颜色
 ---------------
 
 修改文章页面的背景颜色，代码如下：
