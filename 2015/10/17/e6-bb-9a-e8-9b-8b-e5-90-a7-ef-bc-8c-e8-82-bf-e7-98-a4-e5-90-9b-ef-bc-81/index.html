@@ -1,34 +1,30 @@
 <!DOCTYPE html>
-
-
-
-
-
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
-  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+<link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
     root: '/',
     scheme: 'Mist',
-    version: '7.3.0',
+    version: '7.6.0',
     exturl: false,
-    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":false},
+    sidebar: {"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -36,6 +32,7 @@
     mediumzoom: false,
     lazyload: false,
     pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
     algolia: {
       appID: '',
       apiKey: '',
@@ -43,15 +40,9 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
-    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
-    },
-    sidebarPadding: 40
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
 
@@ -66,7 +57,8 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="滚蛋吧，肿瘤君！">
 <meta name="twitter:description" content="忙里偷闲，看了一部电影《滚蛋吧，肿瘤君！》，看了之后感觉挺不错的。原本以为只是一部电影，不想看到最后却发现这是真人改编的版本，而且作者本人已经魂归天堂了。可钦可敬可惜可叹可怜。“按图索骥”，去百度与这部电影相关的信息。今日看完了原著漫画，心中还是有点想说的，姑妄记之吧，算是自己的一点碎碎念。 不论从电影还是从漫画中，都可以看出作者是一位相当幽默风趣兼且乐观的姑娘。我不知道，当人们真正面对不可控的命">
-  <link rel="canonical" href="http://yoursite.com/2015/10/17/e6-bb-9a-e8-9b-8b-e5-90-a7-ef-bc-8c-e8-82-bf-e7-98-a4-e5-90-9b-ef-bc-81/">
+
+<link rel="canonical" href="http://yoursite.com/2015/10/17/e6-bb-9a-e8-9b-8b-e5-90-a7-ef-bc-8c-e8-82-bf-e7-98-a4-e5-90-9b-ef-bc-81/">
 
 
 <script id="page-configurations">
@@ -74,17 +66,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: true,
-    isPage: false,
-    isArchive: false
+    isPost: true
   };
 </script>
 
   <title>滚蛋吧，肿瘤君！ | 恰同学少年</title>
-  <meta name="generator" content="Hexo 3.9.0">
   
-
-
 
 
 
@@ -103,7 +90,6 @@
   .use-motion .post-body,
   .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -117,11 +103,11 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage">
   <div class="container">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-meta">
 
@@ -135,11 +121,11 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 </div>
 
@@ -147,64 +133,32 @@
 <nav class="site-nav">
   
   <ul id="menu" class="menu">
-      
-      
-      
-        
         <li class="menu-item menu-item-home">
-      
-    
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-about">
-      
-    
 
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-tags">
-      
-    
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-categories">
-      
-    
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-archives">
-      
-    
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
   </ul>
-
-    
 
 </nav>
 </div>
@@ -217,33 +171,33 @@
   </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content">
             
 
-  <div id="posts" class="posts-expand">
-      <article itemscope itemtype="http://schema.org/Article">
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block post">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/10/17/e6-bb-9a-e8-9b-8b-e5-90-a7-ef-bc-8c-e8-82-bf-e7-98-a4-e5-90-9b-ef-bc-81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Mingkuo Wang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="恰同学少年">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">滚蛋吧，肿瘤君！
-
-          
+        <h2 class="post-title" itemprop="name headline">
+          滚蛋吧，肿瘤君！
         </h2>
 
         <div class="post-meta">
@@ -253,16 +207,8 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
               <time title="创建时间：2015-10-17 23:41:03" itemprop="dateCreated datePublished" datetime="2015-10-17T23:41:03+08:00">2015-10-17</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -270,31 +216,33 @@
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/生活/" itemprop="url" rel="index"><span itemprop="name">生活</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/生活/" itemprop="url" rel="index">
+                    <span itemprop="name">生活</span>
+                  </a>
+                </span>
             </span>
-          
 
           
-            <span class="post-meta-item" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2015/10/17/e6-bb-9a-e8-9b-8b-e5-90-a7-ef-bc-8c-e8-82-bf-e7-98-a4-e5-90-9b-ef-bc-81/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2015/10/17/e6-bb-9a-e8-9b-8b-e5-90-a7-ef-bc-8c-e8-82-bf-e7-98-a4-e5-90-9b-ef-bc-81/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -305,7 +253,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>忙里偷闲，看了一部电影《滚蛋吧，肿瘤君！》，看了之后感觉挺不错的。原本以为只是一部电影，不想看到最后却发现这是真人改编的版本，而且作者本人已经魂归天堂了。可钦可敬可惜可叹可怜。“按图索骥”，去百度与这部电影相关的信息。今日看完了<a href="http://manhua.weibo.com/c/8133?from=special_xiongdun" target="_blank" rel="noopener">原著漫画</a>，心中还是有点想说的，姑妄记之吧，算是自己的一点碎碎念。 不论从电影还是从漫画中，都可以看出作者是一位相当幽默风趣兼且乐观的姑娘。我不知道，当人们真正面对不可控的命运的时候，都会是一种什么样的表现，乐观异或悲观，怨天尤人或者自暴自弃。我也无法想象当自己面对同样的情形，会有什么样的一种反应。所以，对于作者的这种乐观的精神，自己是相当佩服的。 在看漫画和<a href="http://movie.douban.com/review/7569376/" target="_blank" rel="noopener">这篇影评</a>之前，自己还是觉得电影拍的挺不错的。但是，在看完漫画和相关的影评之后，自己改变了这种想法。在电影里面，为了戏剧冲突，为了形成强烈的对比，改编了很多东西，刻意的艺术化让这部电影脱离了真实的情形。借用<a href="http://movie.douban.com/review/7569376/" target="_blank" rel="noopener">这篇影评</a>里面的一句话就是“罗伯特.麦基说：大量好莱坞烂剧本，都充斥着方便的巧合和脆弱的动机。 ”当然这是电影的一种沉疴，无可厚非。但是始终让自己不太喜欢。但是电影还是有可圈可点的地方的，比如作者后来去尝试了很多之前想做而因为种种原因一直没有做的事情。“工作不好可以换，太忙可以休假，感情不好可以分手，运气也会风水轮流转，在你的生命里，想做的事情就去做。做了，可能后悔一阵子。怂了，可能后悔一辈子。”类似的情节在<a href="http://movie.douban.com/subject/1867345/" target="_blank" rel="noopener">《遗愿清单》</a>这部电影里面也有看到，也让我不禁在想是否我们只有在面对死亡的时候才会有勇气去做自己真正想做的事情。或许在那个时候，我们会想，既然都要面临死亡了，又何须在乎那么多的束缚呢？但是，为什么非要是死亡来推动我们做这些我们一直想要做的事情呢？如此提问，自己也没有答案；恰好，今天看书的时候看到一段不知与之有关还是无关的话，姑且摘抄如下吧。“遇到事情的时候，就问自己，会不会死？不会。那去他妈的。会，我靠，那不能搞。有些事情值得你用生命交换，但绝对不是失恋、飙车、整容、丢合同，和从来没有想要站在你人生中的装x犯”（<a href="http://book.douban.com/subject/25747921/" target="_blank" rel="noopener">《从你的全世界走过》</a>）。生命只有一次，那些想做的事情自己还会不会抛开一切顾虑去做？ 说到最后，不得不谈一下健康了。不得不说，最近几年，癌症好像特别流行，自己听过的身边的人得相关疾病的就有好几个。具体原因当然因人而异了。我们经常挂在嘴边，说什么健康最重要，或者是健康是1，其余都是0，没有了1，再多的0也是没有意义的。但是反观生活中行色匆匆的人，大多数都是拼着身体去争取着很多无关紧要（与健康相比）的东西，比如名，比如利，比如一时的快感等等，不一而足。自己无法去约束别人，只有时刻警戒自己了。一直想说要过一种“规律而节制”的生活，但是好像从来都控制不住自己的欲望与懒惰。想起了之前看过的<a href="http://movie.douban.com/subject/24879839/" target="_blank" rel="noopener">《道士下山》</a>里面的一个片段，地上的落叶怎么也扫不尽，今天扫完了，明天还会有新的落叶，今年扫完了，明年还会有。那还扫不扫？扫。 感谢下面这篇豆瓣的影评，相当不错。引用了不少里面的东西。在此致谢。 <a href="http://movie.douban.com/review/7569376/" target="_blank" rel="noopener">《滚蛋吧肿瘤君》是一部脱离了现实细节的电影</a> 2015年10月17日23:30于实验室； 2015年10月23日更新：</p><a id="more"></a>
+        <p>忙里偷闲，看了一部电影《滚蛋吧，肿瘤君！》，看了之后感觉挺不错的。原本以为只是一部电影，不想看到最后却发现这是真人改编的版本，而且作者本人已经魂归天堂了。可钦可敬可惜可叹可怜。“按图索骥”，去百度与这部电影相关的信息。今日看完了<a href="http://manhua.weibo.com/c/8133?from=special_xiongdun" target="_blank" rel="noopener">原著漫画</a>，心中还是有点想说的，姑妄记之吧，算是自己的一点碎碎念。 不论从电影还是从漫画中，都可以看出作者是一位相当幽默风趣兼且乐观的姑娘。我不知道，当人们真正面对不可控的命运的时候，都会是一种什么样的表现，乐观异或悲观，怨天尤人或者自暴自弃。我也无法想象当自己面对同样的情形，会有什么样的一种反应。所以，对于作者的这种乐观的精神，自己是相当佩服的。 在看漫画和<a href="http://movie.douban.com/review/7569376/" target="_blank" rel="noopener">这篇影评</a>之前，自己还是觉得电影拍的挺不错的。但是，在看完漫画和相关的影评之后，自己改变了这种想法。在电影里面，为了戏剧冲突，为了形成强烈的对比，改编了很多东西，刻意的艺术化让这部电影脱离了真实的情形。借用<a href="http://movie.douban.com/review/7569376/" target="_blank" rel="noopener">这篇影评</a>里面的一句话就是“罗伯特.麦基说：大量好莱坞烂剧本，都充斥着方便的巧合和脆弱的动机。 ”当然这是电影的一种沉疴，无可厚非。但是始终让自己不太喜欢。但是电影还是有可圈可点的地方的，比如作者后来去尝试了很多之前想做而因为种种原因一直没有做的事情。“工作不好可以换，太忙可以休假，感情不好可以分手，运气也会风水轮流转，在你的生命里，想做的事情就去做。做了，可能后悔一阵子。怂了，可能后悔一辈子。”类似的情节在<a href="http://movie.douban.com/subject/1867345/" target="_blank" rel="noopener">《遗愿清单》</a>这部电影里面也有看到，也让我不禁在想是否我们只有在面对死亡的时候才会有勇气去做自己真正想做的事情。或许在那个时候，我们会想，既然都要面临死亡了，又何须在乎那么多的束缚呢？但是，为什么非要是死亡来推动我们做这些我们一直想要做的事情呢？如此提问，自己也没有答案；恰好，今天看书的时候看到一段不知与之有关还是无关的话，姑且摘抄如下吧。“遇到事情的时候，就问自己，会不会死？不会。那去他妈的。会，我靠，那不能搞。有些事情值得你用生命交换，但绝对不是失恋、飙车、整容、丢合同，和从来没有想要站在你人生中的装x犯”（<a href="http://book.douban.com/subject/25747921/" target="_blank" rel="noopener">《从你的全世界走过》</a>）。生命只有一次，那些想做的事情自己还会不会抛开一切顾虑去做？ 说到最后，不得不谈一下健康了。不得不说，最近几年，癌症好像特别流行，自己听过的身边的人得相关疾病的就有好几个。具体原因当然因人而异了。我们经常挂在嘴边，说什么健康最重要，或者是健康是1，其余都是0，没有了1，再多的0也是没有意义的。但是反观生活中行色匆匆的人，大多数都是拼着身体去争取着很多无关紧要（与健康相比）的东西，比如名，比如利，比如一时的快感等等，不一而足。自己无法去约束别人，只有时刻警戒自己了。一直想说要过一种“规律而节制”的生活，但是好像从来都控制不住自己的欲望与懒惰。想起了之前看过的<a href="http://movie.douban.com/subject/24879839/" target="_blank" rel="noopener">《道士下山》</a>里面的一个片段，地上的落叶怎么也扫不尽，今天扫完了，明天还会有新的落叶，今年扫完了，明年还会有。那还扫不扫？扫。 感谢下面这篇豆瓣的影评，相当不错。引用了不少里面的东西。在此致谢。 <a href="http://movie.douban.com/review/7569376/" target="_blank" rel="noopener">《滚蛋吧肿瘤君》是一部脱离了现实细节的电影</a> 2015年10月17日23:30于实验室； 2015年10月23日更新：</p>
 <ul>
 <li>知乎上面的一个问题，<a href="http://www.zhihu.com/question/34825417" target="_blank" rel="noopener">普通人看《滚蛋吧，肿瘤君》与二十一岁癌症晚期患者看有什么不同的感受?</a>，没有人能够感同身受；</li>
 </ul>
@@ -315,65 +263,70 @@
     
     
     
-        
-      
 
       <footer class="post-footer">
 
         
 
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-              
-                <a href="/2015/10/05/e6-b5-ae-e7-94-9f-e5-85-ad-e8-ae-b0/" rel="next" title="浮生六记">
-                  <i class="fa fa-chevron-left"></i> 浮生六记
-                </a>
-              
-            </div>
 
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2015/10/23/e5-a4-8f-e6-b4-9b-e7-89-b9-e7-83-a6-e6-81-bc/" rel="prev" title="夏洛特烦恼">
-                  夏洛特烦恼 <i class="fa fa-chevron-right"></i>
-                </a>
-              
-            </div>
-          </div>
         
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2015/10/05/e6-b5-ae-e7-94-9f-e5-85-ad-e8-ae-b0/" rel="prev" title="浮生六记">
+      <i class="fa fa-chevron-left"></i> 浮生六记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2015/10/23/e5-a4-8f-e6-b4-9b-e7-89-b9-e7-83-a6-e6-81-bc/" rel="next" title="夏洛特烦恼">
+      夏洛特烦恼 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
     
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
   </div>
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
   <aside class="sidebar">
     <div class="sidebar-inner">
-        
-        
-        
-        
-      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -394,115 +347,29 @@
   <p class="site-author-name" itemprop="name">Mingkuo Wang</p>
   <div class="site-description" itemprop="description"></div>
 </div>
-  <nav class="site-state motion-element">
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        
           <a href="/archives/">
         
           <span class="site-state-item-count">174</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-categories">
-        
-          
             <a href="/categories/">
           
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
         <span class="site-state-item-count">12</span>
-        <span class="site-state-item-name">分类</span>
-        </a>
+        <span class="site-state-item-name">分类</span></a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-tags">
-        
-          
             <a href="/tags/">
           
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
         <span class="site-state-item-count">21</span>
-        <span class="site-state-item-name">标签</span>
-        </a>
+        <span class="site-state-item-name">标签</span></a>
       </div>
-    
   </nav>
+</div>
 
 
 
@@ -516,38 +383,26 @@
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
+        
+
+<div class="copyright">
+  
+  &copy; 2014-2019 – 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Mingkuo Wang</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0
+  </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.3.0</div>
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.6.0
+  </div>
 
         
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-user"></i>
-    </span>
-    <span class="site-uv" title="总访客量">
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-  
-    <span class="post-meta-divider">|</span>
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-eye"></i>
-    </span>
-    <span class="site-pv" title="总访问量">
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-  
-</div>
 
 
 
@@ -556,53 +411,75 @@
 
 
 
-
-
-
-
-        
       </div>
     </footer>
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
 
 
-  <script src="/lib/anime.min.js?v=3.1.0"></script>
-<script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/schemes/muse.js?v=7.3.0"></script>
 
-<script src="/js/next-boot.js?v=7.3.0"></script>
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
 
-  
 
-  
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'zjF185xlpGrOe2SEntfRNapB-gzGzoHsz',
+      appKey: 've4tRqlwpgge1iBUpS2v2Gv8',
+      placeholder: "评论一下吧，(´•༝•`)",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: 'zh-cn' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
 
 </body>
 </html>

@@ -1,34 +1,30 @@
 <!DOCTYPE html>
-
-
-
-
-
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
-  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+<link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
     root: '/',
     scheme: 'Mist',
-    version: '7.3.0',
+    version: '7.6.0',
     exturl: false,
-    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":false},
+    sidebar: {"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -36,6 +32,7 @@
     mediumzoom: false,
     lazyload: false,
     pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
     algolia: {
       appID: '',
       apiKey: '',
@@ -43,15 +40,9 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
-    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
-    },
-    sidebarPadding: 40
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
 
@@ -66,7 +57,8 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="毛姆读书随笔">
 <meta name="twitter:description" content="毛姆的文字读起来相当流畅，娓娓道来，如沐春风，就像一位老者在和你促膝长谈一样； 就像本书的译者评论毛姆对哲学的探索的时候说，“他的独特，就独特在他是把高深莫测的哲学理论放到了自己的生活中来考察的，所以别具一格，读起来既不玄乎有发人深省，是一般职业哲学家谈不出来的。” 总而言之，这是一本非常不错的谈读书的书籍，自己从中获益良多。 首先，谈一下毛姆对于读书的看法；从选的这些散文来看，毛姆不厌其烦地说，">
-  <link rel="canonical" href="http://yoursite.com/2015/12/25/e6-af-9b-e5-a7-86-e8-af-bb-e4-b9-a6-e9-9a-8f-e7-ac-94/">
+
+<link rel="canonical" href="http://yoursite.com/2015/12/25/e6-af-9b-e5-a7-86-e8-af-bb-e4-b9-a6-e9-9a-8f-e7-ac-94/">
 
 
 <script id="page-configurations">
@@ -74,17 +66,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: true,
-    isPage: false,
-    isArchive: false
+    isPost: true
   };
 </script>
 
   <title>毛姆读书随笔 | 恰同学少年</title>
-  <meta name="generator" content="Hexo 3.9.0">
   
-
-
 
 
 
@@ -103,7 +90,6 @@
   .use-motion .post-body,
   .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -117,11 +103,11 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage">
   <div class="container">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-meta">
 
@@ -135,11 +121,11 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 </div>
 
@@ -147,64 +133,32 @@
 <nav class="site-nav">
   
   <ul id="menu" class="menu">
-      
-      
-      
-        
         <li class="menu-item menu-item-home">
-      
-    
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-about">
-      
-    
 
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-tags">
-      
-    
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-categories">
-      
-    
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-archives">
-      
-    
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
   </ul>
-
-    
 
 </nav>
 </div>
@@ -217,33 +171,33 @@
   </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content">
             
 
-  <div id="posts" class="posts-expand">
-      <article itemscope itemtype="http://schema.org/Article">
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block post">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/12/25/e6-af-9b-e5-a7-86-e8-af-bb-e4-b9-a6-e9-9a-8f-e7-ac-94/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Mingkuo Wang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="恰同学少年">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">毛姆读书随笔
-
-          
+        <h2 class="post-title" itemprop="name headline">
+          毛姆读书随笔
         </h2>
 
         <div class="post-meta">
@@ -253,16 +207,8 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
               <time title="创建时间：2015-12-25 16:07:04" itemprop="dateCreated datePublished" datetime="2015-12-25T16:07:04+08:00">2015-12-25</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -270,31 +216,33 @@
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/读书/" itemprop="url" rel="index"><span itemprop="name">读书</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/读书/" itemprop="url" rel="index">
+                    <span itemprop="name">读书</span>
+                  </a>
+                </span>
             </span>
-          
 
           
-            <span class="post-meta-item" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2015/12/25/e6-af-9b-e5-a7-86-e8-af-bb-e4-b9-a6-e9-9a-8f-e7-ac-94/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2015/12/25/e6-af-9b-e5-a7-86-e8-af-bb-e4-b9-a6-e9-9a-8f-e7-ac-94/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -305,7 +253,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>毛姆的文字读起来相当流畅，娓娓道来，如沐春风，就像一位老者在和你促膝长谈一样； 就像本书的译者评论毛姆对哲学的探索的时候说，“<strong>他的独特，就独特在他是把高深莫测的哲学理论放到了自己的生活中来考察的，所以别具一格，读起来既不玄乎有发人深省，是一般职业哲学家谈不出来的。</strong>” 总而言之，这是一本非常不错的谈读书的书籍，自己从中获益良多。 首先，谈一下毛姆对于读书的看法；从选的这些散文来看，毛姆不厌其烦地说，读书应该是一种享受；他认为“<strong>不管学者怎么评价一本书，不管他们怎样异口同声地接力颂扬，除非这本书使你感兴趣，否则它就与你毫不相干。</strong>”当然，大部分的书读起来应该是一种享受，还有一小部分书虽然没有趣，但是我们也需要去读。比如名著，“<strong>我却只想谈些名著，就是那些经过时间考验而已被公认为一流的著作。……。它们对文学研究者来说是重要的，只是随着时间和兴趣的转移，它们原来的诱人之处已不再诱人，所以现在要读它们，是很需要有点毅力也需要花一番功夫的。举例说吧：我读过乔治·爱略特的《亚当·比德》，但我没法从心底说，我读这本书是种享受。我读它多半是出于一种责任心，坚持读完后，才不由得松了口气。</strong>”对于畅销书，毛姆也有自己独特的看法，“<strong>对于畅销书，我的做法是，在它出版后的两三年内绝不去读它；因为两三年后我会惊喜的发现，许多轰动一时的书已不再需要我费神去读了。我在这里必须再次强调，我坚决主张为娱乐而读书。不应该把读书当做一项任务；读书是一种乐趣，是人生所能给予的最大乐趣之一。</strong>” 那么读书又有什么作用或者好处呢？在散文中，毛姆多次提到读书的过程就是发现自己，重新认识自己，反思自己，甚至革新自己的一个过程；书中的人物有的是完全虚拟的，有的则是脱胎于现实生活。那些经典的人物之所以千百年之后人们仍然津津乐道，就在于他们代表了一种普遍的人性，这有助于我们更好的思考我们自身；在另一方面，“<strong>养成读书的习惯，也就是给自己营造一个几乎可以逃避生活中一切愁苦的庇护所。</strong>”而且“<strong>很少有什么娱乐，能让你过了中年之后还能从中感到满足；除了玩单人纸牌、解象棋残局和填字谜外，几乎没有什么游戏，你可以单独玩而不需要同伴。</strong>” 既然要读有趣的书，而且读书似乎也有不少好处，那么该如何去读呢？毛姆说“<strong>聪明的读者只要学会一目十行跳跃式阅读这种有用的技巧，就能在阅读时获得最大的享受。</strong>”当然“<strong>这即便说不上天赋才能，大概也需要积累大量的阅读经验后才能获得。</strong>”几乎所有的小说都不会一直有趣下去，总会有一些冗长的读者不感兴趣的部分，使用跳跃式阅读无疑可以让我们不致于失去太大的兴趣；对于另一种文学形式——戏剧，毛姆说“<strong>很少有哪个剧本，在演出前是没有经过大刀阔斧地删节的。</strong>”而且毛姆认为，有些小说和剧本是可以删节的，并举了萧伯纳戏剧在德国和英国上演后效果的反差来说明，自己并不十分认同，就像他说的一样，“<strong>我们各人的口味不可能完全一样，只是大致相同而已</strong>”，那么如何确定你认为的精华和别人认为的精华是一样的呢？如此又如何删节？可能一个人认为有所得的细节而另一人完全无感，所以，如果觉得有必要去读的书，还是去看未删节版的吧。但是，看完全本后可以再看一下删节版的对比一下，也是可以的。不过从另一个角度来看，有些东西实在过于冗余，把精华挑出来这样更有利于传播。比如之前看过《牡丹亭》的原本，若没有一点毅力还真是啃不下来。全本55出如果全部演下来，总时长估计在20小时以上，不仅演员受不了，观众恐怕也没有多少耐心，而且其中的一些东西实属细枝蔓节，无关大雅，整体演出反而会影响其美感；前几年，白先勇先生排青春版牡丹亭，之后演出场场爆满，自己也曾有幸观之，实在是一种美的体验，至今回味无穷；所以毛姆说有些东西需要删节也是有一定的道理的。 书中的很大一部分在谈各国文学以及一些经典的文学作品；对毛姆的一些推荐语做了一下整理，见附录；自己感兴趣的是毛姆对作家生平的叙述，从毛姆的叙述中可以看出，很多小说家都有记日记的习惯，所以我们才能够从多方面看清这个小说家，不是一个虚伪的道学先生，而是一个活生生的人，一个有着和我们一样缺陷的人。高尚的人格固然很可贵，但是生活中的绝大多数都只是普通的人，即使那些蜚声中外的名人，也难以因为他的名声而去忽略了他的品行或者美化他的品行。比如在《巴尔扎克与&lt;高老头&gt;》这篇文章里面说到，“<strong>他（巴尔扎克）是不大讲商业信用的，经常为了预支稿费向某个出版商保证，在某某日期一定交出一部小说稿，然而当他把小说稿匆匆写出来之后，往往把自己做过的保证丢到一边，去找另一个出版商谈价钱了。</strong>”“<strong>他（巴尔扎克）很热衷于布置房间，往往把自己的住处布置得既富丽堂皇又庸俗不堪。</strong>” 再比如在《司汤达和&lt;红与黑&gt;》里说，他（司汤达）后来写道，“<strong>热爱人民，憎恶压迫他们的人，但是如果要我和人民生活在一起，那我觉得简直是一种不堪忍受的折磨······，我过去——现在也依然——有许多贵族倾向；为了人民的幸福，我可以做任何事情，但我得承认，我宁愿每月在监狱里蹲两个星期，也不愿去和那些店主一起生活。</strong>”司汤达还经常勾引别人，即使是帮过自己忙的表兄的妻子。他说，“<strong>好处（勾引表兄妻子的好处）如下：勾引者的欲望将能得到发泄；他还能从中获利；他能进一步从事对人类情感的研究；他将满足自身的荣誉感。</strong>”因为有这样那样的不端品行或者道德败坏的行径，才让他们显的那么真实。反观国内，很少看见类似的叙述，国人一般都秉承着“为圣人讳”的原则，对他们的缺点往往一笔带过或者压根不提，而大篇幅描写他们的优点，以至于很多时候让人迷惑，这是真实存在的人吗？ 概而论之，这真是一部非常不错的书，力荐之；不过书中谈到了很多经典小说，自己没有读过，也不好过多评判，以后读了之后，再来一一印证一下；  </p><a id="more"></a>
+        <p>毛姆的文字读起来相当流畅，娓娓道来，如沐春风，就像一位老者在和你促膝长谈一样； 就像本书的译者评论毛姆对哲学的探索的时候说，“<strong>他的独特，就独特在他是把高深莫测的哲学理论放到了自己的生活中来考察的，所以别具一格，读起来既不玄乎有发人深省，是一般职业哲学家谈不出来的。</strong>” 总而言之，这是一本非常不错的谈读书的书籍，自己从中获益良多。 首先，谈一下毛姆对于读书的看法；从选的这些散文来看，毛姆不厌其烦地说，读书应该是一种享受；他认为“<strong>不管学者怎么评价一本书，不管他们怎样异口同声地接力颂扬，除非这本书使你感兴趣，否则它就与你毫不相干。</strong>”当然，大部分的书读起来应该是一种享受，还有一小部分书虽然没有趣，但是我们也需要去读。比如名著，“<strong>我却只想谈些名著，就是那些经过时间考验而已被公认为一流的著作。……。它们对文学研究者来说是重要的，只是随着时间和兴趣的转移，它们原来的诱人之处已不再诱人，所以现在要读它们，是很需要有点毅力也需要花一番功夫的。举例说吧：我读过乔治·爱略特的《亚当·比德》，但我没法从心底说，我读这本书是种享受。我读它多半是出于一种责任心，坚持读完后，才不由得松了口气。</strong>”对于畅销书，毛姆也有自己独特的看法，“<strong>对于畅销书，我的做法是，在它出版后的两三年内绝不去读它；因为两三年后我会惊喜的发现，许多轰动一时的书已不再需要我费神去读了。我在这里必须再次强调，我坚决主张为娱乐而读书。不应该把读书当做一项任务；读书是一种乐趣，是人生所能给予的最大乐趣之一。</strong>” 那么读书又有什么作用或者好处呢？在散文中，毛姆多次提到读书的过程就是发现自己，重新认识自己，反思自己，甚至革新自己的一个过程；书中的人物有的是完全虚拟的，有的则是脱胎于现实生活。那些经典的人物之所以千百年之后人们仍然津津乐道，就在于他们代表了一种普遍的人性，这有助于我们更好的思考我们自身；在另一方面，“<strong>养成读书的习惯，也就是给自己营造一个几乎可以逃避生活中一切愁苦的庇护所。</strong>”而且“<strong>很少有什么娱乐，能让你过了中年之后还能从中感到满足；除了玩单人纸牌、解象棋残局和填字谜外，几乎没有什么游戏，你可以单独玩而不需要同伴。</strong>” 既然要读有趣的书，而且读书似乎也有不少好处，那么该如何去读呢？毛姆说“<strong>聪明的读者只要学会一目十行跳跃式阅读这种有用的技巧，就能在阅读时获得最大的享受。</strong>”当然“<strong>这即便说不上天赋才能，大概也需要积累大量的阅读经验后才能获得。</strong>”几乎所有的小说都不会一直有趣下去，总会有一些冗长的读者不感兴趣的部分，使用跳跃式阅读无疑可以让我们不致于失去太大的兴趣；对于另一种文学形式——戏剧，毛姆说“<strong>很少有哪个剧本，在演出前是没有经过大刀阔斧地删节的。</strong>”而且毛姆认为，有些小说和剧本是可以删节的，并举了萧伯纳戏剧在德国和英国上演后效果的反差来说明，自己并不十分认同，就像他说的一样，“<strong>我们各人的口味不可能完全一样，只是大致相同而已</strong>”，那么如何确定你认为的精华和别人认为的精华是一样的呢？如此又如何删节？可能一个人认为有所得的细节而另一人完全无感，所以，如果觉得有必要去读的书，还是去看未删节版的吧。但是，看完全本后可以再看一下删节版的对比一下，也是可以的。不过从另一个角度来看，有些东西实在过于冗余，把精华挑出来这样更有利于传播。比如之前看过《牡丹亭》的原本，若没有一点毅力还真是啃不下来。全本55出如果全部演下来，总时长估计在20小时以上，不仅演员受不了，观众恐怕也没有多少耐心，而且其中的一些东西实属细枝蔓节，无关大雅，整体演出反而会影响其美感；前几年，白先勇先生排青春版牡丹亭，之后演出场场爆满，自己也曾有幸观之，实在是一种美的体验，至今回味无穷；所以毛姆说有些东西需要删节也是有一定的道理的。 书中的很大一部分在谈各国文学以及一些经典的文学作品；对毛姆的一些推荐语做了一下整理，见附录；自己感兴趣的是毛姆对作家生平的叙述，从毛姆的叙述中可以看出，很多小说家都有记日记的习惯，所以我们才能够从多方面看清这个小说家，不是一个虚伪的道学先生，而是一个活生生的人，一个有着和我们一样缺陷的人。高尚的人格固然很可贵，但是生活中的绝大多数都只是普通的人，即使那些蜚声中外的名人，也难以因为他的名声而去忽略了他的品行或者美化他的品行。比如在《巴尔扎克与&lt;高老头&gt;》这篇文章里面说到，“<strong>他（巴尔扎克）是不大讲商业信用的，经常为了预支稿费向某个出版商保证，在某某日期一定交出一部小说稿，然而当他把小说稿匆匆写出来之后，往往把自己做过的保证丢到一边，去找另一个出版商谈价钱了。</strong>”“<strong>他（巴尔扎克）很热衷于布置房间，往往把自己的住处布置得既富丽堂皇又庸俗不堪。</strong>” 再比如在《司汤达和&lt;红与黑&gt;》里说，他（司汤达）后来写道，“<strong>热爱人民，憎恶压迫他们的人，但是如果要我和人民生活在一起，那我觉得简直是一种不堪忍受的折磨······，我过去——现在也依然——有许多贵族倾向；为了人民的幸福，我可以做任何事情，但我得承认，我宁愿每月在监狱里蹲两个星期，也不愿去和那些店主一起生活。</strong>”司汤达还经常勾引别人，即使是帮过自己忙的表兄的妻子。他说，“<strong>好处（勾引表兄妻子的好处）如下：勾引者的欲望将能得到发泄；他还能从中获利；他能进一步从事对人类情感的研究；他将满足自身的荣誉感。</strong>”因为有这样那样的不端品行或者道德败坏的行径，才让他们显的那么真实。反观国内，很少看见类似的叙述，国人一般都秉承着“为圣人讳”的原则，对他们的缺点往往一笔带过或者压根不提，而大篇幅描写他们的优点，以至于很多时候让人迷惑，这是真实存在的人吗？ 概而论之，这真是一部非常不错的书，力荐之；不过书中谈到了很多经典小说，自己没有读过，也不好过多评判，以后读了之后，再来一一印证一下；  </p>
 <h2 id="附录："><a href="#附录：" class="headerlink" title="附录："></a><strong>附录：</strong></h2><h3 id="英国文学"><a href="#英国文学" class="headerlink" title="英国文学"></a><strong>英国文学</strong></h3><ul>
 <li>《摩尔·弗兰德斯》，笛福，没有一个英国小说家能写的比笛福更为真实；《摩尔·弗兰德斯》不是一本道德说教的书，它思喧哗的、粗俗的、野蛮的，但我认为它具有英国人个性中的那种活力；</li>
 <li>《格列佛游记》，斯威夫特，约翰逊博士评论说“只要你能想出巨人和小人来，其他一切就算不了什么了。”，毛姆认为他是在胡说。《格列佛游记》里有机智和讽刺，有巧妙的构思，出色的幽默，泼辣的讥嘲和充沛的生命力。它的文笔也精妙绝伦。至今没有人能像斯威夫特这样，使用我们这种笨拙的语言，却写的如此简洁、明快而自然；；</li>
@@ -367,65 +315,70 @@
     
     
     
-        
-      
 
       <footer class="post-footer">
 
         
 
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-              
-                <a href="/2015/12/23/linux-e7-9f-a5-e8-af-86-e9-97-ae-e9-a2-98/" rel="next" title="Linux知识&&问题">
-                  <i class="fa fa-chevron-left"></i> Linux知识&&问题
-                </a>
-              
-            </div>
 
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2015/12/26/e8-bf-bd-e9-a3-8e-e7-ad-9d-e7-9a-84-e4-ba-ba/" rel="prev" title="追风筝的人">
-                  追风筝的人 <i class="fa fa-chevron-right"></i>
-                </a>
-              
-            </div>
-          </div>
         
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2015/12/23/linux-e7-9f-a5-e8-af-86-e9-97-ae-e9-a2-98/" rel="prev" title="Linux知识&&问题">
+      <i class="fa fa-chevron-left"></i> Linux知识&&问题
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2015/12/26/e8-bf-bd-e9-a3-8e-e7-ad-9d-e7-9a-84-e4-ba-ba/" rel="next" title="追风筝的人">
+      追风筝的人 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
     
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
   </div>
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
   <aside class="sidebar">
     <div class="sidebar-inner">
-        
-        
-        
-        
-      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -439,7 +392,6 @@
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
           <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#附录："><span class="nav-number">1.</span> <span class="nav-text">附录：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#英国文学"><span class="nav-number">1.1.</span> <span class="nav-text">英国文学</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#法国文学"><span class="nav-number">1.2.</span> <span class="nav-text">法国文学</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#俄罗斯文学"><span class="nav-number">1.3.</span> <span class="nav-text">俄罗斯文学</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#美国文学"><span class="nav-number">1.4.</span> <span class="nav-text">美国文学</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">1.5.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></div>
-        
       </div>
       <!--/noindex-->
 
@@ -448,115 +400,29 @@
   <p class="site-author-name" itemprop="name">Mingkuo Wang</p>
   <div class="site-description" itemprop="description"></div>
 </div>
-  <nav class="site-state motion-element">
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        
           <a href="/archives/">
         
           <span class="site-state-item-count">174</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-categories">
-        
-          
             <a href="/categories/">
           
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
         <span class="site-state-item-count">12</span>
-        <span class="site-state-item-name">分类</span>
-        </a>
+        <span class="site-state-item-name">分类</span></a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-tags">
-        
-          
             <a href="/tags/">
           
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
         <span class="site-state-item-count">21</span>
-        <span class="site-state-item-name">标签</span>
-        </a>
+        <span class="site-state-item-name">标签</span></a>
       </div>
-    
   </nav>
+</div>
 
 
 
@@ -570,38 +436,26 @@
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
+        
+
+<div class="copyright">
+  
+  &copy; 2014-2019 – 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Mingkuo Wang</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0
+  </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.3.0</div>
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.6.0
+  </div>
 
         
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-user"></i>
-    </span>
-    <span class="site-uv" title="总访客量">
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-  
-    <span class="post-meta-divider">|</span>
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-eye"></i>
-    </span>
-    <span class="site-pv" title="总访问量">
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-  
-</div>
 
 
 
@@ -610,53 +464,75 @@
 
 
 
-
-
-
-
-        
       </div>
     </footer>
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
 
 
-  <script src="/lib/anime.min.js?v=3.1.0"></script>
-<script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/schemes/muse.js?v=7.3.0"></script>
 
-<script src="/js/next-boot.js?v=7.3.0"></script>
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
 
-  
 
-  
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'zjF185xlpGrOe2SEntfRNapB-gzGzoHsz',
+      appKey: 've4tRqlwpgge1iBUpS2v2Gv8',
+      placeholder: "评论一下吧，(´•༝•`)",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: 'zh-cn' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
 
 </body>
 </html>

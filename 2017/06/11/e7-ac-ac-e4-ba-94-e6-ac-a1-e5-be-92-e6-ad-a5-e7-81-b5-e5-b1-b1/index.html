@@ -1,34 +1,30 @@
 <!DOCTYPE html>
-
-
-
-
-
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
-  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+<link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
     root: '/',
     scheme: 'Mist',
-    version: '7.3.0',
+    version: '7.6.0',
     exturl: false,
-    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":false},
+    sidebar: {"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -36,6 +32,7 @@
     mediumzoom: false,
     lazyload: false,
     pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
     algolia: {
       appID: '',
       apiKey: '',
@@ -43,15 +40,9 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
-    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
-    },
-    sidebarPadding: 40
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
 
@@ -66,7 +57,8 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第五次徒步——灵山">
 <meta name="twitter:description" content="上周末先是拉肚子，之后又雪上加霜感冒了。无奈之下，在床上躺了两天，还好后来凭借个人毅力成功脱险。不过个中滋味确实十分难受，不过也从中看出自己的身体素质还有待提高。所以，这周末就迫不及待出来了。 早上7点从家出发，7点半左右乘坐大巴，大约11点到达徒步起点。路上无外乎领队介绍一些基本情况，然后个人做自我介绍。记得第一次参加爱跑徒步的时候，就听领队说，有一个经常参加徒步的调酒师，每次徒步都会带上两瓶红">
-  <link rel="canonical" href="http://yoursite.com/2017/06/11/e7-ac-ac-e4-ba-94-e6-ac-a1-e5-be-92-e6-ad-a5-e7-81-b5-e5-b1-b1/">
+
+<link rel="canonical" href="http://yoursite.com/2017/06/11/e7-ac-ac-e4-ba-94-e6-ac-a1-e5-be-92-e6-ad-a5-e7-81-b5-e5-b1-b1/">
 
 
 <script id="page-configurations">
@@ -74,17 +66,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: true,
-    isPage: false,
-    isArchive: false
+    isPost: true
   };
 </script>
 
   <title>第五次徒步——灵山 | 恰同学少年</title>
-  <meta name="generator" content="Hexo 3.9.0">
   
-
-
 
 
 
@@ -103,7 +90,6 @@
   .use-motion .post-body,
   .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -117,11 +103,11 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage">
   <div class="container">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-meta">
 
@@ -135,11 +121,11 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 </div>
 
@@ -147,64 +133,32 @@
 <nav class="site-nav">
   
   <ul id="menu" class="menu">
-      
-      
-      
-        
         <li class="menu-item menu-item-home">
-      
-    
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-about">
-      
-    
 
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-tags">
-      
-    
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-categories">
-      
-    
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-archives">
-      
-    
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
   </ul>
-
-    
 
 </nav>
 </div>
@@ -217,33 +171,33 @@
   </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content">
             
 
-  <div id="posts" class="posts-expand">
-      <article itemscope itemtype="http://schema.org/Article">
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block post">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/11/e7-ac-ac-e4-ba-94-e6-ac-a1-e5-be-92-e6-ad-a5-e7-81-b5-e5-b1-b1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Mingkuo Wang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="恰同学少年">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">第五次徒步——灵山
-
-          
+        <h2 class="post-title" itemprop="name headline">
+          第五次徒步——灵山
         </h2>
 
         <div class="post-meta">
@@ -253,16 +207,8 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
               <time title="创建时间：2017-06-11 16:20:58" itemprop="dateCreated datePublished" datetime="2017-06-11T16:20:58+08:00">2017-06-11</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -270,31 +216,33 @@
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/生活/" itemprop="url" rel="index"><span itemprop="name">生活</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/生活/" itemprop="url" rel="index">
+                    <span itemprop="name">生活</span>
+                  </a>
+                </span>
             </span>
-          
 
           
-            <span class="post-meta-item" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2017/06/11/e7-ac-ac-e4-ba-94-e6-ac-a1-e5-be-92-e6-ad-a5-e7-81-b5-e5-b1-b1/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2017/06/11/e7-ac-ac-e4-ba-94-e6-ac-a1-e5-be-92-e6-ad-a5-e7-81-b5-e5-b1-b1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -305,7 +253,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>上周末先是拉肚子，之后又雪上加霜感冒了。无奈之下，在床上躺了两天，还好后来凭借个人毅力成功脱险。不过个中滋味确实十分难受，不过也从中看出自己的身体素质还有待提高。所以，这周末就迫不及待出来了。 早上7点从家出发，7点半左右乘坐大巴，大约11点到达徒步起点。路上无外乎领队介绍一些基本情况，然后个人做自我介绍。记得第一次参加爱跑徒步的时候，就听领队说，有一个经常参加徒步的调酒师，每次徒步都会带上两瓶红酒。一直没有遇见，没想到这次竟然见到庐山真面目了，例行的两瓶红酒自然也是少不了的。 到达起点之后，开始正式徒步。开始的一段路乏善可陈。在山林间穿越，四周都是郁郁葱葱的树木，视野被挡住了。不过随着海拔的逐渐升高，视野也变的开阔起来，大片大片的草地蓦然呈现在眼前，心情为之开阔。远远望去，像极了经典的windows桌面背景。之前爬过那么多的山，还是第一次看见在山上绿草成席。更为奇特的是，在山上几乎很难看见高大的树木，偶尔几株树木也是很低矮。想来这里的气候环境不适宜树木的生长吧。一路沿着草坪前行，心旷神怡，走在队伍的最前面，回首向下望去，队尾的人群变得极其微小，仿佛是草坪上一株稍高一点的小树，大与小的对比是如此强烈，不禁生出一种无力之感，与大自然的广阔相比，人真是微乎其微，渺不可言。 草坪上开满了各种不知名的小花，有小黄花，小红花，小紫花，小白花，还有小灰花（蒲公英），各种颜色的小花默默的开放着，与青草相映成辉，如织花锦缎一般，披在了山坡之上，给人一种美的享受。小野花都很小，与青草等高，没有牡丹的雍容，桃花的艳丽，荷花的清秀，却给人一种独特的享受。人亦如花，芸芸众生总有很多人注定如这些野花一般，默默无闻，不被世人所青睐，终其一生可能都不被人所见，独生独死。不过没有被人青睐也有其好处，至少不用被别人打扰，可以独自享受生命之美。这世间它曾来过，这生命它也曾享受过，纵然默默无闻亦努力在生存，如此一生也可满足了。 一路向前，攀上了灵山的主峰——东灵山。山顶有一处小山，是用石块垒上去的，小山上似乎有一个神像，独立在小山尖上，向远处眺望。上山还有一个石碑，上书灵山主峰三个大字，边上标明灵山的海拔。很多人围着石碑拍照，自己也见猎心喜，上去拍了几张照片，以此来证明自己曾经来过。 在山顶略作休息，一行人开始下山，下山的路程一路石阶，不过感觉走着还是很不舒服。山路边偶尔看见骑着马上下山的游客，不过看马的眼神，满眼的疲惫之色，哀叹其悲惨的命运。原本应该驰骋于大草原之上，现在却每天上山下山，日复一日，若马有灵识，不知是否会思考生命的意义。下山的途中还看到了一大群牦牛，据说灵山是北京唯一一处适合牦牛生存的地方，如今身临其境，发现这里确实很适合牦牛的生长。 下山之后，经过一段水泥路，继续攀登北灵山，北灵相比东灵，山势更加陡峭一点，壁立千仞，下临深渊，不过一行人走的路都是类似景区的路线，并没有机会一趟险峻。登上北灵，再一次被眼前的美景所征服，遍地青绿，与蓝天白云相映成辉，景色之美实非笔墨所能形容。当时要不是顾忌身上衬衫染上了颜色，真想来一个驴打滚。。。山上有很多人在搭帐篷，这里应该是一个极佳的露营场所。不知自己以后是否有机会能来吃露营，这样的美景如果辜负了真是太可惜了。 在山上稍作停留之后，开始下山，下午6点半左右到达山地，回到北京已经接近晚上十点了。这一次徒步应该是最近几次最为完美的一次。</p><a id="more"></a>
+        <p>上周末先是拉肚子，之后又雪上加霜感冒了。无奈之下，在床上躺了两天，还好后来凭借个人毅力成功脱险。不过个中滋味确实十分难受，不过也从中看出自己的身体素质还有待提高。所以，这周末就迫不及待出来了。 早上7点从家出发，7点半左右乘坐大巴，大约11点到达徒步起点。路上无外乎领队介绍一些基本情况，然后个人做自我介绍。记得第一次参加爱跑徒步的时候，就听领队说，有一个经常参加徒步的调酒师，每次徒步都会带上两瓶红酒。一直没有遇见，没想到这次竟然见到庐山真面目了，例行的两瓶红酒自然也是少不了的。 到达起点之后，开始正式徒步。开始的一段路乏善可陈。在山林间穿越，四周都是郁郁葱葱的树木，视野被挡住了。不过随着海拔的逐渐升高，视野也变的开阔起来，大片大片的草地蓦然呈现在眼前，心情为之开阔。远远望去，像极了经典的windows桌面背景。之前爬过那么多的山，还是第一次看见在山上绿草成席。更为奇特的是，在山上几乎很难看见高大的树木，偶尔几株树木也是很低矮。想来这里的气候环境不适宜树木的生长吧。一路沿着草坪前行，心旷神怡，走在队伍的最前面，回首向下望去，队尾的人群变得极其微小，仿佛是草坪上一株稍高一点的小树，大与小的对比是如此强烈，不禁生出一种无力之感，与大自然的广阔相比，人真是微乎其微，渺不可言。 草坪上开满了各种不知名的小花，有小黄花，小红花，小紫花，小白花，还有小灰花（蒲公英），各种颜色的小花默默的开放着，与青草相映成辉，如织花锦缎一般，披在了山坡之上，给人一种美的享受。小野花都很小，与青草等高，没有牡丹的雍容，桃花的艳丽，荷花的清秀，却给人一种独特的享受。人亦如花，芸芸众生总有很多人注定如这些野花一般，默默无闻，不被世人所青睐，终其一生可能都不被人所见，独生独死。不过没有被人青睐也有其好处，至少不用被别人打扰，可以独自享受生命之美。这世间它曾来过，这生命它也曾享受过，纵然默默无闻亦努力在生存，如此一生也可满足了。 一路向前，攀上了灵山的主峰——东灵山。山顶有一处小山，是用石块垒上去的，小山上似乎有一个神像，独立在小山尖上，向远处眺望。上山还有一个石碑，上书灵山主峰三个大字，边上标明灵山的海拔。很多人围着石碑拍照，自己也见猎心喜，上去拍了几张照片，以此来证明自己曾经来过。 在山顶略作休息，一行人开始下山，下山的路程一路石阶，不过感觉走着还是很不舒服。山路边偶尔看见骑着马上下山的游客，不过看马的眼神，满眼的疲惫之色，哀叹其悲惨的命运。原本应该驰骋于大草原之上，现在却每天上山下山，日复一日，若马有灵识，不知是否会思考生命的意义。下山的途中还看到了一大群牦牛，据说灵山是北京唯一一处适合牦牛生存的地方，如今身临其境，发现这里确实很适合牦牛的生长。 下山之后，经过一段水泥路，继续攀登北灵山，北灵相比东灵，山势更加陡峭一点，壁立千仞，下临深渊，不过一行人走的路都是类似景区的路线，并没有机会一趟险峻。登上北灵，再一次被眼前的美景所征服，遍地青绿，与蓝天白云相映成辉，景色之美实非笔墨所能形容。当时要不是顾忌身上衬衫染上了颜色，真想来一个驴打滚。。。山上有很多人在搭帐篷，这里应该是一个极佳的露营场所。不知自己以后是否有机会能来吃露营，这样的美景如果辜负了真是太可惜了。 在山上稍作停留之后，开始下山，下午6点半左右到达山地，回到北京已经接近晚上十点了。这一次徒步应该是最近几次最为完美的一次。</p>
 <ul>
 <li><a href="http://www.chnhikers.com/activity/view.jhtml?id=872" target="_blank" rel="noopener">6.3周六 穿越京冀最美高山草原 挑战北京第一高峰</a></li>
 </ul>
@@ -315,65 +263,70 @@
     
     
     
-        
-      
 
       <footer class="post-footer">
 
         
 
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-              
-                <a href="/2017/05/16/e7-ac-ac-e5-9b-9b-e6-ac-a1-e5-be-92-e6-ad-a5-e8-a5-bf-e5-b1-b1-e6-a3-ae-e6-9e-97-e5-85-ac-e5-9b-ad-e9-a6-99-e5-b1-b1/" rel="next" title="第四次徒步——西山森林公园-香山">
-                  <i class="fa fa-chevron-left"></i> 第四次徒步——西山森林公园-香山
-                </a>
-              
-            </div>
 
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2017/07/16/e5-b2-b3-e9-ba-93-e5-b1-b1-e8-a1-a1-e5-b1-b1/" rel="prev" title="岳麓山&衡山">
-                  岳麓山&衡山 <i class="fa fa-chevron-right"></i>
-                </a>
-              
-            </div>
-          </div>
         
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/05/16/e7-ac-ac-e5-9b-9b-e6-ac-a1-e5-be-92-e6-ad-a5-e8-a5-bf-e5-b1-b1-e6-a3-ae-e6-9e-97-e5-85-ac-e5-9b-ad-e9-a6-99-e5-b1-b1/" rel="prev" title="第四次徒步——西山森林公园-香山">
+      <i class="fa fa-chevron-left"></i> 第四次徒步——西山森林公园-香山
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/07/16/e5-b2-b3-e9-ba-93-e5-b1-b1-e8-a1-a1-e5-b1-b1/" rel="next" title="岳麓山&衡山">
+      岳麓山&衡山 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
     
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
   </div>
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
   <aside class="sidebar">
     <div class="sidebar-inner">
-        
-        
-        
-        
-      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -394,115 +347,29 @@
   <p class="site-author-name" itemprop="name">Mingkuo Wang</p>
   <div class="site-description" itemprop="description"></div>
 </div>
-  <nav class="site-state motion-element">
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        
           <a href="/archives/">
         
           <span class="site-state-item-count">174</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-categories">
-        
-          
             <a href="/categories/">
           
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
         <span class="site-state-item-count">12</span>
-        <span class="site-state-item-name">分类</span>
-        </a>
+        <span class="site-state-item-name">分类</span></a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-tags">
-        
-          
             <a href="/tags/">
           
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
         <span class="site-state-item-count">21</span>
-        <span class="site-state-item-name">标签</span>
-        </a>
+        <span class="site-state-item-name">标签</span></a>
       </div>
-    
   </nav>
+</div>
 
 
 
@@ -516,38 +383,26 @@
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
+        
+
+<div class="copyright">
+  
+  &copy; 2014-2019 – 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Mingkuo Wang</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0
+  </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.3.0</div>
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.6.0
+  </div>
 
         
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-user"></i>
-    </span>
-    <span class="site-uv" title="总访客量">
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-  
-    <span class="post-meta-divider">|</span>
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-eye"></i>
-    </span>
-    <span class="site-pv" title="总访问量">
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-  
-</div>
 
 
 
@@ -556,53 +411,75 @@
 
 
 
-
-
-
-
-        
       </div>
     </footer>
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
 
 
-  <script src="/lib/anime.min.js?v=3.1.0"></script>
-<script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/schemes/muse.js?v=7.3.0"></script>
 
-<script src="/js/next-boot.js?v=7.3.0"></script>
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
 
-  
 
-  
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'zjF185xlpGrOe2SEntfRNapB-gzGzoHsz',
+      appKey: 've4tRqlwpgge1iBUpS2v2Gv8',
+      placeholder: "评论一下吧，(´•༝•`)",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: 'zh-cn' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
 
 </body>
 </html>

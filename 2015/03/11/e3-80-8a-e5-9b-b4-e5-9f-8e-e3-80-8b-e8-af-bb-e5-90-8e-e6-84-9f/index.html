@@ -1,34 +1,30 @@
 <!DOCTYPE html>
-
-
-
-
-
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
-  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+<link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
     root: '/',
     scheme: 'Mist',
-    version: '7.3.0',
+    version: '7.6.0',
     exturl: false,
-    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":false},
+    sidebar: {"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -36,6 +32,7 @@
     mediumzoom: false,
     lazyload: false,
     pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
     algolia: {
       appID: '',
       apiKey: '',
@@ -43,15 +40,9 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
-    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
-    },
-    sidebarPadding: 40
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
 
@@ -66,7 +57,8 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《围城》读后感">
 <meta name="twitter:description" content="前言：《围城》这本书是在年前买的，当时准备在过年的时候读完，过年期间家里面发生了一点事情，对于阅读也兴趣索然了，所以一直拖到前几天才把围城读完。读完之后，想着写点什么，于是就有了这篇读后感。  总体来说，我觉得钱钟书先生的《围城》并不十分高明，但却很值得一读；觉得不高明之处很大程度上可能是因为自己读得不深，又或是经历不够丰富吧，所以难以理解更深层次的含义。看了书的后记，觉得钱老还真是“憨”的好玩">
-  <link rel="canonical" href="http://yoursite.com/2015/03/11/e3-80-8a-e5-9b-b4-e5-9f-8e-e3-80-8b-e8-af-bb-e5-90-8e-e6-84-9f/">
+
+<link rel="canonical" href="http://yoursite.com/2015/03/11/e3-80-8a-e5-9b-b4-e5-9f-8e-e3-80-8b-e8-af-bb-e5-90-8e-e6-84-9f/">
 
 
 <script id="page-configurations">
@@ -74,17 +66,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: true,
-    isPage: false,
-    isArchive: false
+    isPost: true
   };
 </script>
 
   <title>《围城》读后感 | 恰同学少年</title>
-  <meta name="generator" content="Hexo 3.9.0">
   
-
-
 
 
 
@@ -103,7 +90,6 @@
   .use-motion .post-body,
   .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -117,11 +103,11 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage">
   <div class="container">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-meta">
 
@@ -135,11 +121,11 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 </div>
 
@@ -147,64 +133,32 @@
 <nav class="site-nav">
   
   <ul id="menu" class="menu">
-      
-      
-      
-        
         <li class="menu-item menu-item-home">
-      
-    
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-about">
-      
-    
 
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-tags">
-      
-    
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-categories">
-      
-    
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-archives">
-      
-    
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
   </ul>
-
-    
 
 </nav>
 </div>
@@ -217,33 +171,33 @@
   </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content">
             
 
-  <div id="posts" class="posts-expand">
-      <article itemscope itemtype="http://schema.org/Article">
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block post">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/03/11/e3-80-8a-e5-9b-b4-e5-9f-8e-e3-80-8b-e8-af-bb-e5-90-8e-e6-84-9f/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Mingkuo Wang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="恰同学少年">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">《围城》读后感
-
-          
+        <h2 class="post-title" itemprop="name headline">
+          《围城》读后感
         </h2>
 
         <div class="post-meta">
@@ -253,16 +207,8 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
               <time title="创建时间：2015-03-11 13:46:50" itemprop="dateCreated datePublished" datetime="2015-03-11T13:46:50+08:00">2015-03-11</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -270,31 +216,33 @@
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/读书/" itemprop="url" rel="index"><span itemprop="name">读书</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/读书/" itemprop="url" rel="index">
+                    <span itemprop="name">读书</span>
+                  </a>
+                </span>
             </span>
-          
 
           
-            <span class="post-meta-item" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2015/03/11/e3-80-8a-e5-9b-b4-e5-9f-8e-e3-80-8b-e8-af-bb-e5-90-8e-e6-84-9f/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2015/03/11/e3-80-8a-e5-9b-b4-e5-9f-8e-e3-80-8b-e8-af-bb-e5-90-8e-e6-84-9f/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -313,7 +261,7 @@
 
 评书自然不能不评主角，对于主角方鸿渐，借用鲁迅先生的一句话，“哀其不幸，怒其不争”。其实更多的应该是怒其不争。鸿渐在挂名岳父的资助下出过留学，却是“兴趣颇广，心得全无（P9）”，最后不得已买了一张“能把一个人的空疏、寡陋、愚笨都掩盖起来（P10）”的假文凭以哄骗其挂名岳父和父亲。在归国的船上，与鲍小姐勾三搭四，有贼心却不见有多少贼胆，面对众人的调侃，最后却只能落荒而逃。归国后，寄居在挂名岳父家里，在挂名岳父的银行里面谋了一个职位。中途受邀做报告，不伦不类，闹了很多笑话，充分显示了其无知无识。在银行任职期间，苏文纨芳心暗许，煞费苦心的向鸿渐表明心意，暗示鸿渐向其表白。却不曾想鸿渐却爱上了苏文纨的表妹唐晓芙。鸿渐生性懦弱，对于文纨不曾明面拒绝，对于晓芙又不曾“明目张胆”地去大胆追求，一直畏首畏尾，最终虽然鼓起了勇气间接地拒绝了苏文纨，去向晓芙表明心意，却惨遭拒绝。苏文纨在自尊心大受打击之后，匆匆与曹元朗订婚。之前苦恋文纨并把鸿渐当做头号情敌的赵辛楣，此时也与鸿渐冰释前嫌，化“敌”为友。并称鸿渐为“同情兄”（同有一个情人的意思）。两个伤心之人备受打击之后，共约远离伤心之地，赴三闾大学任职。同行之人还有李梅亭、顾尔谦以及孙柔嘉。一行人历经千辛万苦之后终于到达三闾大学。三闾大学仿佛就是一群魑魅魍魉的聚集地，【1】有高松年那种道貌岸然、老奸巨猾之徒；有满口仁义道德却一肚子的男盗女娼的李梅亭；有韩学愈那样伪造学历、恬不知耻的假洋博士；有汪楚厚那样谋取职位、结党自固、终于自蹈覆辙的阿木林。有陆子潇、顾尔谦那样专事拍马屁的猥琐小人。还有深藏不露有着很深心机的孙柔嘉。在学校期间上演了各种勾心斗角、阵风吃醋、蝇营狗苟之事。想鸿渐一个初出茅庐未经多少人事的小伙子又如何是这帮老奸巨猾的人的对手，自然处处被别人玩弄于股掌之中。由于鸿渐知道了太多不该知道的事情，加之赵辛楣偷情之事，之后便被高松年解聘。期间又茫然无知的落入孙柔嘉早已经准备好的蜘蛛网中，与其订立婚约。并在回上海的途中在香港完婚。在“一个自己并没确认是否爱他的孙柔嘉的婚姻中”，外加鸿渐的懦弱无能，婚后两人经常争吵，积少成多，并在去留上海的问题上最终爆发激烈争吵，婚姻走向破裂的边缘。整部围城也在这激烈的争吵中伴随着祖传老钟错乱的当当声中结束了。只留下无尽的回音，久久不绝。
 
-整个鸿渐的一生充分表现了其懦弱无能的性格，这也是造就其悲剧生活的根本原因。【2】从大学期间萌生自主恋爱的念头，到与文纨和晓芙的交往当中，再到与柔嘉的婚姻，鸿渐无不在向生活妥协，妥协的结果却不是他想要的，所以时常会懊悔，“拥挤里的孤寂，热闹里的凄凉，使他像许多住在这孤岛上的人，心灵也仿佛一个无凑畔的孤岛（P317）”。他不是不想抵抗，但是这抵抗之力是如此的薄弱，难以突破现实的枷锁，最终只能在围城之中苟延残喘。就像书中有一句话说的那样，“活诚然不痛快，死可也不容易；黑夜似乎够深了，光明依然看不见。（P237）”。俗话说：劝人亦是劝己。当然，评人亦是评己，自己身上与鸿渐相似之处颇多，其人其事足以为戒，希望能从中学到一点东西，让我不再重蹈其覆辙。命运终将会使我们屈服，但可不能那么容易，我想这也是我存在的意义吧。愿以此自勉。</code></pre><a id="more"></a><p>写到这里，关于围城的读后感也告一段落了，自己也就只是就其一个方面来谈谈自己的感想，其中还有很多值得思考的东西，比如说造成鸿渐痛苦命运的还有什么因素，以及鸿渐与四个女人爱恨纠缠，抑或是其中那些魑魅魍魉的性格与历史大环境的关系等等。以后，重读之时或可一叙。</p>
+整个鸿渐的一生充分表现了其懦弱无能的性格，这也是造就其悲剧生活的根本原因。【2】从大学期间萌生自主恋爱的念头，到与文纨和晓芙的交往当中，再到与柔嘉的婚姻，鸿渐无不在向生活妥协，妥协的结果却不是他想要的，所以时常会懊悔，“拥挤里的孤寂，热闹里的凄凉，使他像许多住在这孤岛上的人，心灵也仿佛一个无凑畔的孤岛（P317）”。他不是不想抵抗，但是这抵抗之力是如此的薄弱，难以突破现实的枷锁，最终只能在围城之中苟延残喘。就像书中有一句话说的那样，“活诚然不痛快，死可也不容易；黑夜似乎够深了，光明依然看不见。（P237）”。俗话说：劝人亦是劝己。当然，评人亦是评己，自己身上与鸿渐相似之处颇多，其人其事足以为戒，希望能从中学到一点东西，让我不再重蹈其覆辙。命运终将会使我们屈服，但可不能那么容易，我想这也是我存在的意义吧。愿以此自勉。</code></pre><p>写到这里，关于围城的读后感也告一段落了，自己也就只是就其一个方面来谈谈自己的感想，其中还有很多值得思考的东西，比如说造成鸿渐痛苦命运的还有什么因素，以及鸿渐与四个女人爱恨纠缠，抑或是其中那些魑魅魍魉的性格与历史大环境的关系等等。以后，重读之时或可一叙。</p>
 <p>参考资料：</p>
 <p>【1】<a href="http://baike.baidu.com/link?url=M0Uc7ycW5seJVHsURouR6lMW7yACCe-DhlNAcBhFguDRMpHxRHvnW0rWvS7ewLrB9iV016z852NtDH3b8LMdbZnEIBcvoaU5cZ8KeB2DREK" title="围城_百度百科" target="_blank" rel="noopener">围城</a>，百度百科；</p>
 <p>【2】<a href="http://baike.baidu.com/view/643141.htm" title="方鸿渐_百度百科" target="_blank" rel="noopener">方鸿渐</a>，百度百科；</p>
@@ -323,65 +271,70 @@
     
     
     
-        
-      
 
       <footer class="post-footer">
 
         
 
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-              
-                <a href="/2015/03/03/e5-85-b3-e4-ba-8e-e6-a2-a6-e6-83-b3/" rel="next" title="关于梦想">
-                  <i class="fa fa-chevron-left"></i> 关于梦想
-                </a>
-              
-            </div>
 
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2015/03/18/e3-80-8a-e6-98-86-e6-9b-b2-e5-85-ad-e7-99-be-e5-b9-b4-e3-80-8b-e9-87-87-e6-92-b7/" rel="prev" title="《昆曲六百年》采撷">
-                  《昆曲六百年》采撷 <i class="fa fa-chevron-right"></i>
-                </a>
-              
-            </div>
-          </div>
         
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2015/03/03/e5-85-b3-e4-ba-8e-e6-a2-a6-e6-83-b3/" rel="prev" title="关于梦想">
+      <i class="fa fa-chevron-left"></i> 关于梦想
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2015/03/18/e3-80-8a-e6-98-86-e6-9b-b2-e5-85-ad-e7-99-be-e5-b9-b4-e3-80-8b-e9-87-87-e6-92-b7/" rel="next" title="《昆曲六百年》采撷">
+      《昆曲六百年》采撷 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
     
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
   </div>
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
   <aside class="sidebar">
     <div class="sidebar-inner">
-        
-        
-        
-        
-      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -402,115 +355,29 @@
   <p class="site-author-name" itemprop="name">Mingkuo Wang</p>
   <div class="site-description" itemprop="description"></div>
 </div>
-  <nav class="site-state motion-element">
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        
           <a href="/archives/">
         
           <span class="site-state-item-count">174</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-categories">
-        
-          
             <a href="/categories/">
           
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
         <span class="site-state-item-count">12</span>
-        <span class="site-state-item-name">分类</span>
-        </a>
+        <span class="site-state-item-name">分类</span></a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-tags">
-        
-          
             <a href="/tags/">
           
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
         <span class="site-state-item-count">21</span>
-        <span class="site-state-item-name">标签</span>
-        </a>
+        <span class="site-state-item-name">标签</span></a>
       </div>
-    
   </nav>
+</div>
 
 
 
@@ -524,38 +391,26 @@
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
+        
+
+<div class="copyright">
+  
+  &copy; 2014-2019 – 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Mingkuo Wang</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0
+  </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.3.0</div>
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.6.0
+  </div>
 
         
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-user"></i>
-    </span>
-    <span class="site-uv" title="总访客量">
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-  
-    <span class="post-meta-divider">|</span>
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-eye"></i>
-    </span>
-    <span class="site-pv" title="总访问量">
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-  
-</div>
 
 
 
@@ -564,53 +419,75 @@
 
 
 
-
-
-
-
-        
       </div>
     </footer>
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
 
 
-  <script src="/lib/anime.min.js?v=3.1.0"></script>
-<script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/schemes/muse.js?v=7.3.0"></script>
 
-<script src="/js/next-boot.js?v=7.3.0"></script>
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
 
-  
 
-  
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'zjF185xlpGrOe2SEntfRNapB-gzGzoHsz',
+      appKey: 've4tRqlwpgge1iBUpS2v2Gv8',
+      placeholder: "评论一下吧，(´•༝•`)",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: 'zh-cn' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
 
 </body>
 </html>

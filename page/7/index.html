@@ -1,34 +1,30 @@
 <!DOCTYPE html>
-
-
-
-
-
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
-  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+<link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
     root: '/',
     scheme: 'Mist',
-    version: '7.3.0',
+    version: '7.6.0',
     exturl: false,
-    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":false},
+    sidebar: {"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -36,6 +32,7 @@
     mediumzoom: false,
     lazyload: false,
     pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
     algolia: {
       appID: '',
       apiKey: '',
@@ -43,15 +40,9 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
-    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
-    },
-    sidebarPadding: 40
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
 
@@ -62,7 +53,8 @@
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="恰同学少年">
-  <link rel="canonical" href="http://yoursite.com/page/7/">
+
+<link rel="canonical" href="http://yoursite.com/page/7/">
 
 
 <script id="page-configurations">
@@ -70,17 +62,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome: true,
-    isPost: false,
-    isPage: false,
-    isArchive: false
+    isPost: false
   };
 </script>
 
   <title>恰同学少年</title>
-  <meta name="generator" content="Hexo 3.9.0">
   
-
-
 
 
 
@@ -99,7 +86,6 @@
   .use-motion .post-body,
   .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -113,11 +99,11 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage">
   <div class="container">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-meta">
 
@@ -131,11 +117,11 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 </div>
 
@@ -143,64 +129,32 @@
 <nav class="site-nav">
   
   <ul id="menu" class="menu">
-      
-      
-      
-        
         <li class="menu-item menu-item-home">
-      
-    
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-about">
-      
-    
 
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-tags">
-      
-    
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-categories">
-      
-    
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-archives">
-      
-    
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
   </ul>
-
-    
 
 </nav>
 </div>
@@ -213,23 +167,25 @@
   </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content">
             
-  <div id="posts" class="posts-expand">
-        <article itemscope itemtype="http://schema.org/Article">
+
+  <div class="posts-expand">
+        
   
   
-  
-  <div class="post-block home">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/08/2016-05-08-sublime-config/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Mingkuo Wang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -237,9 +193,8 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-            
-            <a href="/2016/05/08/2016-05-08-sublime-config/" class="post-title-link" itemprop="url">sublime使用配置</a>
           
+            <a href="/2016/05/08/2016-05-08-sublime-config/" class="post-title-link" itemprop="url">sublime使用配置</a>
         </h2>
 
         <div class="post-meta">
@@ -249,16 +204,8 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
               <time title="创建时间：2016-05-08 18:11:05" itemprop="dateCreated datePublished" datetime="2016-05-08T18:11:05+08:00">2016-05-08</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -266,23 +213,33 @@
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2019-12-19 22:19:07" itemprop="dateModified" datetime="2019-12-19T22:19:07+08:00">2019-12-19</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
             </span>
-          
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/05/08/2016-05-08-sublime-config/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/05/08/2016-05-08-sublime-config/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -293,17 +250,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>最近在写前端，经推荐尝试使用sublime 3，记录一下自己的配置。</p><h1 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h1><p>Sublime Text 是一套跨平台的文本编辑器，支持基于Python的插件。说是需要购买注册码，但是不买也是可以使用的。。。推荐使用sublime text3，因为比2要快。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2016/05/08/2016-05-08-sublime-config/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+          <p>最近在写前端，经推荐尝试使用sublime 3，记录一下自己的配置。</p>
+<h1 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h1><p>Sublime Text 是一套跨平台的文本编辑器，支持基于Python的插件。说是需要购买注册码，但是不买也是可以使用的。。。推荐使用sublime text3，因为比2要快。</p>
+<h1 id="2-配置"><a href="#2-配置" class="headerlink" title="2. 配置"></a>2. 配置</h1><p>安装就不赘述了。下面记录一下自己的配置：</p>
+<h2 id="2-1-安装package-control"><a href="#2-1-安装package-control" class="headerlink" title="2.1 安装package control"></a>2.1 安装package control</h2><p>package control类似于debian的apt-get，redhat的yum，有了它能极大得简化插件的安装。ctrl+~（Esc下面那个键）同时按住，弹出一个输入框，粘贴下面代码，回车。 sublime text3</p>
+<pre><code>import urllib.request,os; pf = &apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), &apos;wb&apos;).write(urllib.request.urlopen( &apos;http://sublime.wbond.net/&apos; + pf.replace(&apos; &apos;,&apos;%20&apos;)).read())</code></pre><p>sublime text2</p>
+<pre><code>import urllib2,os; pf=&apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler( ))); open( os.path.join( ipp, pf), &apos;wb&apos; ).write( urllib2.urlopen( &apos;http://sublime.wbond.net/&apos; +pf.replace( &apos; &apos;,&apos;%20&apos; )).read()); print( &apos;Please restart Sublime Text to finish installation&apos;)</code></pre><p>注：最近package control的package仓库貌似被墙了，这里提供一个解决方法：修改hosts文件，添加上一句（没遇到过）：</p>
+<pre><code>50.116.34.243 sublime.wbond.net</code></pre><p>安装好之后，Preferences菜单下看到Package Settings和Package Control两个菜单了，点击Package Control，install package ，输入相应关键字，就能开始安装插件了。</p>
+<h2 id="2-2-插件安装"><a href="#2-2-插件安装" class="headerlink" title="2.2 插件安装"></a>2.2 插件安装</h2><h3 id="2-2-1-Emmet"><a href="#2-2-1-Emmet" class="headerlink" title="2.2.1 Emmet"></a>2.2.1 Emmet</h3><p>HTML、CSS必备；</p>
+<h3 id="2-2-2-Prettify"><a href="#2-2-2-Prettify" class="headerlink" title="2.2.2 Prettify"></a>2.2.2 Prettify</h3><p>HTML、CSS、JS、JSON等可以通过Ctrl+Shift+H 一键进行格式化；</p>
+<h3 id="2-2-3-Bracket-Highlighter"><a href="#2-2-3-Bracket-Highlighter" class="headerlink" title="2.2.3 Bracket Highlighter"></a>2.2.3 Bracket Highlighter</h3><p>括号匹配高亮以及html标签匹配高亮。默认是在匹配的符号下面加横线，可以修改成高亮形式，方法如下： 在preferences–&gt;package settings–&gt;Bracket highlighter–&gt;Bracket settings-Default会打开一个文件，将”bracket_styles”中的style改为hightlight。 注：自己尝试的时候无法编辑，可以将Bracket settings-Default的内容复制到preferences–&gt;package settings–&gt;Bracket highlighter–&gt;Bracket settings-User中，然后进行修改即可；</p>
+<h2 id="2-3-其他问题"><a href="#2-3-其他问题" class="headerlink" title="2.3 其他问题"></a>2.3 其他问题</h2><h3 id="2-3-1-无法通过package-control安装package"><a href="#2-3-1-无法通过package-control安装package" class="headerlink" title="2.3.1 无法通过package control安装package"></a>2.3.1 无法通过package control安装package</h3><p>无法安装package，提示如下：</p>
+<p>An error occurred while trying to unzip the package file for HTML-CSS-JS Prettify. Please try installing the package again.</p>
+<p>解决：手动安装package</p>
+<ol>
+<li>下载相关的package包，如HTML-CSS-JS Prettify的下载地址为：<a href="https://github.com/victorporof/Sublime-HTMLPrettify" target="_blank" rel="noopener">https://github.com/victorporof/Sublime-HTMLPrettify</a></li>
+<li>Preferences -&gt; Browse Package，找到package安装的目录，解压package包到该目录下面即可，然后重启sublime。</li>
+</ol>
+<h3 id="2-3-2-Ubuntu下Sublime-Text3无法输入中文"><a href="#2-3-2-Ubuntu下Sublime-Text3无法输入中文" class="headerlink" title="2.3.2 Ubuntu下Sublime Text3无法输入中文"></a>2.3.2 Ubuntu下Sublime Text3无法输入中文</h3><p>参考这篇文章即可解决：<a href="http://jingyan.baidu.com/article/f3ad7d0ff8731609c3345b3b.html" target="_blank" rel="noopener">Ubuntu下Sublime Text 3解决无法输入中文的方法</a></p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul>
+<li><a href="https://www.wikiwand.com/zh-cn/Sublime_Text" target="_blank" rel="noopener">Sublime Text</a></li>
+<li><a href="http://www.jianshu.com/p/3cb5c6f2421c#" target="_blank" rel="noopener">如何优雅地使用Sublime Text3</a></li>
+<li><a href="https://segmentfault.com/a/1190000000770104" target="_blank" rel="noopener">我的Sublime Text 3配置</a>（主要参考文献）</li>
+<li><a href="http://www.cnblogs.com/cart55free99/p/3502025.html" target="_blank" rel="noopener">SubLime BracketHighlighter 配置</a></li>
+<li><a href="http://www.cnblogs.com/liu-liang/archive/2013/06/09/3129471.html" target="_blank" rel="noopener">sublime中BracketHighlighter 插件使用</a></li>
+<li><a href="http://jingyan.baidu.com/article/f3ad7d0ff8731609c3345b3b.html" target="_blank" rel="noopener">Ubuntu下Sublime Text 3解决无法输入中文的方法</a></li>
+</ul>
+
       
     </div>
 
@@ -311,27 +284,23 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
-        <article itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block home">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/18/e4-b8-a4-e6-9c-ac-e4-b9-a6-e5-8f-b0-e5-8c-97-e4-ba-ba-e5-92-8c-e7-9a-ae-e5-9b-8a/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Mingkuo Wang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -339,9 +308,8 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-            
-            <a href="/2016/04/18/e4-b8-a4-e6-9c-ac-e4-b9-a6-e5-8f-b0-e5-8c-97-e4-ba-ba-e5-92-8c-e7-9a-ae-e5-9b-8a/" class="post-title-link" itemprop="url">两本书——台北人和皮囊</a>
           
+            <a href="/2016/04/18/e4-b8-a4-e6-9c-ac-e4-b9-a6-e5-8f-b0-e5-8c-97-e4-ba-ba-e5-92-8c-e7-9a-ae-e5-9b-8a/" class="post-title-link" itemprop="url">两本书——台北人和皮囊</a>
         </h2>
 
         <div class="post-meta">
@@ -351,16 +319,8 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
               <time title="创建时间：2016-04-18 22:27:26" itemprop="dateCreated datePublished" datetime="2016-04-18T22:27:26+08:00">2016-04-18</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -368,23 +328,33 @@
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/读书/" itemprop="url" rel="index"><span itemprop="name">读书</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/读书/" itemprop="url" rel="index">
+                    <span itemprop="name">读书</span>
+                  </a>
+                </span>
             </span>
-          
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/04/18/e4-b8-a4-e6-9c-ac-e4-b9-a6-e5-8f-b0-e5-8c-97-e4-ba-ba-e5-92-8c-e7-9a-ae-e5-9b-8a/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/04/18/e4-b8-a4-e6-9c-ac-e4-b9-a6-e5-8f-b0-e5-8c-97-e4-ba-ba-e5-92-8c-e7-9a-ae-e5-9b-8a/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -397,7 +367,6 @@
       
           <p>最近翻了两本书，白先勇的《台北人》和蔡崇达的《皮囊》，两本书还是有些相似的地方的，都是故事集或者称之为散文集。所以就将两本书放在一起说一说，写一写。 总体来说，白先勇的《台北人》更好，更精致华美也更忧伤一点，《皮囊》相比之下更贴近自己的生活，前一半的故事不太好，后面的一部分还是可以看一看想一想的。所以都还是比较喜欢的。 《台北人》是由一些小故事组成的，每一个小故事都非常精致，意犹未尽，足见大家风采。这些小故事有几个共同的特点，里面的人物大都来自于大陆后来退守到台湾，曾经都有过辉煌的历史，如今有点还能保留一点“堂前燕”，有的早已经烟消云散“飞入寻常百姓家”。他们都有一段时常念叨的过去，“社交皇后尹雪艳、低级舞女金兆丽、空军遗孀朱青、退役老兵赖鸣升、帮佣工人王雄、老年女仆顺恩嫂、年迈将军朴公、疯痴的妓女娟娟、小学教师卢先生、落魄教授余嵚磊、将军夫人蓝田玉、退休副官秦义方” 皆是如此。所以不管是将相之尊、仆从之卑还是文人之殇，所有的故事读起来总是带有一种忧郁、落寞之感，有一种哀愁挥之不去，像是一个历经繁华而今又落寞的人。就如张爱玲所说的那样“生命是一袭华美的旗袍，爬满了虱子”。 对《皮囊》的评价则有点复杂，这本书给我的感觉真是百转千折，首先看到对本书过高的赞誉，心中已经有点不屑了（应该是不喜欢从众，想特立独行一点），然后看见竟然有娱乐明星来作序，心中更添一分不屑，所以在看前半段的故事的时候，总是在挑刺，比如说些的太煽情，不够真实，矫揉造作，比如说些的句式不流畅等等。等到翻过一半的时候，开始欣赏一些不错的故事，对全书的看法也在慢慢改变，特别是看到写文展、厚朴的时候，与自己的生活开始贴近，才慢慢有点感觉了，对于作者有了较大的认同。全书翻完之后，也改变了自己之前的看法，如果真要打一个分数的话，应该在80分左右，后面的诸多文章还是值得一看的。 看完形形色色的小故事，心中总有一个疙瘩无法祛除，即这些故事很多都是出于人为编造的，那么去阅读这些人为编造的故事的时候，我又能从中获得什么东西呢？所不同的是，对于大师的作品可能会出于对名声的仰慕会更认真一点。更一般的，从假的东西中能够获得什么？如果一开始就是错的，那么又如何期待能够获得对的东西？所以不论在阅读《皮囊》还是《掌舵》的时候，心中总是带着一点不屑，带着一点偏见的。在阅读《台北人》还好一点，因为已经知道白先勇先生的名气了，所以阅读的时候会比较仔细，带着一种学习的心态拜读。后来，慢慢在想，草根未必不如名人，名人大家的境界很多时候难以达到，无法理解，或者他们也会有偏见和误解，只不过，在大多数的时候他们是正确的，但是观思想之深刻与广博，草根未必比名人大家差。更多时候，名人之所以为名人，只不过其一方面出众，而我们却将他们的一切奉之圭臬，殊不可取。禅宗讲究顿悟，经常有一些参了一辈子的禅的老僧被别人的一句无心之言点破，那么是否说这些人的修为高过老僧呢？显然在绝大多数的时候是不是的，对于别人的无心之言，老僧认真对待了，恰好打通了某些关节处，是以会顿悟。从中或许也可以找到一点启发以解我之疑惑，即我若认真，则一切皆为真，假亦可为真。关键在于自己对待事物的态度上面，以认真的态度对待之，那么就会获得与之对应的收获，反之，以浮浪、不屑的态度对待之，事物也必以此反馈自己。总而言之，一切都是自己态度的反馈而已，自己若认为故事为假，自然会处处挑刺，自己也就难以品咂其中三味，自己若认为故事就是真的，那必也会以认真的态度去剖析之，玩味之，反思之，修改之。 还有一点可以说一说，蔡崇达说“我在那时候才恍惚明白写作的意义——写作不仅仅是种技能，是表达，而更是让自己和他人“看见”更多人、看见“世界”的更多可能、让每个人的人生体验尽可能完整的路径。”，自己颇为赞同，人生一世，只能体验自己的一生，有时候偶尔可以体味一下他人的生活，书籍给我们提供了第三条通路，让我们能够见识到更多的人，体味更多的人生。如果把每一个人的一生比做一个三维空间，读书或许可以视为第四个维度，让我们有通道可以进入别人的世界里面体会三味。</p>
 
-        
       
     </div>
 
@@ -405,27 +374,23 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
-        <article itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block home">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/07/e8-af-bb-e4-b9-a6-e7-ac-94-e8-ae-b0-e8-ae-a9-e5-a4-a7-e8-84-91-e8-87-aa-e7-94-b1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Mingkuo Wang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -433,9 +398,8 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-            
-            <a href="/2016/04/07/e8-af-bb-e4-b9-a6-e7-ac-94-e8-ae-b0-e8-ae-a9-e5-a4-a7-e8-84-91-e8-87-aa-e7-94-b1/" class="post-title-link" itemprop="url">读书笔记——让大脑自由</a>
           
+            <a href="/2016/04/07/e8-af-bb-e4-b9-a6-e7-ac-94-e8-ae-b0-e8-ae-a9-e5-a4-a7-e8-84-91-e8-87-aa-e7-94-b1/" class="post-title-link" itemprop="url">读书笔记——让大脑自由</a>
         </h2>
 
         <div class="post-meta">
@@ -445,16 +409,8 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
               <time title="创建时间：2016-04-07 16:35:52" itemprop="dateCreated datePublished" datetime="2016-04-07T16:35:52+08:00">2016-04-07</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -462,23 +418,33 @@
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/读书/" itemprop="url" rel="index"><span itemprop="name">读书</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/读书/" itemprop="url" rel="index">
+                    <span itemprop="name">读书</span>
+                  </a>
+                </span>
             </span>
-          
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/04/07/e8-af-bb-e4-b9-a6-e7-ac-94-e8-ae-b0-e8-ae-a9-e5-a4-a7-e8-84-91-e8-87-aa-e7-94-b1/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/04/07/e8-af-bb-e4-b9-a6-e7-ac-94-e8-ae-b0-e8-ae-a9-e5-a4-a7-e8-84-91-e8-87-aa-e7-94-b1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -490,16 +456,27 @@
 
       
           <p><a href="https://book.douban.com/subject/4137809/" target="_blank" rel="noopener">让大脑自由豆瓣链接</a> 此书的价值并不是很大，写的有点啰嗦，有些也是词不达意，不清楚是自己的阅读水平的问题还是翻译的问题甚或是作者的问题，不过如有有闲暇的时间还是可以一读的。书中从当前对大脑的研究出发，揭示了一些大脑的特性。有些特性是我们“日用而不知”的，比如，运动可以改善我们的大脑、刺激的体验往往更加难忘、“好记性不如烂笔头”长久的记忆需要大量的重复、每天要保证一定的睡眠以及为什么为什么会有熊孩子和青春期的杀马特。有些也是与一般的认知有区别的，比如说即使是成人，每天依旧有新的脑细胞在产生，这些脑细胞、神经元依旧具有和婴儿一样的可塑性。 下面就简单谈一下和一般认知有所区别的东西吧； 先引一段书中的原话如下：</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2016/04/07/e8-af-bb-e4-b9-a6-e7-ac-94-e8-ae-b0-e8-ae-a9-e5-a4-a7-e8-84-91-e8-87-aa-e7-94-b1/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+<blockquote>
+<p>研究表明，成人大脑的某些区域一直像儿童大脑某些区域那样保持着可塑性，因此，我们可以在大脑中增加新的连接，强化现有的连接，甚至产生新的神经元，这让我们大家都称为终生学习者。但对此，我们并不总是这么认为的。直到五六年前，人们对大脑的普遍概念还是：我们在出生的时候，就获得了所有的脑细胞，从成年到老年这一令人沮丧之旅中，脑细胞不断地被侵蚀掉了。的确，随着年龄的增长，我们确实失去某些突触连接（有学者估计单单神经元损失一项，就接近每天30000个）。但成人大脑中某些与学习有关的区域，还在继续产生着新的神经元。这些新的神经元表现出和新生儿神经元一样的可塑性。成人的大脑在其一生中都保持着改变其结构，并应对经验而运转的能力。</p>
+</blockquote>
+<p>无独有偶，之前在TED上也看到一个类似的视频，<a href="http://open.163.com/movie/2015/12/V/N/MB6IJ08AU_MB729EVVN.html" target="_blank" rel="noopener">我们成年后依然能生成新的脑细胞</a> 将演讲的要点整理如下： 在海马体内，人类每天生长约700个新的神经元，相对于人体有数十亿神经元来说，有点微不足道，但是当我们到50岁的时候，我们出生时的所有的神经元都会变成海马体内在成人时期长出的新神经元。实验表明，如果阻止了海马体内生长新的神经元的功能，那也意味着我们也阻止了某些记忆功能，这对空间识别感非常重要。另外对于抑郁症的研究也发现，治疗抑郁症的药物的最终目的也是生成新的神经元，如果阻止了新的神经元的生成，那么治疗抑郁症的药也将失效。新生的神经元可以帮助我们提高记忆力、提高情绪、防止衰老、抗击压力等等，下面是一些日常生活中的活动与新生的神经元之间的关系：</p>
+<p>提高神经元生成</p>
+<p>降低神经元生成</p>
+<p>学习</p>
+<p>压力</p>
+<p>性爱</p>
+<p>睡眠缺乏</p>
+<p>运动</p>
+<p>间歇地断食——在餐与餐之间空下时间</p>
+<p>高饱和脂肪</p>
+<p>摄入黄酮类物质，在黑巧克力或蓝莓中</p>
+<p>乙醇——酒精中摄取（但也不能一概而论白藜芦醇，红酒中的物质，就能够促进新生神经的存活率）</p>
+<p>Omega-3脂肪酸，在脂质鱼中，比如三文鱼</p>
+<p>上述只是一个简单的概括，也不能过于较真，比如视频中提到的太多的性爱导致睡眠缺失会怎样。。。23333 吃的东西也会影响海马体生长新的神经元，一般来说卡路里保持在20%~30%会增强细胞生长，而且软质饮食相对于那些需要咀嚼、或是脆的食物会减少神经生成。 <img src="http://www.wangmingkuo.com/wp-content/uploads/2016/04/%E8%BF%90%E5%8A%A8%E5%AF%B9%E5%B0%8F%E9%BC%A0%E5%A4%A7%E8%84%91%E6%96%B0%E7%94%9F%E6%88%90%E7%A5%9E%E7%BB%8F%E5%85%83%E7%9A%84%E5%BD%B1%E5%93%8D.png" alt> 一张图说明运动的影响，没有滚动跑轮（A）和有滚动跑轮（D）的老鼠的脑细胞生成对比</p>
+<h3 id="寻章摘句老雕虫"><a href="#寻章摘句老雕虫" class="headerlink" title="寻章摘句老雕虫"></a>寻章摘句老雕虫</h3><blockquote>
+<p>我曾涉猎脑科学的几个研究领域，但我对能够指导教育和商业的最佳实践却一无所知。事实上，如果我们能够完全理解人类的大脑是如何知道怎样拿起一杯水这样的问题，拿就已经是一个很了不起的成就了。 <strong>定律1：越运动，大脑越聪明</strong> 当然，并不是认知“军械库”的每一样武器通过运动都能有所改善。例如，短期记忆能力、某些类型的反应时间似乎和体育活动无关，另外，运动后虽然几乎每个人都表现出某方面的改善，但个体之间的受益程度又有很大差异。最重要的是，尽管这些数据很有说服力，但它们只能说明运动与认知能力之间存在一种关联，而不能说明两者之间存在着因果关系。 实验室中的黄金标准似乎是每周2<del>3次，每次30分钟的有氧运动。增加一些力量训练，你将获得更多的认知益处。当然，个体的结果会有所差别，在没有咨询医生以前，任何人都不应该着手进行剧烈的训练。过度的运动和精疲力竭会损伤认知。研究数据只是表明了一个事实，那就是人应该从事体育锻炼。 通过实验发现，直接为健康的年轻人输氧，而不是通过运动的方式增加他们的氧气吸入，年轻人表现出相似的人认知能力改善。 <strong>定律2 大脑一直在进化</strong> <strong>定律3 每个大脑都不同</strong> 大脑就像肌肉：你让它做的运动越多，它就变得越大，越复杂，而这是否意味着智力的提高则是另一个需要讨论的问题，但又一个事实不容置疑：人类在生活中所作的一切实际上都会改变大脑的样子。你可以通过演奏乐器或从事某项运动等选择塑造或重塑自己。 人类大脑最大的施工程序要到我们20出头才能完成，一些微调要一直延续到40多岁。婴儿刚出生的时候，他们的大脑有着和成年人大约相同数量的连接，但这种状况持续不了多久。儿童到了3岁时，他们大脑的某些特定区域的连接已经增长了2</del>3倍。（这一现象让人们普遍认为，婴儿大脑发育是智力成功的关键之处，但并非如此。）这种增长也不会持续很久，因为大脑不久就将这些成千上万的小分支修剪了，儿童大约到了8岁时，大脑中的连接数量又回到了成人的标准。在青春期的时候，整件事情又重新开始，大脑中另一些完全不同的区域开始发展。你会再一次看到神经狂热地生长后又被愤怒地修剪回去，直到上大学之后，孩纸们的大脑开始（某种程度上）以成年人大脑的样子安定下来，这个发展过程就像一个双驼峰。从连通性的角度来看，两岁孩子的大脑相当活跃，之后，十几岁青少年的大脑更加活跃。（解释了熊孩子和青春期。。。） <strong>定律4 大脑不关注无聊之事</strong> 利用波斯纳模型可以预测大脑的功能和注意力，而这种预测是可以验证的，这个模型带来了一些神经病学的重大发现。其中有四种很强的实践潜能：情感、意义、多任务和时机： 1. 与中性事件相比，人们往往更容易记起那些引起情绪反应的事件；情绪冲击事件可以分为两类：一类是体验完全不同的事件，另一类是体验完全相同的事件； 2. 研究表明，情绪唤起将人的注意力集中在一个经历的“要点”身上，而忽视了周围的细节。这意味着我们的头脑中往往充满了概念、事件的概括性影像，而不是日渐褪色的细节；（也就是说，细节是可以重塑的） 3. 大脑不能从事多任务处理，大脑自然地按顺序将注意力集中在概念上，一次只能注意一件事情。此处谈的是大脑集中注意力的能力。研究表明，一个人如果在工作过程中被打扰，那么他需要比原来多50%的时间才能完成任务。不仅如此，他出错的几率增加了50%。比如，开车打手机就像酒后驾车，开车打手机在紧急情况下要比不打手机慢半秒踩下刹车，而且在紧急情况过后，要比不打手机的人需要更长的时间才能恢复到正常的速度，而且与前车之间的行车距离更短； 4. 大脑需要休息； <strong>定律5 短期记忆取决于最初几秒间</strong> 当你试图将信息输入自己的大脑记忆系统的时候，请务必准确地理解这一信息的含义。那么，一个人应该如何利用理解信息含义的方式来改善学习呢？一个最简单的手段就是举例说明，大量使用信息所包含的现实世界相关的例子，不断用有意义的体验刺激主要学习点。（在费曼自传里面费曼也提到，他也是通过举例来理解事情的。） <strong>定律6 长期记忆取决于有规律的重复</strong> 研究人员已经将检索机制理顺为两个通用的模型：一个是被动想象的图书馆，另一个是主动想象的犯罪现场；在一次学习结束之后相对较早的一段时间（比如学习后的几分钟到几小时到几天），检索系统允许我们对某一记忆再生出一个相当具体和详细的账目，这个可以比拟为图书馆模式。但是，随着时间的推移，我们逐步切换到福尔摩斯风格的检索方式。转变的原因是，随着时间的推移，不可避免地导致我们脑中某些事件和事实的削弱，这些事件和事实对我们来说曾经是否明确和具体。为了填补缺失的空白，大脑被迫依靠部分片段进行推论，甚至是完全地猜测，而且常常（也是最令人不安的）依赖于实际事件不相关的记忆进行推测。（99%的确定与1%的不确定会在后面慢慢扩大，让人对某一件事情产生怀疑，只需要埋下一颗怀疑的种子（即使这颗种子及其荒谬），让后让其慢慢发芽即可，适当时候甚至能够长成参天大树；） 一旦一条信息被长期存储，需要几年的时间才能将其转变为完全稳定的状态。 遗忘对我们发挥自身其他方面的能力起着非常重要的作用，其中的原因很简单，遗忘使得我们可以将事件区分优先次序； <strong>定律7 睡得好，大脑才会转得好</strong> 考虑到睡眠占据着我们生命1/3还要多的时间，而我们现在仍然不知道为什么我们需要睡眠。 那么，一个人究竟需要多长的时间睡眠呢？科学家的答案是：我们不知道！你没有看错，经历了千百年的睡眠体验，我们仍然不知道人究竟需要多少睡眠。 <strong>定律8 压力会损伤你的大脑</strong> 那些整天根据令人振奋的剧本来表演的演员的免疫系统十分健康，他们的免疫细胞数量多、活跃，随时都可以进入工作状态。而那些整天与内容沮丧的剧本打交道的演员的血液检测结果有些令人意外：免疫响应明显下降，他们的免疫细胞数量少、不强壮，而且不能随时进入工作状态发挥作用，更容易受到感染。 一次次的研究表明，儿童——有的甚至只有6个月大，对成人的争吵都有生理上的反应，比如他们会出现心跳加快、血压升高的症状。经常目睹父母争吵的各年龄段儿童的尿液中应激激素含量增高。他们难以调节自己的情绪，无法安慰自己，也很难讲注意力集中在某些事情上。 他们的研究发现，父母离异的子女学习成绩同对照组的学习成绩相比存在着惊人的差距。随后进行的调查表明，在情绪不稳定的家庭环境下成长的儿童的学习成绩更糟。（随后进行的更为仔细的调查表明，父母之间公开冲突的存在，而不是离婚这一结果使影响子女学业成绩的最大因素。） <strong>定律9 大脑喜欢多重感觉的世界</strong> <strong>定律10 视觉是最有力的感官</strong> 我要告诉你，你的大脑真的喜欢编造一些事情，没有百分之百忠实于眼睛说告诉它的一切；（眼见不一定为实。。。） 大脑审查盲点四周的视觉信息，进而计算出什么最有可能出现在盲点所在的位置，然后，就像计算机里的画图程序，大脑给盲点填补了内容，这个过程被称为“充盈”，我看不如称它为“伪装”。有些人认为，与其所大脑计算出缺失的内容是什么，不如说大脑只是忽略了视觉信息缺失这一事实。无论哪种方式，你都没有得到关于周围世界的百分之百准确的描述。 简单地说，输入越可视化，该输入就越有可能被认知，也就易于被回忆起来，这个现象非常普遍，并已经有了自己的专有名称：图优效应（the pictorial superiority effect） <strong>定律11 大脑也有性别差异</strong> 大脑的右侧往往记住经历的要点，而左脑倾向于记住细节。男性对压力引起的某一情感体验，记住了更多的要点。而女性则记住了更多的细节。（要紧要紧） <strong>定律12 我们是天生的探险家</strong> 研究表明，成人大脑的某些区域一直像儿童大脑某些区域那样保持着可塑性，因此，我们可以在大脑中增加新的连接，强化现有的连接，甚至产生新的神经元，这让我们大家都称为终生学习者。但对此，我们并不总是这么认为的。直到五六年前，人们对大脑的普遍概念还是：我们在出生的时候，就获得了所有的脑细胞，从成年到老年这一令人沮丧之旅中，脑细胞不断地被侵蚀掉了。的确，随着年龄的增长，我们确实失去某些突触连接（有学者估计单单神经元损失一项，就接近每天30000个）。但成人大脑中某些与学习有关的区域，还在继续产生着新的神经元。这些新的神经元表现出和新生儿神经元一样的可塑性。成人的大脑在其一生中都保持着改变其结构，并应对经验而运转的能力。</p>
+</blockquote>
+
       
     </div>
 
@@ -507,27 +484,23 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
-        <article itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block home">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/04/e4-bd-a0-e4-b8-80-e7-94-9f-e7-9a-84-e6-95-85-e4-ba-8b/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Mingkuo Wang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -535,9 +508,8 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-            
-            <a href="/2016/04/04/e4-bd-a0-e4-b8-80-e7-94-9f-e7-9a-84-e6-95-85-e4-ba-8b/" class="post-title-link" itemprop="url">你一生的故事</a>
           
+            <a href="/2016/04/04/e4-bd-a0-e4-b8-80-e7-94-9f-e7-9a-84-e6-95-85-e4-ba-8b/" class="post-title-link" itemprop="url">你一生的故事</a>
         </h2>
 
         <div class="post-meta">
@@ -547,16 +519,8 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
               <time title="创建时间：2016-04-04 16:31:57" itemprop="dateCreated datePublished" datetime="2016-04-04T16:31:57+08:00">2016-04-04</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -564,23 +528,33 @@
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/读书/" itemprop="url" rel="index"><span itemprop="name">读书</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/读书/" itemprop="url" rel="index">
+                    <span itemprop="name">读书</span>
+                  </a>
+                </span>
             </span>
-          
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/04/04/e4-bd-a0-e4-b8-80-e7-94-9f-e7-9a-84-e6-95-85-e4-ba-8b/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/04/04/e4-bd-a0-e4-b8-80-e7-94-9f-e7-9a-84-e6-95-85-e4-ba-8b/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -592,16 +566,26 @@
 
       
           <p>特德·蒋的小说给我的整体感觉是，在细节上精雕细琢，巨细无靡，但是故事情节上就有所欠缺，阅读起来自然就有点枯燥。不过还是很推荐，里面的不少文章给人一种思维上的享受，需要细细品咂，方能体会其中的精妙之处，而自己也只是认识到这一点，并没有去实践。。。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2016/04/04/e4-bd-a0-e4-b8-80-e7-94-9f-e7-9a-84-e6-95-85-e4-ba-8b/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+<h3 id="1-《地狱是上帝不在的地方》短评"><a href="#1-《地狱是上帝不在的地方》短评" class="headerlink" title="1. 《地狱是上帝不在的地方》短评"></a>1. 《地狱是上帝不在的地方》短评</h3><p>也许是因为《地狱是上帝不在的地方》是本书的最后一篇，对此总有一种偏好，认为，这是整本书里面写的最好的一篇文章。相比于其他的文章，这篇小说的故事情节无疑是最为紧凑的，而且揭示了一个道理，修正人们的最基本的认识，即：<strong>美德不一定会得到好报，好人也会遭遇不幸。</strong>这无疑是与一般的价值观相违背的，但是却又无可反驳，反而是普世价值观说认为的“好人有好报，坏人有坏报，不是不报，时候未到”经不起推敲。且不论什么是好人，什么是坏人（比如有打着好人的旗号做坏事的人，比如有被千夫所指、在当时不被人理解的好人）？单就从现世来看，好人经常遭遇各种困顿，而坏人却反而可以颐养千年。有人可能会反驳说，会有来世，这些坏人会遭受对应的惩罚，好人会得到好报的。但是有一个问题就是：我们所认为的现世是不是另一个世界中的来世？（否则现世的意义又何在？），又如何去证明，现在的一切会在来世被清算，既然如此，为何不在现世清算，这样不是能更好的教化人类吗？设置来世岂不是多此一举。所以，普世的价值观不过是人类的一种美好愿景罢了。或许，有一个悖论可以对此提供一个解答，“上帝让好人成为好人，就是对他们最大的奖赏！”。可发一哂。</p>
+<h3 id="2-《领悟》短评"><a href="#2-《领悟》短评" class="headerlink" title="2. 《领悟》短评"></a>2. 《领悟》短评</h3><p>另一篇映像比较深刻的是《领悟》，想起了之前看过的一个科幻小说，《人类灭绝》，里面描述了在一个非洲部落诞生的超人类，方方面面都能够碾压人类，超人类之于人类就像人类之于大猩猩。领悟描述的也是类似的情况，一个人意外获得了超能力，能够领悟万事万物的内在本质了。人类当前的语言已经无法对其进行描述了，于是小说的主人公又自创了新的语言，去描述内在的本质。通过对事物本质的领悟，甚至可以控制自己的身体，同时感受别人身体的细微变化，于是乎，就能够达到操控别人的目的。这其实和武侠小说中描述的一些武功颇为类似，比如“隔空取物”、“六脉神剑”甚至是“乾坤大挪移”。只不过，在科幻小时里面，一切都有了科学的合理的推测，于是，看起来也不是那么荒谬。也不禁让我自己也开始了幻想：是否《易经》里面的算卦预测也有其科学依据？只不过编写《易经》的人省略了其中的推理过程。当然，以上不过是及其荒谬的幻想罢了。但也不能完全否定类似的想法，记得曾经在一本书中看到，西方的科学家们做个一个统计实验，发现无名指比食指长的人更具有竞争性。类似的还看到过一个报道，说统计发现，那些名字中包含“摩西”的人活得时间更长。当然，以上可能都比较片面，或许是人们强加的一个因果关系。但如此是否也可以说明中国古代的看相、摸骨、算命其实也并不是那么的荒谬绝伦呢？</p>
+<h3 id="3-小说梗概（完整剧透）"><a href="#3-小说梗概（完整剧透）" class="headerlink" title="3. 小说梗概（完整剧透）"></a>3. 小说梗概（完整剧透）</h3><p><strong>巴比伦塔</strong>：科幻总是带着一点童话的意味，这一篇尤甚，一个城市倾几个世纪的人力和物力建造了一个通天之塔，想要看看天上是什么样的，后来才发现，天和地不过是一体的，有点类似于莫比乌斯带和克莱因瓶； <strong>领悟</strong>：因为脑组织受伤，注射了一种激素，反而成为超级天才了，拥有了领悟事物的本质的能力；最后两个拥有同种能力的天才开始巅峰对决，其中一个终究棋差一招。或许万事万物却又其本质的规律可以寻找。学习也是如此，自己目前找到的本质就是重复。 <strong>除以零</strong>：数学本是精密无差可以自洽的，人类目前很多的东西都是建立在数学的基础之上的，但是如果发现其实数学并不完备，那将如何，基础出现裂缝，建立在上面的高楼大厦也毕竟轰然倒塌。譬如量子力学的出现对传统物理学的颠覆；譬如三体里面那些自杀的物理学家； <strong>你一生的故事</strong>：命定论，人的一生是否从某种意义上来说已经定型了，我们的未来完全是可以预测的。小说中，语言学家通过对外星语言的学习获得了这种认知未来的能力，在女儿没有出生之前已经知晓了她一生中的所有的事情，然而最后出于某种原因最终还是选择维护这种必然性；于是对时间悖论提出了一种新的诠释：预知未来改变了一个人，唤醒了她的紧迫感，使她觉得自己有一种义务，必须严格遵照预言行事？ <strong>七十二个字母</strong>：这是一个全新的世界，人们研究内在的规律用来给事物命名，进而驱动事物。一项科学研究发现，人类将在五代之内灭绝，于是研究者们企图寻找一个佳名，让其能够代代相传。统治阶级想利用这种研究，控制贫穷人口的繁衍。然而研究者们终究不能坐视研究成果被这种种族和出生优劣论的人所控制，最终发明了一种方法可以让人类的繁衍不会受任何别有心机的人控制； <strong>人类科学之演变</strong>：设想在后人类时代（各个方面都远超人类，“就连最天才的人类面对后人类的转译的最新成果也往往大惑不解。”），人类发表在科学杂志上的文章。 <strong>地狱是上帝不在的地方</strong>：尼尔的妻子在一次天使下凡的神迹中丧生，因为生前对上帝的信仰，灵魂得以升入天堂。尼尔痛苦万分，想着如何如何也上天堂去和妻子团聚。可是尼尔本身并不信仰上帝，也无法说服自己在以后的时间去信仰上帝。于是便选择了一个十分冒险的方法：追寻天光（九死一生）。不过在被天光照射之后，尼尔依旧被打入地狱：没有上帝的地方。在地狱里，尼尔反而开始虔诚地信仰上帝了。</p>
+<h3 id="4-寻章摘句老雕虫"><a href="#4-寻章摘句老雕虫" class="headerlink" title="4. 寻章摘句老雕虫"></a>4. 寻章摘句老雕虫</h3><p>《领悟》</p>
+<blockquote>
+<p>当然，与我能够体验的情感相比，我实际体验的不过是冰山的一角。我的情感发展受到周围人的智力以及我与他们稀疏交往的制约。我不时想起孔子的“仁”这个概念：“仁慈”这个词远不足以表达“仁”的内涵，“仁”浓缩了人性的精华，只有通过与人接触才能获得，孤独者是无缘问津的。而我，虽然与人同在，处处都与人同在，却没有与任何人往来。按照我的智商，我可以成为一个完人，可是目前我仅仅是完人的一小部分。 我进入大千世界，重新观察社会百态。过去我的眼里是种种表达感情的语言、迹象，现在我看到的则是一个种种因素交叉关联的矩阵。人与人之间、物与物之间、机构与机构之间、观念与观念之间，力的线条扭曲、延伸。其中的个人是可悲的，如同牵线木偶，一个个原本活跃的个体被他们视而不见的网络缠住。如果他们有这个愿望，本来是可以抗拒的，但是这样做的人却寥寥无几。</p>
+</blockquote>
+<p>《你一生的故事》</p>
+<blockquote>
+<p>如果思维时使用的是一种没有发音表达形式的语言，那会怎么样？我对这种情况一直很好奇。我有一个朋友，父母都是聋子。从小到大他一直使用手语。他告诉我，他思考问题时心里用的语言常常是手语。我非常感兴趣，思维竟然能够这样构成。此人思考时内心没有声音，脑子里只有一双手比来划去。 关于这个问题，我喜欢把它跟一个寓言联系在一起。这个寓言说的是一个人站在岁月之书前，这本书按时间先后记载了过去与未来的一切事件。这本书是缩印本，可尽管如此，它还是一部庞然大物。这个人手持放大镜，翻动薄薄的纸页，翻到记载自己生平事迹的地方。她发现有一段写着她翻阅岁月之书。她跳到下一段，这段文字详细叙述了她这一天余下的时间会做什么：根据书里记录，她会在一匹名叫五月魔鬼的赛马上下一百美元的赌注，然后赢回二十倍。 她也想过，就按书上说的做。可她是个反叛型，偏要下定决心，什么马都不赌。 悖论于是产生。岁月之书不可能错误，上一幕的情景之所以发生，前提是这个人已经知道未来，确切地知道，而不是某种可能性。如果这是一则希腊神话，就会有种种外部条件联合起来，迫使她按照预言行事，无论她的自由意志如何。可大家都知道，神话中的预言极其模糊，岁月之书却非常精确详尽，外部事物中也不存在迫使她按预言所说的方式下注的力量。结果就是悖论：按照定义，岁月之书永远是对的；另一方面，不管这部书里说她会做什么，她都可以按照自己的自由意志，选择做出其他举动。这两个互相矛盾的方面如何统一起来？ 不可能统一，这是通常答案。正是因为上面提到的矛盾，岁月之书这种著作便不可能存在，逻辑上不可能。要不然还可以大方点：岁月之书可以存在，只要它不被读者读到——放在一个特别地方保存，不给任何人借阅权。 自由意志的存在意味着我们不可能预知未来。而我们之所以知道自由意志存在，是因为我们直接体验过它。意志是个人意识的本质部分。 ……但真的是这样吗？会不会出现另一种情况：预知未来改变了一个人，唤醒了她的紧迫感，使她觉得自己有一种义务，必须严格遵照预言行事？</p>
+</blockquote>
+<p>《人类科学之演变》</p>
+<blockquote>
+<p>威廉·吉布森：“未来早已到来，只是尚未平均分布。”</p>
+</blockquote>
+<p>《地狱是上帝不在的地方》</p>
+<blockquote>
+<p>在尼尔的一生中，别人总是在宗教信仰方面为他的残疾寻找原因，哪怕这种残疾跟上帝一点关系都没有。（在人们认识事物的时候，总喜欢用自己已有的框架去生硬的理解新的事物，由此不可避免地带来了偏见。一般来说，并无什么不好，不过还是得警醒） 爱无条件，亦无所求，甚至不求任何爱的回报； 自从尼尔堕入地狱，离开上帝的视线，许多年过去了，他仍旧爱着上帝。这才是真正的信仰。 美德并不一定会得到好报，好人也会遭遇不幸。</p>
+</blockquote>
+
       
     </div>
 
@@ -609,27 +593,23 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
-        <article itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block home">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/03/e6-b1-aa-e8-a8-80-e5-a6-84-e8-af-ad-e8-b0-88-e8-b0-88-e6-88-8f-e6-9b-b2-e4-b8-8e-e8-af-bb-e4-b9-a6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Mingkuo Wang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -637,9 +617,8 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-            
-            <a href="/2016/04/03/e6-b1-aa-e8-a8-80-e5-a6-84-e8-af-ad-e8-b0-88-e8-b0-88-e6-88-8f-e6-9b-b2-e4-b8-8e-e8-af-bb-e4-b9-a6/" class="post-title-link" itemprop="url">汪言妄语——谈谈戏曲与读书</a>
           
+            <a href="/2016/04/03/e6-b1-aa-e8-a8-80-e5-a6-84-e8-af-ad-e8-b0-88-e8-b0-88-e6-88-8f-e6-9b-b2-e4-b8-8e-e8-af-bb-e4-b9-a6/" class="post-title-link" itemprop="url">汪言妄语——谈谈戏曲与读书</a>
         </h2>
 
         <div class="post-meta">
@@ -649,16 +628,8 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
               <time title="创建时间：2016-04-03 14:26:09" itemprop="dateCreated datePublished" datetime="2016-04-03T14:26:09+08:00">2016-04-03</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -666,23 +637,33 @@
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/生活/" itemprop="url" rel="index"><span itemprop="name">生活</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/生活/" itemprop="url" rel="index">
+                    <span itemprop="name">生活</span>
+                  </a>
+                </span>
             </span>
-          
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/04/03/e6-b1-aa-e8-a8-80-e5-a6-84-e8-af-ad-e8-b0-88-e8-b0-88-e6-88-8f-e6-9b-b2-e4-b8-8e-e8-af-bb-e4-b9-a6/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/04/03/e6-b1-aa-e8-a8-80-e5-a6-84-e8-af-ad-e8-b0-88-e8-b0-88-e6-88-8f-e6-9b-b2-e4-b8-8e-e8-af-bb-e4-b9-a6/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -695,7 +676,6 @@
       
           <p>最近因为写毕业论文的事情，好长时间没有写点东西了。近两日心情也欠佳。或许通过书写能够纾解一下郁结的心情吧。于是随手记，随意写，观者也就随便看吧。 先谈戏曲，自从之前被人引入“坑”，如今是感觉要越陷越深了。从最初的惊艳于华美的服饰，俊美的扮相，到后来开始欣赏抑扬顿挫的唱腔以及婉转流畅的唱词，甚至最近开始背诵一些经典的唱词，在戏曲这条“不归路”上竟然有点渐行渐远的趋势。常言道“人生如戏、戏如人生”，戏曲本就源于生活，雅俗共赏，其中更是蕴含与寄托了日常生活的人们朴素无华的愿景。比如说，戏曲里面关于才子佳人的故事都有一个基本的套路“书生上京去赶考，小姐赠金后花园。金榜题名封诰命，才子佳人大团圆。”，不论是《牡丹亭》、《西厢记》还是《荆钗记》、《琵琶记》等等，莫不如是，虽然都是老套路，却依旧让人百看不厌。 再举另一个在课上听到的戏曲，《铡美案》（或者叫《秦香莲》，听老师说，如果演秦香莲的演员技艺更精湛，戏曲名字就叫《秦香莲》，反之如果演包拯的演员更胜一筹，那么曲名就叫《铡美案》。。。），戏曲的故事情节家喻户晓，不再赘述。关于里面的细节却颇为耐人寻味。古人一直常说“宁拆十座庙，不毁一桩婚”，因此在戏曲里面，不论是王延龄还是包拯，听到秦香莲的哭诉之后，第一反应都是想着试图去撮合他们，让其能够破镜团圆，王延龄甚至以自身的官位担保会为陈世美和皇上求情。不过陈世美以及死心不改，忘恩负义到底。不仅这些大人物充满人情味，里面的小人物也是如此，比如，秦香莲第一次进驸马府，被门官所阻，门官听取述说之后也不忍心再阻拦，但是如果放秦香莲进去，门官也是难逃罪责，于是想得一条妙计，让秦香莲撕下罗裙半幅，权当已经阻拦了，然后放其进去。再如，陈世美派韩琪去杀秦香莲母子，韩琪在得知实情之后也不忍下手，可是叵耐陈世美要“钢刀见血为证”，最后自刎而死，令人不甚唏嘘。在古代，“法理不外乎人情”，面对国太以及皇姑的求情，甚至是以死相逼，身亡朝廷命官的包拯也是进退维谷，左右为难。甚至包拯也劝秦香莲让她们就此罢休，“这是纹银三百两， 拿回家去度饥寒。教子南学把书念，千万读书你莫做官。你爹爹倒把高官做，害得你一家不团圆。”清官难做，无可奈何，可见一般。不过包拯就是包拯，最后拼着乌纱帽不要，也铡了陈世美，“皇家的官儿我不做，纵有这塌天祸，（包拯摘下乌纱帽。）包某承担！”，还人间一个公平正义，当然也给老百姓留下一个念想：虽然官官相护、民难以与官斗，但毕竟还有包拯这样正直的清官吗，徒留下一些虚无的念想罢了，总不至于真的就让人就此绝望了吧。 说了戏曲，再谈一谈最近读的书吧。应该是去年或者是前年，一位哥们儿向我推荐了一本书《掌舵》，彼时没怎么在意，因为对于这种网络小说总是有一种轻视（其实内心还是挺矛盾的，自己也看过一些不错的网络小说，比如《神墓》、《诛仙》、《悟空传》以及《侯卫东官场笔记》等等，虽然认为写的还不错，不过仍旧对网络小说存在一种偏见）。前几天看见多看上推荐了这本书籍，闲暇之余就开始阅读，由于事先存在的一种偏见和轻视，基本上是泛泛而过，浮光掠影式的翻阅。同时也因为事先的偏见态度，对于书中的描写总抱有一种不屑一顾的态度，因为有了这种“自以为是的居高临下”态度，自然很难去发掘书中的亮点以及与我有裨益之处。翻完之后，细想一下，抱有如此的态度去读书，难怪翻阅了那么多书，却依旧词不达意、思想浅薄，虽然肚子里面装了一些书，但不过就是一个两脚书橱罢了。再回过头来看，书中还是有诸多可取之处的，比如里面尔虞我诈，斗智斗勇的故事情节很是精彩，间杂着一些基本的经济常识、品茶论棋、历史人物的品评，还是值得去认真思考和学习的。不过因为自己事先就戴着有色眼睛去看东西，看到的东西自然就是有色眼睛的颜色，而不是事物本身的颜色。其实一开始对书的轻视还有其他的原因，比如说，出于书生的脾性，对于出生草莽，最后大富大贵的人总是难以有好感，特别是想到自己终其一生都难以望其项背时，这种嫉妒与愤恨更加难以言表，不自觉的就将这种偏见的感情加诸于书籍了。再如，自己有时总是怀有一种理想主义的情绪，认为真正的朋友就应该真诚，真心，而不是尔虞我诈，勾心斗角，一切以利益为主。自己欣赏的一种朋友关系是“君乘车，我戴笠，他日相逢下车辑；君担簦，我跨马，他日相逢为君下。”理想追究敌不过现实，不过有理想总比没有理想好吧，“纵被无情弃，不能羞。” 总的来说，《掌舵》这本书还是挺不错的，值得一读。说到偏见和认真的态度，又岂止于读书。认真处，鸡毛蒜皮皆可证道；偏执时，庙堂高楼难以安身； 斯人已去，无可与游；此闷何及，无处中酒；愿扫林亭，仍赏新晴；</p>
 
-        
       
     </div>
 
@@ -703,27 +683,23 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
-        <article itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block home">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/18/e8-ae-b0-e5-bd-95-e4-b8-80-e4-ba-9b-e6-88-8f-e6-9b-b2-e8-af-be-e4-b8-8a-e7-9a-84-e8-af-97-e8-af-8d/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Mingkuo Wang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -731,9 +707,8 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-            
-            <a href="/2016/03/18/e8-ae-b0-e5-bd-95-e4-b8-80-e4-ba-9b-e6-88-8f-e6-9b-b2-e8-af-be-e4-b8-8a-e7-9a-84-e8-af-97-e8-af-8d/" class="post-title-link" itemprop="url">记录一些戏曲课上的诗词</a>
           
+            <a href="/2016/03/18/e8-ae-b0-e5-bd-95-e4-b8-80-e4-ba-9b-e6-88-8f-e6-9b-b2-e8-af-be-e4-b8-8a-e7-9a-84-e8-af-97-e8-af-8d/" class="post-title-link" itemprop="url">记录一些戏曲课上的诗词</a>
         </h2>
 
         <div class="post-meta">
@@ -743,16 +718,8 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
               <time title="创建时间：2016-03-18 19:56:55" itemprop="dateCreated datePublished" datetime="2016-03-18T19:56:55+08:00">2016-03-18</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -760,23 +727,33 @@
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/生活/" itemprop="url" rel="index"><span itemprop="name">生活</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/生活/" itemprop="url" rel="index">
+                    <span itemprop="name">生活</span>
+                  </a>
+                </span>
             </span>
-          
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/03/18/e8-ae-b0-e5-bd-95-e4-b8-80-e4-ba-9b-e6-88-8f-e6-9b-b2-e8-af-be-e4-b8-8a-e7-9a-84-e8-af-97-e8-af-8d/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/03/18/e8-ae-b0-e5-bd-95-e4-b8-80-e4-ba-9b-e6-88-8f-e6-9b-b2-e8-af-be-e4-b8-8a-e7-9a-84-e8-af-97-e8-af-8d/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -787,19 +764,75 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>每次听完易栋老师的课，都会有一种自己是文盲的感觉，诗词曲文信手拈来，虽不能至，然心向往之，心向往之，必谨而行焉。随手记录下老师课堂上引用的一些诗词吧；</p><h2 id="3-17日"><a href="#3-17日" class="headerlink" title="3.17日"></a>3.17日</h2><h3 id="清平调词三首·李白"><a href="#清平调词三首·李白" class="headerlink" title="清平调词三首·李白"></a><a href="http://baike.baidu.com/view/1190736.htm?fromtitle=%E6%B8%85%E5%B9%B3%E8%B0%83%E8%AF%8D&fromid=6176348&type=syn" target="_blank" rel="noopener">清平调词三首·李白</a></h3><p>其一</p><blockquote>
+          <p>每次听完易栋老师的课，都会有一种自己是文盲的感觉，诗词曲文信手拈来，虽不能至，然心向往之，心向往之，必谨而行焉。随手记录下老师课堂上引用的一些诗词吧；</p>
+<h2 id="3-17日"><a href="#3-17日" class="headerlink" title="3.17日"></a>3.17日</h2><h3 id="清平调词三首·李白"><a href="#清平调词三首·李白" class="headerlink" title="清平调词三首·李白"></a><a href="http://baike.baidu.com/view/1190736.htm?fromtitle=%E6%B8%85%E5%B9%B3%E8%B0%83%E8%AF%8D&fromid=6176348&type=syn" target="_blank" rel="noopener">清平调词三首·李白</a></h3><p>其一</p>
+<blockquote>
 <p>云想衣裳花想容，春风拂槛露华浓。 若非群玉山头见，会向瑶台月下逢。</p>
 </blockquote>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2016/03/18/e8-ae-b0-e5-bd-95-e4-b8-80-e4-ba-9b-e6-88-8f-e6-9b-b2-e8-af-be-e4-b8-8a-e7-9a-84-e8-af-97-e8-af-8d/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+<p>其二</p>
+<blockquote>
+<p>一枝红艳露凝香，云雨巫山枉断肠。 借问汉宫谁得似，可怜飞燕倚新妆。</p>
+</blockquote>
+<p>其三</p>
+<blockquote>
+<p>名花倾国两相欢，长得君王带笑看。 解释春风无限恨，沉香亭北倚阑干。</p>
+</blockquote>
+<h3 id="赏牡丹·刘禹锡"><a href="#赏牡丹·刘禹锡" class="headerlink" title="赏牡丹·刘禹锡"></a><a href="http://baike.baidu.com/subview/751560/15935160.htm" target="_blank" rel="noopener">赏牡丹·刘禹锡</a></h3><blockquote>
+<p>庭前芍药妖无格，池上芙蕖净少情。 唯有牡丹真国色，花开时节动京城。</p>
+</blockquote>
+<h3 id="一种风流吾最爱，六朝人物晚唐诗。"><a href="#一种风流吾最爱，六朝人物晚唐诗。" class="headerlink" title="一种风流吾最爱，六朝人物晚唐诗。"></a><a href="http://tieba.baidu.com/p/3761794014" target="_blank" rel="noopener">一种风流吾最爱，六朝人物晚唐诗。</a></h3><h3 id="天涯·唐代李商隐"><a href="#天涯·唐代李商隐" class="headerlink" title="天涯·唐代李商隐"></a><a href="http://baike.baidu.com/subview/10776/5889260.htm" target="_blank" rel="noopener">天涯·唐代李商隐</a></h3><blockquote>
+<p>春日在天涯，天涯日又斜。 莺啼如有泪，为湿最高花。</p>
+</blockquote>
+<h3 id="鹊踏枝·梅落繁枝千万片·冯延巳"><a href="#鹊踏枝·梅落繁枝千万片·冯延巳" class="headerlink" title="鹊踏枝·梅落繁枝千万片·冯延巳"></a><a href="http://baike.baidu.com/view/2924312.htm" target="_blank" rel="noopener">鹊踏枝·梅落繁枝千万片·冯延巳</a></h3><blockquote>
+<p>梅落繁枝千万片，犹自多情，学雪随风转。昨夜笙歌容易散，酒醒添得愁无限。 楼上春山寒四面，过尽征鸿，暮景烟深浅。一晌凭栏人不见，鲛绡掩泪思量遍。</p>
+</blockquote>
+<h3 id="风入松·听风听雨过清明·吴文英"><a href="#风入松·听风听雨过清明·吴文英" class="headerlink" title="风入松·听风听雨过清明·吴文英"></a><a href="http://baike.baidu.com/view/2793591.htm" target="_blank" rel="noopener">风入松·听风听雨过清明·吴文英</a></h3><blockquote>
+<p>听风听雨过清明，愁草瘗花铭。楼前绿暗分携路，一丝柳，一寸柔情。料峭春寒中酒，交加晓梦啼莺。（瘗（yì），中（zhòng）） 西园日日扫林亭，依旧赏新晴。黄蜂频扑秋千索，有当时、纤手香凝。惆怅双鸳不到，幽阶一夜苔生。</p>
+</blockquote>
+<h3 id="伊州歌·益嘉运诗作"><a href="#伊州歌·益嘉运诗作" class="headerlink" title="伊州歌·益嘉运诗作"></a><a href="http://baike.baidu.com/subview/642400/8326548.htm" target="_blank" rel="noopener">伊州歌·益嘉运诗作</a></h3><blockquote>
+<p>打起黄莺儿，莫教枝上啼。 啼时惊妾梦，不得到辽西。</p>
+</blockquote>
+<h3 id="破阵子·燕子来时新社·晏殊"><a href="#破阵子·燕子来时新社·晏殊" class="headerlink" title="破阵子·燕子来时新社·晏殊"></a><a href="http://baike.baidu.com/view/2785291.htm" target="_blank" rel="noopener">破阵子·燕子来时新社·晏殊</a></h3><blockquote>
+<p>燕子来时新社，梨花落后清明。 池上碧苔三四点，叶底黄鹂一两声。日长飞絮轻。 巧笑东邻女伴，采桑径里逢迎。 疑怪昨宵春梦好，元是今朝斗草赢。笑从双脸生。</p>
+</blockquote>
+<h3 id="竹枝词二首·刘禹锡"><a href="#竹枝词二首·刘禹锡" class="headerlink" title="竹枝词二首·刘禹锡"></a><a href="http://baike.baidu.com/view/159379.htm?fromtitle=%E7%AB%B9%E6%9E%9D%E8%AF%8D%E5%88%98%E7%A6%B9%E9%94%A1&fromid=3159181&type=syn" target="_blank" rel="noopener">竹枝词二首·刘禹锡</a></h3><p>其一</p>
+<blockquote>
+<p>杨柳青青江水平，闻郎江上唱歌声。 东边日出西边雨，道是无晴却有晴。</p>
+</blockquote>
+<p>其二</p>
+<blockquote>
+<p>楚水巴山江雨多，巴人能唱本乡歌。 今朝北客思归去，回入纥那披绿罗。（纥（hé））</p>
+</blockquote>
+<h3 id="思帝乡·春日游·韦庄"><a href="#思帝乡·春日游·韦庄" class="headerlink" title="思帝乡·春日游·韦庄"></a><a href="http://baike.baidu.com/view/4485518.htm" target="_blank" rel="noopener">思帝乡·春日游·韦庄</a></h3><blockquote>
+<p>春日游，杏花吹满头， 陌上谁家年少，足风流？ 妾拟将身嫁与，一生休。 纵被无情弃，不能羞。</p>
+</blockquote>
+<h3 id="望江南·闲梦远·李煜"><a href="#望江南·闲梦远·李煜" class="headerlink" title="望江南·闲梦远·李煜"></a><a href="http://baike.baidu.com/view/7003554.htm" target="_blank" rel="noopener">望江南·闲梦远·李煜</a></h3><blockquote>
+<p>闲梦远，南国正芳春。船上管弦江面渌，满城飞絮辊轻尘。忙杀看花人！ 闲梦远，南国正清秋。千里江山寒色远，芦花深处泊孤舟，笛在月明楼。</p>
+</blockquote>
+<h3 id="梦江南·兰烬落·皇甫松"><a href="#梦江南·兰烬落·皇甫松" class="headerlink" title="梦江南·兰烬落·皇甫松"></a><a href="http://baike.baidu.com/view/391332.htm" target="_blank" rel="noopener">梦江南·兰烬落·皇甫松</a></h3><blockquote>
+<p>兰烬落，屏上暗红蕉。闲梦江南梅熟日，夜船吹笛雨萧萧。人语驿边桥。</p>
+</blockquote>
+<h3 id="梦江南·楼上寝·皇甫松"><a href="#梦江南·楼上寝·皇甫松" class="headerlink" title="梦江南·楼上寝·皇甫松"></a><a href="http://baike.baidu.com/view/649627.htm" target="_blank" rel="noopener">梦江南·楼上寝·皇甫松</a></h3><blockquote>
+<p>楼上寝，残月下帘旌。梦见秣陵惆怅事，桃花柳絮满江城。双髻坐吹笙。</p>
+</blockquote>
+<h3 id="漫感·龚自珍"><a href="#漫感·龚自珍" class="headerlink" title="漫感·龚自珍"></a><a href="http://baike.baidu.com/view/4733280.htm" target="_blank" rel="noopener">漫感·龚自珍</a></h3><blockquote>
+<p>绝域从军计惘然，东南幽恨满词笺。 一箫一剑平生意，负尽狂名十五年。</p>
+</blockquote>
+<p>ps: 据说龚自珍少年时候还是一个翩翩佳公子，常着杏黄衣衫，头梳双髻，于西湖之畔吹苼。。。</p>
+<h2 id="3-24日"><a href="#3-24日" class="headerlink" title="3.24日"></a>3.24日</h2><h3 id="苏溪亭·戴叔伦"><a href="#苏溪亭·戴叔伦" class="headerlink" title="苏溪亭·戴叔伦"></a><a href="http://baike.baidu.com/view/1939126.htm" target="_blank" rel="noopener">苏溪亭·戴叔伦</a></h3><blockquote>
+<p>苏溪亭上草漫漫，谁倚东风十二阑？ 燕子不归春事晚，一汀烟雨杏花寒。</p>
+</blockquote>
+<h3 id="春日我闻室作呈牧翁·柳如是"><a href="#春日我闻室作呈牧翁·柳如是" class="headerlink" title="春日我闻室作呈牧翁·柳如是"></a><a href="http://baike.baidu.com/view/821142.htm" target="_blank" rel="noopener">春日我闻室作呈牧翁·柳如是</a></h3><blockquote>
+<p>裁红晕碧泪漫漫，南国春来正薄寒。此去柳花如梦里，向来烟月是愁端。 画堂消息何人晓，翠帐容颜独自看。珍重君家兰桂室，东风取次一凭栏。</p>
+</blockquote>
+<h3 id="梦江南·千万恨·温庭筠"><a href="#梦江南·千万恨·温庭筠" class="headerlink" title="梦江南·千万恨·温庭筠"></a><a href="http://baike.baidu.com/view/3213491.htm" target="_blank" rel="noopener">梦江南·千万恨·温庭筠</a></h3><blockquote>
+<p>千万恨，恨极在天涯。山月不知心里事，水风空落眼前花，摇曳碧云斜。</p>
+</blockquote>
+<h3 id="望江南·梳洗罢·温庭筠"><a href="#望江南·梳洗罢·温庭筠" class="headerlink" title="望江南·梳洗罢·温庭筠"></a><a href="http://baike.baidu.com/view/2499849.htm" target="_blank" rel="noopener">望江南·梳洗罢·温庭筠</a></h3><blockquote>
+<p>梳洗罢，独倚望江楼。过尽千帆皆不是，斜晖脉脉水悠悠。肠断白蘋洲。</p>
+</blockquote>
+<p>未完待续。。。</p>
+
       
     </div>
 
@@ -807,27 +840,23 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
-        <article itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block home">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/17/e5-a4-9c-e8-b7-91-e7-8f-9e-e7-8f-88-e5-b1-b1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Mingkuo Wang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -835,9 +864,8 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-            
-            <a href="/2016/03/17/e5-a4-9c-e8-b7-91-e7-8f-9e-e7-8f-88-e5-b1-b1/" class="post-title-link" itemprop="url">夜跑珞珈山</a>
           
+            <a href="/2016/03/17/e5-a4-9c-e8-b7-91-e7-8f-9e-e7-8f-88-e5-b1-b1/" class="post-title-link" itemprop="url">夜跑珞珈山</a>
         </h2>
 
         <div class="post-meta">
@@ -847,16 +875,8 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
               <time title="创建时间：2016-03-17 11:38:05" itemprop="dateCreated datePublished" datetime="2016-03-17T11:38:05+08:00">2016-03-17</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -864,23 +884,33 @@
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/生活/" itemprop="url" rel="index"><span itemprop="name">生活</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/生活/" itemprop="url" rel="index">
+                    <span itemprop="name">生活</span>
+                  </a>
+                </span>
             </span>
-          
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/03/17/e5-a4-9c-e8-b7-91-e7-8f-9e-e7-8f-88-e5-b1-b1/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/03/17/e5-a4-9c-e8-b7-91-e7-8f-9e-e7-8f-88-e5-b1-b1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -893,7 +923,6 @@
       
           <p>晚间去珞珈山上跑步，记得上一次去珞珈山跑步还是在去年5月份的时候。后来因为被导师外派而不得不终止。天气渐暖，操场上散步和跑步的人也越来越多了，自己当初选择夜晚跑步的原因就在于夜深人静，正是思考的时候，正好可以去除一天的烦忧，脱去一天的束缚，一心一意地奔跑。在操场上跑了很长时间，过于喧嚣的环境始终与自己本心相违。于是再一次，离开了操场，征途是珞珈山。 从信息学部操场出发，经过图书馆、武大附中，去校医院，在校医院的路口处右拐，然后就是一条弯曲的长路。路的尽头就是珞珈山的入口处，挺长的一段爬山路，记得之前每次在这个地方都有点犯怵，每次都是咬紧牙关向上跑，到了环山公路的时候总是精疲力竭，此时会长吁一口气，终于登顶了。再然后就顺着环山公路开始奔跑。山路九曲十八弯，右手边是“山高林密”，左手边是“悬崖峭壁”，昏黄的路灯静静地照着不大的一片区域，这个时候山上总是很寂静的，偶尔也会相逢两三个同样是跑步的同学，擦肩而过，继续跑向不同的方向。大多数的时候是看不到人的，唯有寂静与昏黄的灯光相伴，“惟有幽人自来去”估计就是这种感觉吧。不过这也正是我所求的，寂静和孤独的时候总是最适合思考，最适合拷问自己的内心。但也并不总是如此，记得去年有几次，山上的路灯坏了，跑着跑着心内的恐惧像发疯了一般地增长，恍惚有一刻自己被魇住了一样，不过后来还是咬紧牙关，心中默念“阿弥陀佛”，不再去胡思乱想了，灵台清明之后，恐惧感也就慢慢地消散了。我曾想象很多珞珈山的前辈们或许也会在夜深人静的时候，独自一人在山上散步，然后很多的思想在这里迸发，照亮整个珞珈山。 绕过大半的珞珈山，然后开始下山，经过行政楼，夜晚的行政楼颇为辉煌，在金黄灯光的掩映下，自有一种高贵与典雅蕴藏其中，与老图遥相辉映。行政楼附近是三月盛开的珞璎，临近深夜，依旧有那些“只恐夜深花睡去， 故烧高烛照红妆。 ”的游人们在拍照。花也真是可怜，这么晚了还无法休息，太过娇艳美丽的东西注定很多时候会身不由己吧，还不如做一朵野花，无人问津，自娱自乐，独生独死的好。不过，富贵有富贵的活法，就像甄嬛传里的华妃说的，“做衣如做人，一定要花团锦簇、轰轰烈烈才好。”当然清贫也有清贫的活法，“晨兴理荒秽，带月荷锄归。”也挺好。如何选择无可厚非，都是个人意愿吧。但愿不管是花团锦簇还是安平乐道，都能够“但使愿无违。”夜晚的灯光虽然比不得月光，但也是美轮美奂，不由让人想起《春江花月夜》，里面有一句“月照花林皆似霰”特别适合此情此景的描写，没有月光有灯光也还将就吧。学生代代无穷已，珞璎年年只相似。不知珞璎待何人，但见游人长如织。 过了行政楼，有两条路，一条是912操场边上的下坡岔路，一条是经过原教务部直接的下坡路。随意选择了那条岔路，信步跑去。经过梅园小操场，路过未名湖。此时又有两条路可以选择，一条是主路，经过教四，过中心花坛，直接到正大门的牌坊。一条是经过万林艺术博物馆，过图书馆的路。随意选择了经过博物馆和图书馆的路。之后的路程也是各种岔道，各种选择，不赘述。最后经过生科院，折返到正大门牌坊，经信息学部的主路，走3栋和图书馆中间的那条路回到操场。如果拿跑步比喻人生，或许也有可比性，跑步的时候，起点是操场，终点还是操场，路上遇见一些人，经过一些风景，做过很多选择。人生亦如是，起点是生，终点是死，生死本是一体两面的。在一生的过程中我们会遇见很多人，经过很多地方，也会做很多选择。其实事后想想，如何选择真的有那么重要吗？起点终点已经固定，选择任何一条路，都会有这条路上独特的风景，或许不必为其他的选择而忧伤，这其实都是我们的必经之路。我们所要做的其实就是相信自己的选择，然后一往无前即可。 跑完之后，心情舒畅，一天的烦恼与忧愁也一扫而光，虽然以后依然会“别有幽愁暗恨生”，但是以后我依然还会跑啊。 附图一张： <img src="http://www.wangmingkuo.com/wp-content/uploads/2016/03/%E8%B7%91%E6%AD%A5.png" alt></p>
 
-        
       
     </div>
 
@@ -901,27 +930,23 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
-        <article itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block home">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/12/2016-03-12-java-compile-in-linux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Mingkuo Wang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -929,9 +954,8 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-            
-            <a href="/2016/03/12/2016-03-12-java-compile-in-linux/" class="post-title-link" itemprop="url">linux下编译使用命令行编译运行java程序（多个文件或者整个工程）</a>
           
+            <a href="/2016/03/12/2016-03-12-java-compile-in-linux/" class="post-title-link" itemprop="url">linux下编译使用命令行编译运行java程序（多个文件或者整个工程）</a>
         </h2>
 
         <div class="post-meta">
@@ -941,16 +965,8 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
               <time title="创建时间：2016-03-12 17:18:32" itemprop="dateCreated datePublished" datetime="2016-03-12T17:18:32+08:00">2016-03-12</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -958,23 +974,33 @@
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2019-12-19 22:54:59" itemprop="dateModified" datetime="2019-12-19T22:54:59+08:00">2019-12-19</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
             </span>
-          
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/03/12/2016-03-12-java-compile-in-linux/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/03/12/2016-03-12-java-compile-in-linux/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -986,16 +1012,57 @@
 
       
           <p>近期做毕业设计，在台式机上使用Intellij IDEA跑Java程序，总是卡的不行不行的。所以就想着放到学院的高性能集群上去跑一下，那么问题来了，长期依赖于IDE的调试，差不多忘记如何再命令行上编译程序了。无赖之下，只好重新学习如何再命令行下编译Java程序；经过摸索，终于弄明白一些基本的东西了，记录如下： 注：以下文章大部分来自于这篇英文文章，<a href="http://www.sergiy.ca/how-to-compile-and-launch-java-code-from-command-line/" target="_blank" rel="noopener">How to Compile and Run Java Code from a Command Line</a>，如果能读懂英文，还是建议阅读原文。本文会大部分翻译，然后加上自己的理解以及收集到的相关知识；</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2016/03/12/2016-03-12-java-compile-in-linux/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+<h2 id="1-任务"><a href="#1-任务" class="headerlink" title="1. 任务"></a>1. 任务</h2><p>假设有一个工程，就叫做helloworld好了，helloworld这个文件夹下包含三个文件夹，描述如下：</p>
+<ul>
+<li>/bin，空文件夹，用于放编译好的.class文件（这个可以任意命名，一般命名为bin）；</li>
+<li>/lib，包含第三方库文件（一般是一些jar包）；</li>
+<li>/src，包含java源文件；</li>
+</ul>
+<p>我们的任务是从根目录上编译和运行整个工程； 注：以下使用的是Linux系统，如果使用windows系统，唯一的区别在于要把路径分隔符的”:”换成”;”</p>
+<h2 id="2-编译Java代码"><a href="#2-编译Java代码" class="headerlink" title="2. 编译Java代码"></a>2. 编译Java代码</h2><p>这一步就是使用javac命令把Java源代码编译成JVM字节码（.class文件）。 假设我们要编译的文件为：Application.java，该文件的相关情况描述如下：</p>
+<ul>
+<li>文件在名为com.example的package中；</li>
+<li>依赖jar包为：lib文件夹下的lib1.jar和lib2.jar；</li>
+<li>编译好的字节码放在bin目录下；</li>
+</ul>
+<p>运行如下命令即可编译：</p>
+<p>javac -d bin -sourcepath src -cp lib/lib1.jar:lib/lib2.jar src/com/example/Application.java</p>
+<p>编译结果会生成bin/com/example/Application.class文件；如果Application.java还依赖其他类文件，那些类文件会被自动编译； 注：如果依赖其他类文件，则需要加上，-sourcepath src，让javac知道到哪里去找这些类文件； javac常用参数说明：</p>
+<ul>
+<li>-d，指定编译后class文件的存放位置，如果不指定，则编译好的class文件和源文件放在同一个目录下；</li>
+<li>-classpath，可以简写成-cp，指定编译所需的class文件的位置，比如jar包、zip文件或其他包含class文件的目录，会覆盖系统的CLASSPATH变量；</li>
+<li>-sourcepath，指定编译所需的源文件的位置；</li>
+<li>-encoding，指定源文件使用的字符编码（暂时没有用到过）；</li>
+</ul>
+<h2 id="3-运行Java代码"><a href="#3-运行Java代码" class="headerlink" title="3. 运行Java代码"></a>3. 运行Java代码</h2><p>这一步是使用java命令运行编译好的.class文件； 假设我们当前在工程的根目录中，运行如下命令即可：</p>
+<p>java -cp bin:lib/lib1.jar:lib/lib2.jar com.example.Application</p>
+<p>注：这里提供的是类的名称而不是类的整个文件名； 一些自己用到过的参数说明：</p>
+<ul>
+<li>-Xms，设置虚拟机可用内存堆的初始大小，缺省单位为字节，该大小为1024的整数倍并且要大于1MB，可用k(K)或m(M)为单位来设置较大的内存数。初始堆大小为2MB。 例如：-Xms6400K，-Xms256M</li>
+<li>-Xmx，设置虚拟机内存堆的最大可用大小，缺省单位为字节，该值必须为1024整数倍，并且要大于2MB。可用k(K)或m(M)为单位来设置较大的内存数。缺省堆最大值为64MB。 例如：-Xmx81920K，-Xmx80M</li>
+</ul>
+<h2 id="4-关于classpath"><a href="#4-关于classpath" class="headerlink" title="4. 关于classpath"></a>4. 关于classpath</h2><p>让我们假设在编译Application.java的过程中，编译器卡在了com.example.Util类上，那么如何在文件系统里找到这些类呢？根据Java的命名规则，Util类必定是放在/com/example文件夹下的，但是如何开始去搜寻这个路径呢？这时候，classpath就派上用场了，classpath可以用如下三种方式设置：</p>
+<ul>
+<li>如果没有 –classpath参数（或者简写成 -cp），就会使用CLASSPATH环境变量；</li>
+<li>如果CLASSPATH环境变量没有找到，就会默认把当前目录当成classpath；</li>
+<li>如果 –classpath被显式设定，那么它将会覆盖所有其他的值；</li>
+</ul>
+<p>如果classpath设置不当，可能会造成一些无法预料的错误，举例如下： 比如，我们没有使用任何第三方的库，只是使用自己的com.example.Util类，同时尝试从src目录下编译Application.java文件，命令如下：</p>
+<p>javac com/example/Application.java</p>
+<p>这没问题，但是当我们需要依赖第三方库的时候，此时把库添加到classpath中，命令如下：</p>
+<p>javac -cp lib/lib1.jar com/example/Application.java</p>
+<p>这将会造成一个错误：</p>
+<p>package com.example.Util does not exist</p>
+<p>原因在于当我们设置 -cp lib/lib1.jar的时候我们覆盖了classpath的默认值（当前目录）。现在编译器只会去查找lib1.jar里面的所有文件。此时我们需要显式地将当前目录添加到classpath中；命令如下：</p>
+<p>javac -cp .;lib/lib1.jar com/example/Application.java</p>
+<h2 id="5-建议"><a href="#5-建议" class="headerlink" title="5. 建议"></a>5. 建议</h2><p>如果要编译多个java文件，或者编译整个工程，建议写一个shell脚本（在windows底下就协议贯彻bat批处理程序即可），</p>
+<h2 id="6-参考文献："><a href="#6-参考文献：" class="headerlink" title="6. 参考文献："></a>6. 参考文献：</h2><ul>
+<li><a href="http://www.sergiy.ca/how-to-compile-and-launch-java-code-from-command-line/" target="_blank" rel="noopener">How to Compile and Run Java Code from a Command Line</a></li>
+<li><a href="http://blog.csdn.net/huagong_adu/article/details/6929817" target="_blank" rel="noopener">如何用javac 和java 编译运行整个Java工程</a></li>
+<li><a href="http://blog.csdn.net/wen294299195/article/details/39964971" target="_blank" rel="noopener">ubuntu下使用java、javac命令行编译工程</a></li>
+<li><a href="http://xinklabi.iteye.com/blog/837435" target="_blank" rel="noopener">Java命令行运行参数说明大全(偷来的)</a></li>
+</ul>
+
       
     </div>
 
@@ -1003,27 +1070,23 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
-        <article itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block home">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/09/e4-b8-80-e5-8f-a5-e9-a1-b6-e4-b8-80-e4-b8-87-e5-8f-a5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Mingkuo Wang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1031,9 +1094,8 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-            
-            <a href="/2016/03/09/e4-b8-80-e5-8f-a5-e9-a1-b6-e4-b8-80-e4-b8-87-e5-8f-a5/" class="post-title-link" itemprop="url">一句顶一万句</a>
           
+            <a href="/2016/03/09/e4-b8-80-e5-8f-a5-e9-a1-b6-e4-b8-80-e4-b8-87-e5-8f-a5/" class="post-title-link" itemprop="url">一句顶一万句</a>
         </h2>
 
         <div class="post-meta">
@@ -1043,16 +1105,8 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
               <time title="创建时间：2016-03-09 16:27:52" itemprop="dateCreated datePublished" datetime="2016-03-09T16:27:52+08:00">2016-03-09</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -1060,23 +1114,33 @@
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/读书/" itemprop="url" rel="index"><span itemprop="name">读书</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/读书/" itemprop="url" rel="index">
+                    <span itemprop="name">读书</span>
+                  </a>
+                </span>
             </span>
-          
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/03/09/e4-b8-80-e5-8f-a5-e9-a1-b6-e4-b8-80-e4-b8-87-e5-8f-a5/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/03/09/e4-b8-80-e5-8f-a5-e9-a1-b6-e4-b8-80-e4-b8-87-e5-8f-a5/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -1089,7 +1153,6 @@
       
           <p>翻完小说之后，总觉得心里有点堵得慌。不是因为最近心里烦闷，别人不理自己，也不是因为小说写的太好或者太糟糕，而是翻完之后，自己心里也有点话想说道说道了，于是就想写一篇博客发在网上。写博客发在网上，不是说自己在现实中没有说的上话的朋友，也不是说网上就有人能够理解自己了，而是说，把心里想说的写出来之后或许就会舒服一些了。 小说的内容很平实，家长里短，说的都是生活中很普通很常见的事情，比如说，某某人和父亲闹翻了，某某人的妻子和别人偷情了，某某人和别人跑了啊，某某人出去找某某人等等；可也正是从这些家长里短的事情中才可以看出，其实千百年来，国人一直都生活的很憋屈，很痛苦，因为“世上的人遍地都是，说得着的人千里难寻。”可发一叹；就拿自己看到过的听到过的来看，事实上很多家庭都存在着这个问题，一家人反而说不到一块去，总是会有各种争执矛盾，有时候反而和外人或者陌生人才能说得痛快。有时也在想，中国的酒文化是不是也与此相关，一般来说，“酒后吐真言”或者是喝了酒的人话特别多，是不是因为平时心里太憋屈了，有话无处可说，无人可说，所以才会借酒一诉衷肠，而且一般能在一起畅快淋漓喝酒的人也一般关系不错，算得上是能够说得上话的人吧；书中说，《论语》开篇，“有朋自远方来，不亦乐乎”，或许孔子也在期待一个能够说得上话的人一诉衷肠吧。 书中有一句话很有意思，“唯一让吴摩西恼火的是，一个女人与人通奸，通奸之前，总有一句话打动了她。这句话到底是什么，吴摩西一辈子没有想出来。”书中描写的几段偷情，基本上也都是因为和丈夫说不上话，反而和别人能够说上话，最后才私奔而去的。比如吴香香与银匠老高，当初吴香香和吴摩西就是百般说不上话，所以吴摩西做任何事情吴香香都能找出茬了，后来吴摩西在火车站偶遇私奔的吴香香和老高，看见他们俩虽然风餐露宿，却也甘之如饴，而且，吴香香和老高相当亲密，直到这是，吴摩西才发现，其实“过去认为她对自己不亲是两人脾气不投，或吴摩西不会说话，或干脆嫌吴摩西没出息；现在看，这些并不主要，主要还是对人。”再不如，庞丽娜和牛爱国的婚姻，也是因为说不上话，结果庞丽娜多次红杏出墙，最终也是私奔而去了。让吴摩西恼火的话估计也是困扰天下很多人也让很多人恼火的话吧。 古语有云“酒逢知己千杯少，话不投机半句多”，人生难得是知己，更难得的是能畅快淋漓说得上话的知己；如果真找不到，或许也有一个办法可以解决。曾经看《三体》，里面罗辑给自己构造了一个女朋友，更诡异的是大史最后竟然在现实中找到了一个几乎一模一样的人——庄颜；或许我们也可以像罗辑一样，给自己虚构一个能够说得上话的人或者干脆就以现实中自己认为知心知己的人为影子，无事之时或者孤独的时候就和她说些话读写书，也是相当有乐趣的，想来如此也不至于太憋屈了。</p>
 
-        
       
     </div>
 
@@ -1097,27 +1160,23 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
-        <article itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block home">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/05/2016-03-05-python-is-chinese-char/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Mingkuo Wang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1125,9 +1184,8 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-            
-            <a href="/2016/03/05/2016-03-05-python-is-chinese-char/" class="post-title-link" itemprop="url">python中判断字符是否是汉字、字母以及数字</a>
           
+            <a href="/2016/03/05/2016-03-05-python-is-chinese-char/" class="post-title-link" itemprop="url">python中判断字符是否是汉字、字母以及数字</a>
         </h2>
 
         <div class="post-meta">
@@ -1137,16 +1195,8 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
               <time title="创建时间：2016-03-05 20:07:00" itemprop="dateCreated datePublished" datetime="2016-03-05T20:07:00+08:00">2016-03-05</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -1154,23 +1204,33 @@
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2019-12-19 22:23:43" itemprop="dateModified" datetime="2019-12-19T22:23:43+08:00">2019-12-19</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
             </span>
-          
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/03/05/2016-03-05-python-is-chinese-char/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/03/05/2016-03-05-python-is-chinese-char/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -1181,17 +1241,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>在python处理数据的过程中，有时候需要判断给定的字符是否是汉字、字母以及数字；参考网上的程序，给出如下的示例：</p><h3 id="python2-x"><a href="#python2-x" class="headerlink" title="python2.x"></a>python2.x</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python</span><br><span class="line"># -*- coding:utf-8-*-</span><br><span class="line"></span><br><span class="line"># 判断一个unicode是否是汉字</span><br><span class="line">def is_chinese(uchar):         </span><br><span class="line">    if u&apos;\\u4e00&apos; &lt;= uchar&lt;=u&apos;\\u9fff&apos;:</span><br><span class="line">        return True</span><br><span class="line">    else:</span><br><span class="line">        return False</span><br><span class="line"></span><br><span class="line"># 判断一个unicode是否是数字</span><br><span class="line">def is_number(uchar):</span><br><span class="line">    if u&apos;\\u0030&apos; &lt;= and uchar&lt;=u&apos;\\u0039&apos;:</span><br><span class="line">        return True</span><br><span class="line">    else:</span><br><span class="line">        return False</span><br><span class="line"></span><br><span class="line">\# 判断一个unicode是否是英文字母</span><br><span class="line">def is_alphabet(uchar):</span><br><span class="line">    if (u&apos;\\u0041&apos; &lt;= uchar&lt;=u&apos;\\u005a&apos;) or (u&apos;\\u0061&apos; &lt;= uchar&lt;=u&apos;\\u007a&apos;):</span><br><span class="line">        return True</span><br><span class="line">    else:</span><br><span class="line">        return False</span><br><span class="line"></span><br><span class="line"># 判断是否非汉字，数字和英文字符</span><br><span class="line">def is_other(uchar):</span><br><span class="line">    if not (is_chinese(uchar) or is_number(uchar) or is_alphabet(uchar)):</span><br><span class="line">        return True</span><br><span class="line">    else:</span><br><span class="line">        return False</span><br><span class="line"></span><br><span class="line">if __name__==&quot;__main__&quot;:</span><br><span class="line">    ustring=u&apos;中国 人名ａ高频Ａ&apos;</span><br><span class="line">    # 判断是否有其他字符；</span><br><span class="line">    for item in ustring:</span><br><span class="line">        if (is_other(item)):</span><br><span class="line">            break</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2016/03/05/2016-03-05-python-is-chinese-char/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+          <p>在python处理数据的过程中，有时候需要判断给定的字符是否是汉字、字母以及数字；参考网上的程序，给出如下的示例：</p>
+<h3 id="python2-x"><a href="#python2-x" class="headerlink" title="python2.x"></a>python2.x</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python</span><br><span class="line"># -*- coding:utf-8-*-</span><br><span class="line"></span><br><span class="line"># 判断一个unicode是否是汉字</span><br><span class="line">def is_chinese(uchar):         </span><br><span class="line">    if u&apos;\\u4e00&apos; &lt;= uchar&lt;=u&apos;\\u9fff&apos;:</span><br><span class="line">        return True</span><br><span class="line">    else:</span><br><span class="line">        return False</span><br><span class="line"></span><br><span class="line"># 判断一个unicode是否是数字</span><br><span class="line">def is_number(uchar):</span><br><span class="line">    if u&apos;\\u0030&apos; &lt;= and uchar&lt;=u&apos;\\u0039&apos;:</span><br><span class="line">        return True</span><br><span class="line">    else:</span><br><span class="line">        return False</span><br><span class="line"></span><br><span class="line">\# 判断一个unicode是否是英文字母</span><br><span class="line">def is_alphabet(uchar):</span><br><span class="line">    if (u&apos;\\u0041&apos; &lt;= uchar&lt;=u&apos;\\u005a&apos;) or (u&apos;\\u0061&apos; &lt;= uchar&lt;=u&apos;\\u007a&apos;):</span><br><span class="line">        return True</span><br><span class="line">    else:</span><br><span class="line">        return False</span><br><span class="line"></span><br><span class="line"># 判断是否非汉字，数字和英文字符</span><br><span class="line">def is_other(uchar):</span><br><span class="line">    if not (is_chinese(uchar) or is_number(uchar) or is_alphabet(uchar)):</span><br><span class="line">        return True</span><br><span class="line">    else:</span><br><span class="line">        return False</span><br><span class="line"></span><br><span class="line">if __name__==&quot;__main__&quot;:</span><br><span class="line">    ustring=u&apos;中国 人名ａ高频Ａ&apos;</span><br><span class="line">    # 判断是否有其他字符；</span><br><span class="line">    for item in ustring:</span><br><span class="line">        if (is_other(item)):</span><br><span class="line">            break</span><br></pre></td></tr></table></figure>
+
+<h3 id="python-3-x"><a href="#python-3-x" class="headerlink" title="python 3.x"></a>python 3.x</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python</span><br><span class="line"># -*- coding:utf-8-*-</span><br><span class="line"></span><br><span class="line"># 判断一个unicode是否是汉字</span><br><span class="line">def is_chinese(uchar):         </span><br><span class="line">    if &apos;\\u4e00&apos; &lt;= uchar&lt;=&apos;\\u9fff&apos;:</span><br><span class="line">        return True</span><br><span class="line">    else:</span><br><span class="line">        return False</span><br><span class="line"></span><br><span class="line"># 判断一个unicode是否是数字</span><br><span class="line">def is_number(uchar):</span><br><span class="line">    if &apos;\\u0030&apos; &lt;= and uchar&lt;=&apos;\\u0039&apos;:</span><br><span class="line">        return True</span><br><span class="line">    else:</span><br><span class="line">        return False</span><br><span class="line"></span><br><span class="line"># 判断一个unicode是否是英文字母</span><br><span class="line">def is_alphabet(uchar):</span><br><span class="line">    if (&apos;\\u0041&apos; &lt;= uchar&lt;=&apos;\\u005a&apos;) or (&apos;\\u0061&apos; &lt;= uchar&lt;=&apos;\\u007a&apos;):</span><br><span class="line">        return True</span><br><span class="line">    else:</span><br><span class="line">        return False</span><br><span class="line"></span><br><span class="line"># 判断是否非汉字，数字和英文字符</span><br><span class="line">def is_other(uchar):</span><br><span class="line">    if not (is_chinese(uchar) or is_number(uchar) or is_alphabet(uchar)):</span><br><span class="line">        return True</span><br><span class="line">    else:</span><br><span class="line">        return False</span><br><span class="line"></span><br><span class="line">if __name__==&quot;__main__&quot;:</span><br><span class="line">    ustring=u&apos;中国 人名ａ高频Ａ&apos;</span><br><span class="line">    # 判断是否有其他字符；</span><br><span class="line">    for item in ustring:</span><br><span class="line">        if (is_other(item)):</span><br><span class="line">            break</span><br></pre></td></tr></table></figure>
+
+<h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3><ol>
+<li>python2.x和python3.x代码的主要不同之处在于unicode判断的地方；因为python3.x中默认都是使用unicode编码方式处理的；</li>
+<li>unicode 分配给汉字（中日韩越统一表意文字）的范围为 4E00-9FFF （目前 unicode 6.3 的标准已定义到 9FCC ）</li>
+<li>\u4e00-\u9fff 不包含中文符号，如有需要可参考<a href="http://goo.gl/hyUcT7" target="_blank" rel="noopener">维基</a></li>
+</ol>
+<h3 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h3><ul>
+<li><a href="http://outofmemory.cn/code-snippet/35784/python-test-unicode-chinese-char" target="_blank" rel="noopener">python判断unicode是否是汉字，数字，英文，或者其他字符</a>（主要参考文献，对其中做了一些细微的修改）</li>
+<li><a href="http://luopuya.github.io/2014/03/29/Python%20%E5%88%A4%E6%96%AD%E6%B1%89%E5%AD%97%E5%AD%97%E7%AC%A6" target="_blank" rel="noopener">Python 判断汉字</a></li>
+</ul>
+
       
     </div>
 
@@ -1199,16 +1263,13 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
   </div>
 
   
@@ -1217,18 +1278,39 @@
   </nav>
 
 
+
           </div>
           
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
   <aside class="sidebar">
@@ -1253,115 +1335,29 @@
   <p class="site-author-name" itemprop="name">Mingkuo Wang</p>
   <div class="site-description" itemprop="description"></div>
 </div>
-  <nav class="site-state motion-element">
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        
           <a href="/archives/">
         
           <span class="site-state-item-count">174</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-categories">
-        
-          
             <a href="/categories/">
           
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
         <span class="site-state-item-count">12</span>
-        <span class="site-state-item-name">分类</span>
-        </a>
+        <span class="site-state-item-name">分类</span></a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-tags">
-        
-          
             <a href="/tags/">
           
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
         <span class="site-state-item-count">21</span>
-        <span class="site-state-item-name">标签</span>
-        </a>
+        <span class="site-state-item-name">标签</span></a>
       </div>
-    
   </nav>
+</div>
 
 
 
@@ -1375,38 +1371,26 @@
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
+        
+
+<div class="copyright">
+  
+  &copy; 2014-2019 – 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Mingkuo Wang</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0
+  </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.3.0</div>
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.6.0
+  </div>
 
         
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-user"></i>
-    </span>
-    <span class="site-uv" title="总访客量">
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-  
-    <span class="post-meta-divider">|</span>
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-eye"></i>
-    </span>
-    <span class="site-pv" title="总访问量">
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-  
-</div>
 
 
 
@@ -1415,53 +1399,75 @@
 
 
 
-
-
-
-
-        
       </div>
     </footer>
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
 
 
-  <script src="/lib/anime.min.js?v=3.1.0"></script>
-<script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/schemes/muse.js?v=7.3.0"></script>
 
-<script src="/js/next-boot.js?v=7.3.0"></script>
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
 
-  
 
-  
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'zjF185xlpGrOe2SEntfRNapB-gzGzoHsz',
+      appKey: 've4tRqlwpgge1iBUpS2v2Gv8',
+      placeholder: "评论一下吧，(´•༝•`)",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: 'zh-cn' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
 
 </body>
 </html>

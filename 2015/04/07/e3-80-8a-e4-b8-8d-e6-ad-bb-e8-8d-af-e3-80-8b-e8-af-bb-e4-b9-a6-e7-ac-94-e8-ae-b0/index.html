@@ -1,34 +1,30 @@
 <!DOCTYPE html>
-
-
-
-
-
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
-  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+<link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
     root: '/',
     scheme: 'Mist',
-    version: '7.3.0',
+    version: '7.6.0',
     exturl: false,
-    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":false},
+    sidebar: {"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -36,6 +32,7 @@
     mediumzoom: false,
     lazyload: false,
     pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
     algolia: {
       appID: '',
       apiKey: '',
@@ -43,15 +40,9 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
-    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
-    },
-    sidebarPadding: 40
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
 
@@ -66,7 +57,8 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《不死药》读书笔记">
 <meta name="twitter:description" content="最近在回顾小时候的经典电视剧《少年王》，算作这一次，这部电视剧至少应该看过四次了，每一次看完之后仍然回味无穷。昨天晚上（4.6）在电脑中发现了之前下载的卫斯理全集，之前看过一些，不过因为一些原因，最后不了了之了。再次看到，自然不能放过。倪匡的小说读起来挺轻松的，情节相当紧凑，故事性非常强。于是在睡觉前和今天上午刷完了《不死药》，是为记。下面还是首先介绍一下故事的发展脉络，然后简单谈谈自己的感想吧。">
-  <link rel="canonical" href="http://yoursite.com/2015/04/07/e3-80-8a-e4-b8-8d-e6-ad-bb-e8-8d-af-e3-80-8b-e8-af-bb-e4-b9-a6-e7-ac-94-e8-ae-b0/">
+
+<link rel="canonical" href="http://yoursite.com/2015/04/07/e3-80-8a-e4-b8-8d-e6-ad-bb-e8-8d-af-e3-80-8b-e8-af-bb-e4-b9-a6-e7-ac-94-e8-ae-b0/">
 
 
 <script id="page-configurations">
@@ -74,17 +66,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: true,
-    isPage: false,
-    isArchive: false
+    isPost: true
   };
 </script>
 
   <title>《不死药》读书笔记 | 恰同学少年</title>
-  <meta name="generator" content="Hexo 3.9.0">
   
-
-
 
 
 
@@ -103,7 +90,6 @@
   .use-motion .post-body,
   .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -117,11 +103,11 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage">
   <div class="container">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-meta">
 
@@ -135,11 +121,11 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 </div>
 
@@ -147,64 +133,32 @@
 <nav class="site-nav">
   
   <ul id="menu" class="menu">
-      
-      
-      
-        
         <li class="menu-item menu-item-home">
-      
-    
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-about">
-      
-    
 
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-tags">
-      
-    
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-categories">
-      
-    
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-archives">
-      
-    
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
   </ul>
-
-    
 
 </nav>
 </div>
@@ -217,33 +171,33 @@
   </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content">
             
 
-  <div id="posts" class="posts-expand">
-      <article itemscope itemtype="http://schema.org/Article">
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block post">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/04/07/e3-80-8a-e4-b8-8d-e6-ad-bb-e8-8d-af-e3-80-8b-e8-af-bb-e4-b9-a6-e7-ac-94-e8-ae-b0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Mingkuo Wang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="恰同学少年">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">《不死药》读书笔记
-
-          
+        <h2 class="post-title" itemprop="name headline">
+          《不死药》读书笔记
         </h2>
 
         <div class="post-meta">
@@ -253,16 +207,8 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
               <time title="创建时间：2015-04-07 18:20:05" itemprop="dateCreated datePublished" datetime="2015-04-07T18:20:05+08:00">2015-04-07</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -270,31 +216,33 @@
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/读书/" itemprop="url" rel="index"><span itemprop="name">读书</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/读书/" itemprop="url" rel="index">
+                    <span itemprop="name">读书</span>
+                  </a>
+                </span>
             </span>
-          
 
           
-            <span class="post-meta-item" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2015/04/07/e3-80-8a-e4-b8-8d-e6-ad-bb-e8-8d-af-e3-80-8b-e8-af-bb-e4-b9-a6-e7-ac-94-e8-ae-b0/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2015/04/07/e3-80-8a-e4-b8-8d-e6-ad-bb-e8-8d-af-e3-80-8b-e8-af-bb-e4-b9-a6-e7-ac-94-e8-ae-b0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -305,7 +253,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>最近在回顾小时候的经典电视剧《少年王》，算作这一次，这部电视剧至少应该看过四次了，每一次看完之后仍然回味无穷。昨天晚上（4.6）在电脑中发现了之前下载的卫斯理全集，之前看过一些，不过因为一些原因，最后不了了之了。再次看到，自然不能放过。倪匡的小说读起来挺轻松的，情节相当紧凑，故事性非常强。于是在睡觉前和今天上午刷完了《不死药》，是为记。下面还是首先介绍一下故事的发展脉络，然后简单谈谈自己的感想吧。</p><a id="more"></a>
+        <p>最近在回顾小时候的经典电视剧《少年王》，算作这一次，这部电视剧至少应该看过四次了，每一次看完之后仍然回味无穷。昨天晚上（4.6）在电脑中发现了之前下载的卫斯理全集，之前看过一些，不过因为一些原因，最后不了了之了。再次看到，自然不能放过。倪匡的小说读起来挺轻松的，情节相当紧凑，故事性非常强。于是在睡觉前和今天上午刷完了《不死药》，是为记。下面还是首先介绍一下故事的发展脉络，然后简单谈谈自己的感想吧。</p>
 <h3 id="第一部：死囚的越狱要求"><a href="#第一部：死囚的越狱要求" class="headerlink" title="第一部：死囚的越狱要求"></a>第一部：死囚的越狱要求</h3><p>一个名叫骆致逊的死囚在临死前几个小时要求见卫斯理，卫斯理无法拒绝这次见面，因为骆致逊的案件有着很多神秘莫测的地方。骆致逊是一个十分富有的人，还有一个弟弟骆致谦，在二次世界大战期间任美国军队的一个军官，并在作战之中失踪，骆致逊花了很大的代价找到了骆致谦，可是就在骆致逊找到骆致谦之后的第三天，骆致逊就谋杀了他的弟弟，案发时有很多见证人。因此骆致逊被判谋杀，判处死刑。骆致逊的妻子柏秀琼极力营救，却也无计可施。（柏秀琼是一个十分有教养的人，且十分有自制力）。在见面之后，骆致逊提出要卫斯理帮忙越狱，卫斯理一开始拒绝了他，但是因为自己的好奇心、对骆太太的同情、杰克的激将等多重因素之下，卫斯理决定帮忙越狱。</p>
 <h3 id="第二部：不顾一切后果的行动"><a href="#第二部：不顾一切后果的行动" class="headerlink" title="第二部：不顾一切后果的行动"></a>第二部：不顾一切后果的行动</h3><p>卫斯理在韦锋侠的帮忙下成功帮助骆致逊越狱，但骆致逊出来之后去独自走了，卫斯理感觉被欺骗了，却也没有办法。因为帮助越狱，卫斯理被通缉，只得与白素躲在黄先生家中。</p>
 <h3 id="第三部：“十九层”"><a href="#第三部：“十九层”" class="headerlink" title="第三部：“十九层”"></a>第三部：“十九层”</h3><p>卫斯理咽不下这口气，准备追捕骆致逊。这黄先生家中期间，卫斯理研究这件命案，发下几个疑点，其一是一个粗大的竹筒，其二是除了竹筒，骆致谦几乎是只身回来的，其三，骆致逊的日记神秘消失。卫斯理找了一个外号叫“十九层”（传说中的地狱是十八层，而他却是应该进第十九层他狱去的人。）帮忙安排出境。</p>
@@ -331,65 +279,70 @@
     
     
     
-        
-      
 
       <footer class="post-footer">
 
         
 
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-              
-                <a href="/2015/04/03/e4-b8-aa-e4-ba-ba-e5-b8-b8-e7-94-a8-e7-bd-91-e7-ab-99-e5-af-bc-e8-88-aa/" rel="next" title="个人常用网站导航">
-                  <i class="fa fa-chevron-left"></i> 个人常用网站导航
-                </a>
-              
-            </div>
 
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2015/04/11/2015-04-11-ubuntu-git-github-usage/" rel="prev" title="ubuntu下git&github使用">
-                  ubuntu下git&github使用 <i class="fa fa-chevron-right"></i>
-                </a>
-              
-            </div>
-          </div>
         
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2015/04/03/e4-b8-aa-e4-ba-ba-e5-b8-b8-e7-94-a8-e7-bd-91-e7-ab-99-e5-af-bc-e8-88-aa/" rel="prev" title="个人常用网站导航">
+      <i class="fa fa-chevron-left"></i> 个人常用网站导航
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2015/04/11/2015-04-11-ubuntu-git-github-usage/" rel="next" title="ubuntu下git&github使用">
+      ubuntu下git&github使用 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
     
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
   </div>
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
   <aside class="sidebar">
     <div class="sidebar-inner">
-        
-        
-        
-        
-      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -403,7 +356,6 @@
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
           <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一部：死囚的越狱要求"><span class="nav-number">1.</span> <span class="nav-text">第一部：死囚的越狱要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二部：不顾一切后果的行动"><span class="nav-number">2.</span> <span class="nav-text">第二部：不顾一切后果的行动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三部：“十九层”"><span class="nav-number">3.</span> <span class="nav-text">第三部：“十九层”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四部：漫长航程"><span class="nav-number">4.</span> <span class="nav-text">第四部：漫长航程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五部：失败"><span class="nav-number">5.</span> <span class="nav-text">第五部：失败</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第六部：一大群白痴"><span class="nav-number">6.</span> <span class="nav-text">第六部：一大群白痴</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第七部：从开始就跌进了陷阱"><span class="nav-number">7.</span> <span class="nav-text">第七部：从开始就跌进了陷阱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第八部：隐蔽的世外桃源"><span class="nav-number">8.</span> <span class="nav-text">第八部：隐蔽的世外桃源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第九部：不死药的后遗症"><span class="nav-number">9.</span> <span class="nav-text">第九部：不死药的后遗症</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十部：喝了不死药"><span class="nav-number">10.</span> <span class="nav-text">第十部：喝了不死药</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十一部：我会不会成为白痴"><span class="nav-number">11.</span> <span class="nav-text">第十一部：我会不会成为白痴</span></a></li></ol></div>
-        
       </div>
       <!--/noindex-->
 
@@ -412,115 +364,29 @@
   <p class="site-author-name" itemprop="name">Mingkuo Wang</p>
   <div class="site-description" itemprop="description"></div>
 </div>
-  <nav class="site-state motion-element">
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        
           <a href="/archives/">
         
           <span class="site-state-item-count">174</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-categories">
-        
-          
             <a href="/categories/">
           
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
         <span class="site-state-item-count">12</span>
-        <span class="site-state-item-name">分类</span>
-        </a>
+        <span class="site-state-item-name">分类</span></a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-tags">
-        
-          
             <a href="/tags/">
           
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
         <span class="site-state-item-count">21</span>
-        <span class="site-state-item-name">标签</span>
-        </a>
+        <span class="site-state-item-name">标签</span></a>
       </div>
-    
   </nav>
+</div>
 
 
 
@@ -534,38 +400,26 @@
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
+        
+
+<div class="copyright">
+  
+  &copy; 2014-2019 – 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Mingkuo Wang</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0
+  </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.3.0</div>
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.6.0
+  </div>
 
         
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-user"></i>
-    </span>
-    <span class="site-uv" title="总访客量">
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-  
-    <span class="post-meta-divider">|</span>
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-eye"></i>
-    </span>
-    <span class="site-pv" title="总访问量">
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-  
-</div>
 
 
 
@@ -574,53 +428,75 @@
 
 
 
-
-
-
-
-        
       </div>
     </footer>
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
 
 
-  <script src="/lib/anime.min.js?v=3.1.0"></script>
-<script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/schemes/muse.js?v=7.3.0"></script>
 
-<script src="/js/next-boot.js?v=7.3.0"></script>
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
 
-  
 
-  
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'zjF185xlpGrOe2SEntfRNapB-gzGzoHsz',
+      appKey: 've4tRqlwpgge1iBUpS2v2Gv8',
+      placeholder: "评论一下吧，(´•༝•`)",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: 'zh-cn' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
 
 </body>
 </html>

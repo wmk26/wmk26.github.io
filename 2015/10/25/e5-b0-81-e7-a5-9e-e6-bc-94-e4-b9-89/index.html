@@ -1,34 +1,30 @@
 <!DOCTYPE html>
-
-
-
-
-
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
-  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+<link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
     root: '/',
     scheme: 'Mist',
-    version: '7.3.0',
+    version: '7.6.0',
     exturl: false,
-    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":false},
+    sidebar: {"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -36,6 +32,7 @@
     mediumzoom: false,
     lazyload: false,
     pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
     algolia: {
       appID: '',
       apiKey: '',
@@ -43,15 +40,9 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
-    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
-    },
-    sidebarPadding: 40
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
 
@@ -66,7 +57,8 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="封神演义">
 <meta name="twitter:description" content="第一次想看这本小说是因为在微信上面看到一篇文章，用反派Boss的视角看主角是一种怎样的体验。故事写的很有趣，于是萌生了去看原著的想法； 期望越高，失望也越大。勉勉强强看完了全书，估计是自己没有看懂，看完之后实在不敢恭维；与四大名著的有很大的差距。以下都是自己不成熟的看法，姑妄记之。 全书虽然想象奇特，但是言语干瘪，比如人物一出场必定先赋诗一首，说自己有多么多么厉害；雷同情节比比皆是，比如姜子牙在破">
-  <link rel="canonical" href="http://yoursite.com/2015/10/25/e5-b0-81-e7-a5-9e-e6-bc-94-e4-b9-89/">
+
+<link rel="canonical" href="http://yoursite.com/2015/10/25/e5-b0-81-e7-a5-9e-e6-bc-94-e4-b9-89/">
 
 
 <script id="page-configurations">
@@ -74,17 +66,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: true,
-    isPage: false,
-    isArchive: false
+    isPost: true
   };
 </script>
 
   <title>封神演义 | 恰同学少年</title>
-  <meta name="generator" content="Hexo 3.9.0">
   
-
-
 
 
 
@@ -103,7 +90,6 @@
   .use-motion .post-body,
   .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -117,11 +103,11 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage">
   <div class="container">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-meta">
 
@@ -135,11 +121,11 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 </div>
 
@@ -147,64 +133,32 @@
 <nav class="site-nav">
   
   <ul id="menu" class="menu">
-      
-      
-      
-        
         <li class="menu-item menu-item-home">
-      
-    
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-about">
-      
-    
 
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-tags">
-      
-    
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-categories">
-      
-    
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-archives">
-      
-    
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
   </ul>
-
-    
 
 </nav>
 </div>
@@ -217,33 +171,33 @@
   </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content">
             
 
-  <div id="posts" class="posts-expand">
-      <article itemscope itemtype="http://schema.org/Article">
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block post">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/10/25/e5-b0-81-e7-a5-9e-e6-bc-94-e4-b9-89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Mingkuo Wang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="恰同学少年">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">封神演义
-
-          
+        <h2 class="post-title" itemprop="name headline">
+          封神演义
         </h2>
 
         <div class="post-meta">
@@ -253,16 +207,8 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              
-                
-              
-
               <time title="创建时间：2015-10-25 22:27:16" itemprop="dateCreated datePublished" datetime="2015-10-25T22:27:16+08:00">2015-10-25</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -270,31 +216,33 @@
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/读书/" itemprop="url" rel="index"><span itemprop="name">读书</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/读书/" itemprop="url" rel="index">
+                    <span itemprop="name">读书</span>
+                  </a>
+                </span>
             </span>
-          
 
           
-            <span class="post-meta-item" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2015/10/25/e5-b0-81-e7-a5-9e-e6-bc-94-e4-b9-89/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2015/10/25/e5-b0-81-e7-a5-9e-e6-bc-94-e4-b9-89/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -305,7 +253,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>第一次想看这本小说是因为在微信上面看到一篇文章，<a href="http://mp.weixin.qq.com/s?__biz=MjM5NDAyNjU0MA==&mid=214244562&idx=4&sn=d6b891a77c883d5a532d6e76636672de&scene=0#rd" target="_blank" rel="noopener">用反派Boss的视角看主角是一种怎样的体验</a>。故事写的很有趣，于是萌生了去看原著的想法； 期望越高，失望也越大。勉勉强强看完了全书，估计是自己没有看懂，看完之后实在不敢恭维；与四大名著的有很大的差距。以下都是自己不成熟的看法，姑妄记之。 全书虽然想象奇特，但是言语干瘪，比如人物一出场必定先赋诗一首，说自己有多么多么厉害；雷同情节比比皆是，比如姜子牙在破十绝阵的时候，我都怀疑作者是复制粘贴的，都是先派一个弱者过去送死，然后再派一个厉害的人过去解决，像这样的描写作者竟然不厌其烦地写了10次，也是醉了；而且对于书中的价值观实在不敢苟同，比如说遇到不可解释的事情，一股脑归咎于天命、天意、天定；（和基督教的某一阶段很像，无法解释的都丢给上帝他老人家。。。）；再比如，按照书中的意思，阐教应该是正统，而截教则无疑是一个反派。但是观书中两派人物的行为，实在不敢苟同；截教的人擒获阐教一般都先关押住，然后让阐教的人救走；而阐教的人遇到截教的人则干净杀绝，毫不留情，谓之封神榜上有名的人物，必死。而且很多时候，都是以大欺小，以多欺少；阐教遇到困难大boss直接出手。而截教的教主则是在最后不得已而出手的，被两个师兄联合西方教主打残，如果不是老师出手相助，估计又会是封神榜上有名的人物。。。 以下不分体例，直接吐槽； 先说土行孙和邓婵玉，按照书中的描写，简直就是强暴，还强说两人是前缘既定；且不说邓婵娟这个千金小姐如何美丽；单说这个土行孙就让人十分不忿，不仅身矮貌丑（原文“身不过四尺，面如土色”），而且人品猥琐下流，在一次去周营刺杀姜子牙的时候，看到漂亮的女子就想行不轨之事；后来，邓婵玉被俘，然后姜子牙强行按照天意将她嫁给土行孙，当晚，土行孙也不顾及婵玉的想法，强行行了周公之礼。简直无耻至极；不由的想到了水浒中的另两个人物，扈三娘和王英，扈三娘全家被杀，还被强行嫁给杀父仇人。如此美化，实在让人反感。（之前对于这个情节没有多少想法，直到看了<a href="http://news.ifeng.com/a/20150730/44308982_0.shtml" target="_blank" rel="noopener">这样一篇评论</a>，道德的外衣如何能够掩盖真实的人性？感谢作者。） 接着说说那个狐狸精，当初受命去蛊惑君王。（女娲）娘娘曰：“三妖听吾密旨：成汤望气黯然，当失天下；凤鸣岐山，西周已生圣主。天意已定，气数使然。你三妖可隐其妖形，托身宫院，惑乱君心；俟武王伐纣，以助成功，不可残害众生。事成之后，使你等亦成正果。”。可是后来呢？武王大军已经攻进朝歌了，三妖逃命，被女娲拿住。三妖泣而告曰：“启娘娘得知：昔日是娘娘用招妖幡招小妖去朝歌，潜入宫禁，迷惑纣王，使他不行正道，断送他的天下。小畜奉命，百事逢迎，去其左右，令彼将天下断送。今已垂亡，正欲覆娘娘钧旨，不期被杨戬等追袭，路遇娘娘圣驾，尚望娘娘救护，娘娘反将小畜缚去，见姜子牙发落，不是娘娘‘出乎反乎’了？望娘娘上裁！”女娲娘娘曰：“吾使你断送殷受天下，原是合上天气数；岂意你无端造业，残贼生灵，屠毒忠烈，惨恶异常，大拂上天好生之仁。今日你罪恶贯盈，理宜正法。”三妖俯伏，不敢声言。。。实在不想说太多。 再说说纣王，我感觉纣王还真是有点无辜。从书中可以看出，没去祭祀女娲之前，纣王根本就不是一个坏皇帝。甚至可以说还算贤明。千不该万不该的是在祭祀女娲的时候觊觎女娲的美貌意淫了一下，由此覆灭了整个王朝。话说女娲一个神仙也实在小气。因为这一个小错，就颠覆了真个商朝。果然女生是惹不得的。。。 总体来说，这本小说还算将就吧。在豆瓣上看到一些不错的书评；记录如下：</p><a id="more"></a>
+        <p>第一次想看这本小说是因为在微信上面看到一篇文章，<a href="http://mp.weixin.qq.com/s?__biz=MjM5NDAyNjU0MA==&mid=214244562&idx=4&sn=d6b891a77c883d5a532d6e76636672de&scene=0#rd" target="_blank" rel="noopener">用反派Boss的视角看主角是一种怎样的体验</a>。故事写的很有趣，于是萌生了去看原著的想法； 期望越高，失望也越大。勉勉强强看完了全书，估计是自己没有看懂，看完之后实在不敢恭维；与四大名著的有很大的差距。以下都是自己不成熟的看法，姑妄记之。 全书虽然想象奇特，但是言语干瘪，比如人物一出场必定先赋诗一首，说自己有多么多么厉害；雷同情节比比皆是，比如姜子牙在破十绝阵的时候，我都怀疑作者是复制粘贴的，都是先派一个弱者过去送死，然后再派一个厉害的人过去解决，像这样的描写作者竟然不厌其烦地写了10次，也是醉了；而且对于书中的价值观实在不敢苟同，比如说遇到不可解释的事情，一股脑归咎于天命、天意、天定；（和基督教的某一阶段很像，无法解释的都丢给上帝他老人家。。。）；再比如，按照书中的意思，阐教应该是正统，而截教则无疑是一个反派。但是观书中两派人物的行为，实在不敢苟同；截教的人擒获阐教一般都先关押住，然后让阐教的人救走；而阐教的人遇到截教的人则干净杀绝，毫不留情，谓之封神榜上有名的人物，必死。而且很多时候，都是以大欺小，以多欺少；阐教遇到困难大boss直接出手。而截教的教主则是在最后不得已而出手的，被两个师兄联合西方教主打残，如果不是老师出手相助，估计又会是封神榜上有名的人物。。。 以下不分体例，直接吐槽； 先说土行孙和邓婵玉，按照书中的描写，简直就是强暴，还强说两人是前缘既定；且不说邓婵娟这个千金小姐如何美丽；单说这个土行孙就让人十分不忿，不仅身矮貌丑（原文“身不过四尺，面如土色”），而且人品猥琐下流，在一次去周营刺杀姜子牙的时候，看到漂亮的女子就想行不轨之事；后来，邓婵玉被俘，然后姜子牙强行按照天意将她嫁给土行孙，当晚，土行孙也不顾及婵玉的想法，强行行了周公之礼。简直无耻至极；不由的想到了水浒中的另两个人物，扈三娘和王英，扈三娘全家被杀，还被强行嫁给杀父仇人。如此美化，实在让人反感。（之前对于这个情节没有多少想法，直到看了<a href="http://news.ifeng.com/a/20150730/44308982_0.shtml" target="_blank" rel="noopener">这样一篇评论</a>，道德的外衣如何能够掩盖真实的人性？感谢作者。） 接着说说那个狐狸精，当初受命去蛊惑君王。（女娲）娘娘曰：“三妖听吾密旨：成汤望气黯然，当失天下；凤鸣岐山，西周已生圣主。天意已定，气数使然。你三妖可隐其妖形，托身宫院，惑乱君心；俟武王伐纣，以助成功，不可残害众生。事成之后，使你等亦成正果。”。可是后来呢？武王大军已经攻进朝歌了，三妖逃命，被女娲拿住。三妖泣而告曰：“启娘娘得知：昔日是娘娘用招妖幡招小妖去朝歌，潜入宫禁，迷惑纣王，使他不行正道，断送他的天下。小畜奉命，百事逢迎，去其左右，令彼将天下断送。今已垂亡，正欲覆娘娘钧旨，不期被杨戬等追袭，路遇娘娘圣驾，尚望娘娘救护，娘娘反将小畜缚去，见姜子牙发落，不是娘娘‘出乎反乎’了？望娘娘上裁！”女娲娘娘曰：“吾使你断送殷受天下，原是合上天气数；岂意你无端造业，残贼生灵，屠毒忠烈，惨恶异常，大拂上天好生之仁。今日你罪恶贯盈，理宜正法。”三妖俯伏，不敢声言。。。实在不想说太多。 再说说纣王，我感觉纣王还真是有点无辜。从书中可以看出，没去祭祀女娲之前，纣王根本就不是一个坏皇帝。甚至可以说还算贤明。千不该万不该的是在祭祀女娲的时候觊觎女娲的美貌意淫了一下，由此覆灭了整个王朝。话说女娲一个神仙也实在小气。因为这一个小错，就颠覆了真个商朝。果然女生是惹不得的。。。 总体来说，这本小说还算将就吧。在豆瓣上看到一些不错的书评；记录如下：</p>
 <ul>
 <li><a href="http://book.douban.com/review/6538466/" target="_blank" rel="noopener">解密《封神榜》（精简版）</a>（分析的相当有意思，反观自己，真的是有点囫囵吞枣了。鲸吞牛饮似的阅读何时才能改变。）</li>
 <li><a href="http://book.douban.com/review/5431793/" target="_blank" rel="noopener">这就是成长啊</a>（对比小说和电视剧）</li>
@@ -321,65 +269,70 @@
     
     
     
-        
-      
 
       <footer class="post-footer">
 
         
 
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-              
-                <a href="/2015/10/25/e4-b8-80-e4-ba-9b-e4-b8-8d-e9-94-99-e7-9a-84-e5-8f-a5-e5-ad-90/" rel="next" title="一些不错的句子">
-                  <i class="fa fa-chevron-left"></i> 一些不错的句子
-                </a>
-              
-            </div>
 
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2015/11/01/e7-83-88-e6-97-a5-e7-81-bc-e5-bf-83-e5-a4-aa-e9-98-b3-e9-bb-91-e5-ad-90/" rel="prev" title="烈日灼心&&太阳黑子">
-                  烈日灼心&&太阳黑子 <i class="fa fa-chevron-right"></i>
-                </a>
-              
-            </div>
-          </div>
         
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2015/10/25/e4-b8-80-e4-ba-9b-e4-b8-8d-e9-94-99-e7-9a-84-e5-8f-a5-e5-ad-90/" rel="prev" title="一些不错的句子">
+      <i class="fa fa-chevron-left"></i> 一些不错的句子
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2015/11/01/e7-83-88-e6-97-a5-e7-81-bc-e5-bf-83-e5-a4-aa-e9-98-b3-e9-bb-91-e5-ad-90/" rel="next" title="烈日灼心&&太阳黑子">
+      烈日灼心&&太阳黑子 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
     
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
   </div>
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
   <aside class="sidebar">
     <div class="sidebar-inner">
-        
-        
-        
-        
-      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -400,115 +353,29 @@
   <p class="site-author-name" itemprop="name">Mingkuo Wang</p>
   <div class="site-description" itemprop="description"></div>
 </div>
-  <nav class="site-state motion-element">
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        
           <a href="/archives/">
         
           <span class="site-state-item-count">174</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-categories">
-        
-          
             <a href="/categories/">
           
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
         <span class="site-state-item-count">12</span>
-        <span class="site-state-item-name">分类</span>
-        </a>
+        <span class="site-state-item-name">分类</span></a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-tags">
-        
-          
             <a href="/tags/">
           
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
         <span class="site-state-item-count">21</span>
-        <span class="site-state-item-name">标签</span>
-        </a>
+        <span class="site-state-item-name">标签</span></a>
       </div>
-    
   </nav>
+</div>
 
 
 
@@ -522,38 +389,26 @@
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
+        
+
+<div class="copyright">
+  
+  &copy; 2014-2019 – 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Mingkuo Wang</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0
+  </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.3.0</div>
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.6.0
+  </div>
 
         
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-user"></i>
-    </span>
-    <span class="site-uv" title="总访客量">
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-  
-    <span class="post-meta-divider">|</span>
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-eye"></i>
-    </span>
-    <span class="site-pv" title="总访问量">
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-  
-</div>
 
 
 
@@ -562,53 +417,75 @@
 
 
 
-
-
-
-
-        
       </div>
     </footer>
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
 
 
-  <script src="/lib/anime.min.js?v=3.1.0"></script>
-<script src="/js/utils.js?v=7.3.0"></script>
-<script src="/js/schemes/muse.js?v=7.3.0"></script>
 
-<script src="/js/next-boot.js?v=7.3.0"></script>
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
 
-  
 
-  
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'zjF185xlpGrOe2SEntfRNapB-gzGzoHsz',
+      appKey: 've4tRqlwpgge1iBUpS2v2Gv8',
+      placeholder: "评论一下吧，(´•༝•`)",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: 'zh-cn' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
 
 </body>
 </html>
