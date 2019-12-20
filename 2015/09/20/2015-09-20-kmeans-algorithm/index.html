@@ -47,18 +47,19 @@
 </script>
 
   <meta name="description" content="0. 简介：聚类是一种无监督的学习方式，它将相似的对象归到同一个簇中。聚类算法几乎可以应用于所有的对象，簇内的对象越相似，聚类的效果越好；   1. 优缺点 优点：容易实现； 缺点：可能收敛到局部最小值，在大规模数据上面收敛比较慢； 数据：数值型数据；  2. 算法伪代码创建k个点作为起始质心（经常是随机选择）当任意一个点的簇分配结果发生变化时    对数据集中的每个数据点        对每个质">
+<meta name="keywords" content="ml,kmeans">
 <meta property="og:type" content="article">
 <meta property="og:title" content="K均值聚类算法">
-<meta property="og:url" content="http://yoursite.com/2015/09/20/k-e5-9d-87-e5-80-bc-e8-81-9a-e7-b1-bb-e7-ae-97-e6-b3-95/index.html">
+<meta property="og:url" content="http://yoursite.com/2015/09/20/2015-09-20-kmeans-algorithm/index.html">
 <meta property="og:site_name" content="恰同学少年">
 <meta property="og:description" content="0. 简介：聚类是一种无监督的学习方式，它将相似的对象归到同一个簇中。聚类算法几乎可以应用于所有的对象，簇内的对象越相似，聚类的效果越好；   1. 优缺点 优点：容易实现； 缺点：可能收敛到局部最小值，在大规模数据上面收敛比较慢； 数据：数值型数据；  2. 算法伪代码创建k个点作为起始质心（经常是随机选择）当任意一个点的簇分配结果发生变化时    对数据集中的每个数据点        对每个质">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-14T09:41:59.317Z">
+<meta property="og:updated_time" content="2019-12-20T14:26:19.015Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="K均值聚类算法">
 <meta name="twitter:description" content="0. 简介：聚类是一种无监督的学习方式，它将相似的对象归到同一个簇中。聚类算法几乎可以应用于所有的对象，簇内的对象越相似，聚类的效果越好；   1. 优缺点 优点：容易实现； 缺点：可能收敛到局部最小值，在大规模数据上面收敛比较慢； 数据：数值型数据；  2. 算法伪代码创建k个点作为起始质心（经常是随机选择）当任意一个点的簇分配结果发生变化时    对数据集中的每个数据点        对每个质">
 
-<link rel="canonical" href="http://yoursite.com/2015/09/20/k-e5-9d-87-e5-80-bc-e8-81-9a-e7-b1-bb-e7-ae-97-e6-b3-95/">
+<link rel="canonical" href="http://yoursite.com/2015/09/20/2015-09-20-kmeans-algorithm/">
 
 
 <script id="page-configurations">
@@ -184,7 +185,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/09/20/k-e5-9d-87-e5-80-bc-e8-81-9a-e7-b1-bb-e7-ae-97-e6-b3-95/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/09/20/2015-09-20-kmeans-algorithm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -214,7 +215,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-14 17:41:59" itemprop="dateModified" datetime="2019-12-14T17:41:59+08:00">2019-12-14</time>
+                <time title="修改时间：2019-12-20 22:26:19" itemprop="dateModified" datetime="2019-12-20T22:26:19+08:00">2019-12-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -222,8 +223,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/NLP-amp-ML/" itemprop="url" rel="index">
-                    <span itemprop="name">NLP&amp;ML</span>
+                  <a href="/categories/ML/" itemprop="url" rel="index">
+                    <span itemprop="name">ML</span>
                   </a>
                 </span>
             </span>
@@ -237,8 +238,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2015/09/20/k-e5-9d-87-e5-80-bc-e8-81-9a-e7-b1-bb-e7-ae-97-e6-b3-95/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2015/09/20/k-e5-9d-87-e5-80-bc-e8-81-9a-e7-b1-bb-e7-ae-97-e6-b3-95/" itemprop="commentCount"></span>
+    <a title="valine" href="/2015/09/20/2015-09-20-kmeans-algorithm/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2015/09/20/2015-09-20-kmeans-algorithm/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -296,6 +297,10 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/ml/" rel="tag"># ml</a>
+              <a href="/tags/kmeans/" rel="tag"># kmeans</a>
+          </div>
 
         
 
@@ -397,7 +402,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
