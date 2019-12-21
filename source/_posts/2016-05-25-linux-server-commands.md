@@ -1,11 +1,10 @@
 ---
 title: Linux服务器相关命令实践总结
-url: 998.html
-id: 998
 categories:
   - Linux
 date: 2016-05-25 17:00:10
 tags:
+  - linux
 ---
 
 0\. 通用

@@ -1,11 +1,11 @@
 ---
 title: K均值聚类算法
-url: 589.html
-id: 589
 categories:
-  - NLP&amp;ML
+  - ML
 date: 2015-09-20 21:04:35
 tags:
+  - ml
+  - kmeans
 ---
 
 ### 0\. 简介：

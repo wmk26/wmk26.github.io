@@ -3,9 +3,11 @@ title: Logistic回归
 url: 574.html
 id: 574
 categories:
-  - NLP&amp;ML
+  - ML
 date: 2015-09-11 20:24:12
 tags:
+  - ml
+  - logistic regression
 ---
 
 这几天学习了一下Logistic回归模型，记录一下学习的历程。
@@ -48,6 +50,7 @@ tags:
 *   数学推导参考：《统计学习方法》以及[《机器学习算法与Python实践之（七）逻辑回归（Logistic Regression）》](http://blog.csdn.net/zouxy09/article/details/20319673)
 *   代码实践：参考《机器学习实战》
 
+```
 #coding=utf-8
 import sys
 import matplotlib.pyplot as plt
@@ -215,7 +218,7 @@ if \_\_name\_\_ == '\_\_main\_\_':
     weights = stocGradAscent1(array(dataArr), labelMat)
     plotBestFit(weights)
 
- 
+```
 
 ### 6\. 其他问题
 
