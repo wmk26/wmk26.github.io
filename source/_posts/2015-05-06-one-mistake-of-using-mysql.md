@@ -1,16 +1,18 @@
 ---
 title: 记一个Mysql小错误
-url: 433.html
-id: 433
 categories:
   - Linux
 date: 2015-05-06 11:30:49
 tags:
+  - linux
+  - mysql
 ---
 
 在Ubuntu下使用Mysql遇到一个小错误，错误提示如下：
 
 Can’t connect to local MySQL server through socket ‘/var/lib/mysql/mysql.sock’ (2)
+
+<!-- more -->
 
 刚刚遇到这个错误的时候，第一反应是直接GOOGLE，搜到了一些方案，基本上是说my.conf文件（我的文件位置是/etc/mysql/）中socket路径错了。于是按照其中的方法查找mysql.sock文件，将socket路径配置正确。但是系统中没有发现mysql.sock文件，又按照[另一些人的方法](http://www.cnblogs.com/wwufengg/articles/mysqld-sock-lost.html)尝试重新生成mysql.sock文件，但是生成的过程中出现了错误。按照错误提示去看官方文档，仍旧无法解决问题。所幸今天再次尝试解决该问题的时候，偶遇[一篇好文章](http://www.cnblogs.com/super-lucky/p/superlucky.html)，文章本身提供的方法并没有解决我的问题。但其中用到的方法却给了我很大的启发意义，最终顺利解决了问题。文章说要学会查看错误日志，于是尝试了一下，才发现所犯错误是那么的低级。
 
