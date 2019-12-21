@@ -1,0 +1,111 @@
+---
+title: 每日Java(0715)
+categories:
+  - Java
+date: 2015-07-15 11:06:45
+tags:
+  - java
+---
+
+String  &&  StringBuilder  &&  StringBuffer
+
+<!-- more -->
+
+**String**
+
+*   String是一个不可变的对象，即一旦被创建就不能改变；
+*   String创建的对象存储在常量池中（Constant String Pool）;
+*   String是线程安全的（任何不可变的对象都是线程安全的），因此不能被多个线程同时使用；
+
+        example：
+
+String s = "Let’s test";
+s.concat(" if the String object is IMMUTABLE");
+System.out.println(s);
+s = s.concat(" if the String object is IMMUTABLE");
+System.out.println(s);
+
+输出为：
+
+Let’s test
+Let’s test if the String object is IMMUTABLE
+
+**StringBuffer**
+
+*   StringBuffer是可变的对象，即可以修改对象的值；
+*   对象存储在堆中（heap）;
+*   StringBuffer中的方法是需要同步的（synchronized），即是线程安全的，每一个方法在同一时间只能被一个线程访问；但是同步操作意味着要耗费一些额外的开销，甚至可能会造成死锁；因此StringBuffer的性能比StringBuilder要差一些；
+*   StringBuffer可以通过使用toString()方法转换成string;
+
+    example:
+
+StringBuffer demo1 = new StringBuffer("Hello");
+//在堆上创建一个对象"Hello"；
+demo1 = new StringBuffer("Bye");
+//修改上述对象为"Bye"；
+
+**StringBuilder**
+
+*   StringBuilder与StringBuffer基本相同。不同之处在于StringBuilder不是线程安全的，因此StringBuilder比StringBuffer快；
+
+**对比：**
+
+String
+
+StringBuffer
+
+StringBuilder
+
+存储区域
+
+常量池
+
+堆
+
+堆
+
+是否可修改
+
+否（不可变）
+
+是（可变）
+
+是（可变）
+
+是否线程安全
+
+是
+
+是
+
+否
+
+性能（创建？？）
+
+快
+
+非常慢
+
+快
+
+相同之处
+
+final类，不允许被继承
+
+final类，不允许被继承
+
+final类，不允许被继承
+
+**其他：**
+
+*   在某些特别的情况下，String对象的字符串拼接会被JVM解释成StringBuffer对象的拼接；（参考资料2）
+*   使用StringBuffer、StringBuilder的无参构造器产生的对象默认拥有16个字符串长度大小的字符串缓冲区；
+
+**参考资料：**
+
+1.  [Difference Between String , StringBuilder And StringBuffer Classes With Example : Java](http://javahungry.blogspot.com/2013/06/difference-between-string-stringbuilder.html)（需翻墙）
+2.  [String,StringBuffer与StringBuilder的区别??](http://blog.csdn.net/rmn190/article/details/1492013)
+3.  [小瓜牛漫谈 — String、StringBuffer、StringBuilder](http://www.cnblogs.com/fancydeepin/archive/2013/04/23/min-snail-speak_String-StringBuffer-StringBuilder.html)
+4.  [Simple example to demonstrate that String object is immutable](http://www.techtamasha.com/simple-example-to-demonstrate-that-string-object-is-immutable/31)
+
+**备注：**主要翻译了第一篇文章；第三篇文章也具有很高的参考价值，做了很多实验测试字符串拼接的性能；
