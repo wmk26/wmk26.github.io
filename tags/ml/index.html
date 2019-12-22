@@ -48,13 +48,13 @@
 
   <meta property="og:type" content="website">
 <meta property="og:title" content="恰同学少年">
-<meta property="og:url" content="http://yoursite.com/tags/ml/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/ML/index.html">
 <meta property="og:site_name" content="恰同学少年">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="恰同学少年">
 
-<link rel="canonical" href="http://yoursite.com/tags/ml/">
+<link rel="canonical" href="http://yoursite.com/tags/ML/">
 
 
 <script id="page-configurations">
@@ -66,7 +66,7 @@
   };
 </script>
 
-  <title>标签: ml | 恰同学少年</title>
+  <title>标签: ML | 恰同学少年</title>
   
 
 
@@ -181,7 +181,7 @@
   <div class="post-block">
     <div class="posts-collapse">
       <div class="collection-title">
-        <h2 class="collection-header">ml
+        <h2 class="collection-header">ML
           <small>标签</small>
         </h2>
       </div>
@@ -196,35 +196,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2015-09-20T21:04:35+08:00"
-              content="2015-09-20">
-          09-20
+              datetime="2015-09-13T23:03:22+08:00"
+              content="2015-09-13">
+          09-13
         </time>
       </div>
 
       <h3 class="post-title">
-          <a class="post-title-link" href="/2015/09/20/2015-09-20-kmeans-algorithm/" itemprop="url">
-            <span itemprop="name">K均值聚类算法</span>
-          </a>
-      </h3>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2015-09-11T20:24:12+08:00"
-              content="2015-09-11">
-          09-11
-        </time>
-      </div>
-
-      <h3 class="post-title">
-          <a class="post-title-link" href="/2015/09/11/2015-09-11-logistic-regression/" itemprop="url">
-            <span itemprop="name">Logistic回归</span>
+          <a class="post-title-link" href="/2015/09/13/2015-09-13-naive-bayes/" itemprop="url">
+            <span itemprop="name">朴素贝叶斯</span>
           </a>
       </h3>
 
@@ -239,15 +219,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2014-12-28T16:35:06+08:00"
-              content="2014-12-28">
-          12-28
+              datetime="2014-12-31T10:20:39+08:00"
+              content="2014-12-31">
+          12-31
         </time>
       </div>
 
       <h3 class="post-title">
-          <a class="post-title-link" href="/2014/12/28/2014-12-28-terms-in-nlp/" itemprop="url">
-            <span itemprop="name">自然语言处理中的专业名词</span>
+          <a class="post-title-link" href="/2014/12/31/2014-12-31-implement-segment-with-crf/" itemprop="url">
+            <span itemprop="name">使用CRF++实现字标注中文分词</span>
           </a>
       </h3>
 
@@ -325,7 +305,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">172</span>
+          <span class="site-state-item-count">170</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -338,7 +318,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-count">63</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -455,6 +435,28 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       return GUEST.includes(item);
     });
     new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'zjF185xlpGrOe2SEntfRNapB-gzGzoHsz',
+      appKey: 've4tRqlwpgge1iBUpS2v2Gv8',
+      placeholder: "评论一下吧，(´•༝•`)，建议填写昵称和邮箱，方便交流~",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: 'zh-cn' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
+w Valine({
       el: '#valine-comments',
       verify: false,
       notify: false,
