@@ -46,18 +46,18 @@
   };
 </script>
 
-  <meta name="description" content="在python处理数据的过程中，有时候需要判断给定的字符是否是汉字、字母以及数字；参考网上的程序，给出如下的示例： python2.x12345678910111213141516171819202122232425262728293031323334353637#!/usr/bin/env python# -*- coding:utf-8-*-# 判断一个unicode是否是汉字def is_c">
+  <meta name="description" content="在python处理数据的过程中，有时候需要判断给定的字符是否是汉字、字母以及数字；参考网上的程序，给出如下的示例：">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python中判断字符是否是汉字、字母以及数字">
 <meta property="og:url" content="http://yoursite.com/2016/03/05/2016-03-05-python-is-chinese-char/index.html">
 <meta property="og:site_name" content="恰同学少年">
-<meta property="og:description" content="在python处理数据的过程中，有时候需要判断给定的字符是否是汉字、字母以及数字；参考网上的程序，给出如下的示例： python2.x12345678910111213141516171819202122232425262728293031323334353637#!/usr/bin/env python# -*- coding:utf-8-*-# 判断一个unicode是否是汉字def is_c">
+<meta property="og:description" content="在python处理数据的过程中，有时候需要判断给定的字符是否是汉字、字母以及数字；参考网上的程序，给出如下的示例：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-19T14:23:43.935Z">
+<meta property="og:updated_time" content="2019-12-22T03:14:28.978Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python中判断字符是否是汉字、字母以及数字">
-<meta name="twitter:description" content="在python处理数据的过程中，有时候需要判断给定的字符是否是汉字、字母以及数字；参考网上的程序，给出如下的示例： python2.x12345678910111213141516171819202122232425262728293031323334353637#!/usr/bin/env python# -*- coding:utf-8-*-# 判断一个unicode是否是汉字def is_c">
+<meta name="twitter:description" content="在python处理数据的过程中，有时候需要判断给定的字符是否是汉字、字母以及数字；参考网上的程序，给出如下的示例：">
 
 <link rel="canonical" href="http://yoursite.com/2016/03/05/2016-03-05-python-is-chinese-char/">
 
@@ -215,7 +215,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-19 22:23:43" itemprop="dateModified" datetime="2019-12-19T22:23:43+08:00">2019-12-19</time>
+                <time title="修改时间：2019-12-22 11:14:28" itemprop="dateModified" datetime="2019-12-22T11:14:28+08:00">2019-12-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -262,6 +262,8 @@
 
       
         <p>在python处理数据的过程中，有时候需要判断给定的字符是否是汉字、字母以及数字；参考网上的程序，给出如下的示例：</p>
+<a id="more"></a>
+
 <h3 id="python2-x"><a href="#python2-x" class="headerlink" title="python2.x"></a>python2.x</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python</span><br><span class="line"># -*- coding:utf-8-*-</span><br><span class="line"></span><br><span class="line"># 判断一个unicode是否是汉字</span><br><span class="line">def is_chinese(uchar):         </span><br><span class="line">    if u&apos;\\u4e00&apos; &lt;= uchar&lt;=u&apos;\\u9fff&apos;:</span><br><span class="line">        return True</span><br><span class="line">    else:</span><br><span class="line">        return False</span><br><span class="line"></span><br><span class="line"># 判断一个unicode是否是数字</span><br><span class="line">def is_number(uchar):</span><br><span class="line">    if u&apos;\\u0030&apos; &lt;= and uchar&lt;=u&apos;\\u0039&apos;:</span><br><span class="line">        return True</span><br><span class="line">    else:</span><br><span class="line">        return False</span><br><span class="line"></span><br><span class="line">\# 判断一个unicode是否是英文字母</span><br><span class="line">def is_alphabet(uchar):</span><br><span class="line">    if (u&apos;\\u0041&apos; &lt;= uchar&lt;=u&apos;\\u005a&apos;) or (u&apos;\\u0061&apos; &lt;= uchar&lt;=u&apos;\\u007a&apos;):</span><br><span class="line">        return True</span><br><span class="line">    else:</span><br><span class="line">        return False</span><br><span class="line"></span><br><span class="line"># 判断是否非汉字，数字和英文字符</span><br><span class="line">def is_other(uchar):</span><br><span class="line">    if not (is_chinese(uchar) or is_number(uchar) or is_alphabet(uchar)):</span><br><span class="line">        return True</span><br><span class="line">    else:</span><br><span class="line">        return False</span><br><span class="line"></span><br><span class="line">if __name__==&quot;__main__&quot;:</span><br><span class="line">    ustring=u&apos;中国 人名ａ高频Ａ&apos;</span><br><span class="line">    # 判断是否有其他字符；</span><br><span class="line">    for item in ustring:</span><br><span class="line">        if (is_other(item)):</span><br><span class="line">            break</span><br></pre></td></tr></table></figure>
 
 <h3 id="python-3-x"><a href="#python-3-x" class="headerlink" title="python 3.x"></a>python 3.x</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python</span><br><span class="line"># -*- coding:utf-8-*-</span><br><span class="line"></span><br><span class="line"># 判断一个unicode是否是汉字</span><br><span class="line">def is_chinese(uchar):         </span><br><span class="line">    if &apos;\\u4e00&apos; &lt;= uchar&lt;=&apos;\\u9fff&apos;:</span><br><span class="line">        return True</span><br><span class="line">    else:</span><br><span class="line">        return False</span><br><span class="line"></span><br><span class="line"># 判断一个unicode是否是数字</span><br><span class="line">def is_number(uchar):</span><br><span class="line">    if &apos;\\u0030&apos; &lt;= and uchar&lt;=&apos;\\u0039&apos;:</span><br><span class="line">        return True</span><br><span class="line">    else:</span><br><span class="line">        return False</span><br><span class="line"></span><br><span class="line"># 判断一个unicode是否是英文字母</span><br><span class="line">def is_alphabet(uchar):</span><br><span class="line">    if (&apos;\\u0041&apos; &lt;= uchar&lt;=&apos;\\u005a&apos;) or (&apos;\\u0061&apos; &lt;= uchar&lt;=&apos;\\u007a&apos;):</span><br><span class="line">        return True</span><br><span class="line">    else:</span><br><span class="line">        return False</span><br><span class="line"></span><br><span class="line"># 判断是否非汉字，数字和英文字符</span><br><span class="line">def is_other(uchar):</span><br><span class="line">    if not (is_chinese(uchar) or is_number(uchar) or is_alphabet(uchar)):</span><br><span class="line">        return True</span><br><span class="line">    else:</span><br><span class="line">        return False</span><br><span class="line"></span><br><span class="line">if __name__==&quot;__main__&quot;:</span><br><span class="line">    ustring=u&apos;中国 人名ａ高频Ａ&apos;</span><br><span class="line">    # 判断是否有其他字符；</span><br><span class="line">    for item in ustring:</span><br><span class="line">        if (is_other(item)):</span><br><span class="line">            break</span><br></pre></td></tr></table></figure>
@@ -374,7 +376,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">170</span>
+          <span class="site-state-item-count">169</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

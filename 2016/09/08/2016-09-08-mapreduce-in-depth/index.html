@@ -46,19 +46,19 @@
   };
 </script>
 
-  <meta name="description" content="关于MapReduce的详细过程一直不是很懂，看了很多资料也是云里雾里的，不过还是找到两篇不错的文章：  MapReduce 过程详解(原理解释的很清晰，强烈建议阅读，本篇文章也是主要参考这篇文章来的) Hadoop排序工具用法小结(主要是说如何排序，里面的例子也是很清晰的)  自己尝试将上面两篇文章结合起来，并依据自己的实践来进行一些注解；  MapReduce总体流程 0. 综述整个MapRe">
+  <meta name="description" content="关于MapReduce的详细过程一直不是很懂，看了很多资料也是云里雾里的，不过还是找到两篇不错的文章：  MapReduce 过程详解(原理解释的很清晰，强烈建议阅读，本篇文章也是主要参考这篇文章来的) Hadoop排序工具用法小结(主要是说如何排序，里面的例子也是很清晰的)  自己尝试将上面两篇文章结合起来，并依据自己的实践来进行一些注解；  MapReduce总体流程">
 <meta name="keywords" content="linux,hadoop">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MapReduce过程详解">
 <meta property="og:url" content="http://yoursite.com/2016/09/08/2016-09-08-mapreduce-in-depth/index.html">
 <meta property="og:site_name" content="恰同学少年">
-<meta property="og:description" content="关于MapReduce的详细过程一直不是很懂，看了很多资料也是云里雾里的，不过还是找到两篇不错的文章：  MapReduce 过程详解(原理解释的很清晰，强烈建议阅读，本篇文章也是主要参考这篇文章来的) Hadoop排序工具用法小结(主要是说如何排序，里面的例子也是很清晰的)  自己尝试将上面两篇文章结合起来，并依据自己的实践来进行一些注解；  MapReduce总体流程 0. 综述整个MapRe">
+<meta property="og:description" content="关于MapReduce的详细过程一直不是很懂，看了很多资料也是云里雾里的，不过还是找到两篇不错的文章：  MapReduce 过程详解(原理解释的很清晰，强烈建议阅读，本篇文章也是主要参考这篇文章来的) Hadoop排序工具用法小结(主要是说如何排序，里面的例子也是很清晰的)  自己尝试将上面两篇文章结合起来，并依据自己的实践来进行一些注解；  MapReduce总体流程">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://images.cnitblog.com/i/361346/201404/041657025158483.png">
-<meta property="og:updated_time" content="2019-12-19T14:46:21.950Z">
+<meta property="og:updated_time" content="2019-12-22T03:15:36.043Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MapReduce过程详解">
-<meta name="twitter:description" content="关于MapReduce的详细过程一直不是很懂，看了很多资料也是云里雾里的，不过还是找到两篇不错的文章：  MapReduce 过程详解(原理解释的很清晰，强烈建议阅读，本篇文章也是主要参考这篇文章来的) Hadoop排序工具用法小结(主要是说如何排序，里面的例子也是很清晰的)  自己尝试将上面两篇文章结合起来，并依据自己的实践来进行一些注解；  MapReduce总体流程 0. 综述整个MapRe">
+<meta name="twitter:description" content="关于MapReduce的详细过程一直不是很懂，看了很多资料也是云里雾里的，不过还是找到两篇不错的文章：  MapReduce 过程详解(原理解释的很清晰，强烈建议阅读，本篇文章也是主要参考这篇文章来的) Hadoop排序工具用法小结(主要是说如何排序，里面的例子也是很清晰的)  自己尝试将上面两篇文章结合起来，并依据自己的实践来进行一些注解；  MapReduce总体流程">
 <meta name="twitter:image" content="http://images.cnitblog.com/i/361346/201404/041657025158483.png">
 
 <link rel="canonical" href="http://yoursite.com/2016/09/08/2016-09-08-mapreduce-in-depth/">
@@ -217,7 +217,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-19 22:46:21" itemprop="dateModified" datetime="2019-12-19T22:46:21+08:00">2019-12-19</time>
+                <time title="修改时间：2019-12-22 11:15:36" itemprop="dateModified" datetime="2019-12-22T11:15:36+08:00">2019-12-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -269,6 +269,8 @@
 <li><a href="http://www.dreamingfish123.info/?p=1102" target="_blank" rel="noopener">Hadoop排序工具用法小结</a>(主要是说如何排序，里面的例子也是很清晰的)</li>
 </ul>
 <p>自己尝试将上面两篇文章结合起来，并依据自己的实践来进行一些注解； <img src="http://images.cnitblog.com/i/361346/201404/041657025158483.png" alt="mapreduce workflow"> MapReduce总体流程</p>
+<a id="more"></a>
+
 <h2 id="0-综述"><a href="#0-综述" class="headerlink" title="0. 综述"></a>0. 综述</h2><p>整个MapReduce过程总共分为七个步骤，分别是Map/Partition/Sort/Combine/Copy/Merge/Reduce。简单来说，Map对文件进行切分，Partition将文件根据一定条件放到不同的桶中，Sort对桶中的数据进行排序，Combine对桶中的数据进行一次合并，以减少数据的传输消耗，Copy是将桶中的数据分发到各个不同的Reduce节点上，Merge是在Reduce节点上对来自不同桶中的数据进行一次合并，Reduce对合并之后的文件进行处理；</p>
 <h2 id="1-Map"><a href="#1-Map" class="headerlink" title="1. Map"></a>1. Map</h2><p>拆解，在此阶段可以定义mapper脚本程序，处理文件，得到mapper的输出；</p>
 <h2 id="2-Partition"><a href="#2-Partition" class="headerlink" title="2. Partition"></a>2. Partition</h2><p>分区，分区的原因在于，有时候会有多个Reducer, Partition就是提前对输入进行处理，将同类数据放到一个区中，可以在hadoop脚本中自定义如何做Partition，比如按照输入数据的第1列做partition，那么第一列相同的数据会被分到同一个Partition中去，同一个Partition中第一列的值可能有多个，但是第一列值相同的数据不会出现在多个Partition中。</p>
@@ -395,7 +397,7 @@ mapred.text.key.partitioner.options和num.key.fields.for.partition不需要一�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">170</span>
+          <span class="site-state-item-count">169</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

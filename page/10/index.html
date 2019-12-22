@@ -308,7 +308,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-20 22:07:39" itemprop="dateModified" datetime="2019-12-20T22:07:39+08:00">2019-12-20</time>
+                <time title="修改时间：2019-12-22 11:16:12" itemprop="dateModified" datetime="2019-12-22T11:16:12+08:00">2019-12-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -348,16 +348,14 @@
 
       
           <p>记录一些自己linux知识以及遇到的一些小问题</p>
-<h2 id="一些问题："><a href="#一些问题：" class="headerlink" title="一些问题："></a><strong>一些问题：</strong></h2><h3 id="1-软件中心（software-center）闪退（software-center-闪退怎么办？）"><a href="#1-软件中心（software-center）闪退（software-center-闪退怎么办？）" class="headerlink" title="1. 软件中心（software center）闪退（software-center 闪退怎么办？）"></a>1. 软件中心（software center）闪退（<a href="https://forum.ubuntu.org.cn/viewtopic.php?f=80&t=453617" target="_blank" rel="noopener">software-center 闪退怎么办？</a>）</h3><p>sudo update-software-center</p>
-<h3 id="2-“Problem-with-MergeList”-or-“status-file-could-not-be-parsed”-error（How-do-I-fix-a-“Problem-with-MergeList”-or-“status-file-could-not-be-parsed”-error-when-trying-to-do-an-update-）"><a href="#2-“Problem-with-MergeList”-or-“status-file-could-not-be-parsed”-error（How-do-I-fix-a-“Problem-with-MergeList”-or-“status-file-could-not-be-parsed”-error-when-trying-to-do-an-update-）" class="headerlink" title="2. “Problem with MergeList” or “status file could not be parsed” error（How do I fix a “Problem with MergeList” or “status file could not be parsed” error when trying to do an update?）"></a>2. “Problem with MergeList” or “status file could not be parsed” error（<a href="http://askubuntu.com/questions/30072/how-do-i-fix-a-problem-with-mergelist-or-status-file-could-not-be-parsed-err" target="_blank" rel="noopener">How do I fix a “Problem with MergeList” or “status file could not be parsed” error when trying to do an update?</a>）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -vf /var/lib/apt/lists/*</span><br><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-ubuntu-无法链接vpn（-VPN-connect-failed-while-starting-a-VPN-connection-solved-）"><a href="#3-ubuntu-无法链接vpn（-VPN-connect-failed-while-starting-a-VPN-connection-solved-）" class="headerlink" title="3. ubuntu 无法链接vpn（[VPN] connect-failed while starting a VPN connection [solved]）"></a>3. ubuntu 无法链接vpn（<a href="https://bbs.archlinux.org/viewtopic.php?id=194042" target="_blank" rel="noopener">[VPN] connect-failed while starting a VPN connection [solved]</a>）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">\# 编辑如下文件，如果没有，就新建一个</span><br><span class="line">sudo vim /etc/modules-load.d/netfilter.conf</span><br><span class="line"></span><br><span class="line">\# 在文件中添加如下内容</span><br><span class="line">nf\_nat\_pptp</span><br><span class="line">nf\_conntrack\_pptp</span><br><span class="line">nf\_conntrack\_proto_gre</span><br><span class="line"></span><br><span class="line">\# 重启</span><br></pre></td></tr></table></figure>
-
-<p>  日志位置：</p>
-<ul>
-<li>/var/log/syslog，查看系统日志</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/12/23/2015-12-23-linux-knowledge/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -795,7 +793,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-21 21:04:57" itemprop="dateModified" datetime="2019-12-21T21:04:57+08:00">2019-12-21</time>
+                <time title="修改时间：2019-12-22 11:16:21" itemprop="dateModified" datetime="2019-12-22T11:16:21+08:00">2019-12-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -835,50 +833,14 @@
 
       
           <p>说起来，断断续续跑步也有五六年了，期间有一些小收获，也遇到过一些有趣的事情，遂记之；没有时间线，想到什么就记下什么。</p>
-<ol>
-<li><p>本科跑步的时候，认识一个哥们，是武大城市设计学院的，但是在信息学部租房子。那也是一个什么能够坚持的人，至少，在很多个下雨天，操场上就只有我们两个人。他说他要考北大的法律系，他说他考上了，后来就断了联系了。但是我总觉得再次见面我们会依旧畅谈如往昔；</p>
-</li>
-<li><p>本科跑步的时候，总是时不时遇到另一个哥们，几乎每次跑步的时候都能够遇到，也经常一起较量。跑完步去做引体向上，压腿，也总是碰到他。但是，好像我们都太矜持，没有任何一个人主动上前打招呼。由是持续了整个本科阶段。后来，研究生期间，一次机缘巧合之下（这个机缘不可说，伤心事哪堪回首），自己主动上前打招呼，大声介绍自己。于是乎就这样认识了。后来的结果估计谁也没有料到，竟然越聊越欢，彼此竟然有那么多相似甚至相同的兴趣爱好，比如古典文学，比如西方哲学，比如昆曲，与之聊天获益良多，后来真有点相见恨晚的感觉。他是国重的博士，理科生中的文科生。阅读广而深，也有不少自己独特的见解。相当佩服。</p>
-</li>
-<li><p>还是本科跑步的时候，有一次跑完步了，在操场上慢走修整。迎面遇到两个女生，其中一个女生走上来跟我说，“学长，我一看你就没有女朋友吧。”，彼时心中有一万只神兽奔腾呼啸而过，我就想了，黑灯瞎火的这你也能看出来！心中虽然大不爽，但还是木然的点了点头。学妹接着说，“我和我同学玩真心话大冒险，我输了，她让我在操场上找一个单身的男生（也就是单身汪）拥抱一下，你应该不会介意的吧。”。心中窃喜，送上门的拥抱怎么会拒绝，自己“义正言辞”地说了一句，“好啊”。于是张开双臂，不想对方蜻蜓点水似的，一触而去。说好的拥抱呢！！！难道平生第一次和女生的拥抱就这样结束了！！！心情郁闷的无以复加，受到的伤害超过一万点，阴影面积无法计算。好了，不编故事了，实际情况是这样的，大体情节和上面类似，但是当时自己有点懵了，只是顺从地帮了她一个忙，仅此而已。不过那句“你没有女朋友”倒是真的。不想自己单身的气质在那个时候就已经如此强烈，如此炉火纯青了，让人一见就能看出来，还是在黑夜里面看出来的，估计是散发出来的气息吧，就像杀手的杀气，高手的霸气，以及。。。唉，不说了，先去哭一会儿。。。</p>
-</li>
-<li><p>再说一个前几天遇到的事情，一天，在做引体向上，看见一个小姑娘在篮球场那里徘徊，嘴里吃着一个棒棒糖。一开始还以为，她的爸妈在操场上锻炼呢，在等她的爸妈。后来，看见她一个人走出了操场，自己此时也锻炼完了，沿着国重的那条路会宿舍。又在国重的附近看到了小姑娘，一个人在树下逡巡。自己都已经走过去了，但是仍旧忍不住返回了，此时都近十一点了，路上都没有多少行人了，一个小姑娘独自一人实在不安全。很少主动去打招呼，但依旧厚着脸皮去打了声招呼。和小姑娘边走边聊，听她说，她今年8岁，在上二年级。她说她经常独自一个人在校园里面闲逛，最远走到了茶港那边。她说，她还有一个弟弟，父母忙于生意都不怎么管她，有几次，父母做完生意之后发现她不见了，到处找她，后来她自己一个人走回去了。自己少不得“义正言辞”地教训了几句，balabala。后来把她送到路口就回去了。粗心父母古来多，不过听话儿女也挺少的吧。终究是父母之过吧。</p>
-</li>
-<li><p>还是这几天发生的事情，一女生本想去压腿，但是一撇眼间又从压腿的地方离去了。不解何故。这是听见女生和一个人打电话说，“刚刚本来想压腿的，但是看见旁边的男生竟然压六格，太厉害了，吓的我赶紧离开了”。听来不觉莞尔，关键是那个女生说话还挺大的，操场上人本来就不多，想来那个男生也听到了吧，不知作何感想，哈哈；</p>
-</li>
-<li><p>之前看见一群女生，一人一个手机，在操场上边走边大甩臂膀，不明其意。后来，另一天晚上，又看见一个女生看着手机对旁边的人说，我还有六百步，然后大甩臂膀向前走去。不觉释然。。。。。。</p>
-</li>
-<li><p>锻炼间隙总喜欢一个人自娱自乐，时而打了鸡血一般上蹿下跳，时而状若痴呆想心事，时而故作深沉漫步独吟。不知路人如何看，反正自己开心就行；</p>
-</li>
-<li><p>曾经心血来潮，想学习武术。去网上下载了李德印太极拳二十四式。跑完步之后就一个人在一旁练习。最后二十四式都学了一遍，也打了较长的时间。后来，凛冬已至，太极拳又是讲究静，在那里打了半天冻成狗，后来就不了了之了。</p>
-</li>
-<li><p>任何运动做的极致的时候都应该是行云流水，赏心悦目的，其中自然而然地蕴含着一种美感。比如跑步，比如引体向上，比如俯卧撑。然而在这之前，又必须会经历一段苦痛异常的训练。就像冰心写的一首小诗，“成功的花（儿）， 人们只惊羡她现时的明艳！ 然而当初她的芽儿， 浸透了奋斗的泪泉， 洒遍了牺牲的血雨。”。运动如此，其实事情亦如是吧。</p>
-</li>
-<li><p>目前看来，运动的快乐少量在运动中，大量在运动后的一小段时间里面，剩余还残留一点在以后的回忆中；</p>
-</li>
-<li><p>下雨天，操场上跑步的人锐减。零零星星三两个人，比冬日武汉夜晚能够看见的星星还少。于是就在想，跑步或者不跑步，和下雨与否，寒冷与否，甚至雾霾与否有何相干。天下天的雨，我跑我的步，我不曾打扰它下雨，它也不能打扰我跑步吧，不是吗？生活中很多事情的关联性远比我们想的要小，当然也有很多事情的关联性远超我们的想象。如何去对待生活各种事情的关联性，只能因人而异吧。</p>
-</li>
-<li><p>已是寒冬，操场上忽然多了许多一闪一闪的“萤火虫”。我想去捉，可是又担心打不过手机的主人，只能作罢。</p>
-</li>
-<li><p>看见在操场上骑自行车的人，总是抑制不住想把他踹下来的欲望。。。</p>
-</li>
-<li><p>最美的一次跑步是在今年三四月份的时候，夜跑经过樱花大道的时候，看到泛黄的灯光透过无瑕的樱花，仿佛能看见那一缕缕光线在花的周围绽放，那种美轮美奂的感觉让人一见倾心，蓦然间发现原来只有春、花、月、夜就已经如此之美了，“月照花林皆似霰”，诚然不虚，此时才理解为何闻一多先生称《春江花月夜》是“这是诗中的诗，顶峰上的顶峰。”。从此以后，再读这首诗歌而时候，一种亲切感和钦佩感油然而生，先生之言不虚也。</p>
-</li>
-<li><p>最惊悚的一次跑步也是在今年的三四月份，在珞珈山上面，十点多的时候，山上很少看见行人。偏偏那一天，环山路有一大段的路路灯坏了。“前不见古人后不见来者”，四周寂静无人声，唯有零星的几声虫叫，听来倍感惊心。当时差点就没大声念阿弥陀佛了。</p>
-</li>
-<li><p>在操场上经常会遇到一些熟人，遇着遇着就不见了；有曾经看过不少结伴来跑步的人，跑着跑着就分开了。</p>
-</li>
-<li><p>想着以后一定学习一下画漫画，将以上的情景都画下来，一定是极好的。</p>
-</li>
-<li><p>有一天晚上跑步经过信息学部的时候，突然听见一个女生大喊着“救命”从一旁的居民楼跑出来，一撇眼间看见阴影处站着一个男的，也并没有追出来，后来看见女生跑到路灯下，行人也是比较多的，于是就继续跑步去了。经常看见网上有类似的案例，其实自己第一次真的在现实世界中遇到，还真有点懵逼了。不知道下一次遇到类似的情况自己会如何反应。</p>
-</li>
-<li><p>下雨天，进入信息学部的地方有一个三岔路口，看见后面有辆车，想着避让一下，等车过了之后，自己就转弯了，不曾想后面还有一个骑自行车的人，速度比较快，估计是也没想到自己会突然转弯吧，车子打横，路面太滑，摔倒了，颇为过意不去，扶起来之后，道歉，离去。</p>
-</li>
-<li><p>还是进信息学部的路上，路灯突然暗了一下，听见一男一女的对话，男：路灯为什么突然暗了？女：因为武大要睡觉了呀。（后面的呀给人一种很糯的感觉。）瞬间就乐了，生活的情趣在于能够发现小事情的美好。</p>
-</li>
-</ol>
-<p>后面待续。。。。。。只要还在运动，就会一直写下去吧。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/12/13/2015-12-13-interesting-things-during-running/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -928,7 +890,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-20 21:41:19" itemprop="dateModified" datetime="2019-12-20T21:41:19+08:00">2019-12-20</time>
+                <time title="修改时间：2019-12-22 11:16:30" itemprop="dateModified" datetime="2019-12-22T11:16:30+08:00">2019-12-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -968,23 +930,14 @@
 
       
           <p>最近刷微博比较多，看到了一些不错的视频，蓦然发现原来在平凡的生活里面可以如此精彩。</p>
-<p>作为一个不太合格的吃货，对美食是无法抗拒的。这里必须推荐一个微博账号<a href="http://weibo.com/u/5732547280?is_all=1" target="_blank" rel="noopener">微在涨姿势</a>，记得看其中的美食的做法的时候真的是一边流口水，一边惊叹：何人有如此的创意竟然能够让普通的食材极大激发人得食欲，用化腐糗为神奇形容估计也不为过。比如这个<a href="http://weibo.com/5732547280/D7TXy5gAF?from=page_1006065732547280_profile&wvr=6&mod=weibotime&type=comment" target="_blank" rel="noopener">馒头的吃法</a>，小小馒头，加上日常生活中的各种配料，竟然做出了黄金馒头薯条、腐乳烤馒头、孜然炒馒头、蓝莓馒头班戟等四种吃法，想着以后成家立业之后，一定一遂心愿，亲手尝试一下，哈哈。还有<a href="http://weibo.com/1991297257/D7DS4fnYX?type=comment" target="_blank" rel="noopener">这个视频</a>，竟然将吃和艺术如此完美的结合起来了。让人拜服。</p>
-<p>不知哪一位哲人说过，生活中本不缺少美，只是缺少发现美的眼睛。附庸风雅一句，生活中原本就充满了各种趣味，等待着有趣的人去发现。按理说，生活在网络中的人们本不应该会让生活如此乏味，因为信息的流通，各种知识无处不在，打开电脑，连上网络，用Google百度一下，可以说，天下尽在股掌之中。然而观察生活中的人，好像每天的生活充满着各种乏味无趣。我们在抱怨天气太坏，抱怨食物不好吃，抱怨人心太坏，抱怨社会太势力等等。但是另一些人虽然处在同样的环境中，好像他们的天总是晴天，他们的食物都是美食，他们接触到的人都很真诚，他们所处的社会处处充满友爱。细思之，生活本身并没有有趣无趣之分，有去无趣的只是我们每个人而已。培养一些生活中的小情趣，发掘生活中的一些小创意，这些并不会花费我们多少时间和精力，但是却会极大的改变我们的生活品质和生活情趣。自己曾经自嘲说生活的乐事只三，吃个饭，睡个觉，想个人。当然饭有时候不好吃，觉有时候也睡不好，想个人有时候也会想的阵阵悸痛。但是大多数的时候，这三件事情还是让人感觉这天无比明亮，这月色如此温柔，这花草树木如此充满活力，这世界如此美好。大的情趣有三，小的情趣就不可胜数了，比如说，每日去锻炼的时候，过程虽然会充满各种痛苦，但是锻炼完了之后心情总是相当愉快，或许是因为完成了一个目标，或许是压力得到了释放，心情愉悦既是最大的收获，谁又去会管他具体是什么原因呢。再比如说，读到一篇好的诗歌，曾经不太理解为什么闻一多先生说，<a href="http://baike.baidu.com/link?url=9DJDmnLP-XFcwNDrlo817LZZSSbJJETpopNfumqu48xyJp4TIUeOEGnMM6EADExrS5L3_PDRR5YyXFnOzrHFehYas7BAMHCeQV3FtNAJNKa" target="_blank" rel="noopener">《春江花月夜》</a>是“这是诗中的诗，顶峰上的顶峰。”，直到有一次，夜跑经过樱花大道的时候，看到泛黄的灯光投过无瑕的樱花，仿佛能看见那一缕缕光线在花的周围绽放，那种美轮美奂的感觉让人一见倾心，蓦然间才发现原来只有春、花、月、夜就已经如此之美了，“月照花林皆似霰”，诚然不虚。从此以后，再读这首诗歌而时候，一种亲切感和钦佩感油然而生，先生之言不虚也。</p>
-<p>记得不久前看过一个知乎上的提问说，<a href="http://www.zhihu.com/question/37412115" target="_blank" rel="noopener">你认为怎样才算「精致地」生活？</a>，里面<a href="http://www.zhihu.com/question/37412115/answer/71882264" target="_blank" rel="noopener">一个回答</a>说到了郭氏家族的四小姐——郭婉莹，让自己印象颇为深刻。里面说，“年轻的时候，她过锦衣玉食的生活，她的家族，像是“好莱坞电影里才有的十全十美”。建国后，家族企业被收归国有，她穿上粗布衣服，做起了职业女性，她能用煤球和铁丝烤出酥脆的土司，用铝锅和供应面粉做出有圣彼得风味的蛋糕。文革中，备受欺凌，却始终高高地抬着下吧，一如既往地、优雅地挺直脊背。再人生的最后时刻，她烫了卷发，化了妆，安详面对死亡”。作者说：“私以为，真正的精致，不在于拥有了多少荣华富贵，而是在屈辱、苦难勉强，依然保持优雅的姿态，将眼前的波涛汹涌化为内心的波澜不惊”。十分赞同（不觉有想起了<a href="http://www.wangmingkuo.com/reading/%e6%88%91%e7%9a%84%e5%9b%a2%e9%95%bf%e6%88%91%e7%9a%84%e5%9b%a2/" target="_blank" rel="noopener">《我的团长我的团》</a>里面的上官戒慈，那也是一个能将生活过的十分精致的女子，“实际上她是那类能把书的精华读进人的生命的少数派。”）。类似的知乎上的问题还有，<a href="http://www.zhihu.com/question/24852717" target="_blank" rel="noopener">民国时期上海的大家闺秀是怎样的？</a>，<a href="http://www.zhihu.com/question/23584359" target="_blank" rel="noopener">民国时期有哪些精致的女子？</a>，以及<a href="http://e.money.163.com/docs/4/2015100511/B55H7M2490017M25.html" target="_blank" rel="noopener">民国红颜录，看到赵四小姐真容我震惊了</a>。</p>
-<p>不得不再次感慨，生活本身并不无趣乏味，无趣乏味的只是我们自己，是为记。</p>
-<p>不写了，赶紧去图书馆借书去。。。</p>
-<p>参考文献：</p>
-<ul>
-<li><a href="http://weibo.com/u/5732547280?is_all=1" target="_blank" rel="noopener">微在涨姿势</a>的微博账号</li>
-<li><a href="http://weibo.com/5732547280/D7TXy5gAF?from=page_1006065732547280_profile&wvr=6&mod=weibotime&type=comment" target="_blank" rel="noopener">馒头的吃法</a>，让人流口水的视频</li>
-<li><a href="http://weibo.com/1991297257/D7DS4fnYX?type=comment" target="_blank" rel="noopener">将吃和艺术结合起来的视频</a></li>
-<li><a href="http://baike.baidu.com/link?url=9DJDmnLP-XFcwNDrlo817LZZSSbJJETpopNfumqu48xyJp4TIUeOEGnMM6EADExrS5L3_PDRR5YyXFnOzrHFehYas7BAMHCeQV3FtNAJNKa" target="_blank" rel="noopener">《春江花月夜》</a></li>
-<li><a href="http://www.zhihu.com/question/37412115" target="_blank" rel="noopener">你认为怎样才算「精致地」生活？</a>以及其中的<a href="http://www.zhihu.com/question/37412115/answer/71882264" target="_blank" rel="noopener">一个回答</a></li>
-<li><a href="http://www.wangmingkuo.com/reading/%e6%88%91%e7%9a%84%e5%9b%a2%e9%95%bf%e6%88%91%e7%9a%84%e5%9b%a2/" target="_blank" rel="noopener">《我的团长我的团》</a>，自己的书评和影评</li>
-<li><a href="http://www.zhihu.com/question/24852717" target="_blank" rel="noopener">民国时期上海的大家闺秀是怎样的？</a></li>
-<li><a href="http://www.zhihu.com/question/23584359" target="_blank" rel="noopener">民国时期有哪些精致的女子？</a></li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/12/12/2015-12-12-unordinary-moment-in-ordinary-life/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1034,7 +987,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-20 22:03:55" itemprop="dateModified" datetime="2019-12-20T22:03:55+08:00">2019-12-20</time>
+                <time title="修改时间：2019-12-22 11:16:45" itemprop="dateModified" datetime="2019-12-22T11:16:45+08:00">2019-12-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1074,20 +1027,14 @@
 
       
           <p>本来不想写这种豆腐块的小文章的，但是秉承着看书偶有所得即记之的观点，还是稍稍记录一下吧。</p>
-<p>整体来说，书并不好，说是随笔，还真是随意。基本上是各种流水账吧，书中三分之一的篇幅在谈mac，剩余是一些编程的碎碎念，包括各种编程工具的使用，一些人物的品评等等，不一而足。很多文章都是在网上一搜一大批，自然，作者的文章只能算中下吧。</p>
-<p>不过一本书再一无是处，也总有一些可取的地方吧。下面就说一下，自己的一点收获吧。文中说“**在MacTalk之前，我写博客，也为一些媒体写文章，最好的时候一个月会写2-3篇，每次约稿都要拖到最后才能完成，但是开始写MacTalk之后，到今天为止，近8个月的时间我写了180多篇有效文章，平均每周5篇左右，文字总量在15万到20万，这个惊人的数量是我从来没想到的，而且花费的时间是我剪切了刷微博、浏览网页、扯淡、看电视的时间，粘贴到MacTalk上的，每个人时间就那么多，我觉得我并没有损失什么。</p>
-<p>所以，不要为自己设限！**”，合抱之木，生于毫末；九层之台，起于累土；千里之行，始于足下。由斯可见；自己开始写博客也差不多有一年的时间了吧，平时在上网的时候，看见别人的博客总喜欢看一下作者最近是否还在坚持写博客，2/8定律还是挺能说明问题的，80%以上的博客早已经田园将芜胡不归，不可不叹；自己做事还算有恒，不知能坚持多长时间；</p>
-<p>书的副标题是人生元编程，但是里面有就只有一篇文章在谈人生元编程的问题。里面的观点还是可以借鉴和思考的。书中说“<strong>具备元编程的语言就具备更强大的操控自己的能力，可以自省，可以反射，可以动态改变和控制自己；具备人生元编程能力的人，同样有自省能力，随时检查和控制自身的情绪和行为，思考自己的想法，改变大脑的动机。</strong>”，不知怎么就想起了之前在知乎上看到的一个<a href="http://www.zhihu.com/question/32422838/answer/55775344" target="_blank" rel="noopener">问题的答案</a>，用程序员的视角去写一本修真小说，解码自己，重构世界，和这里提到的“人生元编程”还真有异曲同工之妙。</p>
-<p>还有一些和作者相同的观点，比如说“内事不决问百度，外事不决问Google”，附录一个知乎上的问答<a href="http://www.zhihu.com/question/20161362" target="_blank" rel="noopener">如何用好Google搜索引擎</a>。比如说软件付费的观点，目前虽然赞同，但不能力行之，以后等财务自由了一定支持正版，去尊重开发人员，也让自己体验更优质的服务。作者是一个Mac控，为Mac打了不少广告，自己也有点动心，以后有机会或可一试；书中还提到一些不错的资源，比如，高晓松的晓说，还有冯唐的《不二》，找时间会去了解一下。</p>
-<p>自己也有以后写书的想法，成与否就让时间去见证吧，是以为记；</p>
-<p>附录：</p>
-<ul>
-<li><a href="http://www.zhihu.com/question/20161362" target="_blank" rel="noopener">如何用好Google搜索引擎</a></li>
-<li><a href="http://www.zhihu.com/question/32422838" target="_blank" rel="noopener">怎么写出一本程序员风格的修真小说？</a></li>
-<li>晓说优酷链接，<a href="http://www.youku.com/show_page/id_zc3c10ca46d8d11e1b52a.html" target="_blank" rel="noopener">第一季</a>，<a href="http://www.youku.com/show_page/id_z64feb2249b8211e296da.html" target="_blank" rel="noopener">第二季</a>，<a href="http://xhtyh.blog.163.com/blog/static/21219421420139231162329/" target="_blank" rel="noopener">Mp3下载</a></li>
-<li>冯唐的<a href="http://book.douban.com/subject/6732178/" target="_blank" rel="noopener">不二</a></li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/12/12/2015-12-12-mactalk-reading-notes/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1137,7 +1084,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-16 23:02:45" itemprop="dateModified" datetime="2019-12-16T23:02:45+08:00">2019-12-16</time>
+                <time title="修改时间：2019-12-22 11:21:17" itemprop="dateModified" datetime="2019-12-22T11:21:17+08:00">2019-12-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1177,17 +1124,14 @@
 
       
           <p>最近用pycharm写python，代码下面出现各种下划线，虽然无关宏旨，但是会严重影响阅读体验；按照提示，google之，原来是自己的编码方式的问题，参考python的编码规范，修改之后果然美观多了。自己之前一直没有注意类似的问题，编的程序仅仅只能完成基本的功能，看起来实在丑陋不堪。与自己心中对于工程的严谨性和美观性的认知大相径庭。好的代码应该是高效（Efficient）、美观（Elegent）、干净（Clean）的。以后，一定注意程序的编码规范。 随手去google一下，无意间发现不少好的论述，摘录如下：</p>
-<ul>
-<li><a href="https://www.quora.com/How-do-you-learn-practice-to-write-clean-code" target="_blank" rel="noopener">How do you learn/practice to write clean code?</a>（Quora的问答，里面推荐了不少好书，比如Code Complete 2，The Mythical Man-Month，Clean Code: A Handbook of Agile Software Craftsmanship）</li>
-<li><a href="https://www.harding.edu/fmccown/writingcleancode.pdf" target="_blank" rel="noopener">Tips to Writing Clean Code By Frank McCown</a></li>
-<li><a href="http://www.ibm.com/developerworks/rational/library/nov06/pollice/" target="_blank" rel="noopener">Writing clean code</a></li>
-</ul>
-<p>附录python的编码规范：</p>
-<ul>
-<li><a href="https://www.python.org/dev/peps/pep-0008" target="_blank" rel="noopener">PEP 0008 – Style Guide for Python Code</a></li>
-<li><a href="https://google.github.io/styleguide/pyguide.html" target="_blank" rel="noopener">Google Python Style Guide</a></li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/12/11/2015-12-11-write-clean-code/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1272,7 +1216,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">170</span>
+          <span class="site-state-item-count">169</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
