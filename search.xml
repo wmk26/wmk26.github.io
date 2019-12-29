@@ -191,8 +191,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>总结</tag>
         <tag>随笔</tag>
+        <tag>总结</tag>
       </tags>
   </entry>
   <entry>
@@ -377,8 +377,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>爬山</tag>
         <tag>旅行</tag>
+        <tag>爬山</tag>
       </tags>
   </entry>
   <entry>
@@ -503,8 +503,8 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>爬山</tag>
         <tag>旅行</tag>
+        <tag>爬山</tag>
       </tags>
   </entry>
   <entry>
@@ -759,8 +759,8 @@
         <category>读书</category>
       </categories>
       <tags>
-        <tag>影评</tag>
         <tag>书评</tag>
+        <tag>影评</tag>
       </tags>
   </entry>
   <entry>
@@ -2292,8 +2292,8 @@ mapred.text.key.partitioner.options和num.key.fields.for.partition不需要一�
         <category>生活</category>
       </categories>
       <tags>
-        <tag>爬山</tag>
         <tag>旅行</tag>
+        <tag>爬山</tag>
       </tags>
   </entry>
   <entry>
@@ -3140,8 +3140,8 @@ kill -9 PID</code></pre><p>具体可以参考如下两篇文章：</p>
         <category>读书</category>
       </categories>
       <tags>
-        <tag>戏曲</tag>
         <tag>书评</tag>
+        <tag>戏曲</tag>
       </tags>
   </entry>
   <entry>
@@ -3785,8 +3785,8 @@ line-height: 180%;
         <category>生活</category>
       </categories>
       <tags>
-        <tag>总结</tag>
         <tag>随笔</tag>
+        <tag>总结</tag>
       </tags>
   </entry>
   <entry>
@@ -4865,8 +4865,8 @@ line-height: 180%;
         <category>读书</category>
       </categories>
       <tags>
-        <tag>影评</tag>
         <tag>书评</tag>
+        <tag>影评</tag>
       </tags>
   </entry>
   <entry>
@@ -6003,8 +6003,8 @@ return h ^ (h &gt;&gt;&gt; 7) ^ (h &gt;&gt;&gt; 4);</code></pre><p>}</p>
         <category>读书</category>
       </categories>
       <tags>
-        <tag>戏曲</tag>
         <tag>书评</tag>
+        <tag>戏曲</tag>
       </tags>
   </entry>
   <entry>
@@ -6542,8 +6542,8 @@ return h ^ (h &gt;&gt;&gt; 7) ^ (h &gt;&gt;&gt; 4);</code></pre><p>}</p>
         <category>读书</category>
       </categories>
       <tags>
-        <tag>戏曲</tag>
         <tag>书评</tag>
+        <tag>戏曲</tag>
       </tags>
   </entry>
   <entry>
