@@ -9,6 +9,8 @@ tags:
 
 近日想深入了解一下Java虚拟机，于是阅读[《深入理解Java虚拟机》](https://book.douban.com/subject/24722612/)这本书；在编译openjdk的时候遇到一些问题。记录如下，以供参考；
 
+<!-- more -->
+
 ### 0\. 编译环境（Linux底下可以用sudo lshw -short命令查看）：
 
 1.  Ubuntu 14.04LTS i386

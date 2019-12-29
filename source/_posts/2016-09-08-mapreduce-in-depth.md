@@ -15,6 +15,8 @@ tags:
 
 自己尝试将上面两篇文章结合起来，并依据自己的实践来进行一些注解； ![mapreduce workflow](http://images.cnitblog.com/i/361346/201404/041657025158483.png) MapReduce总体流程
 
+<!-- more -->
+
 0\. 综述
 ------
 

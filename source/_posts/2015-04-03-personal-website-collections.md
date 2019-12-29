@@ -11,6 +11,8 @@ tags:
 
 自己用chrome收藏了很多有价值的网站，但是一段时间不去用，很容易忘记当初为什么收集这些网站，之后决定不仅仅记录网站名，还要写上收藏的原因。
 
+<!-- more -->
+
 个人博客：
 
 *   [http://www.ruanyifeng.com/blog/](http://www.ruanyifeng.com/blog/)         阮一峰的网络日志

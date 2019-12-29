@@ -15,6 +15,8 @@ tags:
     - Cygwin：让Unix-like下的程序代码在Windows下直接被编译；
     - Djgpp：则是想让DOS下也能用上GCC；
 
+<!-- more -->
+
 因为[MinGW](http://www.mingw.org/)被墙，所以选择了[Cygwin](https://sourceware.org/cygwin/)。。。
 
 安装步骤：参考[http://www.33lc.com/article/7276.html](http://www.33lc.com/article/7276.html)

@@ -11,6 +11,8 @@ tags:
 
 参考[雅黑字体下WordPress 行高与字符间距最佳实践：1.8em与0.06em](http://zhangzhao.me/wordpress-height-under-ya-black-font-and-character-spacing-best-practice-1-8em-and-0-06em.zz)，修改style.css如下
 
+<!-- more -->
+
 ```
     #main {
     clear: both;

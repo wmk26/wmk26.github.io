@@ -7,6 +7,10 @@ tags:
 date: 2015-01-02 20:00:48
 ---
 
+记录 wordpress 修改；
+
+<!-- more -->
+
 1.  文章编辑器：一开始使用的是wordpress默认的编辑器，功能太少，换用kindeditor-for-wordpress，试用了一段时间，功能虽多，体验太差。现在使用的是TinyMCE Advanced，目前感觉还不错。
 2.  添加qq表情：使用kindeditor-for-wordpress 的一个好处是，里面内嵌了qq的默认表情，换用TinyMCE Advanced后，根据[这篇文章](http://www.annhe.net/article-1478.html)添加了qq表情。（备注：kindeditor-for-wordpress中的表情更多，下载该插件到本地，表情文件位于/kindeditor-for-wordpress/plugins/emoticons/images，以后有时间尝试把qq表情嵌入到TinyMCE Advanced编辑器中）
 3.  首页显示文章摘要：参考的是[这篇博文](http://www.zrblog.net/13.html)，使用的插件是wp-utf8-excerpt，主要特点：1. 支持多字节语言（如中文），不会产生乱码；2.摘要可保留文章中的格式标签，如字体、颜色、链接、图片等（需保留的标签可在后台设置）；3. 首页每篇文章显示300字，存档页面每篇文章显示150字（字数可设置）

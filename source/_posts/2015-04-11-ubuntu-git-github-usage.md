@@ -9,6 +9,8 @@ tags:
 
 记录下在Ubuntu下使用git与github的经历。 github基本功能： Repository：放项目的仓库； Fork：授权拷贝；（Fork 别人的项目） Branch：Fork之后，在个人的github上出现同名Repository，是源Repository的分支（Branch）； Pull Request：推送请求，将修改后的代码推送给原作者；
 
+<!-- more -->
+
 1.  git初始设置
 
 $ git config --global user.name "Your Real Name" 
