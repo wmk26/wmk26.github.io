@@ -26,41 +26,37 @@
 <div id="mainDiv">
 	<div id="content">
 		<div id="code">
-        	我很努力的<br />
-            要成为一个</span><br />
-            <span class="keyword">优秀的男朋友</span><br /><br />
-
-            你也很努力的<br />
-            在成为一个<br />
-            <span class="keyword">优秀的女朋友的路上</span><br /><br />
-
-            这种感觉<br />
-            真的是<br />
-             <span class="keyword">太好了</span><br /><br />
-
-            唯有梦想与好姑娘<br />
-            <span class="keyword">不可辜负</span><br /><br />
-
-             <hr />
-   			<span class="keyword">I want to say:</span><br />
-			Mrs.Right<br />
-            <span class="keyword"> I love you! </span><br />
-            -- 钟先森<br />
-
-
+            <p><span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* 第一次线下约会是在王府井</span><br />
+				<span class="space"/><span class="comments">* 那天，一起吃了一顿饭，一起看了第一部电影《唐人街探案 2》，和穿着高跟鞋的你一起在故宫外逛了很久</span><br />
+				<span class="space"/><span class="comments">*/</span><br />
+				Boy i = <span class="keyword">new</span> Boy(<span class="string">"mingkuo"</span>);<br />
+				Girl u = <span class="keyword">new</span> Girl(<span class="string">"suwan"</span>);<br />
+				<span class="comments">// 2018.07.28，那晚清华的荷塘很美，月亮很美，你也很美；</span><br />
+				i.say(i love u, be my girlfriend);<br />
+				<span class="comments">// 那一天我们在一起了；</span><br />
+				u&i.betoghter();<br />
+				<span class="comments">// 从那一刻开始，便彼此不再分离；</span><br />
+				i.miss(u);<br />
+				<span class="comments">// 互相关心，互相照顾；</span><br />
+				i/u.takeCareOf(u/i);<br />
+        		<span class="comments">// 我想轻轻地握着你的手；</span><br />
+		 		Forever.link(i.hand, u.hand)<br />
+            	<span class="comments">// 我想紧紧地抱着你；</span><br />
+				Forever.link(i.heart, u.heart)<br />
+				</p>
 		</div>
 		<div id="loveHeart">
-			<canvas id="garden"></canvas>
+            <canvas id="garden"></canvas>
 			<div id="words">
 				<div id="messages">
-					相遇，相识，相恋...
+					Suwan, We have been together for
 					<div id="elapseClock"></div>
 				</div>
-<!--			<div id="loveu">
-					<br/>
-					<div class="signature">- 钟先森</div>
+				<div id="loveu">
+					Love u forever and ever.<br/>
+					<div class="signature">- Mingkuo</div>
 				</div>
--->
 			</div>
 		</div>
 	</div>
@@ -71,8 +67,8 @@ var offsetX = $("#loveHeart").width() / 2;
 var offsetY = $("#loveHeart").height() / 2 - 55;
 var together = new Date();
 
-together.setFullYear(2018, 5, 1);//1.23；3.29
-together.setHours(12);
+together.setFullYear(2018, 6, 28);//1.23；3.29
+together.setHours(20);
 together.setMinutes(0);
 together.setSeconds(0);
 together.setMilliseconds(0);
@@ -101,8 +97,9 @@ if (!document.createElement('canvas').getContext) {
 }
 </script>
 <div style="text-align:center;clear:both">
-<p>Made for Mrs.Right, made by <a href="https://github.com/enfangzhong" target="_blank">EnfangZhong<a /></p>
-<p>Copyright © 2017 - 2019. All Rights Reserved. Designed by <a href="https://github.com/enfangzhong" target="_blank">EnfangZhong<a /> </p>
+    <p>Made for Suwan, made by Mingkuo; refer: <a href="https://github.com/enfangzhong" target="_blank">EnfangZhong<a /></p>
+    <p>Copyright © 2018 - forever. All Rights Reserved.</p>
+    <embed src="../backgroud_music.mp3" width="0" height="0" loop=true></embed>
 </div>
 </body>
 </html>
